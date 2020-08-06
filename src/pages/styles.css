@@ -1,3 +1,23 @@
+.content {
+  height: 92vh;
+  background-color: #FFF;
+}
+
+.title {
+  padding: 50px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.title .h1 {
+  font-size: 36pt;
+  font-weight: 600;
+}
+
+.title .sub {
+  font-size: 14pt;
+}
+
 .link {
   color: #61dafb;
 }

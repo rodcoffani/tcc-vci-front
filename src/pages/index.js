@@ -6,8 +6,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="app-body">
-        
+      <div className="content">
+        <div className="title">
+          <div className="h1">
+            Treinamentos
+          </div>
+          <div className="sub">
+            Nós somos uma plataforma de treinamento da empresa VCI-Brasil.
+          </div>
+        </div>
       </div>
     </div>
   );
