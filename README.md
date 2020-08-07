@@ -12,7 +12,7 @@ Clique no canto superior direito do repositório, na opção "fork". Dessa forma
 ### 2. Clone o repositório
 
 Depois de ter feito o fork, vá na opção "Code", em verde. Ali, faça o clone do seu repositório clicando na opção "Clonar com HTTPS" e copie o link. \
-Em sua linha de comando (que deve possuir git) digite: `git clone [link copiado]`. \
+Em sua linha de comando (que deve possuir git) digite: `git clone [link copiado]`.
 
 ### 3. Instale as dependências
 
