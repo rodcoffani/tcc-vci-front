@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Guia: 
+
+[1. Setup](#setup) - Clonar o repositório pela primeira fez. \
+[2. Atualizar o fork](#fork) - Atualizar o seu fork com as mudanças feitas no repo principal.
+
+<a name="setup"></a>
 ## Setup
 
 Para instalar e fazer uso deste projeto, siga os seguintes passos: 
@@ -21,6 +27,38 @@ Utilize o comando `npm i` ou `yarn` para fazer o download de todas as dependênc
 ### 4. Inicie o projeto
 
 Com tudo isso realizado, é só rodar o comando `npm start` ou `yarn start`.
+
+<a name="fork">`</a>
+## Atualizar o seu fork
+
+Caso tenham sido feitas mudanças nesse repositório depois de vc ter feito seu fork, você deve atualizar seu fork para poder fazer seus PRs (Pull Requests).
+
+Se for a primeira fez que está fazendo isso, siga os próximo passos (senão, siga [estes](#segundosPassos)):
+
+### 1. Adicione um remote para o repositório original
+
+Na linha de comando, execute `git remote add upstream https://github.com/rodcoffani/tcc-vci-front`
+
+### 2. Atualize o remote upstream
+
+Na linha de comando, atualize o remote upstream com o comando `git fetch upstream`
+
+### 3. Faça o rebase do master com o master do upstream
+
+Na linha de comando, entre na sua branch master com `git checkou master`. Depois disso, `git rebase upstream/master`.
+
+<hr />
+
+<a name="segundosPassos"></a>
+Para atualizar seu fork depois da primeira vez, sigos os passos:
+
+### 1. Atualize o upstream
+
+Atualize o upstream do repositório com o comando `git fetch upstream`
+
+### 2. Faça o rebase 
+
+Para realizar o rebase do repo, entre na sua branch master com `git checkou master`. Depois disso, `git rebase upstream/master`.
 
 ## Available Scripts
 
