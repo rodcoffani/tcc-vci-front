@@ -28,7 +28,7 @@ Utilize o comando `npm i` ou `yarn` para fazer o download de todas as dependênc
 
 Com tudo isso realizado, é só rodar o comando `npm start` ou `yarn start`.
 
-<a name="fork">`</a>
+<a name="fork"></a>
 ## Atualizar o seu fork
 
 Caso tenham sido feitas mudanças nesse repositório depois de vc ter feito seu fork, você deve atualizar seu fork para poder fazer seus PRs (Pull Requests).
