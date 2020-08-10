@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 import Header from '../components/Header';
-import L from '../pages/Login/'
 
 function App() {
   return (
