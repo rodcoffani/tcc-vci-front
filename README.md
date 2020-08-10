@@ -56,7 +56,7 @@ Na linha de comando, atualize o remote upstream com o comando `git fetch upstrea
 
 ### 3. Faça o rebase do master com o master do upstream
 
-Na linha de comando, entre na sua branch master com `git checkou master`. Depois disso, `git rebase upstream/master`.
+Na linha de comando, entre na sua branch master com `git checkout master`. Depois disso, `git rebase upstream/master`.
 
 <hr />
 
