@@ -69,7 +69,7 @@ Atualize o upstream do repositório com o comando `git fetch upstream`
 
 ### 2. Faça o rebase 
 
-Para realizar o rebase do repo, entre na sua branch master com `git checkou master`. Depois disso, `git rebase upstream/master`.
+Para realizar o rebase do repo, entre na sua branch master com `git checkout master`. Depois disso, `git rebase upstream/master`.
 
 <a name="commitPR"></a>
 # Commit & Pull Request
