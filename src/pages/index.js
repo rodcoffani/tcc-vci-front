@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Header from '../components/Header';
-
+import L from '../pages/login/'
 function App() {
   return (
     <div className="App">
@@ -20,4 +20,4 @@ function App() {
   );
 }
 
-export default App;
+export default L;
