@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles.css';
 import Header from '../components/Header';
-import L from '../pages/login/'
+import L from '../pages/Login/'
+
 function App() {
   return (
     <div className="App">
@@ -20,4 +21,4 @@ function App() {
   );
 }
 
-export default L;
+export default App;
