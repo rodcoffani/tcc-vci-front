@@ -8,9 +8,9 @@ const Routes = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route 
-                    path="/login" 
-                    component={ Login } 
+                <Route
+                 path="/Login" 
+                 component={ Login }
                 />
                 <Route 
                     exact path="/"
