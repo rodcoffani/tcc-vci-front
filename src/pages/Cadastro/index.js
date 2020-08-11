@@ -1,17 +1,16 @@
-import React from 'react';
-import './styles.css';
+import React, { Component } from 'react';
 import { Container, Row, Col} from 'react-bootstrap'
-import { Component } from "react"
 
+import './styles.css';
 
-export default class Saudacao extends Component{
+export default class Saudacao extends Component {
     state={
         nome: this.props.nome
     }
     setNome(e){
         this.setState({ nome:e.target.value})
     }
-    render(){
+    render() {
         const {nome} = this.state
         return (
                 <React.Fragment>
@@ -39,11 +38,6 @@ export default class Saudacao extends Component{
                 </Container>
                 </body>
                 </React.Fragment>
-              
-              
-        
-              );
-
-        
+              );        
     }
 }
