@@ -1,25 +1,28 @@
-.Cont {
+body{
     background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
-    background-size: cover;
-    height: auto;
 }
 
 .FormC {
-margin-top: 20%;
-margin-bottom:41.6%;
+margin-top: 24%;
+margin-bottom:31.6%;
+background: transparent!important;
 }
 
 .FormC b {
     font-size: 150%;
+    background: transparent!important;
+
 }
 
 .inputC {
-    background-color: #1c72ff;
+    background-color: #1c72ff !important;
     outline: none;
     border: none;
     border-bottom: solid 1px black;
     width: 100%;
     color:white;
+    height: 7vh;
+    
 }
 
 ::-webkit-input-placeholder {
@@ -27,38 +30,34 @@ margin-bottom:41.6%;
 }
 
 .CadT {
-    font-size: 450%;
+    margin-left: 30.8vw;
+    font-size: 5vw;
     color: white;
-}
-
-.CadT::after {
-    content: "";
-    border-top: 2px solid white;
-    width: 40%;
-    position: absolute;
-    top: 90px;
-    left: 5.5%;
+    background: transparent!important;
+    
 }
 
 .CadS {
-    font-size: 130%;
+    font-size: x-large;
     overflow-wrap: break-word;
     color: white;
+    background: transparent!important;
 }
 
 .TituloC {
     width: 380px;
-    text-align: start;
+    background-color: transparent !important;
 }
 
 @keyframes Flick {
-    from {color: white;background-color: white;} to
+    from {color: white;background-color: white !important;} to
     {color: transparent;background-color: transparent;}
 }
 
 .Flick {
     height: 3px;
     width: 20px;
+    color: white;
     background-color: white;
     animation-name: Flick;
     animation-duration: 1s;
@@ -70,12 +69,13 @@ margin-bottom:41.6%;
 }
 
 .CadBtn {
-    width: 300px;
+    width: 350px;
     float: right;
     color: white;
-    background-color: #1c72ff;
+    background-color: #1c72ff !important;
     border:none;
     margin-top: 10px;
+    height: 8vh;
     border: solid 2px rgb(197, 197, 197);
 }
 
@@ -87,21 +87,352 @@ margin-bottom:41.6%;
 
 .Presc {
     color: white;
+    background-color: transparent !important;
 }
 
-@media screen and (max-width: 742px) {
-    .FormC {
-        margin-top: 2%;
-    }
-}
 
 .linkC {
     text-decoration: none;
     color: white;
     margin-left: 35%;
+    background-color: transparent !important;
 }
 
 .linkC:hover {
     text-decoration: none;
     color: white;
+    background-color: transparent !important;
 }
+
+@media (min-width:320px) and (max-width: 375px) {
+    .TituloC{
+        
+    width: 290px;
+    }
+    .FormC{
+        
+        margin-top: 10%;
+    }
+    .CadT{
+        
+        margin-left: 20.8vw;
+        font-size: 10vw;
+    }
+    .linkC{
+        margin-left: 20%;
+    }
+    .CadBtn{
+        width: 150px;
+        font-size: large;
+    }
+    .CadS{
+        font-size: 6vw;
+    }
+    .inputC{
+        font-size: x-large;
+    }
+
+}
+@media (min-width:365px) and (max-width: 375px) {
+    .TituloC{
+        
+    width: 310px;
+    }
+    .CadT{
+        
+        margin-left: 20.8vw;
+        font-size: 10vw;
+    }
+    .linkC{
+        margin-left: 20%;
+    }
+    .CadBtn{
+        width: 170px;
+    }
+    
+    .inputC{
+        font-size: x-large;
+    }
+}
+
+@media (min-width:376px) and (max-width: 504px) {
+    .TituloC{
+        
+    width: 360px;
+    }
+    .FormC{
+        
+        margin-top: 10%;
+    }
+    .CadT{
+        
+        margin-left: 20.8vw;
+        font-size: 10vw;
+    }
+    .CadS{
+        font-size: 6vw;
+    }
+    .inputC{
+        font-size: x-large;
+    }
+    
+    .CadBtn{
+        font-size: large;
+    }
+}
+@media (min-width:463px) and (max-width: 504px) {
+    .TituloC{
+        
+    width: 400px;
+    }
+
+}
+
+@media (min-width:505px) and (max-width: 599px) {
+    .TituloC{
+        
+    width: 420px;
+    }
+    .FormC{
+        
+        margin-top: 10%;
+    }
+    .CadT{
+        
+        margin-left: 20.8vw;
+        font-size: 10vw;
+    }
+    .CadBtn{
+        font-size: x-large;
+    }
+    .inputC{
+        font-size: x-large;
+    }
+}
+@media (min-width:600px) and (max-width: 789px) {
+    .TituloC{
+        
+    width: 570px;
+    }
+    .FormC{
+        
+        margin-top: 10%;
+    }
+    .CadT{
+        
+        margin-left: 20.8vw;
+        font-size: 10vw;
+    }
+    .CadBtn{
+        width: 260px;
+    }
+    .inputC{
+        font-size: x-large;
+    }
+    .CadBtn{
+        font-size: x-large;
+    }
+    
+    .linkC{
+        font-size: x-large;
+
+       
+   }
+}
+@media (min-width:700px) and (max-width: 789px) {
+    .CadBtn{
+        font-size: x-large;
+    }
+    .FormC{
+        
+        margin-top: 5%;
+    }
+    .TituloC{
+        
+        width: 670px;
+        }
+}
+@media (min-width:789px) and (max-width: 1000px) {
+    .TituloC{
+        padding: 5% 4%;
+    }
+    .CadT{
+        
+    font-size: 6vw;
+    }
+    .CadBtn{
+        font-size: x-large;
+    }
+    
+    .linkC{
+        font-size: x-large;
+
+       
+   }
+}
+@media (min-width:899px) and (max-width: 1000px) {
+    .TituloC{
+        width: 420px;
+    }
+    .CadS{
+        font-size: x-large;
+    }
+
+    
+
+}
+@media (min-width:1000px) and (max-width: 1440px) {
+    .TituloC{
+        padding: 9% 5%;
+        width: 460px;
+    }
+    .CadS{
+        font-size: x-large;
+    }
+    .linkC{
+         font-size: xx-large;
+            margin-left: 40%;
+        
+    }
+    .inputC{
+        
+        height: 8vh;
+        font-size: x-large;
+    }
+    .CadBtn{
+        font-size: x-large;
+    }
+}
+@media (min-width:1100px) and (max-width: 1300px) {
+    .TituloC{
+        padding: 9% 5%;
+        width: 540px;
+    }
+    .CadS{
+        font-size: x-large;
+    }
+    .inputC{
+        
+        height: 8vh;
+        font-size: x-large;
+    }
+    .CadBtn{
+        font-size: x-large;
+    }
+}
+@media (min-width:1250px) and (max-width: 1440px) {
+    .TituloC{
+        padding: 6% 5%;
+        width: 510px;
+    }
+    .CadT{
+        margin-left: 27vw;
+    }
+    .CadS{
+        font-size: xx-large;
+    }
+    .linkC{
+        font-size: xx-large;
+    }
+    .inputC{
+        
+        height: 8vh;
+        font-size: x-large;
+    }
+    .CadBtn{
+        font-size: x-large;
+    }
+}
+@media (min-width:1440px) and (max-width: 2560px) {
+    .TituloC{
+        padding: 6% 2%;
+        width: 510px;
+    }
+    .CadT{
+        margin-left: 23vw;
+        font-size: 4vw;
+    }
+    .CadS{
+        font-size: xx-large;
+    }
+    .linkC{
+        font-size: xx-large;
+    }
+    .inputC{
+        height: 9vh;
+        font-size: x-large;
+    }
+    .CadBtn{
+        font-size: xx-large;
+        height: 9vh;
+
+    }
+}
+@media (min-width:1733px) and (max-width: 2560px) {
+    .TituloC{
+        padding: 1%;
+        width: 510px;
+    }
+    .CadT{
+        margin-left: 22vw;
+        font-size: 4vw;
+    }
+    .Presc{
+        font-size: 12vh;
+    }
+    .CadS{
+        font-size: xx-large;
+    }
+    .linkC{
+        font-size: xx-large;
+    }
+    .inputC{
+        height: 9vh;
+        font-size: x-large;
+    }
+    .CadBtn{
+        font-size: xx-large;
+        height: 9vh;
+    }
+}
+
+@media (min-width:1800px) and (max-width: 2560px) {
+    
+    .CadT{
+        margin-left: 16vw;
+        font-size: 4vw;
+    }
+    .CadS{
+        
+        font-size: xx-large;
+    }
+}
+
+@media (min-width:2380px) and (max-width: 2560px) {
+    .TituloC{
+        padding: 1%;
+        width: 510px;
+    }
+    .CadT{
+        margin-left: 16vw;
+        font-size: 3vw;
+    }
+    .Presc{
+        font-size: 12vh;
+    }
+    .CadS{
+        font-size: xx-large;
+    }
+    .linkC{
+        font-size: xx-large;
+    }
+    .inputC{
+        height: 9vh;
+        font-size: x-large;
+    }
+    .CadBtn{
+        font-size: xx-large;
+        height: 9vh;
+    }
+}
+
