@@ -1,24 +1,26 @@
-import React, { Component } from 'react';
+import React,{ Component } from 'react';
 import { Container, Row, Col} from 'react-bootstrap'
+import {Helmet} from "react-helmet"
 
 import './styles.css';
 
-export default class Saudacao extends Component {
+export default class Saudacao extends Component{
     state={
         nome: this.props.nome
     }
     setNome(e){
         this.setState({ nome:e.target.value})
     }
-    render() {
+    render(){
         const {nome} = this.state
         return (
-                <React.Fragment>
-                <body className="Cont">
+                
+            <React.Fragment>
                 <Container fluid="xl">
+                <Row className="TopShelf"><h1 className="CadT">CADASTRO</h1>   
+                </Row>
                 <Row>
                 <Col><div className="TituloC">
-                    <p className="CadT">CADASTRO</p>
                     <p className="CadS">Se inscreva e seja bem-vindo, {nome}<b className="Flick">_</b>! ;)</p>
                     </div></Col>
                 <Col>
@@ -36,8 +38,12 @@ export default class Saudacao extends Component {
                 
                 <a href="https://ead-lab.coursify.me" className="linkC">https://ead-lab.coursify.me/</a>
                 </Container>
-                </body>
                 </React.Fragment>
-              );        
+              
+              
+        
+              );
+
+        
     }
 }
