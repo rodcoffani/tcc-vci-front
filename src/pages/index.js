@@ -14,6 +14,10 @@ function App() {
             Nós somos uma plataforma de treinamento da empresa VCI-Brasil.
           </div>
         </div>
+        <div className="links">
+          <a href="Login">Login</a>
+          <a href="Cadastro">Cadastro</a>
+        </div>
       </div>
     </div>
   );

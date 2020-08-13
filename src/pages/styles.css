@@ -18,6 +18,11 @@
   font-size: 14pt;
 }
 
-.link {
+.links {
+  display: flex;
+  width: 50vw;
+  font-size: 16pt;
+  margin: 0 auto;
   color: #61dafb;
+  justify-content: space-evenly;
 }
