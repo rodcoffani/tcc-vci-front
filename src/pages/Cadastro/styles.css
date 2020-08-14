@@ -30,7 +30,7 @@ background: transparent!important;
 }
 
 .CadT {
-    margin-left: 30.8vw;
+    margin: auto;
     font-size: 5vw;
     color: white;
     background: transparent!important;
@@ -116,8 +116,7 @@ background: transparent!important;
     width: 290px;
     }
     .CadT{
-        
-        margin-left: 20.8vw;
+        margin: auto;
         font-size: 10vw;
     }
     .linkC{
@@ -142,8 +141,7 @@ background: transparent!important;
     width: 310px;
     }
     .CadT{
-        
-        margin-left: 20.8vw;
+        margin: auto;
         font-size: 10vw;
     }
     .linkC{
@@ -165,8 +163,7 @@ background: transparent!important;
     width: 360px;
     }
     .CadT{
-        
-        margin-left: 20.8vw;
+        margin: auto;
         font-size: 10vw;
     }
     .CadS{
@@ -198,8 +195,7 @@ background: transparent!important;
     width: 420px;
     }
     .CadT{
-        
-        margin-left: 20.8vw;
+        margin: auto;
         font-size: 10vw;
     }
     .CadBtn{
@@ -219,8 +215,7 @@ background: transparent!important;
     width: 570px;
     }
     .CadT{
-        
-        margin-left: 20.8vw;
+        margin: auto;
         font-size: 10vw;
     }
     .CadBtn{
@@ -255,19 +250,18 @@ background: transparent!important;
         padding: 5% 4%;
     }
     .CadT{
-        
-    font-size: 6vw;
+        margin: auto;
+        font-size: 6vw;
     }
     .CadBtn{
         font-size: x-large;
     }
     
     .linkC{
-        font-size: x-large;
-
-       
+        font-size: x-large;  
    }
 }
+
 @media (min-width:899px) and (max-width: 1000px) {
     .TituloC{
         width: 420px;
@@ -275,10 +269,8 @@ background: transparent!important;
     .CadS{
         font-size: x-large;
     }
-
-    
-
 }
+
 @media (min-width:1000px) and (max-width: 1440px) {
     .TituloC{
         padding: 10% 5%;
@@ -324,7 +316,7 @@ background: transparent!important;
         width: 510px;
     }
     .CadT{
-        margin-left: 27vw;
+        margin: auto;
     }
     .CadS{
         font-size: xx-large;
@@ -347,7 +339,7 @@ background: transparent!important;
         width: 510px;
     }
     .CadT{
-        margin-left: 26vw;
+        margin: auto;
         font-size: 4vw;
     }
     .CadS{
@@ -372,7 +364,7 @@ background: transparent!important;
         width: 510px;
     }
     .CadT{
-        margin-left: 22vw;
+        margin: auto;
         font-size: 4vw;
     }
     .Presc{
@@ -397,7 +389,7 @@ background: transparent!important;
 @media (min-width:1800px) and (max-width: 2560px) {
     
     .CadT{
-        margin-left: 16vw;
+        margin: auto;
         font-size: 4vw;
     }
     .CadS{
@@ -412,7 +404,7 @@ background: transparent!important;
         width: 510px;
     }
     .CadT{
-        margin-left: 16vw;
+        margin: auto;
         font-size: 3vw;
     }
     .Presc{
