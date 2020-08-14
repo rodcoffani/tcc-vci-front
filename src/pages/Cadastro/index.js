@@ -16,8 +16,7 @@ export default class Saudacao extends Component{
         const {nome} = this.state
         return (
                 
-            <React.Fragment>
-                
+            <React.Fragment>                
                 <Helmet title="Cadastro" />
                 
                 <Container fluid="xl">
@@ -101,6 +100,10 @@ export default class Saudacao extends Component{
                     
                          }} 
                 /> 
+          
+                <Container fluid="xl">
+                <Row className="TopShelf"><h1 className="CadT">CADASTRO</h1>   
+                </Row>
                 <Row>
                 <Col><div className="TituloC">
                     <p className="CadS">Se inscreva e seja bem-vindo, {nome}<b className="Flick">_</b>! ;)</p>
@@ -122,9 +125,6 @@ export default class Saudacao extends Component{
                 <a href="https://ead-lab.coursify.me" className="linkC">https://ead-lab.coursify.me/</a>
                 </Container>
                 </React.Fragment>
-                
-              
-              
         
               );
 
