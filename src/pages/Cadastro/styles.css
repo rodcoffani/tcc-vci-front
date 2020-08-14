@@ -38,7 +38,7 @@ background: transparent!important;
 }
 .Part{
     position : absolute;
-    width:100%;
+    width:85vw;
     height:100%;
     z-index:-1;
 }
