@@ -110,10 +110,10 @@ export default class Saudacao extends Component{
                             <Col>
                                 <div className="FormC">
                                 <form>
-                                <p><b className="Presc">Nome:</b><input type="text" placeholder="Nome" className="inputC" required onChange={e=>this.setNome(e)} maxLength="85"></input></p>
-                                <p><b className="Presc">E-mail:</b><input type="text" placeholder="E-mail" className="inputC" required></input></p>
-                                <p><b className="Presc">Senha:</b><input type="password" placeholder="Senha" className="inputC" required></input></p>
-                                <p><b className="Presc">Confirme a senha:</b><input type="password" placeholder="Confirmação" className="inputC" required></input></p>
+                                <p className='FieldD'><b className="Presc">Nome:</b><input type="text" placeholder="Nome" className="inputC" required onChange={e=>this.setNome(e)} maxLength="85"></input></p>
+                                <p className='FieldD'><b className="Presc">E-mail:</b><input type="text" placeholder="E-mail" className="inputC" required></input></p>
+                                <p className='FieldD'><b className="Presc">Senha:</b><input type="password" placeholder="Senha" className="inputC" required></input></p>
+                                <p className='FieldD'><b className="Presc">Confirme a senha:</b><input type="password" placeholder="Confirmação" className="inputC" required></input></p>
                                 <input type="submit" value="Cadastrar" className="CadBtn"></input>
                                 </form>
                                 </div>

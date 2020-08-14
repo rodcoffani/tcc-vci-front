@@ -4,7 +4,7 @@ body{
 
 .FormC {
 margin-top: 6%;
-margin-bottom:31.6%;
+margin-bottom:21.6%;
 background: transparent!important;
 }
 
@@ -19,14 +19,14 @@ background: transparent!important;
     outline: none;
     border: none;
     border-bottom: solid 1px black;
-    width: 100%;
+    width: 105%;
     color:white;
     height: 7vh;
     
 }
 
 ::-webkit-input-placeholder {
-    color: rgb(207, 207, 207);
+    color: rgb(184, 184, 184);
 }
 
 .CadT {
@@ -120,8 +120,8 @@ background: transparent!important;
         font-size: 10vw;
     }
     .linkC{
-        font-size: large;
-        margin-left: 20%;
+        margin: 0;
+        font-size: medium;
     }
     .CadBtn{
         width: 150px;
@@ -146,7 +146,6 @@ background: transparent!important;
     }
     .linkC{
         font-size: large;
-        margin-left: 20%;
     }
     .CadBtn{
         width: 170px;
@@ -184,7 +183,7 @@ background: transparent!important;
 @media (min-width:463px) and (max-width: 504px) {
     .TituloC{
         
-    width: 400px;
+    width: 430px;
     }
 
 }
@@ -199,6 +198,7 @@ background: transparent!important;
         font-size: 10vw;
     }
     .CadBtn{
+        padding-bottom: 8%;
         font-size: x-large;
     }
     .inputC{
@@ -219,6 +219,7 @@ background: transparent!important;
         font-size: 10vw;
     }
     .CadBtn{
+        padding-bottom: 8%;
         width: 260px;
     }
     .inputC{
@@ -238,7 +239,7 @@ background: transparent!important;
     }
     .FormC{
         
-        margin-top: 5%;
+        margin-top: 8%;
     }
     .TituloC{
         
@@ -246,6 +247,9 @@ background: transparent!important;
         }
 }
 @media (min-width:789px) and (max-width: 1000px) {
+    .inputC{
+        font-size: x-large;
+    }
     .TituloC{
         padding: 5% 4%;
     }
@@ -261,11 +265,21 @@ background: transparent!important;
         font-size: x-large;  
    }
 }
-
-@media (min-width:899px) and (max-width: 1000px) {
+@media (min-width:789px) and (max-width: 859px) {
     .TituloC{
-        width: 420px;
+        
+        width: 740px;
     }
+    .FieldD{
+        margin-right: 10%;
+    }
+    .CadBtn{
+        padding-bottom: 7%;
+    }
+}
+
+@media (min-width:799px) and (max-width: 1000px) {
+
     .CadS{
         font-size: x-large;
     }
