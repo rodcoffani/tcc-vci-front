@@ -71,7 +71,7 @@ background: transparent!important;
 }
 @keyframes BordShine {
     from {border: solid 2px rgb(197, 197, 197);} to
-    {border: solid 3px rgb(255, 255, 255);}
+    {border: solid 2px rgb(255, 255, 255);}
 }
 
 .CadBtn {
@@ -80,11 +80,7 @@ background: transparent!important;
     color: white;
     background-color: #015df0 !important;
     border:none;
-<<<<<<< HEAD
     margin-right: 25%;
-=======
-    margin-right: 15%;
->>>>>>> f1fcda7cee32cdb45854b599e7198f4106b6f6df
     margin-top: 10px;
     height: 8vh;
     border: solid 2px rgb(197, 197, 197);
