@@ -87,7 +87,7 @@ class login extends Component{
                 <input 
                   type="email"
                   className={formErrors.email.length > 0 ? "Erro" : null}
-                  placeholder="Email" 
+                  placeholder="Emaill" 
                   name="email" 
                   noValidate
                   onChange={this.handleChange}
