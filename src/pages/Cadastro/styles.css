@@ -15,7 +15,7 @@ background: transparent!important;
 }
 
 .inputC {
-    background-color: #1c72ff !important;
+    background-color: #0255da !important;
     outline: none;
     border: none;
     border-bottom: solid 1px black;
@@ -38,7 +38,7 @@ background: transparent!important;
 }
 .Part{
     position : absolute;
-    width:85vw;
+    width:65vw;
     height:100%;
     z-index:-1;
 }
@@ -75,11 +75,12 @@ background: transparent!important;
 }
 
 .CadBtn {
-    width: 350px;
+    width: 200px;
     float: right;
     color: white;
-    background-color: #1c72ff !important;
+    background-color: #015df0 !important;
     border:none;
+    margin-right: 25%;
     margin-top: 10px;
     height: 8vh;
     border: solid 2px rgb(197, 197, 197);
@@ -87,7 +88,7 @@ background: transparent!important;
 
 .CadBtn:hover {
     animation-name: BordShine;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
 
@@ -147,10 +148,6 @@ background: transparent!important;
     .linkC{
         font-size: large;
     }
-    .CadBtn{
-        width: 170px;
-    }
-    
     .inputC{
         font-size: x-large;
     }
@@ -161,17 +158,16 @@ background: transparent!important;
         
     width: 360px;
     }
-    .CadT{
-        margin: auto;
-        font-size: 10vw;
-    }
     .CadS{
         font-size: 5vw;
     }
     .inputC{
         font-size: x-large;
     }
-    
+    .CadT{
+        margin: auto;
+        font-size: 10vw;
+    }
     .CadBtn{
         font-size: large;
     }
@@ -202,6 +198,7 @@ background: transparent!important;
         font-size: x-large;
     }
     .inputC{
+        width: 115%;
         font-size: x-large;
     }
     
@@ -220,9 +217,10 @@ background: transparent!important;
     }
     .CadBtn{
         padding-bottom: 8%;
-        width: 260px;
     }
     .inputC{
+        
+        width: 150%;
         font-size: x-large;
     }
     .CadBtn{
@@ -267,11 +265,16 @@ background: transparent!important;
 }
 @media (min-width:789px) and (max-width: 859px) {
     .TituloC{
-        
+        font-size: xx-large;
         width: 740px;
     }
     .FieldD{
         margin-right: 10%;
+    }
+    .inputC{
+        
+        width: 190%;
+        font-size: x-large;
     }
     .CadBtn{
         padding-bottom: 7%;
@@ -282,6 +285,9 @@ background: transparent!important;
 
     .CadS{
         font-size: x-large;
+    }
+    .CadBtn{
+        padding-bottom: 7%;
     }
 }
 
@@ -304,6 +310,8 @@ background: transparent!important;
         font-size: x-large;
     }
     .CadBtn{
+        
+        padding-bottom: 7%;
         font-size: x-large;
     }
 }
@@ -321,6 +329,8 @@ background: transparent!important;
         font-size: x-large;
     }
     .CadBtn{
+        
+        padding-bottom: 5%;
         font-size: x-large;
     }
 }
