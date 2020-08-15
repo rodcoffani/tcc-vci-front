@@ -71,16 +71,16 @@ background: transparent!important;
 }
 @keyframes BordShine {
     from {border: solid 2px rgb(197, 197, 197);} to
-    {border: solid 3px rgb(255, 255, 255);}
+    {border: solid 2px rgb(255, 255, 255);}
 }
 
 .CadBtn {
-    width: 350px;
+    width: 200px;
     float: right;
     color: white;
     background-color: #015df0 !important;
     border:none;
-    margin-right: 15%;
+    margin-right: 25%;
     margin-top: 10px;
     height: 8vh;
     border: solid 2px rgb(197, 197, 197);
@@ -286,6 +286,9 @@ background: transparent!important;
     .CadS{
         font-size: x-large;
     }
+    .CadBtn{
+        padding-bottom: 7%;
+    }
 }
 
 @media (min-width:1000px) and (max-width: 1440px) {
@@ -307,6 +310,8 @@ background: transparent!important;
         font-size: x-large;
     }
     .CadBtn{
+        
+        padding-bottom: 7%;
         font-size: x-large;
     }
 }
@@ -324,6 +329,8 @@ background: transparent!important;
         font-size: x-large;
     }
     .CadBtn{
+        
+        padding-bottom: 5%;
         font-size: x-large;
     }
 }
