@@ -101,6 +101,7 @@ background: transparent!important;
     margin-top: 10px;
     height: 8vh;
     border: solid 2px rgb(197, 197, 197);
+
 }
 
 .CadBtn:hover {
@@ -149,6 +150,7 @@ background: transparent!important;
         font-size: 5vw;
     }
     .inputC{
+        width: 100%;
         font-size: x-large;
     }
     .inputCS{
@@ -174,6 +176,7 @@ background: transparent!important;
         font-size: large;
     }
     .inputC{
+        width: 100%;
         font-size: x-large;
     }
 }
@@ -187,6 +190,7 @@ background: transparent!important;
         font-size: 5vw;
     }
     .inputC{
+        width: 107%;
         font-size: x-large;
     }
     .CadT{
@@ -197,11 +201,11 @@ background: transparent!important;
         font-size: large;
     }
     .inputCS{
-        width: 100%;
+        width: 105%;
         font-size: x-large;
     }
     .inputCC{
-        width: 105%;
+        width: 117%;
         font-size: x-large;
     }
     
@@ -209,16 +213,58 @@ background: transparent!important;
         font-size: large;
    }
 }
+@media (min-width:376px) and (max-width: 423px) {
+    .TituloC{
+        
+    width: 360px;
+    }
+   
+    .inputC{
+        width: 107%;
+        font-size: x-large;
+    }
+    .inputCS{
+        width: 105%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 105%;
+        font-size: x-large;
+    }
+
+}
+@media (min-width:424px) and (max-width: 462px) {
+    .TituloC{
+        
+    width: 360px;
+    }
+   
+    .inputC{
+        width: 107%;
+        font-size: x-large;
+    }
+    .inputCS{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 113%;
+        font-size: x-large;
+    }
+
+}
 @media (min-width:463px) and (max-width: 504px) {
     .TituloC{
         
     width: 430px;
-    }
-    .inputCS{
-        width: 90%;
+    }.inputCS{
+        width: 94%;
         font-size: x-large;
     }
-
+    .inputCC{
+        width: 115%;
+        font-size: x-large;
+    }
 }
 
 @media (min-width:505px) and (max-width: 599px) {
