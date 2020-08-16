@@ -9,13 +9,13 @@ import { cpfMask } from './mask'
 export default class Saudacao extends Component{
     constructor(props) {
         super(props)
-        this.state = { documentId: '' }
+        this.state = { cpf: '' }
         this.handlechange = this.handlechange.bind(this)
     }
     
       handlechange(e) {
     
-        this.setState({ documentId: cpfMask(e.target.value) })
+        this.setState({ cpf: cpfMask(e.target.value) })
     }
     state={
         nome: this.props.nome
@@ -24,7 +24,7 @@ export default class Saudacao extends Component{
         this.setState({ nome:e.target.value})
     }
     render(){
-        const { documentId } = this.state
+        const { cpf } = this.state
         const {nome} = this.state
         return (
                 
@@ -125,7 +125,7 @@ export default class Saudacao extends Component{
                                 <p className='FieldD'><b className="Presc">Nome:</b><input type="text" placeholder="Nome" className="inputC" required onChange={e=>this.setNome(e)} maxLength="45"></input></p>
                                 <p className='FieldD'><b className="Presc">Sobrenome:</b><input type="text" placeholder="Sobrenome" className="inputCS" required maxLength="45"></input></p>
                                 <p className='FieldD'><b className="Presc">E-mail:</b><input type="text" placeholder="E-mail" className="inputC" required maxLength="45"></input></p>
-                                <p className='FieldD'><b className="Presc">CPF:</b><input type="text" placeholder="CPF" className="inputCC" required value={documentId} onChange={this.handlechange}></input></p>
+                                <p className='FieldD'><b className="Presc">CPF:</b><input type="text" placeholder="CPF" className="inputCC" required value={cpf} onChange={this.handlechange}></input></p>
                                 <input type="submit" value="Cadastrar" className="CadBtn"></input>
                                 </form>
                                 </div>
