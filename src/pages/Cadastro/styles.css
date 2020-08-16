@@ -24,7 +24,24 @@ background: transparent!important;
     height: 7vh;
     
 }
-
+.inputCS{
+    background-color: #0255da !important;
+    outline: none;
+    border: none;
+    border-bottom: solid 1px black;
+    width: 60%;
+    color:white;
+    height: 7vh;
+}
+.inputCC{
+    background-color: #0255da !important;
+    outline: none;
+    border: none;
+    border-bottom: solid 1px black;
+    width: 160%;
+    color:white;
+    height: 7vh;
+}
 ::-webkit-input-placeholder {
     color: rgb(184, 184, 184);
 }
@@ -84,6 +101,7 @@ background: transparent!important;
     margin-top: 10px;
     height: 8vh;
     border: solid 2px rgb(197, 197, 197);
+
 }
 
 .CadBtn:hover {
@@ -132,6 +150,15 @@ background: transparent!important;
         font-size: 5vw;
     }
     .inputC{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputCS{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 100%;
         font-size: x-large;
     }
 
@@ -149,6 +176,7 @@ background: transparent!important;
         font-size: large;
     }
     .inputC{
+        width: 100%;
         font-size: x-large;
     }
 }
@@ -162,6 +190,7 @@ background: transparent!important;
         font-size: 5vw;
     }
     .inputC{
+        width: 107%;
         font-size: x-large;
     }
     .CadT{
@@ -171,17 +200,71 @@ background: transparent!important;
     .CadBtn{
         font-size: large;
     }
+    .inputCS{
+        width: 105%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 117%;
+        font-size: x-large;
+    }
     
     .linkC{
         font-size: large;
    }
 }
+@media (min-width:376px) and (max-width: 423px) {
+    .TituloC{
+        
+    width: 360px;
+    }
+   
+    .inputC{
+        width: 107%;
+        font-size: x-large;
+    }
+    .inputCS{
+        width: 105%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 105%;
+        font-size: x-large;
+    }
+
+}
+@media (min-width:424px) and (max-width: 462px) {
+    .TituloC{
+        
+    width: 360px;
+    }
+   
+    .inputC{
+        width: 107%;
+        font-size: x-large;
+    }
+    .inputCS{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 113%;
+        font-size: x-large;
+    }
+
+}
 @media (min-width:463px) and (max-width: 504px) {
     .TituloC{
         
     width: 430px;
+    }.inputCS{
+        width: 94%;
+        font-size: x-large;
     }
-
+    .inputCC{
+        width: 115%;
+        font-size: x-large;
+    }
 }
 
 @media (min-width:505px) and (max-width: 599px) {
@@ -201,7 +284,14 @@ background: transparent!important;
         width: 115%;
         font-size: x-large;
     }
-    
+    .inputCS{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 125%;
+        font-size: x-large;
+    }
     .linkC{
         font-size: x-large;
    }
@@ -220,8 +310,16 @@ background: transparent!important;
     }
     .inputC{
         
-        width: 150%;
-        font-size: x-large;
+        width: 130%;
+        font-size: xx-large;
+    }
+    .inputCS{
+        width: 115%;
+        font-size: xx-large;
+    }
+    .inputCC{
+        width: 137%;
+        font-size: xx-large;
     }
     .CadBtn{
         font-size: x-large;
@@ -231,22 +329,36 @@ background: transparent!important;
         font-size: x-large;
    }
 }
-@media (min-width:700px) and (max-width: 789px) {
-    .CadBtn{
-        font-size: x-large;
-    }
-    .FormC{
+
+@media (min-width:600px) and (max-width: 641px) {
+   
+    .inputC{
         
-        margin-top: 8%;
+        width: 120%;
+        font-size: xx-large;
     }
-    .TituloC{
-        
-        width: 670px;
-        }
+    .inputCS{
+        width: 105%;
+        font-size: xx-large;
+    }
+    .inputCC{
+        width: 127%;
+        font-size: xx-large;
+    }
 }
+
 @media (min-width:789px) and (max-width: 1000px) {
     .inputC{
         font-size: x-large;
+        width: 100%;
+    }
+    .inputCS{
+        font-size: x-large;
+        width: 90%;
+    }
+    .inputCC{
+        font-size: x-large;
+        width: 110%;
     }
     .TituloC{
         padding: 5% 4%;
@@ -268,6 +380,10 @@ background: transparent!important;
         font-size: xx-large;
         width: 740px;
     }
+    .inputCS{
+        font-size: x-large;
+        width: 163%;
+    }
     .FieldD{
         margin-right: 10%;
     }
@@ -276,13 +392,18 @@ background: transparent!important;
         width: 190%;
         font-size: x-large;
     }
+    .inputCC{
+        
+        width: 205%;
+        font-size: x-large;
+    }
+    
     .CadBtn{
         padding-bottom: 7%;
     }
 }
 
 @media (min-width:799px) and (max-width: 1000px) {
-
     .CadS{
         font-size: x-large;
     }
@@ -305,9 +426,15 @@ background: transparent!important;
         
     }
     .inputC{
-        
-        height: 8vh;
         font-size: x-large;
+    }
+    .inputCS{
+        width: 90%;
+        font-size: x-large;
+    }
+    .inputCC{
+        font-size: x-large;
+        width: 115%;
     }
     .CadBtn{
         
@@ -322,11 +449,6 @@ background: transparent!important;
     }
     .CadS{
         font-size: xx-large;
-    }
-    .inputC{
-        
-        height: 8vh;
-        font-size: x-large;
     }
     .CadBtn{
         
@@ -348,11 +470,6 @@ background: transparent!important;
     .linkC{
         font-size: x-large;
     }
-    .inputC{
-        
-        height: 8vh;
-        font-size: x-large;
-    }
     .CadBtn{
         font-size: x-large;
     }
@@ -361,6 +478,15 @@ background: transparent!important;
     .TituloC{
         padding: 10% 2%;
         width: 510px;
+    }
+    
+    .inputCS{
+        width: 90%;
+        font-size: x-large;
+    }
+    .inputCC{
+        font-size: x-large;
+        width: 115%;
     }
     .CadT{
         margin: auto;
@@ -373,7 +499,6 @@ background: transparent!important;
         font-size: x-large;
     }
     .inputC{
-        height: 9vh;
         font-size: x-large;
     }
     .CadBtn{
@@ -401,7 +526,6 @@ background: transparent!important;
         font-size: x-large;
     }
     .inputC{
-        height: 9vh;
         font-size: x-large;
     }
     .CadBtn{
@@ -441,7 +565,6 @@ background: transparent!important;
         font-size: x-large;
     }
     .inputC{
-        height: 9vh;
         font-size: x-large;
     }
     .CadBtn{
