@@ -1,0 +1,81 @@
+.mother{
+    width: 90%;
+    height: auto;
+    background-color: white;
+}
+
+.Part{
+    position : absolute;
+    width:65vw;
+    height:100%;
+    z-index:-1;
+}
+
+.ranking{
+    float: left;
+    width: 55%;
+    background-color: white;
+}
+
+.employee{
+    float: left;
+    width: 45%;
+    background-color: blue;
+}
+
+.ranking-title{
+    width: 100%;
+    height: auto;
+}
+
+.ranking-title-combo{
+    float: left;
+    align-content: flex-start;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.ranking-title-title{
+    float: left;
+    padding-left: 30%;
+    padding-top: 15px;
+}
+
+.ranking-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+}
+
+.ranking-body{
+    width: 100%;
+    background-color: white;
+}
+
+.ranking-name{
+    width: 30%;
+    background-color:  rgba(96,69,252,1);
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.ranking-points{
+    width: 20%;
+    background-color: rgba(58,167,180,1);
+    float: left;
+    margin-right: 10px;
+}
+
+.ranking-game{
+    width: 20%;
+    background-color: rgba(96,69,252,1);
+    float: left;
+    margin-right: 10px;
+}
+
+.ranking-time{
+    width: 20%;
+    background-color: rgba(58,167,180,1);
+    float: left;
+    margin-right: 10px;
+}
