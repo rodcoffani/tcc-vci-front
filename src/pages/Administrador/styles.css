@@ -50,13 +50,39 @@
     width: 97%;
     background-color: white;
     height: 700px;
-    overflow: scroll;
+    
 }
 
-.ranking-body-header{
-    width: 97%;
-    background-color: white;
-    padding-right: 10px;
+.header-fixed {
+    width: 100% 
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed > tbody {
+    overflow-y: scroll;
+    height: 650px;
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    width: 20%;
+    float: left;
 }
 
 .employee-title{
@@ -75,5 +101,36 @@
     width: 70%;
     background-color: white;
     height: 700px;
-    overflow: scroll;
+}
+
+.header-fixed-employee {
+    width: 100% 
+}
+
+.header-fixed-employee > thead,
+.header-fixed-employee > tbody,
+.header-fixed-employee > thead > tr,
+.header-fixed-employee > tbody > tr,
+.header-fixed-employee > thead > tr > th,
+.header-fixed-employee > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed-employee > tbody > tr:after,
+.header-fixed-employee > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed-employee > tbody {
+    overflow-y: scroll;
+    height: 650px;
+}
+
+.header-fixed-employee > tbody > tr > td,
+.header-fixed-employee > thead > tr > th {
+    width: 50%;
+    float: left;
 }

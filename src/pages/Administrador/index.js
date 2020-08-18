@@ -106,37 +106,38 @@ class admin extends Component {
                             </div>
                             <br /><br /><br /><br />
                             <div className="ranking-body">
-                                <table class="table table-striped">
+                                <table class="table table-striped header-fixed">
                                 <thead>
                                     <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Pontos</th>
-                                    <th scope="col">Tempo</th>
-                                    <th scope="col">Jogo</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Pontos</th>
+                                        <th scope="col">Tempo</th>
+                                        <th scope="col">Jogo</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {/* a fazer: colocar infos na tabela por "for" ? puxando do banco */}
                                     <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>20</td>
-                                    <td>20s</td>
-                                    <td>Quiz</td>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>20</td>
+                                        <td>20s</td>
+                                        <td>Quiz</td>
                                     </tr>
                                     <tr>
-                                    <th scope="row">2</th>
-                                    <td>Mark</td>
-                                    <td>20</td>
-                                    <td>20s</td>
-                                    <td>Quiz</td>
+                                        <td>2</td>
+                                        <td>Mark</td>
+                                        <td>20</td>
+                                        <td>20s</td>
+                                        <td>Quiz</td>
                                     </tr>
                                     <tr>
-                                    <th scope="row">3</th>
-                                    <td>Mark</td>
-                                    <td>20</td>
-                                    <td>20s</td>
-                                    <td>Quiz</td>
+                                        <td>3</td>
+                                        <td>Mark</td>
+                                        <td>20</td>
+                                        <td>20s</td>
+                                        <td>Quiz</td>
                                     </tr>
                                 </tbody>
                                 </table>
@@ -147,25 +148,34 @@ class admin extends Component {
                                 <p className="employee-text">Funcionários</p>
                             </div>
                             <div className="employee-body">
-                                <table class="table table-striped">
+                                <table class="table table-striped header-fixed-employee">
                                 <thead>
                                     <tr>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Validação</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Validação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {/* a fazer: colocar infos na tabela por "for" ? puxando do banco --> link do validar mandar pra pag de validação que ainda n foi feita */}
                                     <tr>
-                                    <td>Mark</td>
-                                    <td>validado</td>
+                                        <td>Mark</td>
+                                        <td>validado</td>
                                     </tr>
                                     <tr>
-                                    <td>Mark</td>
-                                    <td>VALIDAR</td>
+                                        <td>Mark</td>
+                                        <td><a href="">VALIDAR</a></td>
                                     </tr>
                                     <tr>
-                                    <td>Mark</td>
-                                    <td>validado</td>
+                                        <td>Mark</td>
+                                        <td>validado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>validado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>validado</td>
                                     </tr>
                                 </tbody>
                                 </table>
