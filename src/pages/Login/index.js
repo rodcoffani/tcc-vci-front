@@ -6,6 +6,7 @@ import {Helmet} from "react-helmet"
 import Particles from 'react-particles-js'; 
 import axios from 'axios';
 import API from '../../api'
+import ead from '../../assets/images/ead-lab.png';
 
 const  emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -180,7 +181,10 @@ class login extends Component{
                 <Row>
                   <Col>
                     <div className="TituloC">
-                      <p className="CadS">Seja bem-vindo, {nome}<b className="Flick">_</b>! ;)</p>
+                      <p className="CadS">Seja bem-vindo ao game<b className="Flick">_</b>! ;)</p>
+                    </div>
+                    <div className="imageBlue">
+                    <img src={ead} className="img-logo login"/>
                     </div>
                   </Col>
                   <Col>

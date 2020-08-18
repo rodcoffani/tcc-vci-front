@@ -234,7 +234,12 @@ a.one{
     color: white;
     background-color: transparent !important;
 }
-
+.container-xl{
+    padding-top: 60px;
+}
+.img-logo.login{
+        max-height: 290px;
+}
 @media (min-width:320px) and (max-width: 375px) {
     .TituloC{
         
