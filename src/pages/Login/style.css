@@ -145,7 +145,13 @@ background: transparent!important;
 ::-webkit-input-placeholder {
     color: rgb(184, 184, 184);
 }
-
+.oneAcess{
+    width: 70%;
+    text-align:center;
+}
+a.one{
+    color:white;
+}
 .CadT {
     margin: auto;
     font-size: 5vw;
@@ -251,6 +257,10 @@ background: transparent!important;
     .inputC{
         font-size: x-large;
     }
+    .oneAcess{
+        width: 91%;
+        text-align:center;
+    }
 
 }
 @media (min-width:365px) and (max-width: 375px) {
@@ -267,6 +277,10 @@ background: transparent!important;
     }
     .inputC{
         font-size: x-large;
+    }
+    .oneAcess{
+        width: 91%;
+        text-align:center;
     }
 }
 
@@ -292,11 +306,19 @@ background: transparent!important;
     .linkC{
         font-size: large;
    }
+   .oneAcess{
+    width: 91%;
+    text-align:center;
+}
 }
 @media (min-width:463px) and (max-width: 504px) {
     .TituloC{
         
     width: 430px;
+    }
+    .oneAcess{
+        width: 91%;
+        text-align:center;
     }
 
 }
@@ -322,6 +344,10 @@ background: transparent!important;
     .linkC{
         font-size: x-large;
    }
+   .oneAcess{
+    width: 91%;
+    text-align:center;
+}
 }
 @media (min-width:600px) and (max-width: 789px) {
     .TituloC{
@@ -347,6 +373,10 @@ background: transparent!important;
     .linkC{
         font-size: x-large;
    }
+   .oneAcess{
+    width: 91%;
+    text-align:center;
+}
 }
 @media (min-width:700px) and (max-width: 789px) {
     .CadBtn{
@@ -359,7 +389,11 @@ background: transparent!important;
     .TituloC{
         
         width: 670px;
-        }
+    }
+    .oneAcess{
+        width: 91%;
+        text-align:center;
+    }
 }
 @media (min-width:789px) and (max-width: 1000px) {
     .inputC{
@@ -379,6 +413,10 @@ background: transparent!important;
     .linkC{
         font-size: x-large;  
    }
+   .oneAcess{
+        width: 91%;
+        text-align:center;
+    }
 }
 @media (min-width:789px) and (max-width: 859px) {
     .TituloC{
@@ -396,6 +434,10 @@ background: transparent!important;
     .CadBtn{
         padding-bottom: 7%;
     }
+    .oneAcess{
+        width: 91%;
+        text-align:center;
+    }
 }
 
 @media (min-width:799px) and (max-width: 1000px) {
@@ -406,6 +448,7 @@ background: transparent!important;
     .CadBtn{
         padding-bottom: 7%;
     }
+    
 }
 
 @media (min-width:1000px) and (max-width: 1440px) {
@@ -431,6 +474,7 @@ background: transparent!important;
         padding-bottom: 7%;
         font-size: x-large;
     }
+   
 }
 @media (min-width:1100px) and (max-width: 1300px) {
     .TituloC{
@@ -450,6 +494,7 @@ background: transparent!important;
         padding-bottom: 5%;
         font-size: x-large;
     }
+   
 }
 @media (min-width:1250px) and (max-width: 1440px) {
     .TituloC{
@@ -473,6 +518,7 @@ background: transparent!important;
     .CadBtn{
         font-size: x-large;
     }
+   
 }
 @media (min-width:1440px) and (max-width: 2560px) {
     .TituloC{
@@ -498,6 +544,7 @@ background: transparent!important;
         height: 9vh;
 
     }
+   
 }
 @media (min-width:1733px) and (max-width: 2560px) {
     .TituloC{
@@ -525,6 +572,7 @@ background: transparent!important;
         font-size: xx-large;
         height: 9vh;
     }
+    
 }
 
 @media (min-width:1800px) and (max-width: 2560px) {
@@ -537,6 +585,7 @@ background: transparent!important;
         
         font-size: xx-large;
     }
+   
 }
 
 @media (min-width:2380px) and (max-width: 2560px) {
@@ -565,5 +614,6 @@ background: transparent!important;
         font-size: xx-large;
         height: 9vh;
     }
+    
 }
 

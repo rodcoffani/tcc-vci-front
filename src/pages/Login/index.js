@@ -182,7 +182,9 @@ class login extends Component{
                         
                         <p className='FieldD'><b className="Presc">Senha:</b><input type="password" placeholder="Senha" className="inputC" required></input></p>
                         
+                        <div className='oneAcess'> <a className="one" href="#">1º Acesso </a></div>
                         <input type="submit" value="Entrar" className="CadBtn"></input>
+                       
                         </form>
                         </div>
                     </Col>
