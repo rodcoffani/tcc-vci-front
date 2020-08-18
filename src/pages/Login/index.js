@@ -180,7 +180,7 @@ class login extends Component{
                 <Row>
                   <Col>
                     <div className="TituloC">
-                      <p className="CadS">Bem-vindo<b className="Flick"></b>!</p>
+                      <p className="CadS">Seja bem-vindo, {nome}<b className="Flick">_</b>! ;)</p>
                     </div>
                   </Col>
                   <Col>
@@ -215,6 +215,8 @@ class login extends Component{
                     {formErrors.password.length > 0 && (
                       <span className="errorMessage">{formErrors.password}</span>
                     )}
+
+                    <div className='oneAcess'> <a className="one" href="#">1º Acesso </a></div>
                     <input type="submit" value="Entrar" className="CadBtn"></input>
                   </form>
                   </div>
