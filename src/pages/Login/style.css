@@ -133,6 +133,7 @@ background: transparent!important;
 
 .inputC {
     background-color: #0255da !important;
+    position: 50%;
     outline: none;
     border: none;
     border-bottom: solid 1px black;
