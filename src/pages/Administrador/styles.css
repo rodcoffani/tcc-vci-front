@@ -1,6 +1,6 @@
 .mother{
     width: 90%;
-    height: auto;
+    height: 850px;
     background-color: white;
 }
 
@@ -20,7 +20,7 @@
 .employee{
     float: left;
     width: 45%;
-    background-color: blue;
+    background-color: white;
 }
 
 .ranking-title{
@@ -47,35 +47,33 @@
 }
 
 .ranking-body{
-    width: 100%;
+    width: 97%;
     background-color: white;
+    height: 700px;
+    overflow: scroll;
 }
 
-.ranking-name{
-    width: 30%;
-    background-color:  rgba(96,69,252,1);
-    float: left;
-    margin-left: 10px;
-    margin-right: 10px;
+.ranking-body-header{
+    width: 97%;
+    background-color: white;
+    padding-right: 10px;
 }
 
-.ranking-points{
-    width: 20%;
-    background-color: rgba(58,167,180,1);
-    float: left;
-    margin-right: 10px;
+.employee-title{
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.ranking-game{
-    width: 20%;
-    background-color: rgba(96,69,252,1);
-    float: left;
-    margin-right: 10px;
+.employee-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
 }
 
-.ranking-time{
-    width: 20%;
-    background-color: rgba(58,167,180,1);
-    float: left;
-    margin-right: 10px;
+.employee-body{
+    width: 70%;
+    background-color: white;
+    height: 700px;
+    overflow: scroll;
 }

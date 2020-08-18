@@ -106,19 +106,71 @@ class admin extends Component {
                             </div>
                             <br /><br /><br /><br />
                             <div className="ranking-body">
-                                <div className="ranking-name">Nome</div>
-                                <div className="ranking-points">Pontos</div>
-                                <div className="ranking-game">Jogo</div>
-                                <div className="ranking-time">Tempo</div>
-                                
-                                {/* aqui faria por for, coloquei uma fixa só p ter exemplo */}
-                                <div className="ranking-name">carlos</div>
-                                <div className="ranking-points">20</div>
-                                <div className="ranking-game">quiz</div>
-                                <div className="ranking-time">20s</div>
+                                <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Pontos</th>
+                                    <th scope="col">Tempo</th>
+                                    <th scope="col">Jogo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>20</td>
+                                    <td>20s</td>
+                                    <td>Quiz</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">2</th>
+                                    <td>Mark</td>
+                                    <td>20</td>
+                                    <td>20s</td>
+                                    <td>Quiz</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">3</th>
+                                    <td>Mark</td>
+                                    <td>20</td>
+                                    <td>20s</td>
+                                    <td>Quiz</td>
+                                    </tr>
+                                </tbody>
+                                </table>
                             </div>
                         </div>
-                        <div className="employee">aaaaa</div>
+                        <div className="employee">
+                            <div className="employee-title">
+                                <p className="employee-text">Funcionários</p>
+                            </div>
+                            <div className="employee-body">
+                                <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Validação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>Mark</td>
+                                    <td>validado</td>
+                                    </tr>
+                                    <tr>
+                                    <td>Mark</td>
+                                    <td>VALIDAR</td>
+                                    </tr>
+                                    <tr>
+                                    <td>Mark</td>
+                                    <td>validado</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </center>
                 </React.Fragment>
