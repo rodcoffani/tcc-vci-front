@@ -1,7 +1,7 @@
 .mother{
     width: 90%;
     height: 850px;
-    background-color: white;
+    margin-top: 2%;
 }
 
 .Part{
@@ -13,18 +13,21 @@
 
 .ranking{
     float: left;
-    width: 55%;
+    width: 50%;
     background-color: white;
+    margin-right: 4%;
+    border-radius: 3%;
 }
 
 .employee{
     float: left;
     width: 45%;
     background-color: white;
+    border-radius: 3%;
 }
 
 .ranking-title{
-    width: 100%;
+    width: 94%;
     height: auto;
 }
 
@@ -47,9 +50,9 @@
 }
 
 .ranking-body{
-    width: 97%;
+    width: 90%;
     background-color: white;
-    height: 700px;
+    height: 750px;
     
 }
 
@@ -100,7 +103,7 @@
 .employee-body{
     width: 70%;
     background-color: white;
-    height: 700px;
+    height: 750px;
 }
 
 .header-fixed-employee {
