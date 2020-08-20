@@ -147,8 +147,9 @@ background: transparent!important;
     color: rgb(184, 184, 184);
 }
 .oneAcess{
-    width: 70%;
-    text-align:center;
+    width: 67%;
+    text-align: center;
+    font-weight: bold;
 }
 a.one{
     color:white;
@@ -204,8 +205,9 @@ a.one{
     color: white;
     background-color: #015df0 !important;
     border:none;
-    margin-right: 25%;
+    margin-right: 17%;
     margin-top: 10px;
+    margin-left: 15%;
     height: 8vh;
     border: solid 2px rgb(197, 197, 197);
 }
@@ -238,7 +240,11 @@ a.one{
     padding-top: 60px;
 }
 .img-logo.login{
-        max-height: 290px;
+    max-height: 31vh;
+}
+.col.image{
+    text-align: center;
+    padding-top: 19px;
 }
 @media (min-width:320px) and (max-width: 375px) {
     .TituloC{
@@ -256,6 +262,8 @@ a.one{
     .CadBtn{
         width: 150px;
         font-size: large;
+        margin-right: 31%;
+        margin-left: 24%;
     }
     .CadS{
         font-size: 5vw;
@@ -266,6 +274,9 @@ a.one{
     .oneAcess{
         width: 91%;
         text-align:center;
+    }
+    .img-logo.login {
+        max-height: 20vh;
     }
 
 }

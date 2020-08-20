@@ -179,7 +179,7 @@ class login extends Component{
                     <h1 className="CadT">LOGIN</h1>   
                 </Row>
                 <Row>
-                  <Col>
+                  <Col className="image">
                     <div className="TituloC">
                       <p className="CadS">Seja bem-vindo ao game<b className="Flick">_</b>! ;)</p>
                     </div>
@@ -197,13 +197,10 @@ class login extends Component{
                     //  className={formErrors.email.length > 0 ? "Erro" : null}
                     className="inputC"
                     required
-                    onChange={ this.handleChange}
+                    
                     noValidate
                     maxLength="85"></input>
                     </p>
-                    {formErrors.login.length > 0 && (
-                        <span className="errorMessage">{formErrors.login}</span>
-                    )}
                     
                     <p className='FieldD'><b className="Presc">Senha:</b>
                     <input
@@ -214,12 +211,9 @@ class login extends Component{
                     className="inputC"
                     required 
                     noValidate
-                    onChange={ this.handleChange}></input>
+                    ></input>
                     </p>
-                    {formErrors.password.length > 0 && (
-                      <span className="errorMessage">{formErrors.password}</span>
-                    )}
-
+                    
                     <div className='oneAcess'> <a className="one" href="#">1º Acesso </a></div>
                     <input type="submit" value="Entrar" className="CadBtn"></input>
                   </form>
