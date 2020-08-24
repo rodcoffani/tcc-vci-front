@@ -8,6 +8,7 @@ import axios from 'axios';
 import API from '../../api'
 import ead from '../../assets/images/ead-lab.png';
 
+import { BsFillEyeSlashFill } from "react-icons/bs";
 const  emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -202,7 +203,8 @@ class login extends Component{
                     maxLength="85"></input>
                     </p>
                     
-                    <p className='FieldD'><b className="Presc">Senha:</b>
+                    <p className='FieldD senha'><b className="Presc">Senha: <BsFillEyeSlashFill  className="icon"/> </b>
+                    
                     <input
                     type="password"
                     name="password"
@@ -214,7 +216,9 @@ class login extends Component{
                     ></input>
                     </p>
                     
+                    
                     <div className='oneAcess'> <a className="one" href="#">1º Acesso </a></div>
+                    <div className='oneAcess'> <a className="one" href="#">Esqueci a senha </a></div>
                     <input type="submit" value="Entrar" className="CadBtn"></input>
                   </form>
                   </div>

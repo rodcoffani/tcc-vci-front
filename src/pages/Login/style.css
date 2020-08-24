@@ -147,7 +147,7 @@ background: transparent!important;
     color: rgb(184, 184, 184);
 }
 .oneAcess{
-    width: 67%;
+    width: 34%;
     text-align: center;
     font-weight: bold;
 }
@@ -256,7 +256,7 @@ a.one{
         font-size: 10vw;
     }
     .linkC{
-        margin: 0;
+        margin: 46px;
         font-size: medium;
     }
     .CadBtn{
@@ -272,11 +272,14 @@ a.one{
         font-size: x-large;
     }
     .oneAcess{
-        width: 91%;
+        width: 45%;
         text-align:center;
     }
     .img-logo.login {
         max-height: 20vh;
+    }
+    p.FieldD.senha{
+        width: 67%;
     }
 
 }
@@ -291,12 +294,13 @@ a.one{
     }
     .linkC{
         font-size: large;
+        margin: 46px;
     }
     .inputC{
         font-size: x-large;
     }
     .oneAcess{
-        width: 91%;
+        width: 45%;
         text-align:center;
     }
 }
@@ -322,9 +326,10 @@ a.one{
     
     .linkC{
         font-size: large;
+        margin: 46px;
    }
    .oneAcess{
-    width: 91%;
+    width: 45%;
     text-align:center;
 }
 }
@@ -334,9 +339,13 @@ a.one{
     width: 430px;
     }
     .oneAcess{
-        width: 91%;
+        width: 45%;
         text-align:center;
     }
+    .linkC{
+        font-size: large;
+        margin: 46px;
+   }
 
 }
 
@@ -362,8 +371,9 @@ a.one{
         font-size: x-large;
    }
    .oneAcess{
-    width: 91%;
+    width: 45%;
     text-align:center;
+    margin: 46px;
 }
 }
 @media (min-width:600px) and (max-width: 789px) {
@@ -389,9 +399,10 @@ a.one{
     
     .linkC{
         font-size: x-large;
+        margin: 46px;
    }
    .oneAcess{
-    width: 91%;
+    width: 45%;
     text-align:center;
 }
 }
@@ -431,7 +442,7 @@ a.one{
         font-size: x-large;  
    }
    .oneAcess{
-        width: 91%;
+        width: 45%;
         text-align:center;
     }
 }
@@ -452,7 +463,7 @@ a.one{
         padding-bottom: 7%;
     }
     .oneAcess{
-        width: 91%;
+        width: 45%;
         text-align:center;
     }
 }
