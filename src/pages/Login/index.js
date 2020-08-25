@@ -42,6 +42,10 @@ class login extends Component{
       }
     };
   }
+  handleClick = e => {
+    e.preventDefault();
+    console.log('O link foi clicado.');
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -203,7 +207,7 @@ class login extends Component{
                     maxLength="85"></input>
                     </p>
                     
-                    <p className='FieldD senha'><b className="Presc">Senha: <BsFillEyeSlashFill  className="icon"/> </b>
+                    <p className='FieldD senha'><b className="Presc">Senha: <a href="#" onClick={this.handleClick} ><BsFillEyeSlashFill  className="icon"/></a> </b>
                     
                     <input
                     type="password"
