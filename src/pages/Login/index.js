@@ -10,7 +10,7 @@ import ead from '../../assets/images/ead-lab.png';
 
 import { BsFillEyeSlashFill } from "react-icons/bs";
 const  emailRegex = RegExp(
-  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
 
@@ -202,7 +202,7 @@ class login extends Component{
                     //  className={formErrors.email.length > 0 ? "Erro" : null}
                     className="inputC"
                     required
-                    
+                    onChange={this.handleChange}
                     noValidate
                     maxLength="85"></input>
                     </p>
@@ -216,6 +216,7 @@ class login extends Component{
                     // className={formErrors.email.length > 0 ? "Erro" : null}
                     className="inputC"
                     required 
+                    onChange={this.handleChange}
                     noValidate
                     ></input>
                     </p>
