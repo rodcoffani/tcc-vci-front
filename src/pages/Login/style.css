@@ -147,7 +147,7 @@ background: transparent!important;
     color: rgb(184, 184, 184);
 }
 .oneAcess{
-    width: 34%;
+    width: 35%;
     text-align: center;
     font-weight: bold;
 }
@@ -246,6 +246,13 @@ a.one{
     text-align: center;
     padding-top: 19px;
 }
+p.FieldD.senha{
+    width:66%;
+}
+svg.icon {
+    margin-left: 24vh;
+    color:white;
+}
 @media (min-width:320px) and (max-width: 375px) {
     .TituloC{
         
@@ -279,7 +286,10 @@ a.one{
         max-height: 20vh;
     }
     p.FieldD.senha{
-        width: 67%;
+        width: 100%;
+    }
+    svg.icon {
+        margin-left: 28vh;
     }
 
 }
@@ -302,6 +312,13 @@ a.one{
     .oneAcess{
         width: 45%;
         text-align:center;
+    }
+    p.FieldD.senha{
+        width: 100%;
+    }
+    svg.icon {
+        margin-left: 28vh;
+        
     }
 }
 
@@ -374,8 +391,12 @@ a.one{
     width: 45%;
     text-align:center;
     margin: 46px;
+   }
+   p.FieldD.senha{
+    width: 100%;
 }
 }
+
 @media (min-width:600px) and (max-width: 789px) {
     .TituloC{
         
@@ -404,8 +425,12 @@ a.one{
    .oneAcess{
     width: 45%;
     text-align:center;
+   }
+   p.FieldD.senha{
+        width: 100%;
+    }
 }
-}
+
 @media (min-width:700px) and (max-width: 789px) {
     .CadBtn{
         font-size: x-large;
@@ -421,6 +446,9 @@ a.one{
     .oneAcess{
         width: 91%;
         text-align:center;
+    }
+    p.FieldD.senha{
+        width: 100%;
     }
 }
 @media (min-width:789px) and (max-width: 1000px) {
@@ -445,6 +473,9 @@ a.one{
         width: 45%;
         text-align:center;
     }
+    p.FieldD.senha{
+        width: 100%;
+    }
 }
 @media (min-width:789px) and (max-width: 859px) {
     .TituloC{
@@ -465,6 +496,9 @@ a.one{
     .oneAcess{
         width: 45%;
         text-align:center;
+    }
+    p.FieldD.senha{
+        width: 100%;
     }
 }
 
