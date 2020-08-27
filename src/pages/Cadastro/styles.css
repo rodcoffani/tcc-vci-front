@@ -139,7 +139,7 @@ background: transparent!important;
         font-size: 10vw;
     }
     .linkC{
-        margin: 0;
+        margin: 46px;
         font-size: medium;
     }
     .CadBtn{
@@ -310,15 +310,15 @@ background: transparent!important;
     }
     .inputC{
         
-        width: 130%;
+        width: 100%;
         font-size: xx-large;
     }
     .inputCS{
-        width: 115%;
+        width: 88%;
         font-size: xx-large;
     }
     .inputCC{
-        width: 137%;
+        width: 107%;
         font-size: xx-large;
     }
     .CadBtn{
