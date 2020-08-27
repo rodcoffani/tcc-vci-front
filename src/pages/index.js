@@ -1,8 +1,9 @@
 import React from 'react';
 import './styles.css';
 import Header from '../components/Header';
-import {Carousel,Row, Col, Container, Card, CardGroup, Jumbotron} from 'react-bootstrap'
+import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faClock,faUser} from '@fortawesome/free-regular-svg-icons'
 
 function App() {
   return (
@@ -67,15 +68,20 @@ function App() {
           <CardGroup style={{
           marginTop:'78px',
           marginBottom:'20px'
-          }}>
+          }} className='EfctvCardG'>
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
                 <Card.Title style={{textAlign:'center'}}>Título</Card.Title>
                 <Card.Text>
-                  Lorem ipsum.
+                  1.
                 </Card.Text>
               </Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item></ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>Duração:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>N° de jogadores:</ListGroup.Item>
+              </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
               </Card.Footer>
@@ -85,9 +91,14 @@ function App() {
               <Card.Body>
                 <Card.Title style={{textAlign:'center'}}>Título</Card.Title>
                 <Card.Text>
-                  Lorem ipsum.
+                  2.
                 </Card.Text>
               </Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item></ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>Duração:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>N° de jogadores:</ListGroup.Item>
+              </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
               </Card.Footer>
@@ -97,9 +108,14 @@ function App() {
               <Card.Body>
                 <Card.Title  style={{textAlign:'center'}}>Título</Card.Title>
                 <Card.Text>
-                  Lorem ipsum.
+                  3.
                 </Card.Text>
               </Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item></ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>Duração:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>N° de jogadores:</ListGroup.Item>
+              </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
               </Card.Footer>
@@ -107,7 +123,6 @@ function App() {
           </CardGroup>
           </Col>
           </Row>
-         
         </Container>
       
       </div>
