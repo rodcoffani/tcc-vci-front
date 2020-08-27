@@ -43,6 +43,12 @@ body{
   box-shadow:  5px 5px 13px #e1e1e1, 
                -5px -5px 13px #ffffff;
 }
+.EfctvCardG:hover > *{
+ opacity: 0.2;
+}
+.EfctvCardG:hover > *:hover{
+  opacity: 1;
+ }
 span{
   position: absolute;
   top: 50%;
@@ -50,7 +56,6 @@ span{
   transform: translate(-50%, -50%);
   font-size:275%;
   letter-spacing:0.1em;
-  line-break: loose;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(7, 161, 199);
