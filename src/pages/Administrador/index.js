@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Header from '../../components/Header';
+import Sidebar from '../../components/Sidebar';
 import { Container, Row, Col} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import Particles from 'react-particles-js'; 
@@ -9,7 +10,8 @@ class admin extends Component {
     render() {
         return(
             <div>
-                <Header />
+                <Header title="Administrador"/>
+                <Sidebar />
                 <React.Fragment>
                 <Container fluid="xl">
                     <Particles className="Part"
