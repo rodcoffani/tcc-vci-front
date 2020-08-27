@@ -7,6 +7,8 @@ import Particles from 'react-particles-js';
 import axios from 'axios';
 import API from '../../api'
 import ead from '../../assets/images/ead-lab.png';
+import $ from 'jquery';
+import 'font-awesome/css/font-awesome.min.css';
 
 import { BsFillEyeSlashFill } from "react-icons/bs";
 const  emailRegex = RegExp(
@@ -43,8 +45,7 @@ class login extends Component{
     };
   }
   handleClick = e => {
-    e.preventDefault();
-    console.log('O link foi clicado.');
+    
   }
 
   handleSubmit = e => {
@@ -207,7 +208,7 @@ class login extends Component{
                     maxLength="85"></input>
                     </p>
                     
-                    <p className='FieldD senha'><b className="Presc">Senha: <a href="#" onClick={this.handleClick} ><BsFillEyeSlashFill  className="icon"/></a> </b>
+                    <p className='FieldD senha'><b className="Presc">Senha: <a href="#" onClick={this.handleClick}> <i class="fa fa-cog fa-spin"></i></a> </b>
                     
                     <input
                     type="password"
