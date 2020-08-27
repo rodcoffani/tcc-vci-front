@@ -37,8 +37,11 @@ body{
 }
 .EfctvCard{
   margin-right: 5px;
-  border-radius: 5px;
-  border: 1px solid midnightblue!important;
+  border: none!important;
+  border-radius: 34px;
+  background: #fafafa;
+  box-shadow:  5px 5px 13px #e1e1e1, 
+               -5px -5px 13px #ffffff;
 }
 span{
   position: absolute;
