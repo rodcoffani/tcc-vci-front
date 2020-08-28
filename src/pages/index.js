@@ -52,6 +52,39 @@ function App() {
           </Carousel.Item>
         </Carousel>
         <div className='EfctvDiv'></div>
+
+      <div>
+
+      <Container style={{
+          marginTop:'58px' }}>
+        <Row>
+          <Col sm={12}>
+            <h3 className='main-title'>Título aqui</h3>
+          </Col>
+          <Col sm={6}>
+              <img src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg"></img>
+          </Col>
+          <Col sm={6}>
+            <h3>Título Curtinho</h3>
+            <p>Um texto um pouco maior e mais explicativo sobre o EAD-LAB e seu projeto como um todo. De preferência com mais de uma frase e linguagem formal.</p>
+            
+            <ul>
+                <li>Texto do Check 1</li>
+                <li>Texto do Check 2</li>
+                <li>Texto do Check 3</li>
+            </ul>
+                
+            </Col>
+                          
+        </Row>
+      </Container>
+
+      </div>
+        
+
+
+
+
         <Container fluid style={{
           marginTop:'58px'
         }}>
