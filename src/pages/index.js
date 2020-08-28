@@ -3,20 +3,17 @@ import './styles.css';
 import Header from '../components/Header';
 import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faClock,faUser} from '@fortawesome/free-regular-svg-icons'
+import {faClock,faUser,faEnvelope,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
 
 function App() {
   return (
   <React.Fragment>
-    <div className="App">
+    <div className="App" id='Topo'>
       <Header />
       <div className="content">
         <div className="title">
           <div className="h1">
             EAD-LAB
-          </div>
-          <div className="sub">
-            Nós somos uma plataforma de treinamento da empresa VCI-Brasil.
           </div>
         </div>
         <div className='EfctvDiv'></div>
@@ -79,8 +76,8 @@ function App() {
               </Card.Body>
               <ListGroup variant="flush">
                 <ListGroup.Item></ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
@@ -96,8 +93,8 @@ function App() {
               </Card.Body>
               <ListGroup variant="flush">
                 <ListGroup.Item></ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
@@ -113,8 +110,8 @@ function App() {
               </Card.Body>
               <ListGroup variant="flush">
                 <ListGroup.Item></ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
@@ -128,10 +125,10 @@ function App() {
       </div>
       
     </div>
-    <div style={{backgroundColor:'black',textAlign:'center', color:'white'}}>
-      <h1>Footer</h1>
-      <br></br>
-    </div>
+      <a href='#Topo' style={{textAlign:'center'}}>
+      <div style={{backgroundColor:'black'}} className='Topo'>
+      <FontAwesomeIcon icon={faCaretSquareUp} size="lg"/>
+      </div></a>
   </React.Fragment>
     
   );
