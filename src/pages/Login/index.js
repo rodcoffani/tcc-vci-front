@@ -14,8 +14,7 @@ import { BsFillEyeSlashFill } from "react-icons/bs";
 const  emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
-
-
+const flag = 0;
 const formValid = ({formErrors, ...rest}) => {
   let valid = true;
 
@@ -33,6 +32,7 @@ const formValid = ({formErrors, ...rest}) => {
 
 
 class login extends Component{
+  
   constructor(props){
     super(props);
     this.state = {
@@ -45,7 +45,14 @@ class login extends Component{
     };
   }
   handleClick = e => {
-    
+    var texto =  $('#pass').attr('type');
+    if(texto=='password'){
+      $('#pass').attr('type', 'text');
+    }
+    else{
+      $('#pass').attr('type', 'password');
+     
+    }
   }
 
   handleSubmit = e => {
@@ -208,9 +215,10 @@ class login extends Component{
                     maxLength="85"></input>
                     </p>
                     
-                    <p className='FieldD senha'><b className="Presc">Senha: <a href="#" onClick={this.handleClick}> <i class="fa fa-cog fa-spin"></i></a> </b>
+                    <p className='FieldD senha'><b className="Presc">Senha: <a href="#"  className="icone" onClick={this.handleClick}> <i class="fa fa-cog fa-spin"></i></a> </b>
                     
                     <input
+                    id="pass"
                     type="password"
                     name="password"
                     placeholder="Senha"
