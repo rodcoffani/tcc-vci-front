@@ -1,14 +1,18 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './styles.css';
 import Header from '../components/Header';
 import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faClock,faUser,faEnvelope,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
-
+import {animateScroll as scroll} from 'react-scroll'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 function App() {
+  useEffect(() => {
+    Aos.init({duration:1000})
+  }, []);
   return (
   <React.Fragment>
-    <div className="App" id='Topo'>
       <Header />
       <div className="content">
         <div className="title">
@@ -88,7 +92,7 @@ function App() {
         <Container fluid style={{
           marginTop:'58px'
         }}>
-          <Row>
+          <Row data-aos='fade-right'>
               <Col>
               <span>Nossos jogos!</span>
               </Col>
@@ -98,7 +102,7 @@ function App() {
           <CardGroup style={{
           marginTop:'78px',
           marginBottom:'20px'
-          }} className='EfctvCardG'>
+          }} className='EfctvCardG' data-aos='fade-up'>
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
@@ -156,11 +160,9 @@ function App() {
         </Container>
       
       </div>
-      
-    </div>
-      <a href='#Topo' style={{textAlign:'center'}}>
+      <a style={{textAlign:'center', cursor:'pointer',color:'blue'}} onClick={()=>scroll.scrollToTop()} >
       <div style={{backgroundColor:'black'}} className='Topo'>
-      <FontAwesomeIcon icon={faCaretSquareUp} size="lg"/>
+      <FontAwesomeIcon icon={faCaretSquareUp} size="lg" />
       </div></a>
   </React.Fragment>
     
