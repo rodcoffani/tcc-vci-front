@@ -7,12 +7,14 @@ import {faClock,faUser,faEnvelope,faCaretSquareUp} from '@fortawesome/free-regul
 import {animateScroll as scroll} from 'react-scroll'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import {Helmet} from "react-helmet"
 function App() {
   useEffect(() => {
     Aos.init({duration:1000})
   }, []);
   return (
   <React.Fragment>
+    <Helmet title="Home" />
       <Header />
       <div className="content">
         <div className="title">
@@ -62,13 +64,13 @@ function App() {
       <Container style={{
           marginTop:'58px' }}>
         <Row>
-          <Col sm={12}>
+          <Col sm={12} data-aos='fade-down'>
             <h3 className='main-title'>Título aqui</h3>
           </Col>
-          <Col sm={6}>
+          <Col sm={6} data-aos='fade-left'>
               <img src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg"></img>
           </Col>
-          <Col sm={6}>
+          <Col sm={6} data-aos='fade-right'>
             <h3>Título Curtinho</h3>
             <p>Um texto um pouco maior e mais explicativo sobre o EAD-LAB e seu projeto como um todo. De preferência com mais de uma frase e linguagem formal.</p>
             

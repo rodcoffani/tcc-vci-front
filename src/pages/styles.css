@@ -91,4 +91,16 @@ span{
   span{
     font-size: 4vw;
   }
-  }
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+::-webkit-scrollbar-thumb {
+  background: #999; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
+}
