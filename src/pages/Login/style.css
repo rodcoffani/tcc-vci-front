@@ -249,8 +249,8 @@ a.one{
 p.FieldD.senha{
     width:66%;
 }
-svg.icon {
-    margin-left: 24vh;
+a.icone {
+    margin-left: 25.2vh;
     color:white;
 }
 @media (min-width:320px) and (max-width: 375px) {
@@ -288,10 +288,10 @@ svg.icon {
     p.FieldD.senha{
         width: 100%;
     }
-    svg.icon {
-        margin-left: 28vh;
+    a.icone {
+        margin-left: 29.2vh;
+       
     }
-
 }
 @media (min-width:365px) and (max-width: 375px) {
     .TituloC{
