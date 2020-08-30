@@ -67,10 +67,10 @@ function App() {
           <Col sm={12} data-aos='fade-down'>
             <h3 className='main-title'>Título aqui</h3>
           </Col>
-          <Col sm={6} data-aos='fade-left'>
+          <Col sm={6} data-aos='fade-top'>
               <img src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg"></img>
           </Col>
-          <Col sm={6} data-aos='fade-right'>
+          <Col sm={6} data-aos='fade-top'>
             <h3>Título Curtinho</h3>
             <p>Um texto um pouco maior e mais explicativo sobre o EAD-LAB e seu projeto como um todo. De preferência com mais de uma frase e linguagem formal.</p>
             
