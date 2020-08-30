@@ -17,11 +17,6 @@ function App() {
     <Helmet title="Home" />
       <Header />
       <div className="content">
-        <div className="title">
-          <div className="h1">
-            EAD-LAB
-          </div>
-        </div>
         <div className='EfctvDiv'></div>
         <Carousel>
           <Carousel.Item>
