@@ -2,6 +2,7 @@
     width: 90%;
     height: 850px;
     margin-top: 2%;
+    margin-left: 4%;
 }
 
 .Part{
@@ -40,8 +41,9 @@
 
 .ranking-title-title{
     float: left;
-    padding-left: 15%;
     padding-top: 15px;
+    width: 70%;
+    align-content: center;
 }
 
 .ranking-text{
