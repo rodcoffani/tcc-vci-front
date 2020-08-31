@@ -90,7 +90,7 @@ function App() {
           marginTop:'58px'
         }}>
         
-          <Row data-aos='fade-right' data-aos-anchor-placement='center-center' data-aos-delay='200'>
+          <Row data-aos='fade-right' data-aos-anchor-placement='top-center' data-aos-delay='200'>
               <Col>
               <span>Nossos jogos!</span>
               </Col>
@@ -100,7 +100,7 @@ function App() {
           <CardGroup style={{
           marginTop:'78px',
           marginBottom:'20px'
-          }} className='EfctvCardG' data-aos='fade-right'  data-aos-duration='1000' data-aos-delay='200'  data-aos-anchor-placement='top-center' >
+          }} className='EfctvCardG' data-aos='fade-right'  data-aos-duration='1000' data-aos-delay='200'  data-aos-anchor-placement='top-bottom' >
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
