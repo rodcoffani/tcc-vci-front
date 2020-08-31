@@ -11,7 +11,7 @@ function App() {
   return (
   <React.Fragment>
     <Helmet title="Home" />
-      <Header />
+      <Header headerTitle="Home"/>
       <div className="content">
         <div className='EfctvDiv'></div>
         <Carousel>
