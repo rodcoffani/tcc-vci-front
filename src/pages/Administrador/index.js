@@ -12,7 +12,6 @@ class admin extends Component {
             <div>
                 <Sidebar />
                 <Header headerTitle="Administrador"/>
-                
                 <React.Fragment>
                 <Container fluid="xl">
                     <Particles className="Part"

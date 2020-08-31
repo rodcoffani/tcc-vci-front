@@ -1,7 +1,6 @@
 .mother{
     width: 90%;
-    height: 850px;
-    margin-top: 2%;
+    height: auto;
     margin-left: 4%;
 }
 
@@ -138,4 +137,140 @@
 .header-fixed-employee > thead > tr > th {
     width: 50%;
     float: left;
+}
+
+@media (min-width:320px) and (max-width: 375px) {
+    .ranking{
+        width: 80%;
+        border-radius: 3%;
+        margin-left: 18%;
+    }
+    
+    .employee{
+        width: 80%;
+        margin-top: 5%;
+        border-radius: 3%;
+        margin-left: 18%;
+    }
+    
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+}
+
+@media (min-width:365px) and (max-width: 375px) {
+    .ranking{
+        width: 80%;
+        border-radius: 3%;
+        margin-left: 18%;
+    }
+    
+    .employee{
+        width: 80%;
+        margin-top: 5%;
+        border-radius: 3%;
+        margin-left: 18%;
+    }
+    
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+}
+
+@media (min-width:376px) and (max-width: 504px) {
+    
+}
+
+@media (min-width:505px) and (max-width: 599px) {
+    
+}
+
+@media (min-width:600px) and (max-width: 789px) {
+    
+}
+
+@media (min-width:700px) and (max-width: 789px) {
+    
+}
+@media (min-width:789px) and (max-width: 1000px) {
+    
+}
+@media (min-width:789px) and (max-width: 859px) {
+    
+}
+
+@media (min-width:799px) and (max-width: 1000px) {
+
+    
+}
+
+@media (min-width:1000px) and (max-width: 1440px) {
+    
+}
+@media (min-width:1100px) and (max-width: 1300px) {
+    
+}
+@media (min-width:1250px) and (max-width: 1440px) {
+    
+}
+@media (min-width:1440px) and (max-width: 2560px) {
+    
+}
+@media (min-width:1733px) and (max-width: 2560px) {
+    
+}
+
+@media (min-width:1800px) and (max-width: 2560px) {
+  
+}
+
+@media (min-width:2380px) and (max-width: 2560px) {
+   
+    
 }
