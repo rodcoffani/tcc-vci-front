@@ -5,14 +5,9 @@ import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup} from 'react-bo
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faClock,faUser,faEnvelope,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
 import {animateScroll as scroll} from 'react-scroll'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 import {Helmet} from "react-helmet"
 function App() {
-  useEffect(() => {
-    Aos.init({duration:1000
-    });
-  }, []);
+
   return (
   <React.Fragment>
     <Helmet title="Home" />
@@ -60,13 +55,15 @@ function App() {
           marginTop:'58px' }}
           >
         <Row >
-          <Col sm={12}>
+          <Col sm={12} >
             <h3 className='main-title'>Título aqui</h3>
           </Col>
-          <Col sm={6}  data-aos='fade-up' data-aos-delay='300' data-aos-anchor-placement='center-center' >
+        </Row>
+        <Row>
+          <Col sm={6}>
               <img style={{borderRadius:'10px'}} src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg"></img>
           </Col>
-          <Col sm={6} data-aos='fade-up' data-aos-delay='300' data-aos-anchor-placement='center-center' >
+          <Col sm={6}>
             <h3>Título Curtinho</h3>
             <p>Um texto um pouco maior e mais explicativo sobre o EAD-LAB e seu projeto como um todo. De preferência com mais de uma frase e linguagem formal.</p>
             
@@ -88,19 +85,19 @@ function App() {
 
         <Container fluid style={{
           marginTop:'58px'
-        }}>
+        }} >
         
-          <Row data-aos='fade-right' data-aos-anchor-placement='top-center' data-aos-delay='200'>
-              <Col>
-              <span>Nossos jogos!</span>
+          <Row >
+              <Col >
+              <span >Nossos jogos!</span>
               </Col>
           </Row>
-          <Row>
+          <Row> 
           <Col xs={12} md={12}>
           <CardGroup style={{
           marginTop:'78px',
           marginBottom:'20px'
-          }} className='EfctvCardG' data-aos='fade-right'  data-aos-duration='1000' data-aos-delay='200'  data-aos-anchor-placement='top-bottom' >
+          }} className='EfctvCardG'>
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
