@@ -5,27 +5,20 @@ import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup} from 'react-bo
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faClock,faUser,faEnvelope,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
 import {animateScroll as scroll} from 'react-scroll'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+import {Helmet} from "react-helmet"
 function App() {
-  useEffect(() => {
-    Aos.init({duration:1000})
-  }, []);
+
   return (
   <React.Fragment>
+    <Helmet title="Home" />
       <Header />
       <div className="content">
-        <div className="title">
-          <div className="h1">
-            EAD-LAB
-          </div>
-        </div>
         <div className='EfctvDiv'></div>
         <Carousel>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://picsum.photos/800/330?text=First slide&bg=373940"
+              src="https://picsum.photos/800/350?text=First slide&bg=373940"
               alt="P. slide"
             />
             <Carousel.Caption className='Caption'>
@@ -35,7 +28,7 @@ function App() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://picsum.photos/800/330?text=Second slide&bg=20232a"
+              src="https://picsum.photos/800/350?text=Second slide&bg=20232a"
               alt="S. slide"
             />
 
@@ -46,7 +39,7 @@ function App() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://picsum.photos/800/330?text=Second slide&bg=282c34"
+              src="https://picsum.photos/800/350?text=Second slide&bg=282c34"
               alt="T. slide"
             />
 
@@ -58,15 +51,17 @@ function App() {
         <div className='EfctvDiv'></div>
 
       <div>
-
       <Container style={{
-          marginTop:'58px' }}>
-        <Row>
-          <Col sm={12}>
+          marginTop:'58px' }}
+          >
+        <Row >
+          <Col sm={12} >
             <h3 className='main-title'>Título aqui</h3>
           </Col>
+        </Row>
+        <Row>
           <Col sm={6}>
-              <img src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg"></img>
+              <img style={{borderRadius:'10px'}} src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg"></img>
           </Col>
           <Col sm={6}>
             <h3>Título Curtinho</h3>
@@ -82,27 +77,27 @@ function App() {
                           
         </Row>
       </Container>
-
+      
       </div>
         
 
 
 
-
         <Container fluid style={{
           marginTop:'58px'
-        }}>
-          <Row data-aos='fade-right'>
-              <Col>
-              <span>Nossos jogos!</span>
+        }} >
+        
+          <Row >
+              <Col >
+              <span >Nossos jogos!</span>
               </Col>
           </Row>
-          <Row>
+          <Row> 
           <Col xs={12} md={12}>
           <CardGroup style={{
           marginTop:'78px',
           marginBottom:'20px'
-          }} className='EfctvCardG' data-aos='fade-up'>
+          }} className='EfctvCardG'>
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
