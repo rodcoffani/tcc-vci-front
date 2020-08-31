@@ -10,7 +10,8 @@ import 'aos/dist/aos.css'
 import {Helmet} from "react-helmet"
 function App() {
   useEffect(() => {
-    Aos.init({duration:1000})
+    Aos.init({duration:1000
+    });
   }, []);
   return (
   <React.Fragment>
@@ -22,7 +23,7 @@ function App() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://picsum.photos/800/330?text=First slide&bg=373940"
+              src="https://picsum.photos/800/350?text=First slide&bg=373940"
               alt="P. slide"
             />
             <Carousel.Caption className='Caption'>
@@ -32,7 +33,7 @@ function App() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://picsum.photos/800/330?text=Second slide&bg=20232a"
+              src="https://picsum.photos/800/350?text=Second slide&bg=20232a"
               alt="S. slide"
             />
 
@@ -43,7 +44,7 @@ function App() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://picsum.photos/800/330?text=Second slide&bg=282c34"
+              src="https://picsum.photos/800/350?text=Second slide&bg=282c34"
               alt="T. slide"
             />
 
@@ -55,17 +56,17 @@ function App() {
         <div className='EfctvDiv'></div>
 
       <div>
-
       <Container style={{
-          marginTop:'58px' }}>
-        <Row>
-          <Col sm={12} data-aos='fade-down'>
+          marginTop:'58px' }}
+          >
+        <Row >
+          <Col sm={12}>
             <h3 className='main-title'>Título aqui</h3>
           </Col>
-          <Col sm={6} data-aos='fade-top'>
-              <img src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg"></img>
+          <Col sm={6}  data-aos='fade-up' data-aos-delay='300' data-aos-anchor-placement='center-center' >
+              <img style={{borderRadius:'10px'}} src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg"></img>
           </Col>
-          <Col sm={6} data-aos='fade-top'>
+          <Col sm={6} data-aos='fade-up' data-aos-delay='300' data-aos-anchor-placement='center-center' >
             <h3>Título Curtinho</h3>
             <p>Um texto um pouco maior e mais explicativo sobre o EAD-LAB e seu projeto como um todo. De preferência com mais de uma frase e linguagem formal.</p>
             
@@ -79,17 +80,17 @@ function App() {
                           
         </Row>
       </Container>
-
+      
       </div>
         
-
 
 
 
         <Container fluid style={{
           marginTop:'58px'
         }}>
-          <Row data-aos='fade-right'>
+        
+          <Row data-aos='fade-right' data-aos-anchor-placement='center-center' data-aos-delay='200'>
               <Col>
               <span>Nossos jogos!</span>
               </Col>
@@ -99,7 +100,7 @@ function App() {
           <CardGroup style={{
           marginTop:'78px',
           marginBottom:'20px'
-          }} className='EfctvCardG' data-aos='fade-up'>
+          }} className='EfctvCardG' data-aos='fade-right'  data-aos-duration='1000' data-aos-delay='200'  data-aos-anchor-placement='top-center' >
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
