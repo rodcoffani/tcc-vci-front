@@ -1,11 +1,13 @@
 .header {
   background-color: #282c34;
-  min-height: 8vh;
-  height: 8vh;
+  min-height: 10%;
+  height: 10%;
+  padding-top: 0.6%;
+  padding-bottom: 0.6%;
   display: flex;
   align-items: center; /* Centro da linha (eixo y - altura) */
   justify-content: center; /* Centro da coluna (eixo x - largura) */
-  font-size: 16pt;
+  font-size: 170%;
   color: white;
 }
 
