@@ -426,6 +426,7 @@
         align-content: center;
     }
 }
+
 @media (min-width:789px) and (max-width: 1000px) {
     .ranking{
         width: 93%;
