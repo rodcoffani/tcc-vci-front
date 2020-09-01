@@ -10,8 +10,8 @@ class admin extends Component {
     render() {
         return(
             <div>
-                <Header title="Administrador"/>
                 <Sidebar />
+                <Header headerTitle="Administrador"/>
                 <React.Fragment>
                 <Container fluid="xl">
                     <Particles className="Part"
