@@ -3,8 +3,8 @@ body{
 }
 
 .FormC {
-margin-top: 6%;
-margin-bottom:21.6%;
+margin-top: 3%;
+margin-bottom:11.6%;
 background: transparent!important;
 }
 
@@ -48,6 +48,7 @@ background: transparent!important;
 
 .CadT {
     margin: auto;
+    margin-top: -10%!important;
     font-size: 5vw;
     color: white;
     background: transparent!important;
@@ -128,7 +129,7 @@ background: transparent!important;
 .linkC {
     text-decoration: none;
     color: white;
-    margin-left: 29%;
+    margin-left: auto;
     background-color: transparent !important;
     font-size: small!important;
 
