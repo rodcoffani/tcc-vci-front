@@ -5,7 +5,7 @@ import { Component } from "react"
 import {Helmet} from "react-helmet"
 import Particles from 'react-particles-js'; 
 import { cpfMask } from './mask'
-
+import ead from '../../assets/images/ead-lab.png';
 export default class Saudacao extends Component{
     constructor(props) {
         super(props)
@@ -115,10 +115,11 @@ export default class Saudacao extends Component{
                             <h1 className="CadT">CADASTRO</h1>   
                         </Row>
                         <Row>
-                            <Col><div className="TituloC">
-                                <p className="CadS">Se inscreva e seja bem-vindo, {nome}<b className="Flick">_</b>! ;)</p>
-                                </div>
-                            </Col>
+                        <Col className="image">
+                            <div className="imageBlue">
+                            <img src={ead} className="img-logo login"/>
+                            </div>
+                        </Col>
                             <Col>
                                 <div className="FormC">
                                 <form>
