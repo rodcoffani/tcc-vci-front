@@ -129,7 +129,7 @@ background: transparent!important;
 .linkC {
     text-decoration: none;
     color: white;
-    margin-left: auto;
+    margin-left: auto!important;
     background-color: transparent !important;
     font-size: small!important;
 
