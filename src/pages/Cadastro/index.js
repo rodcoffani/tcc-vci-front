@@ -115,10 +115,6 @@ export default class Saudacao extends Component{
                             <h1 className="CadT">CADASTRO</h1>   
                         </Row>
                         <Row>
-                            <Col><div className="TituloC">
-                                <p className="CadS">Se inscreva e seja bem-vindo, {nome}<b className="Flick">_</b>! ;)</p>
-                                </div>
-                            </Col>
                             <Col>
                                 <div className="FormC">
                                 <form>
