@@ -4,7 +4,8 @@ body{
 
 .FormC {
 margin-top: 6%;
-margin-bottom:21.6%;
+margin-bottom:11.6%;
+max-width:700px;
 background: transparent!important;
 }
 
@@ -80,20 +81,6 @@ background: transparent!important;
     padding: 5% 3%;
 }
 
-@keyframes Flick {
-    from {color: white;background-color: white !important;} to
-    {color: transparent;background-color: transparent;}
-}
-
-.Flick {
-    height: 3px;
-    width: 20px;
-    color: white;
-    background-color: white;
-    animation-name: Flick;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
 @keyframes BordShine {
     from {border: solid 2px rgb(197, 197, 197);} to
     {border: solid 2px rgb(255, 255, 255);}
@@ -151,7 +138,7 @@ background: transparent!important;
     }
     .linkC{
         margin: 46px;
-        font-size: medium;
+        font-size: small;
     }
     .CadBtn{
         width: 150px;
@@ -183,13 +170,19 @@ background: transparent!important;
         margin: auto;
         font-size: 10vw;
     }
-    .linkC{
-        font-size: large;
-    }
     .inputC{
         width: 100%;
         font-size: x-large;
     }
+    .inputCS{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 100%;
+        font-size: x-large;
+    }
+
 }
 
 @media (min-width:376px) and (max-width: 504px) {
@@ -221,7 +214,7 @@ background: transparent!important;
     }
     
     .linkC{
-        font-size: large;
+        font-size: small;
    }
 }
 @media (min-width:376px) and (max-width: 423px) {
@@ -239,7 +232,7 @@ background: transparent!important;
         font-size: x-large;
     }
     .inputCC{
-        width: 105%;
+        width: 107%;
         font-size: x-large;
     }
 
@@ -288,7 +281,6 @@ background: transparent!important;
         font-size: 10vw;
     }
     .CadBtn{
-        padding-bottom: 8%;
         font-size: x-large;
     }
     .inputC{
@@ -387,9 +379,6 @@ background: transparent!important;
         width: 100%;
     }
     
-    .CadBtn{
-        padding-bottom: 7%;
-    }
 }
 
 @media (min-width:799px) and (max-width: 1000px) {
@@ -399,6 +388,24 @@ background: transparent!important;
     .CadBtn{
         padding-bottom: 7%;
     }
+    .FormC{
+        margin-left: 30vw;
+    }
+    .inputCS{
+        font-size: x-large;
+        width: 82%;
+    }
+    .inputC{
+        
+        width: 95%;
+        font-size: x-large;
+    }
+    .inputCC{
+        
+        width: 102%;
+        font-size: x-large;
+    }
+    
 }
 
 @media (min-width:1000px) and (max-width: 1440px) {
@@ -408,6 +415,9 @@ background: transparent!important;
     }
     .CadS{
         font-size: x-large;
+    }
+    .FormC{
+        margin-left: 30vw;
     }
     .linkC{
          font-size: x-large;
@@ -450,6 +460,9 @@ background: transparent!important;
         padding: 6% 5%;
         width: 510px;
     }
+    .FormC{
+        margin-left: 26vw;
+    }
     .CadT{
         margin: auto;
     }
@@ -464,6 +477,9 @@ background: transparent!important;
     }
 }
 @media (min-width:1440px) and (max-width: 2560px) {
+    .FormC{
+        margin-left: 24vw;
+    }
     .TituloC{
         padding: 10% 2%;
         width: 510px;
@@ -477,10 +493,7 @@ background: transparent!important;
         font-size: x-large;
         width: 115%;
     }
-    .CadT{
-        margin: auto;
-        font-size: 4vw;
-    }
+    
     .CadS{
         font-size: xx-large;
     }
@@ -511,6 +524,9 @@ background: transparent!important;
     .CadS{
         font-size: xx-large;
     }
+    .FormC{
+        margin-left: 18vw;
+    }
     .linkC{
         font-size: x-large;
     }
@@ -527,7 +543,19 @@ background: transparent!important;
     
     .CadT{
         margin: auto;
-        font-size: 4vw;
+    }
+    .CadS{
+        
+        font-size: xx-large;
+    }
+}
+@media (min-width:2000px) and (max-width: 2560px) {
+    .FormC{
+        margin-left: 16vw;
+    }
+    
+    .CadT{
+        margin: auto;
     }
     .CadS{
         
@@ -536,13 +564,15 @@ background: transparent!important;
 }
 
 @media (min-width:2380px) and (max-width: 2560px) {
+    .FormC{
+        margin-left: 14vw;
+    }
     .TituloC{
         padding: 1%;
         width: 510px;
     }
     .CadT{
         margin: auto;
-        font-size: 3vw;
     }
     .Presc{
         font-size: 12vh;
