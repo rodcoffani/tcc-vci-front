@@ -19,7 +19,7 @@ const Sidebar = (props) => {
                 }}
             >
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected="reports">
+                <SideNav.Nav defaultSelected={props.pageSelected}>
                     <NavItem eventKey="profile">
                         <NavIcon>
                             <FontAwesomeIcon icon={faIdBadge} />

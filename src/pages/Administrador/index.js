@@ -10,7 +10,7 @@ class admin extends Component {
     render() {
         return(
             <div>
-                <Sidebar />
+                <Sidebar pageSelected="reports"/>
                 <Header headerTitle="Administrador"/>
                 <React.Fragment>
                 <Container fluid="xl">

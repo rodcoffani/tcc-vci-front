@@ -11,6 +11,8 @@
     z-index:-1;
 }
 
+/* relatórios */
+
 .ranking{
     float: left;
     width: 50%;
@@ -139,6 +141,89 @@
     float: left;
 }
 
+
+
+/* cadastro de jogos */
+.profile{
+    float: left;
+    width: 25%;
+    height: 600px;
+    background-color: white;
+    border-radius: 5%;
+    align-content: center;
+}
+
+.profile-photo{
+    width: 50%;
+    margin-top: 5%;
+    height: 200px;
+    background-color: yellow;
+}
+
+.profile-info{
+    width: 85%;
+    margin-top: 5%;
+    height: 270px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+}
+
+.admin{
+    float: left;
+    width: 70%;
+    margin-left: 5%;
+    height: 600px;
+    background-color: white;
+    border-radius: 5%;
+    align-items: center;
+}
+
+.admin-title{
+    width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 160%;
+    padding: 1.2%;
+    height: auto;
+}
+
+.admin-table{
+    width: 90%;
+}
+
+.header-fixed-profile {
+    width: 100% 
+}
+
+.header-fixed-profile > thead,
+.header-fixed-profile > tbody,
+.header-fixed-profile > thead > tr,
+.header-fixed-profile > tbody > tr,
+.header-fixed-profile > thead > tr > th,
+.header-fixed-profile > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed-profile > tbody > tr:after,
+.header-fixed-profile > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed-profile > tbody {
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.header-fixed-profile > tbody > tr > td,
+.header-fixed-profile > thead > tr > th {
+    width: 33%;
+    float: left;
+}
+
+/* design celular */
+
 @media (min-width:320px) and (max-width: 375px) {
     .ranking{
         width: 80%;
@@ -176,6 +261,50 @@
 
     .header-fixed-employee > tbody {
         height: 350px;
+    }
+
+    .profile{
+        width: 80%;
+        height: auto;
+        margin-left: 15%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 30%;
+        height: 80px;
+        margin-left: 3%;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 80%;
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
     }
 }
 
@@ -217,6 +346,49 @@
     .header-fixed-employee > tbody {
         height: 350px;
     }
+
+    .profile{
+        width: 80%;
+        height: auto;
+        margin-left: 15%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 30%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 80%;
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
 }
 
 @media (min-width:376px) and (max-width: 504px) {
@@ -257,6 +429,49 @@
     .header-fixed-employee > tbody {
         height: 350px;
     }
+
+    .profile{
+        width: 80%;
+        height: auto;
+        margin-left: 15%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 30%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 80%;
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
 }
 
 @media (min-width:505px) and (max-width: 599px) {
@@ -270,7 +485,6 @@
         margin-top: 5%;
         margin-left: 10%;
     }
-    
     
     .ranking-body{
         width: 92%;
@@ -300,6 +514,49 @@
     
     .ranking-title-title{
         width: 60%;
+    }
+
+    .profile{
+        width: 80%;
+        height: auto;
+        margin-left: 15%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 25%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 80%;
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
     }
 }
 
@@ -315,7 +572,6 @@
         margin-left: 10%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -344,6 +600,49 @@
     
     .ranking-title-title{
         width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 9%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 9%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
     }
 }
 
@@ -359,7 +658,6 @@
         margin-left: 8%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -388,6 +686,49 @@
     
     .ranking-title-title{
         width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 9%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 120%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 9%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 102%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
     }
 }
 
@@ -403,7 +744,6 @@
         margin-left: 6%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -432,6 +772,50 @@
     
     .ranking-title-title{
         width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 9%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 100px;
+        margin-left: 2%;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 145%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 9%;
+        margin-top: 5%;
+        height: 550px;
+    }
+    
+    .admin-title{
+        font-size: 150%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 400px;
     }
 }
 
@@ -447,7 +831,6 @@
         margin-left: 5%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -476,6 +859,49 @@
     
     .ranking-title-title{
         width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 8%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 90px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 130%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 8%;
+        margin-top: 5%;
+        height: 450px;
+    }
+    
+    .admin-title{
+        font-size: 150%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
     }
 }
 
@@ -491,7 +917,6 @@
         margin-left: 5%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -521,6 +946,49 @@
     .ranking-title-title{
         width: 60%;
     }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 7.5%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 90px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 130%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 7.5%;
+        margin-top: 5%;
+        height: 550px;
+    }
+    
+    .admin-title{
+        font-size: 150%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 400px;
+    }
 }
 
 @media (min-width:1000px) and (max-width: 1440px) {
@@ -534,7 +1002,6 @@
         margin-top: 5%;
         margin-left: 5%;
     }
-    
     
     .ranking-body{
         width: 92%;
@@ -573,6 +1040,49 @@
     .header-fixed-employee > thead > tr > th,
     .header-fixed-employee > tbody > tr > td {
         font-size: 120%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 7%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 125px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 200%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 7%;
+        margin-top: 5%;
+        height: 800px;
+    }
+    
+    .admin-title{
+        font-size: 190%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 120%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 600px;
     }
 }
 
@@ -588,7 +1098,6 @@
         margin-left: 5%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -626,6 +1135,49 @@
     .header-fixed-employee > thead > tr > th,
     .header-fixed-employee > tbody > tr > td {
         font-size: 120%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 7%;
+    }
+    
+    .profile-photo{
+        margin-left: 2%;
+        width: 20%;
+        height: 125px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 200%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 7%;
+        margin-top: 5%;
+        height: 800px;
+    }
+    
+    .admin-title{
+        font-size: 190%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 120%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 600px;
     }
 }
 
@@ -641,7 +1193,6 @@
         margin-left: 3%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -679,5 +1230,48 @@
     .header-fixed-employee > thead > tr > th,
     .header-fixed-employee > tbody > tr > td {
         font-size: 120%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 7%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 125px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 200%;
+        text-align: left;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 7%;
+        margin-top: 5%;
+        height: 800px;
+    }
+    
+    .admin-title{
+        font-size: 230%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 600px;
     }
 }
