@@ -15,37 +15,21 @@ const Sidebar = (props) => {
                 }}
             >
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected={props.rotaItem1}>
-                    <NavItem eventKey={props.rotaItem1}>
+                <SideNav.Nav defaultSelected="profile">
+                    <NavItem eventKey="profile">
                         <NavIcon>
                             <FontAwesomeIcon icon={faIdBadge} />
                         </NavIcon>
                         <NavText>
-                            {props.item1}
+                            Perfil
                         </NavText>
                     </NavItem>
-                    <NavItem eventKey={props.rotaItem2}>
+                    <NavItem eventKey="games">
                         <NavIcon>
                             <FontAwesomeIcon icon={faGamepad} />
                         </NavIcon>
                         <NavText>
-                            {props.item2}
-                        </NavText>           
-                    </NavItem>
-                    <NavItem eventKey={props.rotaItem3}>
-                        <NavIcon>
-                            <FontAwesomeIcon icon={faUserFriends} />
-                        </NavIcon>
-                        <NavText>
-                            Validar funcionários
-                        </NavText>           
-                    </NavItem>
-                    <NavItem eventKey={props.rotaItem4}>
-                        <NavIcon>
-                            <FontAwesomeIcon icon={faChartPie} />
-                        </NavIcon>
-                        <NavText>
-                            Relatórios
+                             Jogos
                         </NavText>           
                     </NavItem>
                     <NavItem eventKey="logout">
