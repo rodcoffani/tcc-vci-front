@@ -111,12 +111,7 @@ class login extends Component {
                         </Row>
                         <Row>
                             <Col className="image">
-                                <div className="TituloC">
-                                    <p className="CadS">
-                                        Seja bem-vindo ao game
-                                        <b className="Flick">_</b>! ;)
-                                    </p>
-                                </div>
+                                
                                 <div className="imageBlue">
                                     <img src={ead} className="img-logo login" />
                                 </div>
