@@ -13,7 +13,7 @@ const Sidebar = (props) => {
             <SideNav 
                 onSelect={(selected) => {
                     const to = '/' + selected;
-                    if (this.props.location.pathname !== to) {
+                    if (props.location.pathname !== to) {
                         history.push(to);
                     }
                 }}
