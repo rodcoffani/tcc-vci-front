@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Header from '../../components/Header';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../components/Sidebar/admin';
 import { Container, Row, Col} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import backgroundParticle from '../../components/Background-particle'
@@ -10,17 +10,7 @@ class admin extends Component {
     render() {
         return(
             <div>
-                <Sidebar 
-                    item1 = "Perfil"
-                    rotaItem1 = "perfil"
-                    item2 = "Cadastro de Jogos" 
-                    rotaItem2 = "cadastro"
-                    item3 = "Validar funcionários"
-                    rotaItem3 = "validacao"
-                    item4 = "Relatórios"
-                    rotaItem4 = "relatorio"
-                    
-                />
+                <Sidebar pageSelected="reports"/>
                 <Header headerTitle="Administrador"/>
                 <React.Fragment>
                 <Container fluid="xl">

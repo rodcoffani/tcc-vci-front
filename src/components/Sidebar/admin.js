@@ -4,35 +4,39 @@ import { faIdBadge, faGamepad, faUserFriends, faChartPie, faSignOutAlt } from "@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
 import './styles.css';
+import { useHistory } from "react-router-dom";
 
 const Sidebar = (props) => {
+    let history = useHistory();
     return (
         <div className="sidebar">
             <SideNav 
                 onSelect={(selected) => {
-                    var flag = selected;
-
+                    const to = '/' + selected;
+                    if (props.location.pathname !== to) {
+                        history.push(to);
+                    }
                 }}
             >
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected={props.rotaItem1}>
-                    <NavItem eventKey={props.rotaItem1}>
+                <SideNav.Nav defaultSelected={props.pageSelected}>
+                    <NavItem eventKey="profile">
                         <NavIcon>
                             <FontAwesomeIcon icon={faIdBadge} />
                         </NavIcon>
                         <NavText>
-                            {props.item1}
+                            Perfil
                         </NavText>
                     </NavItem>
-                    <NavItem eventKey={props.rotaItem2}>
+                    <NavItem eventKey="insertGames">
                         <NavIcon>
                             <FontAwesomeIcon icon={faGamepad} />
                         </NavIcon>
                         <NavText>
-                            {props.item2}
+                             Cadastro de Jogos
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey={props.rotaItem3}>
+                    <NavItem eventKey="validateEmployee">
                         <NavIcon>
                             <FontAwesomeIcon icon={faUserFriends} />
                         </NavIcon>
@@ -40,7 +44,7 @@ const Sidebar = (props) => {
                             Validar funcionários
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey={props.rotaItem4}>
+                    <NavItem eventKey="reports">
                         <NavIcon>
                             <FontAwesomeIcon icon={faChartPie} />
                         </NavIcon>
