@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
 import { Container, Row, Col} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
-import Particles from 'react-particles-js'; 
+import backgroundParticle from '../../components/Background-particle'
 
 class admin extends Component {
     render() {
@@ -14,82 +14,7 @@ class admin extends Component {
                 <Header headerTitle="Administrador"/>
                 <React.Fragment>
                 <Container fluid="xl">
-                    <Particles className="Part"
-                        params={{ 
-                        "particles": {
-                            "number": {
-                                "value": 60,
-                                    "density": {
-                                        "enable": true,
-                                        "value_area": 1000
-                                    }
-                                },
-                                "color": {
-                                    "value": "#f00080"
-                                },
-                                "shape": {
-                                    "type": "circle",
-                                    "stroke": {
-                                        "width": 2,
-                                        "color": "#3030ff"
-                                    },
-                                    "polygon": {
-                                        "nb_sides": 3
-                                    },
-                                },
-                                "opacity": {
-                                    "value": 0.4008530152163807,
-                                    "random": false,
-                                    "anim": {
-                                        "enable": false,
-                                        "speed": 1,
-                                        "opacity_min": 0.1,
-                                        "sync": false
-                                    }
-                                },
-                                "line_linked": {
-                                    "enable": true,
-                                    "color": "#ffffff",
-                                    "width": 0.6413648243462091
-                                },
-                                "size": {
-                                    "value": 1.5,
-                                    "random": true,
-                                    "anim": {
-                                        "enable": false,
-                                        "speed": 40,
-                                        "size_min": 0.1,
-                                        "sync": false
-                                    }
-                                },
-                                "move": {
-                                    "enable": true,
-                                    "speed": 6,
-                                    "direction": "none",
-                                    "random": true,
-                                    "straight": false,
-                                    "out_mode": "out",
-                                    "bounce": false,
-                                    "attract": {
-                                        "enable": false,
-                                        "rotateX": 600,
-                                        "rotateY": 1200
-                                    }
-                                }
-                            },
-                            "interactivity": {
-                                "detect_on": "window",
-                                "events": {
-                                    "onhover": {
-                                        "enable": true,
-                                        "mode": "grab"
-                                    },
-                                    "resize": true
-                                },
-                            },
-                        "retina_detect": true
-                        }} 
-                    /> 
+                    <backgroundParticle></backgroundParticle>
                 </Container>
                 <center>
                     <div className="mother">
