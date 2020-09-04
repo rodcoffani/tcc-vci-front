@@ -31,7 +31,7 @@ export default class Saudacao extends Component {
 
                 <Container fluid="xl">
                     <backgroundParticle></backgroundParticle>
-                    <Container fluid="xl">
+                    <Container fluid="xl login">
                         <Row className="TopShelf">
                             <h1 className="CadT">CADASTRO</h1>
                         </Row>
@@ -98,9 +98,11 @@ export default class Saudacao extends Component {
                             </Col>
                         </Row>
                         <hr />
-                        <a href="https://ead-lab.coursify.me" className="linkC">
-                            https://ead-lab.coursify.me/
-                        </a>
+                        <div className="footer"> 
+                            <a href="https://ead-lab.coursify.me" className="linkC">
+                                https://ead-lab.coursify.me/
+                            </a>
+                        </div>
                     </Container>
                 </Container>
             </React.Fragment>

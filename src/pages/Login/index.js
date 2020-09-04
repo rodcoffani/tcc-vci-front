@@ -105,7 +105,7 @@ class login extends Component {
             <React.Fragment>
                 <Container fluid="xl">
                     <backgroundParticle></backgroundParticle>
-                    <Container fluid="xl">
+                    <Container fluid="xl login">
                         <Row className="TopShelf">
                             <h1 className="CadT">LOGIN</h1>
                         </Row>
@@ -121,8 +121,9 @@ class login extends Component {
                                     <form
                                         onSubmit={this.handleSubmit}
                                         noValidate
+                                        className="formLogin"
                                     >
-                                        <p className="FieldD">
+                                        <p className="FieldD senha">
                                             <b className="Presc">Login:</b>
                                             <input
                                                 type="text"
@@ -168,26 +169,26 @@ class login extends Component {
                                             <a className="one" href="#">
                                                 1º Acesso{" "}
                                             </a>
-                                        </div>
-                                        <div className="oneAcess">
                                             {" "}
-                                            <a className="one" href="#">
+                                            <a className="oneTwo" href="#">
                                                 Esqueci a senha{" "}
                                             </a>
-                                        </div>
-                                        <input
+                                            <input
                                             type="submit"
                                             value="Entrar"
                                             className="CadBtn"
-                                        ></input>
+                                            ></input>  
+                                        </div>
                                     </form>
                                 </div>
                             </Col>
                         </Row>
                         <hr />
-                        <a href="https://ead-lab.coursify.me" className="linkC">
-                            https://ead-lab.coursify.me/
-                        </a>
+                        <div className="footer"> 
+                            <a href="https://ead-lab.coursify.me" className="linkC">
+                                https://ead-lab.coursify.me/
+                            </a>
+                        </div>
                     </Container>
                     {/* NAO APAGARRRRRRR SERÁ USADO PARA VALIDACAO
             

@@ -26,10 +26,14 @@ light green: #A3C4BC
     box-shadow: 0px 10px 50px #555;
     background-color: #284c69;
 }
-
-form {
+form{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+}
+form.formLogin {
+    width: 100%;
+    /*display: flex;*/
     flex-wrap: wrap;
 }
 
@@ -114,4 +118,15 @@ input.error {
 .createAccount small {
     color: #999;
     font-weight: lighter;
+}
+.oneTwo{
+    color: white;
+    padding: 0px 0px 0px 42px;
+}
+.footer{
+    text-align: center;
+    width: 100%;
+}
+.container-xl.login{
+    margin-top: 20%;
 }
