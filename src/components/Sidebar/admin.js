@@ -12,23 +12,27 @@ const Sidebar = (props) => {
         <div className="sidebar">
             <SideNav 
                 onSelect={(selected) => {
-                    const to = '/' + selected;
-                    if (props.location.pathname !== to) {
-                        history.push(to);
-                    }
+                    var flag = selected;
+                    const to = '/' +selected; // só um exemplo com a tela login
+                    history.push(to);
+                
+                    // const to = '/' + selected;
+                    // if (props.location.pathname !== to) {
+                    //     history.push(to);
+                    // }
                 }}
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected={props.pageSelected}>
-                    <NavItem eventKey="profile">
-                        <NavIcon>
+                     <NavItem eventKey="profile"> {/* arquivo q vai ao clicar */}
+                         <NavIcon>
                             <FontAwesomeIcon icon={faIdBadge} />
                         </NavIcon>
                         <NavText>
                             Perfil
                         </NavText>
                     </NavItem>
-                    <NavItem eventKey="insertGames">
+                    <NavItem eventKey="insertGames"> {/* arquivo q vai ao clicar */}
                         <NavIcon>
                             <FontAwesomeIcon icon={faGamepad} />
                         </NavIcon>
@@ -36,7 +40,7 @@ const Sidebar = (props) => {
                              Cadastro de Jogos
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey="validateEmployee">
+                    <NavItem eventKey="validateEmployee"> {/* arquivo q vai ao clicar */}
                         <NavIcon>
                             <FontAwesomeIcon icon={faUserFriends} />
                         </NavIcon>
@@ -44,7 +48,7 @@ const Sidebar = (props) => {
                             Validar funcionários
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey="reports">
+                    <NavItem eventKey="reports"> {/* arquivo q vai ao clicar */}
                         <NavIcon>
                             <FontAwesomeIcon icon={faChartPie} />
                         </NavIcon>
@@ -52,7 +56,7 @@ const Sidebar = (props) => {
                             Relatórios
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey="logout">
+                    <NavItem eventKey="logout"> {/* arquivo q vai ao clicar */}
                         <NavIcon>
                             <FontAwesomeIcon icon={faSignOutAlt} />
                         </NavIcon>

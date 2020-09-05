@@ -32,7 +32,7 @@ body {
     color: rgb(184, 184, 184);
 }
 .oneAcess {
-    width: 35%;
+    width: 69%;
     text-align: center;
     font-weight: bold;
 }
@@ -120,7 +120,6 @@ a.one {
 .linkC {
     text-decoration: none;
     color: white;
-    margin-left: 29%;
     background-color: transparent !important;
 }
 
@@ -128,9 +127,6 @@ a.one {
     text-decoration: none;
     color: white;
     background-color: transparent !important;
-}
-.container-xl {
-    padding-top: 60px;
 }
 .img-logo.login {
     max-height: 31vh;
@@ -143,7 +139,7 @@ p.FieldD.senha {
     width: 66%;
 }
 a.icone {
-    margin-left: 25.2vh;
+    margin-left: 65%;
     color: white;
 }
 @media (min-width: 320px) and (max-width: 375px) {
@@ -155,7 +151,6 @@ a.icone {
         font-size: 10vw;
     }
     .linkC {
-        margin: 46px;
         font-size: medium;
     }
     .CadBtn {
@@ -171,7 +166,7 @@ a.icone {
         font-size: x-large;
     }
     .oneAcess {
-        width: 45%;
+        width: 100%;
         text-align: center;
     }
     .img-logo.login {
@@ -184,6 +179,13 @@ a.icone {
         margin-left: 29.2vh;
     }
 }
+
+@media (min-width: 375px) and (max-width: 812px) {
+    a.icone{
+        margin-left: 65%;
+    }
+
+}
 @media (min-width: 365px) and (max-width: 375px) {
     .TituloC {
         width: 310px;
@@ -194,13 +196,12 @@ a.icone {
     }
     .linkC {
         font-size: large;
-        margin: 46px;
     }
     .inputC {
         font-size: x-large;
     }
     .oneAcess {
-        width: 45%;
+        width: 100%;
         text-align: center;
     }
     p.FieldD.senha {
@@ -231,10 +232,9 @@ a.icone {
 
     .linkC {
         font-size: large;
-        margin: 46px;
     }
     .oneAcess {
-        width: 45%;
+        width: 100%;
         text-align: center;
     }
 }
@@ -243,12 +243,11 @@ a.icone {
         width: 430px;
     }
     .oneAcess {
-        width: 45%;
+        width: 100%;
         text-align: center;
     }
     .linkC {
         font-size: large;
-        margin: 46px;
     }
 }
 
@@ -273,7 +272,7 @@ a.icone {
         font-size: x-large;
     }
     .oneAcess {
-        width: 45%;
+        width: 100%;
         text-align: center;
         margin: 46px;
     }
@@ -303,10 +302,9 @@ a.icone {
 
     .linkC {
         font-size: x-large;
-        margin: 46px;
     }
     .oneAcess {
-        width: 45%;
+        width: 100%;
         text-align: center;
     }
     p.FieldD.senha {
@@ -325,7 +323,7 @@ a.icone {
         width: 670px;
     }
     .oneAcess {
-        width: 91%;
+        width: 100%;
         text-align: center;
     }
     p.FieldD.senha {
@@ -351,7 +349,7 @@ a.icone {
         font-size: x-large;
     }
     .oneAcess {
-        width: 45%;
+        width: 100%;
         text-align: center;
     }
     p.FieldD.senha {
@@ -374,7 +372,7 @@ a.icone {
         padding-bottom: 7%;
     }
     .oneAcess {
-        width: 45%;
+        width: 100%;
         text-align: center;
     }
     p.FieldD.senha {
@@ -401,7 +399,6 @@ a.icone {
     }
     .linkC {
         font-size: x-large;
-        margin-left: 31%;
     }
     .inputC {
         height: 8vh;
