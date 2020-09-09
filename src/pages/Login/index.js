@@ -6,15 +6,16 @@ import { Helmet } from "react-helmet";
 import axios from "axios";
 import API from "../../api";
 import ead from "../../assets/images/ead-lab.png";
+import { Redirect } from "react-router-dom";
 import $ from "jquery";
-import backgroundParticle from '../../components/Background-particle'
+import BackgroundParticle from "../../components/Background-particle";
 import "font-awesome/css/font-awesome.min.css";
 
 import { BsFillEyeSlashFill } from "react-icons/bs";
-const emailRegex = RegExp(
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+const loginRegex = RegExp(
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
-const flag = 0;
+
 const formValid = ({ formErrors, ...rest }) => {
     let valid = true;
 
@@ -36,6 +37,7 @@ class login extends Component {
         this.state = {
             login: null,
             password: null,
+            redirect: '',
             formErrors: {
                 login: "",
                 password: "",
@@ -55,10 +57,10 @@ class login extends Component {
         e.preventDefault();
         if (formValid(this.state)) {
             console.log(`
-        --Enviando--
-        Email ${this.state.login}
-        Senha ${this.state.password}
-      `);
+            --Enviando--
+            Login ${this.state.login}
+            Senha ${this.state.password}
+            `);
             const user = {
                 login: this.state.login,
                 password: this.state.password,
@@ -66,6 +68,12 @@ class login extends Component {
             API.post("/login", user).then((res) => {
                 console.log(res);
                 console.log(res.data);
+                if (res.data.success === "true") {
+                    localStorage.setItem("authTk", res.data.token);
+                    this.setState({ redirect: "/" });
+                } else {
+                    //Caso não logue
+                }
             });
         } else {
             console.error("Form invalid");
@@ -77,9 +85,9 @@ class login extends Component {
         let formErrors = this.state.formErrors;
         switch (name) {
             case "login":
-                formErrors.login = emailRegex.test(value)
+                formErrors.login = loginRegex.test(value)
                     ? ""
-                    : "Endereço de email inválido";
+                    : "Login inválido";
                 break;
             case "password":
                 formErrors.password =
@@ -88,30 +96,37 @@ class login extends Component {
             default:
                 break;
         }
-        this.setState({ formErrors, [name]: value }, () =>
-            console.log(this.state)
-        );
+        this.setState({ formErrors, [name]: value }, () => console.log(this.state));
     };
-    state = {
-        nome: this.props.nome,
-    };
-    setNome(e) {
-        this.setState({ nome: e.target.value });
+    componentWillMount(){
+      let tk = {
+        token: localStorage.getItem('authTk')
+      };
+      if (tk) {
+        API.post("/login/teste-token", tk).then((res) => {
+          console.log(res.data);
+          if (res.data.success === "true") {
+            this.setState({ redirect: "/" });
+          }
+        });
+      }
     }
     render() {
         const { nome } = this.state;
         const { formErrors } = this.state;
+        if (this.state.redirect) {
+          return <Redirect to={this.state.redirect} />
+        }
         return (
             <React.Fragment>
                 <Container fluid="xl">
-                    <backgroundParticle></backgroundParticle>
+                    <BackgroundParticle></BackgroundParticle>
                     <Container fluid="xl login">
                         <Row className="TopShelf">
                             <h1 className="CadT">LOGIN</h1>
                         </Row>
                         <Row>
                             <Col className="image">
-                                
                                 <div className="imageBlue">
                                     <img src={ead} className="img-logo login" />
                                 </div>
@@ -129,7 +144,6 @@ class login extends Component {
                                                 type="text"
                                                 name="login"
                                                 placeholder="Login"
-                                                //  className={formErrors.email.length > 0 ? "Erro" : null}
                                                 className="inputC"
                                                 required
                                                 onChange={this.handleChange}
@@ -156,7 +170,6 @@ class login extends Component {
                                                 type="password"
                                                 name="password"
                                                 placeholder="Senha"
-                                                // className={formErrors.email.length > 0 ? "Erro" : null}
                                                 className="inputC"
                                                 required
                                                 onChange={this.handleChange}
@@ -168,24 +181,26 @@ class login extends Component {
                                             {" "}
                                             <a className="one" href="#">
                                                 1º Acesso{" "}
-                                            </a>
-                                            {" "}
+                                            </a>{" "}
                                             <a className="oneTwo" href="#">
                                                 Esqueci a senha{" "}
                                             </a>
                                             <input
-                                            type="submit"
-                                            value="Entrar"
-                                            className="CadBtn"
-                                            ></input>  
+                                                type="submit"
+                                                value="Entrar"
+                                                className="CadBtn"
+                                            ></input>
                                         </div>
                                     </form>
                                 </div>
                             </Col>
                         </Row>
                         <hr />
-                        <div className="footer"> 
-                            <a href="https://ead-lab.coursify.me" className="linkC">
+                        <div className="footer">
+                            <a
+                                href="https://ead-lab.coursify.me"
+                                className="linkC"
+                            >
                                 https://ead-lab.coursify.me/
                             </a>
                         </div>
