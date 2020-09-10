@@ -48,7 +48,7 @@ const Sidebar = (props) => {
                             Validar funcionários
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey="reports"> {/* arquivo q vai ao clicar */}
+                    <NavItem eventKey="administrador"> {/* arquivo q vai ao clicar */}
                         <NavIcon>
                             <FontAwesomeIcon icon={faChartPie} />
                         </NavIcon>
