@@ -31,12 +31,6 @@ body{
 
 .Caption h1{
   color: white;
-  text-shadow:
-      4px 4px 0 #000,
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
 }
 .EfctvDiv{
   background-color: midnightblue;
@@ -64,12 +58,11 @@ span{
   transform: translate(-50%, -50%);
   font-size:6vw;
   letter-spacing:0.1em;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(7, 161, 199);
-  text-shadow: 
+  -webkit-text-fill-color: blue;
+  -webkit-text-stroke-color: blue;
+  /*text-shadow: 
 						3px 3px #1622c4,
-						5px 5px #000000;
+						5px 5px #000000;*/
 }
 @media (min-width: 425px) and (max-width:600px) {
  span{
