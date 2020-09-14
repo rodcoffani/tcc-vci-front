@@ -13,13 +13,8 @@ const Sidebar = (props) => {
             <SideNav 
                 onSelect={(selected) => {
                     var flag = selected;
-                    const to = '/' +selected; // só um exemplo com a tela login
+                    const to = '/' +selected; 
                     history.push(to);
-                
-                    // const to = '/' + selected;
-                    // if (props.location.pathname !== to) {
-                    //     history.push(to);
-                    // }
                 }}
             >
                 <SideNav.Toggle />

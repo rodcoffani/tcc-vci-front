@@ -11,12 +11,13 @@ const Sidebar = (props) => {
             <SideNav 
                 onSelect={(selected) => {
                     var flag = selected;
-
+                    const to = '/' +selected;
+                    history.push(to);
                 }}
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected={props.pageSelected}>
-                    <NavItem eventKey="profile">
+                    <NavItem eventKey="profile-employee">
                         <NavIcon>
                             <FontAwesomeIcon icon={faIdBadge} />
                         </NavIcon>
