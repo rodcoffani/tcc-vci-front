@@ -18,6 +18,7 @@ class admin extends Component {
                 </Container>
                 <center>
                     <div className="mother">
+                        <br />
                         <div className="ranking">
                             <div className="ranking-title">
                                 <div className="ranking-title-combo">
