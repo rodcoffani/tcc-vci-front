@@ -5,8 +5,26 @@ import Sidebar from '../../components/Sidebar/admin';
 import { Container, Row, Col} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import backgroundParticle from '../../components/Background-particle'
+import API from "../../api";
+import $ from "jquery";
 
 class admin extends Component {
+    constructor(props){
+        super(props);
+        this.selectUsers();
+    }
+
+    selectUsers(){
+        let tk = {
+            token: localStorage.getItem('authTk')
+        };
+        if (tk) {
+            API.get("/", tk).then((res) => {
+                console.log(res.data);
+            });
+        }
+    }
+    
     render() {
         return(
             <div>
