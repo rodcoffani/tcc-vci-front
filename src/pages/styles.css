@@ -1,9 +1,10 @@
 body{
   
   background-color: #FFF;
+
 }
 .content {
-  background-color: #FFF;
+  background-color: rgb(13, 64, 117);
 }
 
 .main-title
@@ -42,8 +43,6 @@ body{
   border: none!important;
   border-radius: 34px;
   background: #fafafa;
-  box-shadow:  5px 5px 13px #e1e1e1, 
-               -5px -5px 13px #ffffff;
 }
 .EfctvCardG:hover > *{
  opacity: 0.2;
@@ -58,7 +57,7 @@ span{
   transform: translate(-50%, -50%);
   font-size:6vw;
   letter-spacing:0.1em;
-  -webkit-text-fill-color: rgb(0, 0, 0);
+  -webkit-text-fill-color: rgb(241, 241, 241);
 }
 @media (min-width: 425px) and (max-width:600px) {
  span{

@@ -4,9 +4,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../components/Header';
 import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup, Jumbotron} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import Sidebar from '../components/Sidebar/user';
 import slider_01 from "../assets/images/slider_01.png";
 import slider_02 from "../assets/images/slider_02.PNG";
 import slider_03 from "../assets/images/slider_03.PNG";
+import home_mid from "../assets/images/home_mid.png";
 import {faClock,faUser,faCheckCircle,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
 import {animateScroll as scroll} from 'react-scroll'
 import {Helmet} from "react-helmet"
@@ -15,6 +17,7 @@ function App() {
   return (
   <React.Fragment>
     <Helmet title="Home" />
+    <Sidebar pageSelected="reports"/>
       <Header headerTitle="Home"/>
       <div className="content">
         <Container style={{width:"75vw"}}>
@@ -23,7 +26,6 @@ function App() {
             <img
               className="d-block w-100"
               src={slider_01}
-              height="485px"
               alt="P. slide"
             />
             <Carousel.Caption className='Caption'>
@@ -34,7 +36,6 @@ function App() {
             <img
               className="d-block w-100"
               src={slider_02}
-              height="485px"
               alt="S. slide"
             />
 
@@ -46,7 +47,6 @@ function App() {
             <img
               className="d-block w-100"
               src={slider_03}
-              height="485px"
               alt="T. slide"
             />
 
@@ -63,7 +63,7 @@ function App() {
           ><hr color="#000"></hr>
         <Row>
         <Card>
-        <Card.Img variant="top" src="https://ichef.bbci.co.uk/news/410/cpsprodpb/3CC7/production/_112395551_eso2008a.jpg" />
+        <Card.Img variant="top" src={home_mid} />
         <Card.Body>
           <Card.Text>
           <div>
@@ -100,8 +100,9 @@ function App() {
               <span >Nossos jogos!</span>
               </Col>
           </Row>
-          <Row> 
-          <Col xs={12} md={12}>
+          <Row>
+          <Col xs={1} md={1}></Col>
+          <Col xs={10} md={10}>
           <CardGroup style={{
           marginTop:'78px',
           marginBottom:'20px'
