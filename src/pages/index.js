@@ -27,7 +27,7 @@ function App() {
               alt="P. slide"
             />
             <Carousel.Caption className='Caption'>
-              <h1>Coloca</h1>
+              <h1>Sorteio de questões</h1>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -39,7 +39,7 @@ function App() {
             />
 
             <Carousel.Caption className='Caption'>
-              <h1>um</h1>
+              <h1>Forca</h1>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -51,7 +51,7 @@ function App() {
             />
 
             <Carousel.Caption className='Caption'>
-              <h1>texto</h1>
+              <h1>Comparação de resultados</h1>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

@@ -58,11 +58,7 @@ span{
   transform: translate(-50%, -50%);
   font-size:6vw;
   letter-spacing:0.1em;
-  -webkit-text-fill-color: blue;
-  -webkit-text-stroke-color: blue;
-  /*text-shadow: 
-						3px 3px #1622c4,
-						5px 5px #000000;*/
+  -webkit-text-fill-color: rgb(0, 0, 0);
 }
 @media (min-width: 425px) and (max-width:600px) {
  span{
