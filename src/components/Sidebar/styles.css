@@ -5,6 +5,7 @@
   width: 64px;
   background-color: #282c34;
   position: fixed;
+  z-index: 3;
 }
 .sidenav---sidenav---_2tBP {
     position: absolute;

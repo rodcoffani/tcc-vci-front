@@ -1,9 +1,10 @@
 body{
   
   background-color: #FFF;
+
 }
 .content {
-  background-color: #FFF;
+  background-color: rgb(13, 64, 117);
 }
 
 .main-title
@@ -31,12 +32,6 @@ body{
 
 .Caption h1{
   color: white;
-  text-shadow:
-      4px 4px 0 #000,
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
 }
 .EfctvDiv{
   background-color: midnightblue;
@@ -48,8 +43,6 @@ body{
   border: none!important;
   border-radius: 34px;
   background: #fafafa;
-  box-shadow:  5px 5px 13px #e1e1e1, 
-               -5px -5px 13px #ffffff;
 }
 .EfctvCardG:hover > *{
  opacity: 0.2;
@@ -64,12 +57,7 @@ span{
   transform: translate(-50%, -50%);
   font-size:6vw;
   letter-spacing:0.1em;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(7, 161, 199);
-  text-shadow: 
-						3px 3px #1622c4,
-						5px 5px #000000;
+  -webkit-text-fill-color: rgb(241, 241, 241);
 }
 @media (min-width: 425px) and (max-width:600px) {
  span{
