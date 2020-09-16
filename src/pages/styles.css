@@ -1,10 +1,18 @@
-body{
+body
+{
   
-  background-color: #FFF;
+  background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
 
 }
-.content {
-  background-color: rgb(13, 64, 117);
+.content
+{
+  background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
+}
+
+.mid
+{
+  padding-left: 15px;
+  background-color: white;
 }
 
 .main-title
@@ -12,6 +20,17 @@ body{
     margin: 0 0 65px 0;
     font-size: 40px;
     text-align: center;
+}
+
+p
+{
+  text-align: justify;
+  padding-right: 20px;
+}
+
+h3
+{
+  font-size: 2vw!important;
 }
 
 
@@ -42,7 +61,7 @@ body{
   margin-right: 5px;
   border: none!important;
   border-radius: 34px;
-  background: #fafafa;
+  background: #b1b1b1!important;
 }
 .EfctvCardG:hover > *{
  opacity: 0.2;
@@ -55,9 +74,9 @@ span{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size:6vw;
+  font-size: 4vw;
   letter-spacing:0.1em;
-  -webkit-text-fill-color: rgb(241, 241, 241);
+  -webkit-text-fill-color: rgb(0, 0, 0);
 }
 @media (min-width: 425px) and (max-width:600px) {
  span{

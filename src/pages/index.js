@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import backgroundParticle from '../components/Background-particle'
 import Header from '../components/Header';
 import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup, Jumbotron} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -20,8 +21,9 @@ function App() {
     <Sidebar pageSelected="reports"/>
       <Header headerTitle="Home"/>
       <div className="content">
-        <Container style={{width:"75vw"}}>
-        <Carousel>
+        <Container style={{width:"80vw", marginTop:"30px"}}>
+        <backgroundParticle></backgroundParticle>
+        <Carousel style={{height:"20vw"}}>
           <Carousel.Item>
             <img
               className="d-block w-100"
@@ -29,7 +31,7 @@ function App() {
               alt="P. slide"
             />
             <Carousel.Caption className='Caption'>
-              <h1>Sorteio de questões</h1>
+              <h1 style={{fontWeight:"bold"}}>Sorteio de questões</h1>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -40,7 +42,7 @@ function App() {
             />
 
             <Carousel.Caption className='Caption'>
-              <h1>Forca</h1>
+              <h1 style={{fontWeight:"bold"}}>Forca</h1>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -51,53 +53,33 @@ function App() {
             />
 
             <Carousel.Caption className='Caption'>
-              <h1>Comparação de resultados</h1>
+              <h1 style={{fontWeight:"bold"}}>Comparação de resultados</h1>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        </Container>
 
-      <div>
-      <Container style={{
-          marginTop:'58px' }}
-          ><hr color="#000"></hr>
+      <div className="mid">
         <Row>
-        <Card>
-        <Card.Img variant="top" src={home_mid} />
-        <Card.Body>
-          <Card.Text>
-          <div>
+            <Col style={{float:"left", paddingTop:"50px"}}>
+            <img src={home_mid} style={{height:"35vw"}}/>
+            </Col>
+            <Col style={{paddingTop:"70px", textAlign:"justify", paddingRight:"70px", fontSize:"1.2vw"}}>
             <h3>O projeto</h3>
             <p>O EAD-LAB é uma plataforma de jogos didáticos que têm como objetivo fazer com que o aprendizado seja uma atividade atrativa e prazerosa. Fornecendo uma experiência que é, ao mesmo tempo, confortável e instrutiva, nossos jogos são concebidos no intuito de facilitar a assimilação de conteúdos com uma dinâmica elaborada para expandir e reforçar o desenvolvimento profissional dos usuários.</p>
             
-            <ul style={{listStyle:"none"}}>
+            <ul style={{listStyle:"none", marginLeft:"-42px"}}>
               <li><FontAwesomeIcon icon={faCheckCircle}/> Combinação perfeita entre educação e entretenimento;</li>
               <li><FontAwesomeIcon icon={faCheckCircle}/> Testa as capacidades de se trabalhar em equipe;</li>
               <li><FontAwesomeIcon icon={faCheckCircle}/> Procedimento rápido e intuitivo;</li>
               <li><FontAwesomeIcon icon={faCheckCircle}/> Viável e portátil.</li>
             </ul>
-                
-            </div>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-          
-                          
+            </Col>
+                        
         </Row>
-      </Container>
-      
-      </div>
-        
-
-
-
-        <Container fluid style={{
-          marginTop:'58px'
-        }} >
         
           <Row >
-              <Col >
-              <span >Nossos jogos!</span>
+              <Col>
+              <span style={{fontSize:"3.5vw"}}>Nossos jogos!</span>
               </Col>
           </Row>
           <Row>
@@ -110,15 +92,14 @@ function App() {
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
-                <Card.Title style={{textAlign:'center'}}>Título</Card.Title>
+                <Card.Title style={{textAlign:'center', fontSize:"1.3vw"}}>Título</Card.Title>
                 <Card.Text>
                   1.
                 </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item></ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item style={{fontSize:"1vw"}}><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
+                <ListGroup.Item style={{fontSize:"1vw"}}><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
@@ -127,15 +108,14 @@ function App() {
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
-                <Card.Title style={{textAlign:'center'}}>Título</Card.Title>
+                <Card.Title style={{textAlign:'center', fontSize:"1.3vw"}}>Título</Card.Title>
                 <Card.Text>
                   2.
                 </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item></ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item style={{fontSize:"1vw"}}><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
+                <ListGroup.Item style={{fontSize:"1vw"}}><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
@@ -144,15 +124,14 @@ function App() {
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
-                <Card.Title  style={{textAlign:'center'}}>Título</Card.Title>
+                <Card.Title  style={{textAlign:'center', fontSize:"1.3vw"}}>Título</Card.Title>
                 <Card.Text>
                   3.
                 </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item></ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item style={{fontSize:"1vw"}}><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
+                <ListGroup.Item style={{fontSize:"1vw"}}><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
@@ -161,8 +140,8 @@ function App() {
           </CardGroup>
           </Col>
           </Row>
+          </div>
         </Container>
-      
       </div>
       <a style={{textAlign:'center', cursor:'pointer',color:'white'}} onClick={()=>scroll.scrollToTop()} >
       <div style={{backgroundColor:'black'}} className='Topo'>
