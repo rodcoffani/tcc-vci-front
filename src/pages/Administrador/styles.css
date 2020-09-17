@@ -36,6 +36,7 @@
 .ranking-title-title{
     float: left;
     padding-top: 15px;
+    padding-left: 40%;
     width: 70%;
     align-content: center;
 }
@@ -89,6 +90,7 @@
     height: auto;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 50%;
 }
 
 .employee-text{
@@ -147,7 +149,7 @@
 }
 
 .profile-photo{
-    width: 50%;
+    width: 65%;
     margin-top: 5%;
     height: 200px;
     background-color: yellow;
@@ -159,6 +161,7 @@
     height: 270px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
+    padding-left: 20%;
 }
 
 .admin{
@@ -239,6 +242,10 @@
         height: auto;
     }
 
+    .employee-title{
+        padding-left: 25%;
+    }
+
     .header-fixed > thead,
     .header-fixed > tbody,
     .header-fixed > thead > tr,
@@ -274,6 +281,7 @@
         height: 100%;
         font-size: 100%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{
@@ -313,7 +321,6 @@
         margin-left: 18%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -321,6 +328,10 @@
     
     .employee-body{
         height: auto;
+    }
+
+    .employee-title{
+        padding-left: 25%;
     }
 
     .header-fixed > thead,
@@ -357,6 +368,7 @@
         height: 100%;
         font-size: 100%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{
@@ -406,6 +418,10 @@
         height: auto;
     }
 
+    .employee-title{
+        padding-left: 27%;
+    }
+
     .header-fixed > thead,
     .header-fixed > tbody,
     .header-fixed > thead > tr,
@@ -440,6 +456,7 @@
         height: 100%;
         font-size: 100%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{
@@ -488,6 +505,10 @@
         height: auto;
     }
 
+    .employee-title{
+        padding-left: 20%;
+    }
+
     .header-fixed > thead,
     .header-fixed > tbody,
     .header-fixed > thead > tr,
@@ -526,6 +547,7 @@
         height: 100%;
         font-size: 100%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{
@@ -574,6 +596,10 @@
         height: auto;
     }
 
+    .employee-title{
+        padding-left: 50%;
+    }
+
     .header-fixed > thead,
     .header-fixed > tbody,
     .header-fixed > thead > tr,
@@ -612,6 +638,7 @@
         height: 100%;
         font-size: 100%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{
@@ -660,6 +687,10 @@
         height: auto;
     }
 
+    .employee-title{
+        padding-left: 50%;
+    }
+
     .header-fixed > thead,
     .header-fixed > tbody,
     .header-fixed > thead > tr,
@@ -698,6 +729,7 @@
         height: 100%;
         font-size: 120%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{
@@ -746,6 +778,10 @@
         height: auto;
     }
 
+    .employee-title{
+        padding-left: 30%;
+    }
+
     .header-fixed > thead,
     .header-fixed > tbody,
     .header-fixed > thead > tr,
@@ -785,6 +821,7 @@
         height: 100%;
         font-size: 145%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{
@@ -833,6 +870,10 @@
         height: auto;
     }
 
+    .employee-title{
+        padding-left: 30%;
+    }
+
     .header-fixed > thead,
     .header-fixed > tbody,
     .header-fixed > thead > tr,
@@ -871,6 +912,7 @@
         height: 100%;
         font-size: 130%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{
@@ -919,6 +961,10 @@
         height: auto;
     }
 
+    .employee-title{
+        padding-left: 10%;
+    }
+
     .header-fixed > thead,
     .header-fixed > tbody,
     .header-fixed > thead > tr,
@@ -957,6 +1003,7 @@
         height: 100%;
         font-size: 130%;
         text-align: left;
+        padding-left: 10%;
     }
     
     .admin{

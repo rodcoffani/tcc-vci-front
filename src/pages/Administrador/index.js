@@ -5,8 +5,27 @@ import Sidebar from '../../components/Sidebar/admin';
 import { Container, Row, Col} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import BackgroundParticle from '../../components/Background-particle'
+import API from "../../api";
+import $ from "jquery";
 
 class admin extends Component {
+    constructor(props){
+        super(props);
+        const users = this.selectUsers();
+    }
+
+    selectUsers(){
+        const tk = {
+            token: localStorage.getItem('authTk')
+        };
+        if (tk) {
+            API.get("/users/all", tk).then((res) => {
+                console.log(res.data);
+                return res.data;
+            });
+        }
+    }
+    
     render() {
         return(
             <div>
@@ -84,26 +103,8 @@ class admin extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {/* a fazer: colocar infos na tabela por "for" ? puxando do banco --> link do validar mandar pra pag de validação que ainda n foi feita */}
                                     <tr>
-                                        <td>Mark</td>
-                                        <td>validado</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td><a href="">VALIDAR</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>validado</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>validado</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>validado</td>
+                                        {this.users}
                                     </tr>
                                 </tbody>
                                 </table>

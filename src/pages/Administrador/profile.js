@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar/admin';
 import { Container, Row, Col} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
-import backgroundParticle from '../../components/Background-particle'
+import BackgroundParticle from '../../components/Background-particle'
 
 class profile extends Component {
     render() {
@@ -14,10 +14,11 @@ class profile extends Component {
                 <Header headerTitle="Administrador"/>
                 <React.Fragment>
                 <Container fluid="xl">
-                    <backgroundParticle></backgroundParticle>
+                    <BackgroundParticle></BackgroundParticle>
                 </Container>
                 <center>
                     <div className="mother">
+                        <br />
                         <div className="profile">
                             <div className="profile-photo">
                                 

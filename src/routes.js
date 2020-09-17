@@ -33,7 +33,7 @@ const Routes = () => {
                     component={ Roleta }
                 />
                 <Route
-                    path="/perfil"
+                    path="/profile"
                     component={ Perfil }
                 />
             </Switch>
