@@ -57,9 +57,9 @@ class login extends Component {
         e.preventDefault();
         if (formValid(this.state)) {
             console.log(`
-            --Enviando--
-            Login ${this.state.login}
-            Senha ${this.state.password}
+                --Enviando--
+                Email ${this.state.login}
+                Senha ${this.state.password}
             `);
             const user = {
                 login: this.state.login,
