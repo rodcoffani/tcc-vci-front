@@ -121,9 +121,11 @@ export default class Saudacao extends Component {
                             </Col>
                         </Row>
                         <hr />
-                        <a href="https://ead-lab.coursify.me" className="linkC">
-                            https://ead-lab.coursify.me/
-                        </a>
+                        <div className="footer"> 
+                            <a href="https://ead-lab.coursify.me" className="linkC">
+                                https://ead-lab.coursify.me/
+                            </a>
+                        </div>
                     </Container>
                 </Container>
             </React.Fragment>

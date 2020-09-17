@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Header from '../../components/Header';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../components/Sidebar/admin';
 import { Container, Row, Col} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import BackgroundParticle from '../../components/Background-particle'
@@ -10,7 +10,7 @@ class admin extends Component {
     render() {
         return(
             <div>
-                <Sidebar />
+                <Sidebar pageSelected="reports"/>
                 <Header headerTitle="Administrador"/>
                 <React.Fragment>
                 <Container fluid="xl">
@@ -18,6 +18,7 @@ class admin extends Component {
                 </Container>
                 <center>
                     <div className="mother">
+                        <br />
                         <div className="ranking">
                             <div className="ranking-title">
                                 <div className="ranking-title-combo">
