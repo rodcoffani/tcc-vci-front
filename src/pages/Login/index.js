@@ -10,7 +10,6 @@ import { Redirect } from "react-router-dom";
 import $ from "jquery";
 import BackgroundParticle from "../../components/Background-particle";
 import "font-awesome/css/font-awesome.min.css";
-import {Redirect} from "react-router-dom";
 
 import { BsFillEyeSlashFill } from "react-icons/bs";
 const loginRegex = RegExp(

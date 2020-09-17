@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import "./style.css";
-import Header from "../../components/Header";
+import Header from "../../../components/Header";
 import { Container, Row, Col } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import axios from "axios";
-import API from "../../api";
-import ead from "../../assets/images/ead-lab.png";
+import API from "../../../api";
+import ead from "../../../assets/images/ead-lab.png";
 import $ from "jquery";
-import BackgroundParticle from "../../components/Background-particle";
+import BackgroundParticle from "../../../components/Background-particle";
 import "font-awesome/css/font-awesome.min.css";
 import { Redirect } from "react-router-dom";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 
-export default class home extends Component {
+export default class Roleta extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -115,7 +115,4 @@ export default class home extends Component {
             </React.Fragment>
         );
     }
-}
-module.exports = {
-
 }
