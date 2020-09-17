@@ -9,102 +9,15 @@ import ead from "../../assets/images/ead-lab.png";
 import $ from "jquery";
 import BackgroundParticle from "../../components/Background-particle";
 import "font-awesome/css/font-awesome.min.css";
-import {Redirect} from "react-router-dom";
-
+import { Redirect } from "react-router-dom";
 import { BsFillEyeSlashFill } from "react-icons/bs";
-const emailRegex = RegExp(
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-);
-const flag = 0;
-const formValid = ({ formErrors, ...rest }) => {
-    let valid = true;
 
-    //Valida o form vazio
-    Object.values(formErrors).forEach((val) => {
-        val.length > 0 && (valid = false);
-    });
-    //Valida o form que foi preenchido
-    Object.values(rest).forEach((val) => {
-        val === null && (valid = false);
-    });
-
-    return valid;
-};
-
-class login extends Component {
+export default class home extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            login: null,
-            password: null,
-            formErrors: {
-                login: "",
-                password: "",
-            },
-        };
-    }
-    handleClick = (e) => {
-        var texto = $("#pass").attr("type");
-        if (texto == "password") {
-            $("#pass").attr("type", "text");
-        } else {
-            $("#pass").attr("type", "password");
-        }
-    };
-
-    handleSubmit = (e) => {
-        e.preventDefault();
-        if (formValid(this.state)) {
-            console.log(`
-                --Enviando--
-                Email ${this.state.login}
-                Senha ${this.state.password}
-            `);
-            const user = {
-                login: this.state.login,
-                password: this.state.password,
-            };
-            API.post("/login", user).then((res) => {
-                console.log(res);
-                console.log(res.data);
-            });
-        } else {
-            console.error("Form invalid");
-        }
-    };
-    handleChange = (e) => {
-        e.preventDefault();
-        const { name, value } = e.target;
-        let formErrors = this.state.formErrors;
-        switch (name) {
-            case "login":
-                formErrors.login = emailRegex.test(value)
-                    ? ""
-                    : "Endereço de email inválido";
-                break;
-            case "password":
-                formErrors.password =
-                    value.length < 6 ? "Senha precisa ter 6 caracteres" : "";
-                break;
-            default:
-                break;
-        }
-        this.setState({ formErrors, [name]: value }, () =>
-            console.log(this.state)
-        );
-    };
-    state = {
-        nome: this.props.nome,
-    };
-    setNome(e) {
-        this.setState({ nome: e.target.value });
+        this.state = {};
     }
     render() {
-        const { nome } = this.state;
-        const { formErrors } = this.state;
-        if(1==1) {
-            return <Redirect to='/' />
-        }
         return (
             <React.Fragment>
                 <Container fluid="xl">
@@ -164,7 +77,6 @@ class login extends Component {
                                                 type="password"
                                                 name="password"
                                                 placeholder="Senha"
-                                                // className={formErrors.email.length > 0 ? "Erro" : null}
                                                 className="inputC"
                                                 required
                                                 onChange={this.handleChange}
@@ -198,54 +110,12 @@ class login extends Component {
                             https://ead-lab.coursify.me/
                         </a>
                     </Container>
-                    {/* NAO APAGARRRRRRR SERÁ USADO PARA VALIDACAO
-            
-          
-              ///////////////////////////// ATENCAO /////////////////////////////////////////////
-          }
-
-            {/* <div className="form-wrapper">
-
-              <h1>Login</h1>
-              <form onSubmit={this.handleSubmit} noValidate>
-                <div className="email">
-                  <label htmlFor="email">Email</label>
-                  <input 
-                    type="email"
-                    className={formErrors.email.length > 0 ? "Erro" : null}
-                    placeholder="Email" 
-                    name="email" 
-                    noValidate
-                    onChange={this.handleChange}
-                  />
-                  {formErrors.email.length > 0 && (
-                    <span className="errorMessage">{formErrors.email}</span>
-                  )}
-                </div>
-                <div className="password">
-                  <label htmlFor="password">Senha</label>
-                  <input 
-                    type="password"
-                    className={formErrors.password.length > 0 ? "Erro" : null}
-                    placeholder="Senha" 
-                    name="password" 
-                    noValidate
-                    onChange={this.handleChange}
-                  />
-                  {formErrors.password.length > 0 && (
-                    <span className="errorMessage">{formErrors.password}</span>
-                  )}
-                </div>
-                <div className="createAccount">
-                  <button type="submit">Login</button>
-                  <small>Esqueceu sua senha</small>
-                </div>
-              </form> 
-                  </div>*/}
+                    {}
                 </Container>
             </React.Fragment>
         );
     }
 }
+module.exports = {
 
-export default login;
+}

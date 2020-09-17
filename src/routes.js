@@ -5,6 +5,7 @@ import Home from "./pages";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Administrador from "./pages/Administrador";
+import Roleta from "./pages/Jogos/Roleta";
 
 const Routes = () => {
     return (
@@ -25,6 +26,10 @@ const Routes = () => {
                 <Route 
                     path="/administrador"
                     component={ Administrador }
+                />
+                <Route 
+                    path="/jogos/10"
+                    component={ Roleta }
                 />
             </Switch>
         </BrowserRouter>
