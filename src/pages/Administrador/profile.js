@@ -18,6 +18,7 @@ class profile extends Component {
                 </Container>
                 <center>
                     <div className="mother">
+                        <br />
                         <div className="profile">
                             <div className="profile-photo">
                                 

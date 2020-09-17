@@ -28,7 +28,7 @@ const Routes = () => {
                     component={ Administrador }
                 />
                 <Route 
-                    path="/perfil"
+                    path="/profile"
                     component={ Perfil }
                 />
             </Switch>
