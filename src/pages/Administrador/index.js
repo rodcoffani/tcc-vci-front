@@ -11,16 +11,17 @@ import $ from "jquery";
 class admin extends Component {
     constructor(props){
         super(props);
-        this.selectUsers();
+        const users = this.selectUsers();
     }
 
     selectUsers(){
-        let tk = {
+        const tk = {
             token: localStorage.getItem('authTk')
         };
         if (tk) {
-            API.get("/", tk).then((res) => {
+            API.get("/users/all", tk).then((res) => {
                 console.log(res.data);
+                return res.data;
             });
         }
     }
@@ -102,26 +103,8 @@ class admin extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {/* a fazer: colocar infos na tabela por "for" ? puxando do banco --> link do validar mandar pra pag de validação que ainda n foi feita */}
                                     <tr>
-                                        <td>Mark</td>
-                                        <td>validado</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td><a href="">VALIDAR</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>validado</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>validado</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>validado</td>
+                                        {this.users}
                                     </tr>
                                 </tbody>
                                 </table>
