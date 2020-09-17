@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Particles from 'react-particles-js'; 
 import "./styles.css";
 
-export default class backgroundParticle extends Component {
+export default class BackgroundParticle extends Component {
     constructor(props) {
         super(props);
     }

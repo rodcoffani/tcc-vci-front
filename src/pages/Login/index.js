@@ -10,6 +10,7 @@ import { Redirect } from "react-router-dom";
 import $ from "jquery";
 import BackgroundParticle from "../../components/Background-particle";
 import "font-awesome/css/font-awesome.min.css";
+import {Redirect} from "react-router-dom";
 
 import { BsFillEyeSlashFill } from "react-icons/bs";
 const loginRegex = RegExp(
@@ -57,9 +58,9 @@ class login extends Component {
         e.preventDefault();
         if (formValid(this.state)) {
             console.log(`
-            --Enviando--
-            Login ${this.state.login}
-            Senha ${this.state.password}
+                --Enviando--
+                Email ${this.state.login}
+                Senha ${this.state.password}
             `);
             const user = {
                 login: this.state.login,

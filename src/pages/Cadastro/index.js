@@ -5,16 +5,25 @@ import { Component } from "react";
 import { Helmet } from "react-helmet";
 import { cpfMask } from "./mask";
 import ead from "../../assets/images/ead-lab.png";
-import backgroundParticle from '../../components/Background-particle'
+import axios from "axios";
+import API from "../../api";
+import BackgroundParticle from '../../components/Background-particle'
 export default class Saudacao extends Component {
     constructor(props) {
         super(props);
-        this.state = { cpf: "" };
+        this.state = { cpf: "",nome:"",sobrenome:"",email:"" };
         this.handlechange = this.handlechange.bind(this);
     }
 
     handlechange(e) {
         this.setState({ cpf: cpfMask(e.target.value) });
+    }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        API.post("/users/",this.state).then((res) => {
+            console.log(res);
+        })
+        
     }
     state = {
         nome: this.props.nome,
@@ -30,8 +39,8 @@ export default class Saudacao extends Component {
                 <Helmet title="Cadastro" />
 
                 <Container fluid="xl">
-                    <backgroundParticle></backgroundParticle>
-                    <Container fluid="xl login">
+                    <BackgroundParticle></BackgroundParticle>
+                    <Container fluid="xl">
                         <Row className="TopShelf">
                             <h1 className="CadT">CADASTRO</h1>
                         </Row>
@@ -43,7 +52,9 @@ export default class Saudacao extends Component {
                             </Col>
                             <Col>
                                 <div className="FormC">
-                                    <form>
+                                    <form
+                                        onSubmit={this.handleSubmit}
+                                    >
                                         <p className="FieldD">
                                             <b className="Presc">Nome:</b>
                                             <input
@@ -51,8 +62,10 @@ export default class Saudacao extends Component {
                                                 placeholder="Nome"
                                                 className="inputC"
                                                 required
-                                                onChange={(e) =>
-                                                    this.setNome(e)
+                                                onChange={(e) => // pega o valor do input e adiciona na variavel this.state
+                                                    this.setState({
+                                                        nome : e.target.value
+                                                    })
                                                 }
                                                 maxLength="45"
                                             ></input>
@@ -63,6 +76,11 @@ export default class Saudacao extends Component {
                                                 type="text"
                                                 placeholder="Sobrenome"
                                                 className="inputCS"
+                                                onChange={(e) =>
+                                                    this.setState({
+                                                        sobrenome : e.target.value
+                                                    })
+                                                }
                                                 required
                                                 maxLength="45"
                                             ></input>
@@ -75,6 +93,11 @@ export default class Saudacao extends Component {
                                                 className="inputC"
                                                 required
                                                 maxLength="45"
+                                                onChange={(e) =>
+                                                    this.setState({
+                                                        email : e.target.value
+                                                    })
+                                                }
                                             ></input>
                                         </p>
                                         <p className="FieldD">
