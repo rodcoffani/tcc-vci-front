@@ -32,7 +32,7 @@ body {
     color: rgb(184, 184, 184);
 }
 .oneAcess {
-    width: 69%;
+    width: 55%;
     text-align: center;
     font-weight: bold;
 }
@@ -133,14 +133,18 @@ a.one {
 }
 .col.image {
     text-align: center;
-    padding-top: 19px;
+    padding-top: 25px;
+    padding-right: 10%;
 }
 p.FieldD.senha {
-    width: 66%;
+    width: 100%;
 }
 a.icone {
     margin-left: 65%;
     color: white;
+}
+.one{    
+    margin-left: -29px;
 }
 @media (min-width: 320px) and (max-width: 375px) {
     .TituloC {
@@ -173,10 +177,14 @@ a.icone {
         max-height: 20vh;
     }
     p.FieldD.senha {
-        width: 100%;
+        width: 122%;
+        margin-left: -22%;
     }
     a.icone {
         margin-left: 29.2vh;
+    }
+    .one {
+        margin-left: 21px;
     }
 }
 
