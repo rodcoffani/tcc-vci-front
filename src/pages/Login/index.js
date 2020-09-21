@@ -188,7 +188,7 @@ class login extends Component {
                                             <input
                                                 type="submit"
                                                 value="Entrar"
-                                                className="CadBtn"
+                                                className="CadBtn cad"
                                             ></input>
                                         </div>
                                     </form>

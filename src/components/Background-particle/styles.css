@@ -140,11 +140,14 @@ p.FieldD.senha {
     width: 100%;
 }
 a.icone {
-    margin-left: 65%;
+    margin-right: 14%;
     color: white;
 }
 .one{    
-    margin-left: -29px;
+    margin-left: -109px;
+}
+.CadBtn.cad{
+    margin-right: 40%;
 }
 @media (min-width: 320px) and (max-width: 375px) {
     .TituloC {

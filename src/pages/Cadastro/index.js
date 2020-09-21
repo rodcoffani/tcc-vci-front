@@ -40,20 +40,21 @@ export default class Saudacao extends Component {
 
                 <Container fluid="xl">
                     <BackgroundParticle></BackgroundParticle>
-                    <Container fluid="xl">
+                    <Container fluid="xl cadastro">
                         <Row className="TopShelf">
                             <h1 className="CadT">CADASTRO</h1>
                         </Row>
                         <Row>
                             <Col className="image">
                                 <div className="imageBlue">
-                                    <img src={ead} className="img-logo login" />
+                                    <img src={ead} className="img-logo cad" />
                                 </div>
                             </Col>
                             <Col>
                                 <div className="FormC">
                                     <form
                                         onSubmit={this.handleSubmit}
+                                        className="cad"
                                     >
                                         <p className="FieldD">
                                             <b className="Presc">Nome:</b>
