@@ -24,7 +24,7 @@ const Sidebar = (props) => {
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected={props.pageSelected}>
-                     <NavItem eventKey="games"> {/* arquivo q vai ao clicar */}
+                     <NavItem eventKey="games">
                          <NavIcon>
                             <FontAwesomeIcon icon={faGamepad} />
                         </NavIcon>
@@ -32,7 +32,7 @@ const Sidebar = (props) => {
                             Jogos
                         </NavText>
                     </NavItem>
-                    <NavItem eventKey="userLogin"> {/* arquivo q vai ao clicar */}
+                    <NavItem eventKey="Login">
                         <NavIcon>
                             <FontAwesomeIcon icon={faIdBadge} />
                         </NavIcon>
@@ -40,7 +40,7 @@ const Sidebar = (props) => {
                              Login
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey="userCad"> {/* arquivo q vai ao clicar */}
+                    <NavItem eventKey="Cadastro">
                         <NavIcon>
                             <FontAwesomeIcon icon={faUserFriends} />
                         </NavIcon>
