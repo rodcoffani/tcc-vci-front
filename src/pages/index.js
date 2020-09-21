@@ -9,7 +9,8 @@ import Sidebar from '../components/Sidebar/user';
 import slider_01 from "../assets/images/slider_01.png";
 import slider_02 from "../assets/images/slider_02.PNG";
 import slider_03 from "../assets/images/slider_03.PNG";
-import home_mid from "../assets/images/home_mid.png";
+import home_mid_pc from "../assets/images/home_mid_pc.png";
+import home_mid_mobile from "../assets/images/home_mid_mobile.png";
 import {faClock,faUser,faCheckCircle,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
 import {animateScroll as scroll} from 'react-scroll'
 import {Helmet} from "react-helmet"
@@ -61,7 +62,7 @@ function App() {
       <div className="mid">
         <Row>
             <Col md={6}>
-            <img className="img_mid" src={home_mid}/>
+            <div className="img_mid"/>
             </Col>
             <Col md={5}>
             <h2 className="h2_projeto">O projeto</h2>
