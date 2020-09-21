@@ -19,9 +19,10 @@ background: transparent!important;
     outline: none;
     border: none;
     border-bottom: solid 1px black;
-    width: 105%;
+    
     color:white;
     height: 7vh;
+    width: 88%;
     
 }
 .inputCS{
@@ -80,7 +81,18 @@ background: transparent!important;
     background-color: transparent !important;
     padding: 5% 3%;
 }
-
+.container-xl.cadastro{
+    margin-top: 17%;
+}
+form.cad{
+    display: block;
+}
+.img-logo.cad{
+    height: 31vw;
+    min-height: 150px;
+    max-height: 260px;
+    margin-top: 89px;
+}
 @keyframes Flick {
     from {color: white;background-color: white !important;} to
     {color: transparent;background-color: transparent;}
@@ -106,7 +118,7 @@ background: transparent!important;
     color: white;
     background-color: #015df0 !important;
     border:none;
-    margin-right: 25%;
+    margin-right: 50%;
     margin-top: 10px;
     padding-bottom: 40px!important;
     height: 8vh;
@@ -157,6 +169,7 @@ background: transparent!important;
     .CadBtn{
         width: 150px;
         font-size: large;
+        margin-right: 25%;
     }
     .CadS{
         font-size: 5vw;
@@ -172,6 +185,9 @@ background: transparent!important;
     .inputCC{
         width: 100%;
         font-size: x-large;
+    }
+    .FormC{
+        padding-left: 22px;
     }
 
 }
@@ -419,12 +435,13 @@ background: transparent!important;
         font-size: x-large;
     }
     .inputCS{
-        width: 90%;
+        width: 88%;
         font-size: x-large;
     }
     .inputCC{
+        display: flex;
+        width: 88%;
         font-size: x-large;
-        width: 114%;
     }
     .CadBtn{
         
@@ -471,12 +488,13 @@ background: transparent!important;
     }
     
     .inputCS{
-        width: 90%;
+        width: 88%;
         font-size: x-large;
     }
     .inputCC{
+        display: flex;
+        width: 88%;
         font-size: x-large;
-        width: 114%;
     }
     .CadT{
         margin: auto;
