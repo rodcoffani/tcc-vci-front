@@ -29,10 +29,13 @@ const Routes = () => {
                     component={ Administrador }
                 />
                 <Route 
+<<<<<<< HEAD
                     path="/jogos/10"
                     component={ Roleta }
                 />
                 <Route
+=======
+>>>>>>> 62031ea... mudei uma rota do adm - perfil
                     path="/profile"
                     component={ Perfil }
                 />
