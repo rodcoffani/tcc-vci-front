@@ -92,14 +92,14 @@ function App() {
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
-                <Card.Title style={{textAlign:'center'}}>Título</Card.Title>
+                <Card.Title style={{textAlign:'center'}}>Roleta</Card.Title>
                 <Card.Text style={{marginLeft:"0.1vw"}}>
                   1.
                 </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 10 minutos</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 2</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
@@ -108,14 +108,14 @@ function App() {
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
-                <Card.Title style={{textAlign:'center'}}>Título</Card.Title>
+                <Card.Title style={{textAlign:'center'}}>Quiz</Card.Title>
                 <Card.Text style={{marginLeft:"0.1vw"}}>
                   2.
                 </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 15 minutos</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 1</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
@@ -124,14 +124,14 @@ function App() {
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
-                <Card.Title  style={{textAlign:'center'}}>Título</Card.Title>
+                <Card.Title  style={{textAlign:'center'}}>Caça-palavras</Card.Title>
                 <Card.Text style={{marginLeft:"0.1vw"}}>
                   3.
                 </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração:</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores:</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 15 minutos</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 1</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
               <a href='Cadastro'>Jogar!</a>
