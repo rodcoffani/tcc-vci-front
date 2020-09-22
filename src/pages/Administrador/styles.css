@@ -138,7 +138,7 @@
 
 
 
-/* cadastro de jogos */
+/* perfil */
 .profile{
     float: left;
     width: 25%;
@@ -216,6 +216,46 @@
 .header-fixed-profile > thead > tr > th {
     width: 33%;
     float: left;
+}
+
+/* cadastro de jogos */
+.insert-games{
+    width: 80%;
+    height: 600px;
+    background-color: white;
+    border-radius: 5%;
+    align-content: center;
+    padding-right: 10%;
+}
+
+.game-type-combo{
+    float: left;
+    justify-content: flex-start; 
+    padding-top: 15px;
+    margin-left: 7%;
+    color: black;
+}
+
+.select-game-type{
+    margin-top: 2%;
+    margin-right: 31%;
+    width: 100%;
+}
+
+label{
+    font-size: 100%;
+    margin-top: 2%;
+    color: black;
+    font-weight: normal;
+}
+
+.form-insert-questions{
+    margin-top: 5%;
+    margin-left: 7%;
+}
+
+.input{
+    width: 90%;
 }
 
 /* design celular */
