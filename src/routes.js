@@ -7,6 +7,7 @@ import Cadastro from "./pages/Cadastro";
 import Administrador from "./pages/Administrador";
 import Roleta from "./pages/Jogos/Roleta";
 import Perfil from "./pages/Administrador/profile"
+import CadastroJogos from "./pages/Administrador/insertGames"
 
 const Routes = () => {
     return (
@@ -35,6 +36,10 @@ const Routes = () => {
                 <Route
                     path="/profile"
                     component={ Perfil }
+                />
+                <Route
+                    path="/insertGames"
+                    component={ CadastroJogos }
                 />
             </Switch>
         </BrowserRouter>
