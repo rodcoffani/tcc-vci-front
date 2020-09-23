@@ -4,8 +4,10 @@ import { faIdBadge, faGamepad, faUserFriends, faChartPie, faSignOutAlt } from "@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
 import './styles.css';
+import { useHistory } from "react-router-dom";
 
 const Sidebar = (props) => {
+    let history = useHistory();
     return (
         <div className="sidebar">
             <SideNav 
@@ -17,6 +19,14 @@ const Sidebar = (props) => {
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected={props.pageSelected}>
+                    <NavItem eventKey="">
+                            <NavIcon>
+                                <FontAwesomeIcon icon={faGamepad} />
+                            </NavIcon>
+                            <NavText>
+                                Jogos
+                            </NavText>           
+                    </NavItem>
                     <NavItem eventKey="profile-employee">
                         <NavIcon>
                             <FontAwesomeIcon icon={faIdBadge} />
@@ -24,14 +34,6 @@ const Sidebar = (props) => {
                         <NavText>
                             Perfil
                         </NavText>
-                    </NavItem>
-                    <NavItem eventKey="games">
-                        <NavIcon>
-                            <FontAwesomeIcon icon={faGamepad} />
-                        </NavIcon>
-                        <NavText>
-                             Jogos
-                        </NavText>           
                     </NavItem>
                     <NavItem eventKey="logout">
                         <NavIcon>
