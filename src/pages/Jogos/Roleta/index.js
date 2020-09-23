@@ -42,7 +42,7 @@ export default class Roleta extends Component {
         return (
             <React.Fragment>
                 <Helmet title="Jogo 10" />
-                <Sidebar pageSelected="reports"/>
+                <Sidebar />
                 <Header headerTitle="Jogo de perguntas"/>
                 <div className="content">
                     <div className="players">
@@ -81,9 +81,9 @@ export default class Roleta extends Component {
                         <Wheel></Wheel>
                     </div>
                     <div className="questionsBar">
-                        <span className="streak1">&nbsp;</span>
-                        <span className="streak2">&nbsp;</span>
-                        <span className="streak3">&nbsp;</span>
+                        <div className="streak1">&nbsp;</div>
+                        <div className="streak2">&nbsp;</div>
+                        <div className="streak3">&nbsp;</div>
                     </div>
                 </div>
             </React.Fragment>
