@@ -1,6 +1,6 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .content
+    .content-roleta
     {
         background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
         width: 100vw;
@@ -92,7 +92,7 @@
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : 321px) and (orientation : landscape) {
-    .content
+    .content-roleta
     {
         background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
         width: 100vh;
@@ -184,7 +184,7 @@
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) and (orientation : portrait)  {
-    .content
+    .content-roleta
     {
         background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
         width: 100vw;
@@ -293,7 +293,7 @@
 
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
-    .content
+    .content-roleta
     {
         background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
         width: 100vh;
