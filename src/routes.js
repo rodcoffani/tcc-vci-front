@@ -29,7 +29,7 @@ const Routes = () => {
                     component={ Administrador }
                 />
                 <Route 
-                    path="/jogos/10"
+                    path="/jogos/roleta"
                     component={ Roleta }
                 />
                 <Route
