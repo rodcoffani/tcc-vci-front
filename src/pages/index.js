@@ -5,7 +5,7 @@ import backgroundParticle from '../components/Background-particle'
 import Header from '../components/Header';
 import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import Sidebar from '../components/Sidebar/user';
+import Sidebar from '../components/Sidebar/employee';
 import slider_01 from "../assets/images/slider_01.png";
 import slider_02 from "../assets/images/slider_02.PNG";
 import slider_03 from "../assets/images/slider_03.PNG";
@@ -19,7 +19,7 @@ function App() {
   return (
   <React.Fragment>
     <Helmet title="Home" />
-    <Sidebar pageSelected="reports"/>
+    <Sidebar pageSelected=""/>
       <Header headerTitle="Home"/>
       <div className="content">
         <Container className="cont" fluid="xl">
@@ -77,7 +77,7 @@ function App() {
             </Col>
 
             </Row>
-
+          <br />
           <Row >
               <Col>
               <span>Nossos jogos!</span>
@@ -93,25 +93,19 @@ function App() {
               <Card.Img variant="top" src="" />
               <Card.Body>
                 <Card.Title style={{textAlign:'center'}}>Roleta</Card.Title>
-                <Card.Text style={{marginLeft:"0.1vw"}}>
-                  1.
-                </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
                 <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 10 minutos</ListGroup.Item>
                 <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 2</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
-              <a href='Cadastro'>Jogar!</a>
+              <a href='jogos/roleta'>Jogar!</a>
               </Card.Footer>
             </Card>
             <Card className='EfctvCard'>
               <Card.Img variant="top" src="" />
               <Card.Body>
                 <Card.Title style={{textAlign:'center'}}>Quiz</Card.Title>
-                <Card.Text style={{marginLeft:"0.1vw"}}>
-                  2.
-                </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
                 <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 15 minutos</ListGroup.Item>
@@ -125,9 +119,6 @@ function App() {
               <Card.Img variant="top" src="" />
               <Card.Body>
                 <Card.Title  style={{textAlign:'center'}}>Caça-palavras</Card.Title>
-                <Card.Text style={{marginLeft:"0.1vw"}}>
-                  3.
-                </Card.Text>
               </Card.Body>
               <ListGroup variant="flush">
                 <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 15 minutos</ListGroup.Item>
