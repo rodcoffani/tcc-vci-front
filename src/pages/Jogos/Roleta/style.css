@@ -1,0 +1,93 @@
+.content
+{
+  background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
+  border-radius: 3%;
+  width: 100%;
+  padding-right: 15%;
+}
+
+.players{
+    width: 100%;
+    height:20%;
+}
+
+.p1{
+    display: inline-block;
+    width: 40%;
+    margin-right: 10%;
+    margin-top: 1%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    font-weight: bold;
+    /* opacity: 0.5; */
+}
+
+.p2{
+    display: inline-block;
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 1%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    font-weight: bold;
+    /* opacity: 0.5; */
+}
+
+.profilePic{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 2%;
+    border-radius: 50%;
+    opacity: 1;
+    background-color: #ff0707;
+}
+
+.employeeName{
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 12%;
+}
+
+.totensContainer{
+    margin-left: 20%;
+}
+
+.totens{
+    width: 8%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid #000000;
+}
+
+.questionsBar{
+    width: 100%;
+    height: 6%;
+    display: inline-block;
+    margin-left: 12%;
+}
+
+
+.streak1{
+    width: 5%;
+    height: 5%;
+    margin-top: 22%;
+    margin-left: -4%;
+    border-radius: 50% 0% 0% 50%;
+    background-color: rgb(43, 158, 158);
+}
+.streak2{
+    width: 5%;
+    height: 5%;
+    margin-top: 22%;
+    margin-left: 2%;
+    background-color: aqua;
+}
+.streak3{
+    width: 5%;
+    height: 5%;
+    margin-top: 22%;
+    margin-left: 8%;
+    border-radius: 0% 50% 50% 0%;
+    background-color: aqua;
+}
