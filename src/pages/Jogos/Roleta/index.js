@@ -1,16 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
 import Header from "../../../components/Header";
-import { Container, Row, Col } from "react-bootstrap";
 import { Helmet } from "react-helmet";
-import axios from "axios";
-import API from "../../../api";
-import ead from "../../../assets/images/ead-lab.png";
-import $ from "jquery";
-import BackgroundParticle from "../../../components/Background-particle";
 import "font-awesome/css/font-awesome.min.css";
-import { Redirect } from "react-router-dom";
-import { BsFillEyeSlashFill } from "react-icons/bs";
 import Sidebar from '../../../components/Sidebar/user';
 import Wheel from '../../../components/Wheel/Wheel';
 import image_000 from '../../../assets/images/jogo_10/image_000.png';
@@ -42,13 +34,13 @@ export default class Roleta extends Component {
         return (
             <React.Fragment>
                 <Helmet title="Jogo 10" />
-                <Sidebar />
-                <Header headerTitle="Jogo de perguntas"/>
-                <div className="content">
-                    <div className="players">
-                        <div className="p1">
+                {/* <Sidebar /> */}
+                <Header headerTitle="Jogo da Roletas"/>
+                <div className="content-roleta">
+                    <div className="playersArea">
+                        <div className="player p1">
                             <img className="profilePic" src="https://www.menshair.style/wp-content/uploads/2019/03/black-men-hairstyles-59.jpg"/>
-                            <div className="employeeName">Danyel Sena</div>
+                            <div className="employeeName">Danyel</div>
                             <div className="totensContainer">
                                 <img className="totens" src={image_000}/>
                                 <img className="totens" src={image_003}/>
@@ -61,13 +53,13 @@ export default class Roleta extends Component {
                                 <img className="totens" src={image_017}/>
                             </div>
                         </div>
-                        <div className="p2">
+                        <div className="player p2">
                             <img className="profilePic" src="https://i.pinimg.com/originals/07/a9/97/07a9978da38303b87c13243d55942df4.jpg"/>
-                            <div className="employeeName">Caroline Santos</div>
+                            <div className="employeeName">Caroline</div>
                             <div className="totensContainer">
-                                <img className="totens" src={image_000}/>
+                                <img className="totens" src={image_001}/>
                                 <img className="totens" src={image_003}/>
-                                <img className="totens" src={image_005}/>
+                                <img className="totens" src={image_004}/>
                                 <img className="totens" src={image_007}/>
                                 <img className="totens" src={image_009}/>
                                 <img className="totens" src={image_011}/>

@@ -1,95 +1,388 @@
-.content
-{
-  background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
-  border-radius: 3%;
-  width: 100%;
-  padding-right: 15%;
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .content
+    {
+        background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .playersArea {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 20vh;
+        padding: 1vh 0;
+    }
+
+    .player {
+        display: flex;
+        flex-wrap: wrap;
+        width: 45vw;
+        border-radius: 20px;
+        background-color: #ffffffaa;
+    }
+    .p2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .profilePic {
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        margin: 2%;
+        border-radius: 50%;
+    }
+
+    .employeeName {
+        padding: 8% 2%;
+        font-size: 12pt;
+        font-weight: bold;
+    }
+
+    .totensContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-left: 10%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+    }
+
+    .totens {
+        width: 14%;
+        margin: 0.1vh 0.1vw;
+        border: 1px solid #000000;
+    }
+
+    .quizWheel {
+        display: flex;
+        justify-content: center;
+        width: 80vw;
+        margin: 5vh auto;
+    }
+
+    .questionsBar{
+        width: 100vw;
+        margin: 10vh auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .streak1{
+        width: 10vw;
+        height: 5%;
+        border-radius: 45% 0% 0% 45%;
+        background-color: rgb(43, 158, 158);
+    }
+    .streak2{
+        width: 10vw;
+        height: 5%;
+        margin: 0 1vh;
+        background-color: aqua;
+    }
+    .streak3{
+        width: 10vw;
+        height: 5%;
+        border-radius: 0% 45% 45% 0%;
+        background-color: aqua;
+    }
 }
 
-.players{
-    width: 100%;
-    height:20%;
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) and (orientation : landscape) {
+    .content
+    {
+        background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
+        width: 100vh;
+        height: 100vw;
+    }
+
+    .playersArea {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 50vh;
+        padding: 1vw 0;
+    }
+
+    .player {
+        display: flex;
+        flex-wrap: wrap;
+        width: 45vw;
+        height: 40vh;
+        border-radius: 20px;
+        background-color: #ffffffaa;
+    }
+    .p2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .profilePic {
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        margin: 3%;
+        border-radius: 50%;
+    }
+
+    .employeeName {
+        padding: 6% 2%;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+    }
+
+    .totensContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 0 5% 5% 5%;
+    }
+
+    .totens {
+        width: 14%;
+        margin: 0.5vh 0.1vw;
+        border: 1px solid #000000;
+    }
+
+    .quizWheel {
+        display: flex;
+        justify-content: center;
+        width: 40vw;
+        margin: 5vh auto;
+    }
+
+    .questionsBar{
+        width: 100vw;
+        margin: 10vh 0 0 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .streak1{
+        width: 6vw;
+        height: 5%;
+        border-radius: 45% 0% 0% 45%;
+        background-color: rgb(43, 158, 158);
+    }
+    .streak2{
+        width: 6vw;
+        height: 5%;
+        margin: 0 1vh;
+        background-color: aqua;
+    }
+    .streak3{
+        width: 6vw;
+        height: 5%;
+        border-radius: 0% 45% 45% 0%;
+        background-color: aqua;
+    }
 }
 
-.p1{
-    display: inline-block;
-    width: 40%;
-    margin-right: 10%;
-    margin-top: 1%;
-    border-radius: 20px;
-    background-color: #ffffff;
-    font-weight: bold;
-    /* opacity: 0.5; */
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) and (orientation : portrait)  {
+    .content
+    {
+        background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .playersArea {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 20vh;
+        padding: 1vh 0;
+    }
+
+    .player {
+        display: flex;
+        flex-wrap: wrap;
+        width: 45vw;
+        border-radius: 20px;
+        background-color: #ffffffaa;
+    }
+    .p2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .profilePic {
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        margin: 2%;
+        border-radius: 50%;
+    }
+
+    .employeeName {
+        padding: 8% 2%;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+    }
+
+    .totensContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-left: 10%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+    }
+
+    .totens {
+        width: 14%;
+        margin: 0.1vh 0.1vw;
+        border: 1px solid #000000;
+    }
+
+    .quizWheel {
+        display: flex;
+        justify-content: center;
+        width: 80vw;
+        margin: 5vh auto;
+    }
+
+    .questionsBar{
+        width: 100vw;
+        margin: 10vh 0 0 0;
+        position: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .streak1{
+        width: 10vw;
+        height: 5%;
+        border-radius: 45% 0% 0% 45%;
+        background-color: rgb(43, 158, 158);
+    }
+    .streak2{
+        width: 10vw;
+        height: 5%;
+        margin: 0 1vh;
+        background-color: aqua;
+    }
+    .streak3{
+        width: 10vw;
+        height: 5%;
+        border-radius: 0% 45% 45% 0%;
+        background-color: aqua;
+    }
 }
 
-.p2{
-    display: inline-block;
-    width: 40%;
-    margin-left: 10%;
-    margin-top: 1%;
-    border-radius: 20px;
-    background-color: #ffffff;
-    font-weight: bold;
-    /* opacity: 0.5; */
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
 }
 
-.profilePic{
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin: 2%;
-    border-radius: 50%;
-    opacity: 1;
-    background-color: #ff0707;
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
 }
 
-.employeeName{
-    display: inline-block;
-    font-size: 20px;
-    margin-left: 12%;
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
 }
 
-.totensContainer{
-    margin-left: 10%;
-    margin-right: 5%;
-    margin-bottom: 5%;
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    .content
+    {
+        background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
+        width: 100vh;
+        height: 100vw;
+    }
+
+    .playersArea{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 30vh;
+        padding: 1vh 0 0 0;
+    }
+
+    .player{
+        display: flex;
+        flex-wrap: wrap;
+        height: 25vh;
+        width: 25vw;
+        border-radius: 20px;
+        background-color: #ffffffaa;
+    }
+    
+    .p2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .profilePic{
+        overflow: hidden;
+        width: 50px;
+        height: 50px;
+        margin: 2%;
+        border-radius: 50%;
+    }
+
+    .employeeName{
+        padding: 5%;
+        font-size: 16pt;
+        font-weight: bold;
+    }
+
+    .totensContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-left: 10%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+    }
+
+    .totens{
+        width: 12.5%;
+        margin: 0.5vh 0.1vw;
+        border: 1px solid #000000;
+    }
+
+    .questionsBar{
+        width: 100vh;
+        margin: 1vh auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .streak1{
+        width: 5%;
+        height: 5%;
+        display: inline-block;
+        border-radius: 50% 0% 0% 50%;
+        background-color: rgb(43, 158, 158);
+    }
+    .streak2{
+        width: 5%;
+        height: 5%;
+        display: inline-block;
+        margin-left: 3%;
+        background-color: aqua;
+    }
+    .streak3{
+        width: 5%;
+        height: 5%;
+        display: inline-block;
+        margin-left: 3%;
+        border-radius: 0% 50% 50% 0%;
+        background-color: aqua;
+    }
 }
 
-.totens{
-    width: 20%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    border: 1px solid #000000;
-}
-
-.questionsBar{
-    width: 100%;
-    margin-top: 2%;
-    position: center;
-    display: flex;
-    justify-content: center;
-}
-
-
-.streak1{
-    width: 5%;
-    height: 5%;
-    display: inline-block;
-    border-radius: 50% 0% 0% 50%;
-    background-color: rgb(43, 158, 158);
-}
-.streak2{
-    width: 5%;
-    height: 5%;
-    display: inline-block;
-    margin-left: 3%;
-    background-color: aqua;
-}
-.streak3{
-    width: 5%;
-    height: 5%;
-    display: inline-block;
-    margin-left: 3%;
-    border-radius: 0% 50% 50% 0%;
-    background-color: aqua;
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+/* Styles */
 }
