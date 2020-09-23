@@ -296,8 +296,8 @@
     .content-roleta
     {
         background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
-        width: 100vh;
-        height: 100vw;
+        width: 100vw;
+        height: 100vh;
     }
 
     .playersArea{
