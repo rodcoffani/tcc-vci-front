@@ -13,46 +13,69 @@ class Wheel extends Component {
             wheel: document.querySelector(".wheel"),
             startButton: document.querySelector(".button"),
             numeroJogo: 0,
+            vez: 1,
+            sorteados: [],
         };
     }
     /*
 
     =============== CATEGORIAS DE ACORDO COM O NUMERO ===============
-        1 - Ordem de Producao e Preparacao de maquina
-        2 - Politica de Qualidade
-        3 - Indicadores de Qualidade
-        4 - Identificacao de Rastreabilidade
-        5 - Controle de Qualidade
-        6 - Acao corretiva
-        7 - Instrucao operacional
-        8 - Procedimentos de Qualidade
-        9 - Desperdicio e sobra de Processo 
+        0 - Ordem de Producao e Preparacao de maquina
+        1 - Politica de Qualidade
+        2 - Indicadores de Qualidade
+        3 - Identificacao de Rastreabilidade
+        4 - Controle de Qualidade
+        5 - Acao corretiva
+        6 - Instrucao operacional
+        7 - Procedimentos de Qualidade
+        8 - Desperdicio e sobra de Processo 
 
     */
+
+    //funcao para validar
+    validate = (val) => {
+        var aux = false;
+
+        this.state.sorteados.map((item) => {
+            if (val == item) {
+                aux = true;
+            }
+        });
+
+        return aux;
+    };
 
     //funcao chamada quando clica no botao girar
     handleButtonClick = () => {
         //Sorteia uma das categorias de 1 a 9 (inclusive)
-        let sortedVal = Math.random() * 9 + 1;
+        let sortedVal = 0;
+        do {
+            sortedVal = Math.floor(Math.random() * 9);
+        } while (this.validate(sortedVal));
 
         //Deg representa a rotacao a ser aplicada a wheel. de 40 em 40
         //Pois 9 categorias / 360 graus = 40 graus
-        let deg = Math.floor(3600 + (sortedVal - 1) * 40);
+        let deg = Math.floor(3600 * this.state.vez + sortedVal * 40);
+        deg = 20 + deg;
+        console.log(sortedVal);
         //Aqui no Deg ele nao gira de forma constante pois Math.Randon retorna ponto flutuante
         //Para que gire de forma constante use Math.floor em sorted val.
 
-        let newWheel = this.state.wheel;
+        this.setState({
+            wheel: document.querySelector(".wheel"),
+            startButton: document.querySelector(".button"),
+            vez: this.state.vez + 1,
+        });
 
         //Para regular o tempo que ele demora para parar troque o valor de segundos
-        newWheel.style.transition = "all 5s ease-out";
-        newWheel.style.transform = `rotate(${deg}deg)`;
+        this.state.wheel.style.transition = "all 6s ease-out";
+        this.state.wheel.style.transform = `rotate(${deg}deg)`;
 
         //Guarda a categoria no State
         this.setState({
-            numeroJogo: Math.floor(sortedVal),
+            numeroJogo: sortedVal,
+            sorteados: [sortedVal].concat(this.state.sorteados),
         });
-
-        //console.log(Math.floor(sortedVal));
     };
 
     render() {
