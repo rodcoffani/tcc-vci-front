@@ -160,8 +160,9 @@
     margin-top: 5%;
     height: 270px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 150%;
+    font-size: 120%;
     padding-left: 20%;
+    text-align: center;
 }
 
 .admin{
@@ -221,41 +222,51 @@
 /* cadastro de jogos */
 .insert-games{
     width: 80%;
-    height: 600px;
+    height: 800px;
     background-color: white;
     border-radius: 5%;
     align-content: center;
     padding-right: 10%;
 }
 
-.game-type-combo{
+.labels-insert{
     float: left;
-    justify-content: flex-start; 
-    padding-top: 15px;
-    margin-left: 7%;
-    color: black;
+    width: 30%;
+    height: 100%;
+    padding-left: 5%;
 }
 
-.select-game-type{
-    margin-top: 2%;
-    margin-right: 31%;
-    width: 100%;
+.inputs-insert{
+    float: left;
+    width: 70%;
+    height: 100%;
+    padding-left: 2%;
+    padding-top: 1%;
 }
 
 label{
     font-size: 100%;
-    margin-top: 2%;
+    width: 100%;
+    margin-top: 6%;
     color: black;
     font-weight: normal;
-}
-
-.form-insert-questions{
-    margin-top: 5%;
-    margin-left: 7%;
+    text-align: right;
 }
 
 .input{
-    width: 90%;
+    width: 100%;
+    margin-top: 1%;
+}
+
+.select-jogos{
+    width: 50%;
+    margin-top: 1%;
+}
+
+.add-question{
+    width: 5%;
+    margin-top: 2%;
+    margin-left: 45%;
 }
 
 /* design celular */

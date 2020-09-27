@@ -179,7 +179,7 @@ class login extends Component {
 
                                         <div className="oneAcess">
                                             {" "}
-                                            <a className="one" href="#">
+                                            <a className="one" href="cadastro">
                                                 1º Acesso{" "}
                                             </a>{" "}
                                             <a className="oneTwo" href="#">

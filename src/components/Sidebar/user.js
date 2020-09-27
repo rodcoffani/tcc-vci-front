@@ -15,16 +15,11 @@ const Sidebar = (props) => {
                     var flag = selected;
                     const to = '/' +selected; // só um exemplo com a tela login
                     history.push(to);
-                
-                    // const to = '/' + selected;
-                    // if (props.location.pathname !== to) {
-                    //     history.push(to);
-                    // }
                 }}
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected={props.pageSelected}>
-                     <NavItem eventKey="games">
+                     <NavItem eventKey="">
                          <NavIcon>
                             <FontAwesomeIcon icon={faGamepad} />
                         </NavIcon>

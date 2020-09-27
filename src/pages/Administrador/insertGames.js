@@ -5,6 +5,10 @@ import Sidebar from '../../components/Sidebar/admin';
 import { Container, Row, Col, Form} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import BackgroundParticle from '../../components/Background-particle'
+import addQuestion from '../../assets/images/mais.PNG'
+import { InputGroup } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
+import { FormLabel } from 'react-bootstrap';
 
 class insertGames extends Component {
     render() {
@@ -20,18 +24,53 @@ class insertGames extends Component {
                     <div className="mother">
                         <br />
                         <div className="insert-games">
-                            <div className="game-type-combo">
-                                    Selecionar tipo do jogo: <br />
-                                    <select className = "select-game-type">
-                                        <option value="a">Quiz</option>
-                                        <option value="b">Perguntados</option>
-                                    </select>
-                            </div> 
-                            <div className = "form-insert-questions">
+                            <div className="labels-insert">
                                 <Form>
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter email" className = "input"/>
+                                    <FormLabel>Selecionar tipo de jogo:</FormLabel><br />
+                                    <FormLabel>Nome do jogo:</FormLabel>
+                                    <FormLabel>Perguntas:</FormLabel>
                                 </Form>
+                            </div>
+                            <div className="inputs-insert">
+                                <Form>
+                                    <FormControl as="select">
+                                        <option value="a" className = "select-jogos">Perguntados</option>
+                                        <option value="b" className = "select-jogos">Quiz</option>
+                                    </FormControl>
+                                    <FormControl type="text" placeholder="Digite o nome do jogo" className = "input"/>
+                                    <FormControl type="text" placeholder="Digite o enunciado da pergunta" className = "input"/>
+                                  
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Radio aria-label="Radio button for following text input" />
+                                        </InputGroup.Prepend>
+                                        <FormControl type="text" placeholder="Digite uma alternativa de resposta" className = "input"/>
+                                    </InputGroup>
+                         
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Radio aria-label="Radio button for following text input" />
+                                        </InputGroup.Prepend>
+                                        <FormControl type="text" placeholder="Digite uma alternativa de resposta" className = "input"/>
+                                    </InputGroup>
+
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Radio aria-label="Radio button for following text input" />
+                                        </InputGroup.Prepend>
+                                        <FormControl type="text" placeholder="Digite uma alternativa de resposta" className = "input"/>
+                                    </InputGroup>
+
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Radio aria-label="Radio button for following text input" />
+                                        </InputGroup.Prepend>
+                                        <FormControl type="text" placeholder="Digite uma alternativa de resposta" className = "input"/>
+                                    </InputGroup>
+
+                                    
+                                    <img src={addQuestion} className="add-question"></img>
+                                 </Form>
                             </div>
                         </div>
 
