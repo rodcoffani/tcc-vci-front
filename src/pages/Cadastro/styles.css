@@ -193,8 +193,7 @@ form.cad{
 }
 @media (min-width:365px) and (max-width: 375px) {
     .TituloC{
-        
-    width: 310px;
+        width: 310px;
     }
     .CadT{
         margin: auto;
@@ -206,6 +205,9 @@ form.cad{
     .inputC{
         width: 100%;
         font-size: x-large;
+    }
+    .inputC.log{
+        width: 130%;
     }
 }
 

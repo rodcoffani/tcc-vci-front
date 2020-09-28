@@ -144,7 +144,7 @@ class login extends Component {
                                                 type="text"
                                                 name="login"
                                                 placeholder="Login"
-                                                className="inputC"
+                                                className="inputC log"
                                                 required
                                                 onChange={this.handleChange}
                                                 noValidate
@@ -170,7 +170,7 @@ class login extends Component {
                                                 type="password"
                                                 name="password"
                                                 placeholder="Senha"
-                                                className="inputC"
+                                                className="inputC log"
                                                 required
                                                 onChange={this.handleChange}
                                                 noValidate
