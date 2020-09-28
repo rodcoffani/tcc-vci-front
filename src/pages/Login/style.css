@@ -120,14 +120,16 @@ input.error {
     font-weight: lighter;
 }
 
-.oneTwo{
-    color: white;
-    padding: 0px 36px 0px 60px;
-}
 .footer{
     text-align: center;
     width: 100%;
 }
 .container-xl.login{
     margin-top: 20%;
+}
+@media (min-width: 365px) and (max-width: 375px) {
+    .inputC {
+        width: 130%;
+        font-size: x-large; 
+    }
 }

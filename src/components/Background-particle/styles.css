@@ -146,6 +146,10 @@ a.icone {
 .one{    
     margin-left: -109px;
 }
+.oneTwo{
+    color: white;
+    padding: 0px 36px 0px 60px;
+}
 .CadBtn.cad{
     margin-right: 40%;
 }
@@ -184,17 +188,27 @@ a.icone {
         margin-left: -22%;
     }
     a.icone {
-        margin-left: 29.2vh;
+        margin-left: 20.2vh;
+        margin-right:2%;
     }
     .one {
-        margin-left: 21px;
+        margin-left: -12px;
+    }
+    .oneTwo{
+        padding: 0px 5px 0px 30px;
+
+    }
+    .CadBtn.cad {
+        margin-right: 23%;
     }
 }
 
 @media (min-width: 375px) and (max-width: 812px) {
     a.icone{
-        margin-left: 65%;
+        margin-left: 0.2vh;
+        margin-right: -24%;
     }
+   
 
 }
 @media (min-width: 365px) and (max-width: 375px) {
@@ -209,7 +223,9 @@ a.icone {
         font-size: large;
     }
     .inputC {
+        width: 130%;
         font-size: x-large;
+        
     }
     .oneAcess {
         width: 100%;
@@ -247,6 +263,15 @@ a.icone {
     .oneAcess {
         width: 100%;
         text-align: center;
+    }
+    form.formLogin {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-left: 19%;
+    }
+    a.icone {
+        margin-left: 0.2vh;
+        margin-right: -3%;
     }
 }
 @media (min-width: 463px) and (max-width: 504px) {
