@@ -29,8 +29,12 @@
 .ranking-title-combo{
     float: left;
     align-content: flex-start;
-    padding-left: 15px;
     padding-top: 15px;
+    margin-left: 2%;
+}
+
+.ranking-title-combo-title{
+    margin-right: 18%;
 }
 
 .ranking-title-title{

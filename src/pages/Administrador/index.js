@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './styles.css';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar/admin';
-import { Container, Row, Col} from 'react-bootstrap'
+import { Container, Row, Col, Form, FormControl} from 'react-bootstrap'
 import BackgroundParticle from '../../components/Background-particle'
 import API from "../../api";
 
@@ -29,11 +29,13 @@ const Admin = (props) => {
                     <div className="ranking">
                         <div className="ranking-title">
                             <div className="ranking-title-combo">
-                                Filtrar por jogo: <br />
-                                <select>
-                                    <option value="a">Quiz</option>
-                                    <option value="b">Perguntados</option>
-                                </select>
+                                <div className="ranking-title-combo-title">Filtrar por jogo: <br /></div>
+                                <Form>
+                                    <FormControl as="select">
+                                        <option value="a" className = "select-jogos">Perguntados</option>
+                                        <option value="b" className = "select-jogos">Quiz</option>
+                                    </FormControl>
+                                </Form>
                             </div> 
                             <div className="ranking-title-title">
                                 <p className="ranking-text">Ranking</p>
