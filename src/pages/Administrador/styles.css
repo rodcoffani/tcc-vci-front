@@ -270,8 +270,31 @@ label{
 .add-question{
     width: 5%;
     margin-top: 2%;
-    margin-left: 45%;
+    border-radius: 50%;
+    color: white;
+    font-style: bold;
+    background: radial-gradient(
+        circle,
+        rgba(58, 167, 180, 1) 0%,
+        rgba(96, 69, 252, 1) 100%
+    );
 }
+
+.list{
+    color: black;
+    margin-top: 3%;
+}
+
+.list p{
+    padding: 10%;
+}
+
+.icons{
+    margin-top: 1%;
+    cursor: pointer;
+    font-size: 115%;
+}
+
 
 /* design celular */
 
