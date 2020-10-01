@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import Header from "../../components/Header";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal, Alert} from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import API from "../../api";
@@ -10,12 +10,12 @@ import { Redirect } from "react-router-dom";
 import $ from "jquery";
 import BackgroundParticle from "../../components/Background-particle";
 import "font-awesome/css/font-awesome.min.css";
-
+import { useHistory } from "react-router-dom";
 import { BsFillEyeSlashFill } from "react-icons/bs";
+import { ButtonBase } from "@material-ui/core";
 const loginRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
-
 const formValid = ({ formErrors, ...rest }) => {
     let valid = true;
 
@@ -42,7 +42,35 @@ class login extends Component {
                 login: "",
                 password: "",
             },
+            sucess: false,
+            error: false,
+            view:false,
         };
+        
+    
+    }
+    handleModal = () => {
+        var a = this.state.view;
+        if(a==true){
+            this.setState({view:false});
+            this.setState({sucess:false})
+            this.setState({error:false});
+        }else{
+            this.setState({view:true});
+        }
+
+        
+        
+       
+       
+    }
+    handleModalValidacao = () =>{
+        // atencao backend!! se a validacao der certo executa esse codigo -- alert avisando que deu certo
+        this.setState({sucess:true});
+
+        // se der errado - alert avisando que deu erro
+        this.setState({error:true});
+
     }
     handleClick = (e) => {
         var texto = $("#pass").attr("type");
@@ -182,7 +210,7 @@ class login extends Component {
                                             <a className="one" href="cadastro">
                                                 1º Acesso{" "}
                                             </a>{" "}
-                                            <a className="oneTwo" href="#">
+                                            <a className="oneTwo" href="#" onClick={()=>{this.handleModal()}}>
                                                 Esqueci a senha{" "}
                                             </a>
                                             <input
@@ -205,51 +233,35 @@ class login extends Component {
                             </a>
                         </div>
                     </Container>
-                    {/* NAO APAGARRRRRRR SERÁ USADO PARA VALIDACAO
-            
-          
-              ///////////////////////////// ATENCAO /////////////////////////////////////////////
-          }
-
-            {/* <div className="form-wrapper">
-
-              <h1>Login</h1>
-              <form onSubmit={this.handleSubmit} noValidate>
-                <div className="email">
-                  <label htmlFor="email">Email</label>
-                  <input 
-                    type="email"
-                    className={formErrors.email.length > 0 ? "Erro" : null}
-                    placeholder="Email" 
-                    name="email" 
-                    noValidate
-                    onChange={this.handleChange}
-                  />
-                  {formErrors.email.length > 0 && (
-                    <span className="errorMessage">{formErrors.email}</span>
-                  )}
-                </div>
-                <div className="password">
-                  <label htmlFor="password">Senha</label>
-                  <input 
-                    type="password"
-                    className={formErrors.password.length > 0 ? "Erro" : null}
-                    placeholder="Senha" 
-                    name="password" 
-                    noValidate
-                    onChange={this.handleChange}
-                  />
-                  {formErrors.password.length > 0 && (
-                    <span className="errorMessage">{formErrors.password}</span>
-                  )}
-                </div>
-                <div className="createAccount">
-                  <button type="submit">Login</button>
-                  <small>Esqueceu sua senha</small>
-                </div>
-              </form> 
-                  </div>*/}
                 </Container>
+                <div>
+                    <Modal show={this.state.view} onHide={()=>this.handleModal()}>
+                        <Modal.Header>Recuperação de Senha </Modal.Header>
+                        <Modal.Body>
+                            <b className="">Digite seu email:</b>
+                            <input
+                                type="text"
+                                placeholder="Email"
+                                className=""
+                                maxLength="85"
+                            ></input>
+                            <Alert show={this.state.sucess} id="AlertSucess" variant="success">
+                                Senha enviada para o respectivo email
+                            </Alert>
+                            <Alert show={this.state.error} id="AlertDanger" variant="danger">
+                               Email Incorreto
+                            </Alert>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button onClick={()=>{this.handleModalValidacao()}}>
+                                Enviar
+                            </Button>
+                            <Button onClick={()=>{this.handleModal()}}>
+                                Cancelar
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
             </React.Fragment>
         );
     }
