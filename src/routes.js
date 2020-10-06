@@ -8,6 +8,9 @@ import Administrador from "./pages/Administrador";
 import Roleta from "./pages/Jogos/Roleta";
 import Perfil from "./pages/Administrador/profile"
 import CadastroJogos from "./pages/Administrador/insertGames"
+import Funcionario from "./pages/Funcionario";
+import Profile from "./pages/Funcionario/profile"
+
 
 const Routes = () => {
     return (
@@ -40,6 +43,14 @@ const Routes = () => {
                 <Route
                     path="/insertGames"
                     component={ CadastroJogos }
+                />
+                <Route
+                    path="/funcionario"
+                    component={ Funcionario }
+                />
+                <Route
+                    path="/profile"
+                    component={ Profile }
                 />
             </Switch>
         </BrowserRouter>
