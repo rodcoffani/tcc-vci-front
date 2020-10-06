@@ -257,8 +257,12 @@ label{
     text-align: right;
 }
 
-.input{
+.form-control{
     width: 100%;
+    margin-top: 1%;
+}
+
+.input-group-prepend{
     margin-top: 1%;
 }
 

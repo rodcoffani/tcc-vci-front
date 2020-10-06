@@ -35,14 +35,6 @@ const Sidebar = (props) => {
                              Cadastro de Jogos
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey="validateEmployee"> {/* arquivo q vai ao clicar */}
-                        <NavIcon>
-                            <FontAwesomeIcon icon={faUserFriends} />
-                        </NavIcon>
-                        <NavText>
-                            Validar funcionários
-                        </NavText>           
-                    </NavItem>
                     <NavItem eventKey="administrador"> {/* arquivo q vai ao clicar */}
                         <NavIcon>
                             <FontAwesomeIcon icon={faChartPie} />

@@ -17,7 +17,7 @@ const Admin = (props) => {
     
     return (
         <div>
-            <Sidebar pageSelected="reports"/>
+            <Sidebar pageSelected="administrador"/>
             <Header headerTitle="Administrador"/>
             <React.Fragment>
             <Container fluid="xl">

@@ -18,17 +18,24 @@ function ListItems(props){
             //vai criar uma class (?) p cada item
             //o key acha o item 
             return <div className="list" key={item.key}>
-                <FormControl 
-                    type="text" 
-                    className = "input" 
-                    id={item.key} 
-                    value={item.text}
-                    onChange={
-                        (e) => {
-                            props.setUpdate(e.target.value, item.key)
+                <div class="input-group" >
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio" aria-label="Botão radio para acompanhar input text" />
+                        </div>
+                    </div>
+                    <input 
+                        type="text" 
+                        className = "form-control" 
+                        id={item.key} 
+                        value={item.text}
+                        onChange={
+                            (e) => {
+                                props.setUpdate(e.target.value, item.key)
+                            }
                         }
-                    }
-                />
+                    />
+                </div>
                 <FontAwesomeIcon icon={faTrashAlt} className="icons" onClick={ () => props.deleteItem(item.key)}/> 
             </div>
         })
@@ -128,38 +135,47 @@ class insertGames extends Component {
                                         <option value="a" className = "select-jogos">Perguntados</option>
                                         <option value="b" className = "select-jogos">Quiz</option>
                                     </FormControl>
-                                    <FormControl type="text" placeholder="Digite o nome do jogo" className = "input"/>
-                                    <FormControl type="text" placeholder="Digite o enunciado da pergunta" className = "input" value={this.state.currentItem.text} onChange={this.handleInput}/>
+                                    <input type="text" placeholder="Digite o nome do jogo" className="form-control"/>
+                                    <input type="text" placeholder="Digite o enunciado da pergunta" className="form-control" value={this.state.currentItem.text} onChange={this.handleInput}/>
                                   
-                                    <InputGroup>
-                                        <InputGroup.Prepend>
-                                            <InputGroup.Radio aria-label="Radio button for following text input" />
-                                        </InputGroup.Prepend>
-                                        <FormControl type="text" placeholder="Digite uma alternativa de resposta" className = "input" value={this.state.currentItem.text} onChange={this.handleInput}/>
-                                    </InputGroup>
-                         
-                                    <InputGroup>
-                                        <InputGroup.Prepend>
-                                            <InputGroup.Radio aria-label="Radio button for following text input" />
-                                        </InputGroup.Prepend>
-                                        <FormControl type="text" placeholder="Digite uma alternativa de resposta" className = "input" value={this.state.currentItem.text} onChange={this.handleInput}/>
-                                    </InputGroup>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="alternativa" value="a" aria-label="Botão radio para acompanhar input text" />
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Digite uma alternativa de resposta" aria-label="Input text com botão radio" value={this.state.currentItem.text} onChange={this.handleInput}/>
+                                    </div>
 
-                                    <InputGroup>
-                                        <InputGroup.Prepend>
-                                            <InputGroup.Radio aria-label="Radio button for following text input" />
-                                        </InputGroup.Prepend>
-                                        <FormControl type="text" placeholder="Digite uma alternativa de resposta" className = "input" value={this.state.currentItem.text} onChange={this.handleInput}/>
-                                    </InputGroup>
+                                    <div class="input-group" >
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="alternativa" value="b"  aria-label="Botão radio para acompanhar input text" />
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Digite uma alternativa de resposta"  aria-label="Input text com botão radio" value={this.state.currentItem.text} onChange={this.handleInput}/>
+                                    </div>
 
-                                    <InputGroup>
-                                        <InputGroup.Prepend>
-                                            <InputGroup.Radio aria-label="Radio button for following text input" />
-                                        </InputGroup.Prepend>
-                                        <FormControl type="text" placeholder="Digite uma alternativa de resposta" className = "input" value={this.state.currentItem.text} onChange={this.handleInput}/>
-                                    </InputGroup>
+                                    <div class="input-group" >
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="alternativa" aria-label="Botão radio para acompanhar input text" />
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" value="c" placeholder="Digite uma alternativa de resposta"  aria-label="Input text com botão radio" value={this.state.currentItem.text} onChange={this.handleInput}/>
+                                    </div>
+
+                                    <div class="input-group" >
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="alternativa" value="d" aria-label="Botão radio para acompanhar input text" />
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Digite uma alternativa de resposta"  aria-label="Input text com botão radio" value={this.state.currentItem.text} onChange={this.handleInput}/>
+                                    </div>
 
                                     <input type="submit" className="add-question" value="+"/>
+                                    
                                     <ListItems 
                                         items = {this.state.items}
                                         deleteItem = {this.deleteItem}
