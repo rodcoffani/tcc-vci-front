@@ -19,7 +19,7 @@ const Sidebar = (props) => {
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected={props.pageSelected}>
-                    <NavItem eventKey="">
+                    <NavItem eventKey="funcionario">
                             <NavIcon>
                                 <FontAwesomeIcon icon={faGamepad} />
                             </NavIcon>
