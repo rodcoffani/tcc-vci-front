@@ -61,7 +61,7 @@ export default class Saudacao extends Component {
                                             <input
                                                 type="text"
                                                 placeholder="Nome"
-                                                className="inputC"
+                                                className="inputV"
                                                 required
                                                 onChange={(e) => // pega o valor do input e adiciona na variavel this.state
                                                     this.setState({
@@ -91,7 +91,7 @@ export default class Saudacao extends Component {
                                             <input
                                                 type="text"
                                                 placeholder="E-mail"
-                                                className="inputC"
+                                                className="inputV"
                                                 required
                                                 maxLength="45"
                                                 onChange={(e) =>

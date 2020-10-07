@@ -12,8 +12,8 @@ import slider_03 from "../../assets/images/slider_03.PNG";
 import {faClock,faUser,faCheckCircle,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
 import {animateScroll as scroll} from 'react-scroll'
 import {Helmet} from "react-helmet"
-function App() {
 
+function App() {
   return (
   <React.Fragment>
     <Helmet title="Home" />
@@ -73,7 +73,6 @@ function App() {
               <li><FontAwesomeIcon icon={faCheckCircle}/> Viável e portátil.</li>
             </ul>
             </Col>
-
             </Row>
           <br />
           <Row >
