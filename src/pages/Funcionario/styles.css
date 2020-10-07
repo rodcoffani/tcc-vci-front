@@ -1,0 +1,1145 @@
+.mother{
+    width: 90%;
+    height: auto;
+    margin-left: 4%;
+}
+
+/* relatórios */
+
+.ranking{
+    float: left;
+    width: 50%;
+    background-color: white;
+    margin-right: 4%;
+    border-radius: 3%;
+}
+
+.employee{
+    float: left;
+    width: 45%;
+    background-color: white;
+    border-radius: 3%;
+}
+
+.ranking-title{
+    width: 94%;
+    height: auto;
+}
+
+.ranking-title-combo{
+    float: left;
+    align-content: flex-start;
+    padding-top: 15px;
+    margin-left: 2%;
+}
+
+.ranking-title-combo-title{
+    margin-right: 18%;
+}
+
+.ranking-title-title{
+    float: left;
+    padding-top: 15px;
+    padding-left: 40%;
+    width: 70%;
+    align-content: center;
+}
+
+.ranking-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+}
+
+.ranking-body{
+    width: 90%;
+    background-color: white;
+    height: 750px;
+    
+}
+
+.header-fixed {
+    width: 100% 
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed > tbody {
+    overflow-y: scroll;
+    height: 650px;
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    width: 25%;
+    float: left;
+}
+
+.employee-title{
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50%;
+}
+
+.employee-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+}
+
+.employee-body{
+    width: 70%;
+    background-color: white;
+    height: 750px;
+}
+
+.header-fixed-employee {
+    width: 100% 
+}
+
+.header-fixed-employee > thead,
+.header-fixed-employee > tbody,
+.header-fixed-employee > thead > tr,
+.header-fixed-employee > tbody > tr,
+.header-fixed-employee > thead > tr > th,
+.header-fixed-employee > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed-employee > tbody > tr:after,
+.header-fixed-employee > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed-employee > tbody {
+    overflow-y: scroll;
+    height: 650px;
+}
+
+.header-fixed-employee > tbody > tr > td,
+.header-fixed-employee > thead > tr > th {
+    width: 50%;
+    float: left;
+}
+
+
+
+/* perfil */
+.profile{
+    float: left;
+    width: 25%;
+    height: 600px;
+    background-color: white;
+    border-radius: 5%;
+    align-content: center;
+}
+
+.profile-photo{
+    width: 65%;
+    margin-top: 5%;
+    height: 200px;
+    background-color: yellow;
+    align-items: center;
+}
+
+.profile-info{
+    width: 85%;
+    margin-top: 5%;
+    height: 270px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120%;
+    padding-left: 20%;
+    text-align: left;
+}
+
+.admin{
+    float: left;
+    width: 70%;
+    margin-left: 5%;
+    height: 600px;
+    background-color: white;
+    border-radius: 5%;
+    align-items: center;
+}
+
+.admin-title{
+    width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 160%;
+    padding: 1.2%;
+    height: auto;
+}
+
+.admin-table{
+    width: 90%;
+}
+
+.header-fixed-profile {
+    width: 100% 
+}
+
+.header-fixed-profile > thead,
+.header-fixed-profile > tbody,
+.header-fixed-profile > thead > tr,
+.header-fixed-profile > tbody > tr,
+.header-fixed-profile > thead > tr > th,
+.header-fixed-profile > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed-profile > tbody > tr:after,
+.header-fixed-profile > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed-profile > tbody {
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.header-fixed-profile > tbody > tr > td,
+.header-fixed-profile > thead > tr > th {
+    width: 33%;
+    float: left;
+}
+
+.profile-picf{
+    width: 35%;
+    height: 100px;
+    float: left;
+    margin: 3%;
+    background-color: transparent;
+}
+
+.nome-profilef{
+    width: 50%;
+    font: Helvetica;
+    font-size: 25px;
+    height: 30px;
+    float: left;
+    margin-top: 13%;
+    background-color: transparent;
+}
+
+.profile-func{
+    width: 100%;
+    height: 400px;
+    float: left;
+    margin-top: 30%;
+    font: Helvetica;
+    font-size: 15px;
+    background-color: transparent;
+}
+.profile-func > tbody > tr > td,
+.profile-func > thead > tr > td{
+    width: 100%;
+    float: left;
+
+} 
+
+/* cadastro de jogos */
+.insert-games{
+    width: 80%;
+    height: 800px;
+    background-color: white;
+    border-radius: 5%;
+    align-content: center;
+    padding-right: 10%;
+}
+
+.labels-insert{
+    float: left;
+    width: 30%;
+    height: 100%;
+    padding-left: 5%;
+}
+
+.inputs-insert{
+    float: left;
+    width: 70%;
+    height: 100%;
+    padding-left: 2%;
+    padding-top: 1%;
+}
+
+label{
+    font-size: 100%;
+    width: 100%;
+    margin-top: 6%;
+    color: black;
+    font-weight: normal;
+    text-align: right;
+}
+
+.input{
+    width: 100%;
+    margin-top: 1%;
+}
+
+.select-jogos{
+    width: 50%;
+    margin-top: 1%;
+}
+
+.add-question{
+    width: 5%;
+    margin-top: 2%;
+    border-radius: 50%;
+    color: white;
+    font-style: bold;
+    background: radial-gradient(
+        circle,
+        rgba(58, 167, 180, 1) 0%,
+        rgba(96, 69, 252, 1) 100%
+    );
+}
+
+.list{
+    color: black;
+    margin-top: 3%;
+}
+
+.list p{
+    padding: 10%;
+}
+
+.icons{
+    margin-top: 1%;
+    cursor: pointer;
+    font-size: 115%;
+}
+
+
+/* design celular */
+
+@media (min-width:320px) and (max-width: 375px) {
+    .ranking{
+        width: 80%;
+        margin-left: 18%;
+    }
+    
+    .employee{
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 18%;
+    }
+    
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 25%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+
+    .profile{
+        width: 80%;
+        height: auto;
+        margin-left: 15%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 30%;
+        height: 80px;
+        margin-left: 3%;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 80%;
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
+}
+
+@media (min-width:365px) and (max-width: 375px) {
+    .ranking{
+        width: 80%;
+        margin-left: 18%;
+    }
+    
+    .employee{
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 18%;
+    }
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 25%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+
+    .profile{
+        width: 80%;
+        height: auto;
+        margin-left: 15%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 30%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 80%;
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
+}
+
+@media (min-width:376px) and (max-width: 504px) {
+    .ranking{
+        width: 80%;
+        margin-left: 18%;
+    }
+    
+    .employee{
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 18%;
+    }
+    
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 27%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+
+    .profile{
+        width: 80%;
+        height: auto;
+        margin-left: 15%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 30%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 80%;
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
+}
+
+@media (min-width:505px) and (max-width: 599px) {
+    .ranking{
+        width: 90%;
+        margin-left: 10%;
+    }
+    
+    .employee{
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 20%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 100%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+    
+    .ranking-title-title{
+        width: 60%;
+    }
+
+    .profile{
+        width: 80%;
+        height: auto;
+        margin-left: 15%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 25%;
+        height: 50px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 80%;
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
+}
+
+@media (min-width:600px) and (max-width: 789px) {
+    .ranking{
+        width: 90%;
+        margin-left: 10%;
+    }
+    
+    .employee{
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 50%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 100%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+    
+    .ranking-title-title{
+        width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 9%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 100%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 9%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
+}
+
+@media (min-width:700px) and (max-width: 789px) {
+    .ranking{
+        width: 90%;
+        margin-left: 8%;
+    }
+    
+    .employee{
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 8%;
+    }
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 50%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 100%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+    
+    .ranking-title-title{
+        width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 9%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 80px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 120%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 9%;
+        margin-top: 5%;
+        height: 400px;
+    }
+    
+    .admin-title{
+        font-size: 130%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 102%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
+}
+
+@media (min-width:789px) and (max-width: 1000px) {
+    .ranking{
+        width: 93%;
+        margin-left: 6%;
+    }
+    
+    .employee{
+        width: 93%;
+        margin-top: 5%;
+        margin-left: 6%;
+    }
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 30%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 100%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+    
+    .ranking-title-title{
+        width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 9%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 100px;
+        margin-left: 2%;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 145%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 9%;
+        margin-top: 5%;
+        height: 550px;
+    }
+    
+    .admin-title{
+        font-size: 150%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 400px;
+    }
+}
+
+@media (min-width:789px) and (max-width: 859px) {
+    .ranking{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .employee{
+        width: 95%;
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 30%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 100%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+    
+    .ranking-title-title{
+        width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 8%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 90px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 130%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 8%;
+        margin-top: 5%;
+        height: 450px;
+    }
+    
+    .admin-title{
+        font-size: 150%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 300px;
+    }
+}
+
+@media (min-width:799px) and (max-width: 1000px) {
+    .ranking{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .employee{
+        width: 95%;
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .employee-title{
+        padding-left: 10%;
+    }
+
+    .header-fixed > thead,
+    .header-fixed > tbody,
+    .header-fixed > thead > tr,
+    .header-fixed > tbody > tr,
+    .header-fixed > thead > tr > th,
+    .header-fixed > tbody > tr > td {
+        font-size: 100%;
+    }
+
+    .header-fixed > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+    
+    .ranking-title-title{
+        width: 60%;
+    }
+
+    .profile{
+        width: 90%;
+        height: auto;
+        margin-left: 7.5%;
+    }
+    
+    .profile-photo{
+        float: left;
+        width: 20%;
+        height: 90px;
+    }
+    
+    .profile-info{
+        width: 95%;
+        height: 100%;
+        font-size: 130%;
+        text-align: left;
+        padding-left: 10%;
+    }
+    
+    .admin{
+        width: 90%;
+        margin-left: 7.5%;
+        margin-top: 5%;
+        height: 550px;
+    }
+    
+    .admin-title{
+        font-size: 150%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 400px;
+    }
+}
