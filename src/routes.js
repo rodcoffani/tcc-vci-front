@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "./pages";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
+import Relatorios from "./pages/Administrador/reports";
 import Administrador from "./pages/Administrador";
 import Roleta from "./pages/Jogos/Roleta/jogo";
 import Quiz from "./pages/Jogos/Quiz/quiz";
@@ -12,6 +13,8 @@ import Quiz_rules from "./pages/Jogos/Quiz";
 import Caca_palavras_rules from "./pages/Jogos/Caça-palavras";
 import Perfil from "./pages/Administrador/profile";
 import CadastroJogos from "./pages/Administrador/insertGames";
+import Funcionario from "./pages/Funcionario";
+import Profile from "./pages/Funcionario/profile"
 
 const Routes = () => {
     return (
@@ -28,6 +31,10 @@ const Routes = () => {
                 <Route 
                     exact path="/"
                     component={ Home } 
+                />
+                <Route 
+                    path="/reports"
+                    component={ Relatorios }
                 />
                 <Route 
                     path="/administrador"
@@ -60,6 +67,14 @@ const Routes = () => {
                 <Route
                     path="/insertGames"
                     component={ CadastroJogos }
+                />
+                <Route
+                    path="/funcionario"
+                    component={ Funcionario }
+                />
+                <Route
+                    path="/profile"
+                    component={ Profile }
                 />
             </Switch>
         </BrowserRouter>

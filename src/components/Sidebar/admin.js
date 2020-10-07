@@ -1,6 +1,6 @@
 import React from "react";
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import { faIdBadge, faGamepad, faUserFriends, faChartPie, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faIdBadge, faGamepad, faUserFriends, faChartPie, faSignOutAlt, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
 import './styles.css';
@@ -19,6 +19,14 @@ const Sidebar = (props) => {
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected={props.pageSelected}>
+                    <NavItem eventKey="administrador">
+                         <NavIcon>
+                            <FontAwesomeIcon icon={faHome} />
+                        </NavIcon>
+                        <NavText>
+                            Home
+                        </NavText>
+                    </NavItem>
                      <NavItem eventKey="profile"> {/* arquivo q vai ao clicar */}
                          <NavIcon>
                             <FontAwesomeIcon icon={faIdBadge} />
@@ -35,15 +43,7 @@ const Sidebar = (props) => {
                              Cadastro de Jogos
                         </NavText>           
                     </NavItem>
-                    <NavItem eventKey="validateEmployee"> {/* arquivo q vai ao clicar */}
-                        <NavIcon>
-                            <FontAwesomeIcon icon={faUserFriends} />
-                        </NavIcon>
-                        <NavText>
-                            Validar funcionários
-                        </NavText>           
-                    </NavItem>
-                    <NavItem eventKey="administrador"> {/* arquivo q vai ao clicar */}
+                    <NavItem eventKey="reports"> {/* arquivo q vai ao clicar */}
                         <NavIcon>
                             <FontAwesomeIcon icon={faChartPie} />
                         </NavIcon>
