@@ -73,7 +73,7 @@ const Routes = () => {
                     component={ Funcionario }
                 />
                 <Route
-                    path="/profile"
+                    path="/profile-employee"
                     component={ Profile }
                 />
             </Switch>

@@ -1,119 +1,143 @@
-import React, { Component } from 'react';
-import './styles.css';
-import Header from '../../components/Header';
-import Sidebar from '../../components/Sidebar/employee';
-import Foto from '../../assets/images/nn.jpg';
-import { Container, FormControl, Form, Col, Row, Image} from 'react-bootstrap'
-import {Helmet} from "react-helmet"
+import React,{useEffect} from 'react';
+import '../styles.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import BackgroundParticle from '../../components/Background-particle'
+import Header from '../../components/Header';
+import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup} from 'react-bootstrap'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import Sidebar from '../../components/Sidebar/employee';
+import slider_01 from "../../assets/images/slider_01.png";
+import slider_02 from "../../assets/images/slider_02.PNG";
+import slider_03 from "../../assets/images/slider_03.PNG";
+import {faClock,faUser,faCheckCircle,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
+import {animateScroll as scroll} from 'react-scroll'
+import {Helmet} from "react-helmet"
 
-class employee extends Component{
-    render() {
-        return(
-            <div>
-            <Sidebar pageSelected="reports"/>
-            <Header headerTitle="Funcionario"/>
-            <React.Fragment>
-            <Container fluid="xl">
-                <BackgroundParticle />
-            </Container>
-            <center>
-                <div className="mother">
-                    <br />
-                    <div className="ranking">
-                        <div className="ranking-title">
-                            <div className="ranking-title-combo">
-                                <div className="ranking-title-combo-title">Filtrar por jogo: <br /></div>
-                                <Form>
-                                    <FormControl as="select">
-                                        <option value="a" className = "select-jogos">Perguntados</option>
-                                        <option value="b" className = "select-jogos">Quiz</option>
-                                    </FormControl>
-                                </Form>
-                            </div> 
-                            <div className="ranking-title-title">
-                                <p className="ranking-text">Ranking</p>
-                            </div>
-                        </div>
-                        <div className="ranking-body">
-                            <table class="table table-striped header-fixed">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Jogo</th>
-                                    <th scope="col">Tempo</th>
-                                    <th scope="col">Pontos</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Quiz</td>
-                                    <td>21s</td>
-                                    <td>20</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Roleta</td>
-                                    <td>20s</td>
-                                    <td>20</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Quiz</td>
-                                    <td>14s</td>
-                                    <td>18</td>
-                                </tr>
-                            </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="employee">
-                        <div className="employee-title">
-                            <p className="employee-text"> Seu Perfil</p>
-                        </div>
-                        <div className="employee-body">
-                            <div class="table table-striped header-fixed-employee">
-                                <div className="profile-picf">
-                                    <div xs={6} md={4}>
-                                        <Image src={Foto} roundedCircle />
-                                    </div>
-                                </div>
-                                <div className="nome-profilef"> 
-                                    Funcionaria 1
-                                </div>
-                                <br></br>
-                                <div className="profile-func">
-                                    <tr>
-                                        <td><b>Usuário</b></td>
-                                        <td>funcionaria_1</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Departamento</b></td>
-                                        <td>Produção</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>CPF</b></td>
-                                        <td>147.154.126-47</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Acertos</b></td>
-                                        <td><b>Erros</b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>9</td>
-                                    </tr>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </center>
-            </React.Fragment>
-        </div>
-        );
-    };
-};
+function App() {
+  return (
+  <React.Fragment>
+    <Helmet title="Home" />
+    <Sidebar pageSelected="funcionario"/>
+      <Header headerTitle="Funcionário"/>
+      <div className="content">
+        <Container className="cont" fluid="xl">
+        <BackgroundParticle />
+        <Carousel className="Carrossel">
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={slider_01}
+              alt="P. slide"
+            />
+            <Carousel.Caption className='Caption'>
+              <h1>Aprendizagem</h1>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={slider_02}
+              alt="S. slide"
+            />
 
-export default employee;
+            <Carousel.Caption className='Caption'>
+              <h1>Desenvolvimento</h1>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={slider_03}
+              alt="T. slide"
+            />
+
+            <Carousel.Caption className='Caption'>
+              <h1>Trabalho em equipe</h1>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+
+      <div className="mid">
+        <Row>
+            <Col md={6}>
+            <div className="img_mid"/>
+            </Col>
+            <Col md={5}>
+            <h2 className="h2_projeto">O projeto</h2>
+            <p>O EAD-LAB é uma plataforma de jogos didáticos que têm como objetivo fazer com que o aprendizado seja uma atividade atrativa e prazerosa. Fornecendo uma experiência que é, ao mesmo tempo, confortável e instrutiva, nossos jogos são concebidos no intuito de facilitar a assimilação de conteúdos com uma dinâmica elaborada para expandir e reforçar o desenvolvimento profissional dos usuários.</p>
+            
+            <ul>
+              <li><FontAwesomeIcon icon={faCheckCircle}/> Testa as capacidades de se trabalhar em equipe;</li>
+              <li><FontAwesomeIcon icon={faCheckCircle}/> Educação e entretenimento combinados;</li>
+              <li><FontAwesomeIcon icon={faCheckCircle}/> Procedimento rápido e intuitivo;</li>
+              <li><FontAwesomeIcon icon={faCheckCircle}/> Viável e portátil.</li>
+            </ul>
+            </Col>
+            </Row>
+          <br />
+          <Row >
+              <Col>
+              <span>Nossos jogos!</span>
+              </Col>
+          </Row>
+          <Row>
+          <Col xs={12} md={12}>
+          <CardGroup style={{
+          marginTop:'6vw',
+          marginBottom:'6vw',
+          }} className='EfctvCardG'>
+            <Card className='EfctvCard'>
+              <Card.Img variant="top" src="" />
+              <Card.Body>
+                <Card.Title style={{textAlign:'center'}}>Roleta</Card.Title>
+              </Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 10 minutos</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 2</ListGroup.Item>
+              </ListGroup>
+              <Card.Footer style={{textAlign:'center'}}> 
+              <a href='jogos/roleta'>Jogar!</a>
+              </Card.Footer>
+            </Card>
+            <Card className='EfctvCard'>
+              <Card.Img variant="top" src="" />
+              <Card.Body>
+                <Card.Title style={{textAlign:'center'}}>Quiz</Card.Title>
+              </Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 15 minutos</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 1</ListGroup.Item>
+              </ListGroup>
+              <Card.Footer style={{textAlign:'center'}}> 
+              <a href='Cadastro'>Jogar!</a>
+              </Card.Footer>
+            </Card>
+            <Card className='EfctvCard'>
+              <Card.Img variant="top" src="" />
+              <Card.Body>
+                <Card.Title  style={{textAlign:'center'}}>Caça-palavras</Card.Title>
+              </Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 15 minutos</ListGroup.Item>
+                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 1</ListGroup.Item>
+              </ListGroup>
+              <Card.Footer style={{textAlign:'center'}}> 
+              <a href='Cadastro'>Jogar!</a>
+              </Card.Footer>
+            </Card>
+          </CardGroup>
+          </Col>
+          </Row>
+          </div>
+        </Container>
+      </div>
+      <a style={{textAlign:'center', cursor:'pointer',color:'white'}} onClick={()=>scroll.scrollToTop()} >
+      <div style={{backgroundColor:'black'}} className='Topo'>
+      <FontAwesomeIcon icon={faCaretSquareUp} size="lg" />
+      </div></a>
+  </React.Fragment>
+    
+  );
+}
+
+export default App;

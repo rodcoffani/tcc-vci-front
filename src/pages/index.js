@@ -5,7 +5,7 @@ import backgroundParticle from '../components/Background-particle'
 import Header from '../components/Header';
 import {Carousel,Row, Col, Container, Card, CardGroup, ListGroup} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import Sidebar from '../components/Sidebar/employee';
+import Sidebar from '../components/Sidebar/user';
 import slider_01 from "../assets/images/slider_01.png";
 import slider_02 from "../assets/images/slider_02.PNG";
 import slider_03 from "../assets/images/slider_03.PNG";

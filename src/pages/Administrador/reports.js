@@ -65,6 +65,7 @@ const Admin = (props) => {
                                         <td>{item.user.name_user}</td>
                                         <td>{item.points}</td>
                                         <td>{item.time}</td>
+                                        <td>{item.idgame}</td>
                                     </tr>
                                 })}
                             </tbody>
