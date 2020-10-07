@@ -7,7 +7,6 @@ import Cadastro from "./pages/Cadastro";
 import Administrador from "./pages/Administrador";
 import Roleta from "./pages/Jogos/Roleta/jogo";
 import Quiz from "./pages/Jogos/Quiz/quiz";
-import Caca_palavras from "./pages/Jogos/Caça-palavras/caça_palavras";
 import Roleta_rules from "./pages/Jogos/Roleta";
 import Quiz_rules from "./pages/Jogos/Quiz";
 import Caca_palavras_rules from "./pages/Jogos/Caça-palavras";
@@ -53,10 +52,6 @@ const Routes = () => {
                 <Route 
                     path="/caça_palavras_rules"
                     component={ Caca_palavras_rules }
-                />
-                <Route 
-                    path="/caça_palavras"
-                    component={ Caca_palavras }
                 />
                 <Route
                     path="/profile"
