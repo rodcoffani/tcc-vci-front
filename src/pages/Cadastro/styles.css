@@ -14,7 +14,7 @@ background: transparent!important;
 
 }
 
-.inputC {
+.inputV {
     background-color: #0255da !important;
     outline: none;
     border: none;
@@ -174,7 +174,7 @@ form.cad{
     .CadS{
         font-size: 5vw;
     }
-    .inputC{
+    .inputV{
         width: 100%;
         font-size: x-large;
     }
@@ -202,11 +202,11 @@ form.cad{
     .linkC{
         font-size: large;
     }
-    .inputC{
+    .inputV{
         width: 100%;
         font-size: x-large;
     }
-    .inputC.log{
+    .inputV.log{
         width: 130%;
     }
 }
@@ -219,7 +219,7 @@ form.cad{
     .CadS{
         font-size: 5vw;
     }
-    .inputC{
+    .inputV{
         width: 107%;
         font-size: x-large;
     }
@@ -249,7 +249,7 @@ form.cad{
     width: 360px;
     }
    
-    .inputC{
+    .inputV{
         width: 107%;
         font-size: x-large;
     }
@@ -269,7 +269,7 @@ form.cad{
     width: 360px;
     }
    
-    .inputC{
+    .inputV{
         width: 100%;
         font-size: x-large;
     }
@@ -310,7 +310,7 @@ form.cad{
         padding-bottom: 8%;
         font-size: x-large;
     }
-    .inputC{
+    .inputV{
         width: 100%;
         font-size: x-large;
     }
@@ -338,7 +338,7 @@ form.cad{
     .CadBtn{
         padding-bottom: 8%;
     }
-    .inputC{
+    .inputV{
         width: 100%;
         font-size: x-large;
     }
@@ -361,7 +361,7 @@ form.cad{
 
 
 @media (min-width:789px) and (max-width: 1000px) {
-    .inputC{
+    .inputV{
         font-size: x-large;
         width: 100%;
     }
@@ -393,7 +393,7 @@ form.cad{
         font-size: xx-large;
         width: 740px;
     }
-    .inputC{
+    .inputV{
         font-size: x-large;
         width: 100%;
     }
@@ -433,7 +433,7 @@ form.cad{
 
         
     }
-    .inputC{
+    .inputV{
         font-size: x-large;
     }
     .inputCS{
@@ -508,7 +508,7 @@ form.cad{
     .linkC{
         font-size: x-large;
     }
-    .inputC{
+    .inputV{
         font-size: x-large;
     }
     .CadBtn{
@@ -535,7 +535,7 @@ form.cad{
     .linkC{
         font-size: x-large;
     }
-    .inputC{
+    .inputV{
         font-size: x-large;
     }
     .CadBtn{
@@ -574,7 +574,7 @@ form.cad{
     .linkC{
         font-size: x-large;
     }
-    .inputC{
+    .inputV{
         font-size: x-large;
     }
     .CadBtn{
