@@ -243,31 +243,6 @@
         float: left;
     } 
     
-    /* cadastro de jogos */
-    .insert-games{
-        width: 80%;
-        height: 800px;
-        background-color: white;
-        border-radius: 5%;
-        align-content: center;
-        padding-right: 10%;
-    }
-    
-    .labels-insert{
-        float: left;
-        width: 30%;
-        height: 100%;
-        padding-left: 5%;
-    }
-    
-    .inputs-insert{
-        float: left;
-        width: 70%;
-        height: 100%;
-        padding-left: 2%;
-        padding-top: 1%;
-    }
-    
     label{
         font-size: 100%;
         width: 100%;
@@ -286,34 +261,6 @@
         width: 50%;
         margin-top: 1%;
     }
-    
-    .add-question{
-        width: 5%;
-        margin-top: 2%;
-        border-radius: 50%;
-        color: white;
-        font-style: bold;
-        background: radial-gradient(
-            circle,
-            rgba(58, 167, 180, 1) 0%,
-            rgba(96, 69, 252, 1) 100%
-        );
-    }
-    
-    .list{
-        color: black;
-        margin-top: 3%;
-    }
-    
-    .list p{
-        padding: 10%;
-    }
-    
-    .icons{
-        margin-top: 1%;
-        cursor: pointer;
-        font-size: 115%;
-    } 
 }
 
 @media (max-width: 789px) and (min-width: 600px){
