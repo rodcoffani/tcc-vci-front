@@ -3,7 +3,6 @@ import "./style.css";
 import Header from "../../../components/Header";
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
-import Sidebar from '../../../components/Sidebar/user';
 import Wheel from '../../../components/Wheel/Wheel';
 import image_000 from '../../../assets/images/jogo_10/image_000.png';
 import image_001 from '../../../assets/images/jogo_10/image_001.png';
@@ -34,38 +33,38 @@ export default class Roleta extends Component {
         return (
             <React.Fragment>
                 <Helmet title="Jogo 10" />
-                {/* <Sidebar /> */}
-                <Header headerTitle="Jogo da Roletas"/>
+                {/* Inserir sidebar */}
+                <Header headerTitle="Jogo da Roleta"/>
                 <div className="content-roleta">
                     <div className="playersArea">
                         <div className="player p1">
-                            <img className="profilePic" src="https://www.menshair.style/wp-content/uploads/2019/03/black-men-hairstyles-59.jpg"/>
+                            <img className="profilePic" src="https://www.menshair.style/wp-content/uploads/2019/03/black-men-hairstyles-59.jpg" alt="Imagem do participante 1"/>
                             <div className="employeeName">Danyel</div>
                             <div className="totensContainer">
-                                <img className="totens" src={image_000}/>
-                                <img className="totens" src={image_003}/>
-                                <img className="totens" src={image_005}/>
-                                <img className="totens" src={image_007}/>
-                                <img className="totens" src={image_009}/>
-                                <img className="totens" src={image_011}/>
-                                <img className="totens" src={image_013}/>
-                                <img className="totens" src={image_015}/>
-                                <img className="totens" src={image_017}/>
+                                <img className="totens" src={image_000} alt="Totem do jogo"/>
+                                <img className="totens" src={image_002} alt="Totem do jogo"/>
+                                <img className="totens" src={image_004} alt="Totem do jogo"/>
+                                <img className="totens" src={image_006} alt="Totem do jogo"/>
+                                <img className="totens" src={image_008} alt="Totem do jogo"/>
+                                <img className="totens" src={image_010} alt="Totem do jogo"/>
+                                <img className="totens" src={image_012} alt="Totem do jogo"/>
+                                <img className="totens" src={image_014} alt="Totem do jogo"/>
+                                <img className="totens" src={image_016} alt="Totem do jogo"/>
                             </div>
                         </div>
                         <div className="player p2">
-                            <img className="profilePic" src="https://i.pinimg.com/originals/07/a9/97/07a9978da38303b87c13243d55942df4.jpg"/>
+                            <img className="profilePic" src="https://i.pinimg.com/originals/07/a9/97/07a9978da38303b87c13243d55942df4.jpg" alt="Imagem do participante 2"/>
                             <div className="employeeName">Caroline</div>
                             <div className="totensContainer">
-                                <img className="totens" src={image_001}/>
-                                <img className="totens" src={image_003}/>
-                                <img className="totens" src={image_004}/>
-                                <img className="totens" src={image_007}/>
-                                <img className="totens" src={image_009}/>
-                                <img className="totens" src={image_011}/>
-                                <img className="totens" src={image_013}/>
-                                <img className="totens" src={image_015}/>
-                                <img className="totens" src={image_017}/>
+                                <img className="totens" src={image_001} alt="Totem do jogo"/>
+                                <img className="totens" src={image_003} alt="Totem do jogo"/>
+                                <img className="totens" src={image_005} alt="Totem do jogo"/>
+                                <img className="totens" src={image_007} alt="Totem do jogo"/>
+                                <img className="totens" src={image_009} alt="Totem do jogo"/>
+                                <img className="totens" src={image_011} alt="Totem do jogo"/>
+                                <img className="totens" src={image_013} alt="Totem do jogo"/>
+                                <img className="totens" src={image_015} alt="Totem do jogo"/>
+                                <img className="totens" src={image_017} alt="Totem do jogo"/>
                             </div>
                         </div>
                     </div>

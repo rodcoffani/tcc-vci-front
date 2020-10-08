@@ -1,8 +1,8 @@
-import React, { useState , useEffect , Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar/admin';
-import { Container, Row, Col} from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import BackgroundParticle from '../../components/Background-particle'
 import API from "../../api";
@@ -18,6 +18,7 @@ const Profile = (props) => {
 
     return(
         <div>
+            <Helmet title="Perfil"/>
             <Sidebar pageSelected="profile" />
             <Header headerTitle="Administrador"/>
             <React.Fragment>
@@ -54,7 +55,7 @@ const Profile = (props) => {
                                         return <tr>
                                             <td>{item.name_user}</td>
                                             <td>{item.nickname_user}</td>
-                                            <td><a href="">{item.email_user}</a></td>
+                                            <td><button type="button" className="btn btn-link">{item.email_user}</button></td>
                                         </tr>
                                     })}
                                 </tbody>

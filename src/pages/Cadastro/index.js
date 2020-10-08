@@ -5,13 +5,12 @@ import { Component } from "react";
 import { Helmet } from "react-helmet";
 import { cpfMask } from "./mask";
 import ead from "../../assets/images/ead-lab.png";
-import axios from "axios";
 import API from "../../api";
 import BackgroundParticle from '../../components/Background-particle'
 export default class Saudacao extends Component {
     constructor(props) {
         super(props);
-        this.state = { cpf: "",nome:"",sobrenome:"",email:"" };
+        this.state = {cpf: "", nome:"", sobrenome:"", email:"" };
         this.handlechange = this.handlechange.bind(this);
     }
 
@@ -47,7 +46,7 @@ export default class Saudacao extends Component {
                         <Row>
                             <Col className="image">
                                 <div className="imageBlue">
-                                    <img src={ead} className="img-logo cad" />
+                                    <img src={ead} className="img-logo cad" alt="Logotipo do EAD-LAB"/>
                                 </div>
                             </Col>
                             <Col>
@@ -62,6 +61,7 @@ export default class Saudacao extends Component {
                                                 type="text"
                                                 placeholder="Nome"
                                                 className="inputV"
+                                                value={nome}
                                                 required
                                                 onChange={(e) => // pega o valor do input e adiciona na variavel this.state
                                                     this.setState({

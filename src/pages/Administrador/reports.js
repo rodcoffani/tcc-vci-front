@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './styles.css';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar/admin';
-import { Container, Row, Col, Form, FormControl} from 'react-bootstrap';
+import { Container, Form, FormControl} from 'react-bootstrap';
 import BackgroundParticle from '../../components/Background-particle';
 import API from "../../api";
 
@@ -10,7 +10,6 @@ const Admin = (props) => {
     const [users, setUsers] = useState([]);
     const [ranking, setRanking] = useState([]);
     const [games, setGames] = useState([]);
-    const [game, setGame] = useState({});
     const [id, setId] = useState(0);
 
     useEffect(() => {

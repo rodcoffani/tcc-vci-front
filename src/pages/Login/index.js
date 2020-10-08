@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 import "./style.css";
-import Header from "../../components/Header";
 import { Container, Row, Col, Button, Modal, Alert} from "react-bootstrap";
 import { Helmet } from "react-helmet";
-import axios from "axios";
 import API from "../../api";
 import ead from "../../assets/images/ead-lab.png";
 import { Redirect } from "react-router-dom";
 import $ from "jquery";
 import BackgroundParticle from "../../components/Background-particle";
 import "font-awesome/css/font-awesome.min.css";
-import { useHistory } from "react-router-dom";
-import { BsFillEyeSlashFill } from "react-icons/bs";
-import { ButtonBase } from "@material-ui/core";
 const loginRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -51,7 +46,7 @@ class login extends Component {
     }
     handleModal = () => {
         var a = this.state.view;
-        if(a==true){
+        if(a){
             this.setState({view:false});
             this.setState({sucess:false})
             this.setState({error:false});
@@ -74,7 +69,7 @@ class login extends Component {
     }
     handleClick = (e) => {
         var texto = $("#pass").attr("type");
-        if (texto == "password") {
+        if (texto === "password") {
             $("#pass").attr("type", "text");
         } else {
             $("#pass").attr("type", "password");
@@ -139,14 +134,17 @@ class login extends Component {
         });
       }
     }
+    goToCadastro() {
+        /* eslint-disable no-restricted-globals */
+        open('/cadastro');
+    }
     render() {
-        const { nome } = this.state;
-        const { formErrors } = this.state;
         if (this.state.redirect) {
           return <Redirect to={this.state.redirect} />
         }
         return (
             <React.Fragment>
+                <Helmet title="Login"/> 
                 <Container fluid="xl">
                     <BackgroundParticle></BackgroundParticle>
                     <Container fluid="xl login">
@@ -156,7 +154,7 @@ class login extends Component {
                         <Row>
                             <Col className="image">
                                 <div className="imageBlue">
-                                    <img src={ead} className="img-logo login" />
+                                    <img src={ead} className="img-logo login" alt="Logotipo EAD-LAB"/>
                                 </div>
                             </Col>
                             <Col>
@@ -177,20 +175,18 @@ class login extends Component {
                                                 onChange={this.handleChange}
                                                 noValidate
                                                 maxLength="85"
-                                            ></input>
+                                            />
                                         </p>
 
                                         <p className="FieldD senha">
                                             <b className="Presc">
                                                 Senha:{" "}
-                                                <a
-                                                    href="#"
-                                                    className="icone"
+                                                <button
+                                                    className="btn"
                                                     onClick={this.handleClick}
                                                 >
-                                                    {" "}
-                                                    <i class="fa fa-cog fa-spin"></i>
-                                                </a>{" "}
+                                                    <i class="fa fa-cog fa-spin icone"></i>
+                                                </button>{" "}
                                             </b>
 
                                             <input
@@ -202,22 +198,22 @@ class login extends Component {
                                                 required
                                                 onChange={this.handleChange}
                                                 noValidate
-                                            ></input>
+                                            />
                                         </p>
 
                                         <div className="oneAcess">
                                             {" "}
-                                            <a className="one" href="cadastro">
+                                            <button className="btn btn-link one" onClick={() => {this.goToCadastro()}}>
                                                 1º Acesso{" "}
-                                            </a>{" "}
-                                            <a className="oneTwo" href="#" onClick={()=>{this.handleModal()}}>
+                                            </button>{" "}
+                                            <button className="btn btn-link oneTwo" onClick={()=>{this.handleModal()}}>
                                                 Esqueci a senha{" "}
-                                            </a>
+                                            </button>
                                             <input
                                                 type="submit"
                                                 value="Entrar"
                                                 className="CadBtn cad"
-                                            ></input>
+                                            />
                                         </div>
                                     </form>
                                 </div>

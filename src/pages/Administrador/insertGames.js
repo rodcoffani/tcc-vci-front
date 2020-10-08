@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar/admin';
-import { Container, Row, Col, Form, InputGroup, FormControl, FormLabel} from 'react-bootstrap'
+import { Container, Form, FormControl, FormLabel} from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import BackgroundParticle from '../../components/Background-particle'
 import { faTrashAlt, faPlus, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,6 @@ import API from "../../api";
 
 const ListItems = (props) => {
     const items = props.items;
-    console.log(items);
     const listItems = items.map(item =>
         {
             //vai criar um elemento p cada item
@@ -26,7 +25,7 @@ const ListItems = (props) => {
                         value={item.question}
                         onChange={
                             (e) => {
-                                props.updateItem(e.target.value, item.key)
+                                props.updateItem(e.target.value, 'question', item.key)
                             }
                         }
                     />
@@ -43,7 +42,7 @@ const ListItems = (props) => {
                         value={item.alternative_a}
                         onChange={
                             (e) => {
-                                props.updateItem(e.target.value, item.key)
+                                props.updateItem(e.target.value, 'alternative_a', item.key)
                             }
                         }
                     />
@@ -60,7 +59,7 @@ const ListItems = (props) => {
                         value={item.alternative_b}
                         onChange={
                             (e) => {
-                                props.updateItem(e.target.value, item.key)
+                                props.updateItem(e.target.value, 'alternative_b', item.key)
                             }
                         }
                     />
@@ -77,7 +76,7 @@ const ListItems = (props) => {
                         value={item.alternative_c}
                         onChange={
                             (e) => {
-                                props.updateItem(e.target.value, item.key)
+                                props.updateItem(e.target.value, 'alternative_c', item.key)
                             }
                         }
                     />
@@ -94,7 +93,7 @@ const ListItems = (props) => {
                         value={item.alternative_d}
                         onChange={
                             (e) => {
-                                props.updateItem(e.target.value, item.key)
+                                props.updateItem(e.target.value, 'alternative_d', item.key)
                             }
                         }
                     />
@@ -207,19 +206,68 @@ const InsertGames = (props) => {
         setItems(filteredItems);
     }
 
-    const updateItem = (text, key) => {
-        const newItems = items;
-        newItems.map(item => {      
-            if(item.key === key){
-                console.log(item.key +"    "+key)
-                item.question= text;
+    const updateItem = (text, element, key) => {
+        const newItems = items.map(item => {      
+            if(item.key === key) {
+                if (element === 'question') {
+                    return ({
+                        question: text,
+                        alternative_a: item.alternative_a,
+                        alternative_b: item.alternative_b,
+                        alternative_c: item.alternative_c,
+                        alternative_d: item.alternative_d,
+                        key
+                    })
+                }
+                else if (element === 'alternative_a') {
+                    return ({
+                        question: item.question,
+                        alternative_a: text,
+                        alternative_b: item.alternative_b,
+                        alternative_c: item.alternative_c,
+                        alternative_d: item.alternative_d,
+                        key
+                    })
+                }
+                else if (element === 'alternative_b') {
+                    return ({
+                        question: item.question,
+                        alternative_a: item.alternative_a,
+                        alternative_b: text,
+                        alternative_c: item.alternative_c,
+                        alternative_d: item.alternative_d,
+                        key
+                    })
+                }
+                else if (element === 'alternative_c') {
+                    return ({
+                        question: item.question,
+                        alternative_a: item.alternative_a,
+                        alternative_b: item.alternative_b,
+                        alternative_c: text,
+                        alternative_d: item.alternative_d,
+                        key
+                    })
+                }
+                else if (element === 'alternative_d') {
+                    return ({
+                        question: item.question,
+                        alternative_a: item.alternative_a,
+                        alternative_b: item.alternative_b,
+                        alternative_c: item.alternative_c,
+                        alternative_d: text,
+                        key
+                    })
+                }
             }
+            return item;
         })
         setItems(newItems);
     }
 
     return (
         <div>
+            <Helmet title="Cadastro de Jogos"/>
             <Sidebar pageSelected="insertGames" />
             <Header headerTitle="Administrador"/>
             <React.Fragment>
@@ -268,7 +316,7 @@ const InsertGames = (props) => {
                                             <input type="radio" name="alternativa" aria-label="Botão radio para acompanhar input text" />
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" value="c" placeholder="Alternativa C"  aria-label="Input text com botão radio" value={currentQuestion.alternative_c} onChange={handleChangeAltC}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa C"  aria-label="Input text com 0botão radio" value={currentQuestion.alternative_c} onChange={handleChangeAltC}/>
                                 </div>
 
                                 <div class="input-group" >

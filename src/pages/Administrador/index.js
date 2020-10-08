@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import '../styles.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import BackgroundParticle from '../../components/Background-particle'
@@ -132,7 +132,7 @@ function App() {
           </div>
         </Container>
       </div>
-      <a style={{textAlign:'center', cursor:'pointer',color:'white'}} onClick={()=>scroll.scrollToTop()} >
+      <a style={{textAlign:'center', cursor:'pointer',color:'white'}} href="#content" onClick={()=>scroll.scrollToTop()} >
       <div style={{backgroundColor:'black'}} className='Topo'>
       <FontAwesomeIcon icon={faCaretSquareUp} size="lg" />
       </div></a>

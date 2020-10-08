@@ -3,7 +3,7 @@ import "../Quiz/style.css";
 import Header from "../../../components/Header";
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import {faFlag} from '@fortawesome/free-regular-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 

@@ -6,7 +6,7 @@ import './styles.css';
 const Header = (props) => {
   return (
     <div className="header">
-      <img src={ead} className="img-logo"/>
+      <img src={ead} className="img-logo" alt="Logotipo do EAD-LAB"/>
         {props.headerTitle}
     </div>
   );

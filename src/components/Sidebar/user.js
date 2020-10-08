@@ -1,5 +1,5 @@
 import React from "react";
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import { faIdBadge, faGamepad, faUserFriends } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
@@ -12,7 +12,6 @@ const Sidebar = (props) => {
         <div className="sidebar">
             <SideNav 
                 onSelect={(selected) => {
-                    var flag = selected;
                     const to = '/' +selected; // só um exemplo com a tela login
                     history.push(to);
                 }}
