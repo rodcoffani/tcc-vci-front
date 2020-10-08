@@ -9,15 +9,33 @@ import API from "../../api";
 const Admin = (props) => {
     const [users, setUsers] = useState([]);
     const [ranking, setRanking] = useState([]);
+    const [games, setGames] = useState([]);
+    const [game, setGame] = useState({});
+    const [id, setId] = useState(0);
 
     useEffect(() => {
         API.get("/users/all").then((res) => {
             setUsers(res.data);
         });
-        API.get("/ranking/all").then((res) => {
-            setRanking(res.data);
-        });
+        
+        API.get("/game/all").then((res) => {
+            setGames(res.data);
+        });        
     }, []);
+
+    useEffect(() => {
+        if(id === 0){
+            API.get("/ranking/all").then((res) => {
+                setRanking(res.data);
+            }); 
+        }
+        else{
+            API.get(`/ranking/${id}`).then((res) => {
+                setRanking(res.data);
+            });  
+        }
+            
+    }, [id]);
 
     return (
         <div>
@@ -35,9 +53,11 @@ const Admin = (props) => {
                             <div className="ranking-title-combo">
                                 <div className="ranking-title-combo-title">Filtrar por jogo: <br /></div>
                                 <Form>
-                                    <FormControl as="select">
-                                        <option value="a" className = "select-jogos">Perguntados</option>
-                                        <option value="b" className = "select-jogos">Quiz</option>
+                                    <FormControl as="select" onChange={((e) => setId(parseInt(e.target.value)))}>
+                                        <option value={0} className="select-jogos">---</option>
+                                        {games.map((item) => {
+                                            return <option value={item.idgame} className="select-jogos">{item.name_game}</option>
+                                        })}
                                     </FormControl>
                                 </Form>
                             </div> 
@@ -45,9 +65,9 @@ const Admin = (props) => {
                                 <p className="ranking-text">Ranking</p>
                             </div>
                         </div>
-                        <br /><br /><br /><br />
+                        <br />
                         <div className="ranking-body">
-                            <table className="table table-striped header-fixed">
+                            <table className="table table-striped header-fixed-ranking">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -58,14 +78,13 @@ const Admin = (props) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {ranking.map((item) => {
-                                    {console.log(item)}
+                                {ranking.map((item, index) => {
                                     return <tr>
-                                        <td></td>
-                                        <td>{item.user.name_user}</td>
+                                        <td>{index + 1}</td>
+                                        <td>{item.name_user}</td>
                                         <td>{item.points}</td>
                                         <td>{item.time}</td>
-                                        <td>{item.idgame}</td>
+                                        <td>{item.name_game}</td>
                                     </tr>
                                 })}
                             </tbody>
@@ -88,7 +107,13 @@ const Admin = (props) => {
                                 {users.map((item) => {
                                     return <tr>
                                         <td>{item.name_user}</td>
-                                        <td>{item.iduser}</td>
+                                        {/*<td>{item.iduser}</td>*/}
+                                        <td>
+                                            <label class="switch">
+                                                <input type="checkbox" value={item.iduser} />
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </td>
                                     </tr>
                                 })}
                             </tbody>

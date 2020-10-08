@@ -97,7 +97,7 @@ function App() {
                 <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 2</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
-              <a href='jogos/roleta'>Jogar!</a>
+              <a href='/roleta_rules'>Jogar!</a>
               </Card.Footer>
             </Card>
             <Card className='EfctvCard'>
@@ -110,7 +110,7 @@ function App() {
                 <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 1</ListGroup.Item>
               </ListGroup>
               <Card.Footer style={{textAlign:'center'}}> 
-              <a href='Cadastro'>Jogar!</a>
+              <a href='/quiz_rules'>Jogar!</a>
               </Card.Footer>
             </Card>
             <Card className='EfctvCard'>
