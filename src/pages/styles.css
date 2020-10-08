@@ -115,6 +115,67 @@ span{
   -webkit-text-fill-color: rgb(0, 0, 0);
 }
 
+/* sobre */
+.mother{
+  width: 90%;
+  height: auto;
+  margin-left: 4%;
+}
+
+.about{
+    width: 80%;
+    background-color: white;
+    border-radius: 50px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.integrantes{
+  width: 77%;
+  margin-top: 1%;
+  margin-left: 10%;
+}
+
+.logo-grupo{
+  width:20%;
+  height: 500px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.cards{
+  width: 100%;
+}
+
+.card-text{
+  text-align: center;
+}
+
+.logos{
+  width: 70%;
+  margin-left: 17%;
+  margin-top: 2%;
+}
+
+.img-logo-empresa{
+  width: 18%;
+  margin-bottom: 3%;
+  margin-right: 3%;
+}
+
+.card{
+  float:left;
+  width: 10rem;
+  margin-left: 1.5%;
+  margin-top: 2%
+}
+
+
 @media (max-width:320px)
 {
   span

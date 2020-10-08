@@ -53,11 +53,6 @@ class login extends Component {
         }else{
             this.setState({view:true});
         }
-
-        
-        
-       
-       
     }
     handleModalValidacao = () =>{
         // atencao backend!! se a validacao der certo executa esse codigo -- alert avisando que deu certo
@@ -93,7 +88,7 @@ class login extends Component {
                 console.log(res.data);
                 if (res.data.success === "true") {
                     localStorage.setItem("authTk", res.data.token);
-                    this.setState({ redirect: "/" });
+                    this.setState({ redirect: "/funcionario" });
                 } else {
                     //Caso não logue
                 }

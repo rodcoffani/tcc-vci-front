@@ -5,12 +5,13 @@ import { Component } from "react";
 import { Helmet } from "react-helmet";
 import { cpfMask } from "./mask";
 import ead from "../../assets/images/ead-lab.png";
+import { Redirect } from "react-router-dom";
 import API from "../../api";
 import BackgroundParticle from '../../components/Background-particle'
 export default class Saudacao extends Component {
     constructor(props) {
         super(props);
-        this.state = {cpf: "", nome:"", sobrenome:"", email:"" };
+        this.state = {cpf: "", nome: "", sobrenome: "", email: "", redirect: ''};
         this.handlechange = this.handlechange.bind(this);
     }
 
@@ -20,7 +21,10 @@ export default class Saudacao extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         API.post("/users/",this.state).then((res) => {
-            console.log(res);
+            console.log(res.data.success);
+            if(res.data.success === true) {
+                this.setState({ redirect: "/login" })
+            }
         })
         
     }
@@ -33,6 +37,9 @@ export default class Saudacao extends Component {
     render() {
         const { cpf } = this.state;
         const { nome } = this.state;
+        if(this.state.redirect.length > 0) {
+            return <Redirect to={this.state.redirect} />
+        }
         return (
             <React.Fragment>
                 <Helmet title="Cadastro" />
