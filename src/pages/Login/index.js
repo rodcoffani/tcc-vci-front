@@ -58,11 +58,6 @@ class login extends Component {
         }else{
             this.setState({view:true});
         }
-
-        
-        
-       
-       
     }
     handleModalValidacao = () =>{
         // atencao backend!! se a validacao der certo executa esse codigo -- alert avisando que deu certo
