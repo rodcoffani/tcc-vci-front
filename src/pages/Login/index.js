@@ -93,7 +93,7 @@ class login extends Component {
                 console.log(res.data);
                 if (res.data.success === "true") {
                     localStorage.setItem("authTk", res.data.token);
-                    this.setState({ redirect: "/" });
+                    this.setState({ redirect: "/funcionario" });
                 } else {
                     //Caso não logue
                 }
