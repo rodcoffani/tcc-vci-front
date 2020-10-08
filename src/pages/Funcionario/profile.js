@@ -11,8 +11,8 @@ class employee extends Component{
     render() {
         return(
             <div>
-            <Sidebar pageSelected="profile-employee"/>
-            <Header headerTitle="Funcionário"/>
+            <Sidebar pageSelected="reports"/>
+            <Header headerTitle="Funcionario"/>
             <React.Fragment>
             <Container fluid="xl">
                 <BackgroundParticle />
@@ -35,7 +35,6 @@ class employee extends Component{
                                 <p className="ranking-text">Ranking</p>
                             </div>
                         </div>
-                        <br /><br /><br /><br />
                         <div className="ranking-body">
                             <table class="table table-striped header-fixed">
                             <thead>
@@ -47,16 +46,15 @@ class employee extends Component{
                                 </tr>
                             </thead>
                             <tbody>
-                               
                                 <tr>
                                     <td>1</td>
                                     <td>Quiz</td>
-                                    <td>19s</td>
+                                    <td>21s</td>
                                     <td>20</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Perguntados</td>
+                                    <td>Roleta</td>
                                     <td>20s</td>
                                     <td>20</td>
                                 </tr>
@@ -75,43 +73,39 @@ class employee extends Component{
                             <p className="employee-text"> Seu Perfil</p>
                         </div>
                         <div className="employee-body">
-                            <table class="table table-striped header-fixed-employee">
-                                <thead>
-                                    <div className="profile-picf">
-                                        <Col xs={6} md={4}>
-                                            <Image src={Foto} roundedCircle />
-                                        </Col>
+                            <div class="table table-striped header-fixed-employee">
+                                <div className="profile-picf">
+                                    <div xs={6} md={4}>
+                                        <Image src={Foto} roundedCircle />
                                     </div>
-                                    <div className="nome-profilef"> 
-                                        Funcionaria 1
-                                    </div>
-                                </thead>
-                                <br></br><br></br><br></br><br></br><br></br><br></br>
-                                <tbody>
-                                    <div className="profile-func">
-                                        <tr>
-                                            <td><b>Usuário</b></td>
-                                            <td>funcionaria_1</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Departamento</b></td>
-                                            <td>Produção</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>CPF</b></td>
-                                            <td>147.154.126-47</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Acertos</b></td>
-                                            <td><b>Erros</b></td>
-                                        </tr>
-                                        <tr>
-                                            <td>9</td>
-                                            <td>9</td>
-                                        </tr>
-                                    </div>
-                                </tbody>
-                            </table>
+                                </div>
+                                <div className="nome-profilef"> 
+                                    Matilda53
+                                </div>
+                                <br></br>
+                                <div className="profile-func">
+                                    <tr>
+                                        <td><b>Usuário</b></td>
+                                        <td>Matilda53</td>
+                                    </tr>
+                                    {/* <tr>
+                                        <td><b>Departamento</b></td>
+                                        <td>Produção</td>
+                                    </tr> */}
+                                    <tr>
+                                        <td><b>CPF</b></td>
+                                        <td>472.522.454-09</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Acertos</b></td>
+                                        <td><b>Erros</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>9</td>
+                                    </tr>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
