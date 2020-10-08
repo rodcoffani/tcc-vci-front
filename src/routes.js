@@ -15,6 +15,7 @@ import Perfil from "./pages/Administrador/profile";
 import CadastroJogos from "./pages/Administrador/insertGames";
 import Funcionario from "./pages/Funcionario";
 import Profile from "./pages/Funcionario/profile"
+import Sobre from "./pages/about"
 
 const Routes = () => {
     return (
@@ -75,6 +76,10 @@ const Routes = () => {
                 <Route
                     path="/profile-employee"
                     component={ Profile }
+                />
+                <Route
+                    path="/sobre"
+                    component={ Sobre }
                 />
             </Switch>
         </BrowserRouter>

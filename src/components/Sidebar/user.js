@@ -1,6 +1,6 @@
 import React from "react";
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import { faIdBadge, faGamepad, faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import { faIdBadge, faGamepad, faUserFriends, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
 import './styles.css';
@@ -41,6 +41,14 @@ const Sidebar = (props) => {
                         </NavIcon>
                         <NavText>
                             Cadastro
+                        </NavText>           
+                    </NavItem>
+                    <NavItem eventKey="Sobre">
+                        <NavIcon>
+                            <FontAwesomeIcon icon={faInfoCircle} />
+                        </NavIcon>
+                        <NavText>
+                            Sobre
                         </NavText>           
                     </NavItem>
                 </SideNav.Nav>
