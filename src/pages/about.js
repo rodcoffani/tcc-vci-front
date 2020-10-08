@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import BackgroundParticle from '../components/Background-particle'
@@ -44,120 +44,120 @@ const About = () => {
                         <div className="integrantes">
                         <h4>O projeto foi realizado para a formação acadêmica, no Colégio Técnico Industrial
                         "Prof Isaac Portal Roldán" (CTI), da Unesp, dos seguintes alunos:</h4>
-                            <div className="card">
-                                <img className="card-img-top rounded" src={grazi} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={grazi} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Graziele</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={laura} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={laura} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Laura</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={ana} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={ana} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Ana Julia</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={guilherme} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={guilherme} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Guilherme</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={kaio} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={kaio} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Kaio</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={micaela} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={micaela} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Micaela</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={rodrigo} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={rodrigo} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Rodrigo</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={sophia} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={sophia} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Sophia</h4>
                                 </div>
                             </div>
                         
-                            <div className="card">
-                                <img className="card-img-top rounded" src={amanda} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={amanda} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Amanda</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={anselmo} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={anselmo} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Anselmo</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={jose} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={jose} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>José</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={luiz} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={luiz} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Luiz</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={nicolas} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={nicolas} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Nicolas</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={thiago} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={thiago} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Thiago</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={vinicius} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={vinicius} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Vinicius</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={eduardo} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={eduardo} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Eduardo</h4>
                                 </div>
                             </div>
 
-                            <div className="card">
-                                <img className="card-img-top rounded" src={hugo} alt="Card image"/>
+                            <div className="card-integrante">
+                                <img className="card-img-top rounded" src={hugo} alt="Integrante do grupo"/>
                                 <div className="card-body">
                                     <h4>Hugo</h4>
                                 </div>
@@ -166,10 +166,10 @@ const About = () => {
 
                         <div className="logos">
                             <hr/>
-                            <img src={cti} className="img-logo-empresa"></img>
-                            <img src={unesp} className="img-logo-empresa"></img>
-                            <img src={adacode} className="img-logo-empresa"></img>
-                            <img src={ezweb} className="img-logo-empresa"></img>
+                            <img src={cti} className="img-logo-empresa" alt="Logotipo CTI"></img>
+                            <img src={unesp} className="img-logo-empresa" alt="Logotipo UNESP"></img>
+                            <img src={adacode} className="img-logo-empresa" alt="Logotipo AdaCode"></img>
+                            <img src={ezweb} className="img-logo-empresa" alt="Logotipo EzWeb"></img>
                         </div>
                     </div>
                 </div>
