@@ -141,6 +141,7 @@ p.FieldD.senha {
 }
 button .icone {
     color: white;
+    font-size: 28px;
 }
 button.icone {
     outline: 0;
@@ -163,6 +164,20 @@ button.icone {
 }
 .CadBtn.cad{
     margin-right: 40%;
+}
+.recuperaEmail{
+    width: 89%;
+    margin-left: 1%;
+    border: solid;
+    background: white;
+    border-color: #00428a;
+}
+.modal-header{
+    font-weight: 600;
+    color: black;
+}
+.alert-danger{
+    margin-top: 4%;
 }
 @media (min-width: 320px) and (max-width: 375px) {
     .TituloC {
@@ -199,8 +214,9 @@ button.icone {
         margin-left: -22%;
     }
     button .icone {
-        margin-left: 20.2vh;
+        margin-left: 9.2vh;
         margin-right:2%;
+        font-size: 21px;
     }
     .one {
         margin-left: -12px;
