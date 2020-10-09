@@ -55,8 +55,8 @@ class login extends Component {
         }
     }
     handleModalValidacao = () =>{
-        // atencao backend!! se a validacao der certo executa esse codigo -- alert avisando que deu certo
-        this.setState({sucess:true});
+        // atencao backend!! se a validacao der certo executa esse codigo -- alert avisando que deu certo (falta recarregar a página)
+        alert("Senha enviada ao respectivo email");
 
         // se der errado - alert avisando que deu erro
         this.setState({error:true});
@@ -227,18 +227,18 @@ class login extends Component {
                 </Container>
                 <div>
                     <Modal show={this.state.view} onHide={()=>this.handleModal()}>
-                        <Modal.Header>Recuperação de Senha </Modal.Header>
+                        <Modal.Header>RECUPERAÇÃO DE SENHA </Modal.Header>
                         <Modal.Body>
-                            <b className="">Digite seu email:</b>
+                            <b className="">Email:</b>
                             <input
                                 type="text"
                                 placeholder="Email"
-                                className=""
+                                className="recuperaEmail"
                                 maxLength="85"
                             ></input>
-                            <Alert show={this.state.sucess} id="AlertSucess" variant="success">
+                            {/* <Alert show={this.state.sucess} id="AlertSucess" variant="success">
                                 Senha enviada para o respectivo email
-                            </Alert>
+                            </Alert> */}
                             <Alert show={this.state.error} id="AlertDanger" variant="danger">
                                Email Incorreto
                             </Alert>
