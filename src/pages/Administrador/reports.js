@@ -50,7 +50,7 @@ const Admin = (props) => {
                     <div className="ranking">
                         <div className="ranking-title">
                             <div className="ranking-title-combo">
-                                <div className="ranking-title-combo-title">Filtrar por jogo: <br /></div>
+                                Filtrar por jogo:
                                 <Form>
                                     <FormControl as="select" onChange={((e) => setId(parseInt(e.target.value)))}>
                                         <option value={0} className="select-jogos">---</option>
@@ -59,9 +59,9 @@ const Admin = (props) => {
                                         })}
                                     </FormControl>
                                 </Form>
-                            </div> 
+                             </div>
                             <div className="ranking-title-title">
-                                <p className="ranking-text">Ranking</p>
+                                <h2>Ranking</h2>
                             </div>
                         </div>
                         <br />
@@ -92,7 +92,7 @@ const Admin = (props) => {
                     </div>
                     <div className="employee">
                         <div className="employee-title">
-                            <p className="employee-text">Funcionários</p>
+                            <h2>Funcionários</h2>
                         </div>
                         <div className="employee-body">
                             <table className="table table-striped header-fixed-employee">

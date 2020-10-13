@@ -12,6 +12,10 @@ import slider_03 from "../assets/images/slider_03.PNG";
 import {faClock,faUser,faCheckCircle,faCaretSquareUp} from '@fortawesome/free-regular-svg-icons'
 import {animateScroll as scroll} from 'react-scroll'
 import {Helmet} from "react-helmet"
+import adacode from "../assets/images/logos/adacode.png";
+import cti from "../assets/images/logos/cti.png";
+import unesp from "../assets/images/logos/unesp.png";
+import ezweb from "../assets/images/logos/ezweb.png";
 function App() {
 
   return (
@@ -129,9 +133,19 @@ function App() {
           </CardGroup>
           </Col>
           </Row>
+            <div className="logos">
+              <hr/>
+              <img src={cti} className="img-logo-empresa" alt="Logotipo CTI"></img>
+              <img src={unesp} className="img-logo-empresa" alt="Logotipo UNESP"></img>
+              <img src={adacode} className="img-logo-empresa" alt="Logotipo AdaCode"></img>
+              <img src={ezweb} className="img-logo-empresa" alt="Logotipo EzWeb"></img>
+            </div>
           </div>
+          
         </Container>
+        
       </div>
+      
       <a style={{textAlign:'center', cursor:'pointer',color:'white'}} href="#content" onClick={()=>scroll.scrollToTop()} >
         <div style={{backgroundColor:'black'}} className='Topo'>
           <FontAwesomeIcon icon={faCaretSquareUp} size="lg" />

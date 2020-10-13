@@ -4,6 +4,12 @@
     margin-left: 4%;
 }
 
+.logos{
+    width: 70%;
+    margin-left: 17%;
+    margin-top: 2%;
+  }
+
 /* relatórios */
 
 .ranking{
@@ -28,26 +34,16 @@
 
 .ranking-title-combo{
     float: left;
+    width: 17%;
     align-content: flex-start;
     padding-top: 15px;
     margin-left: 2%;
 }
 
-.ranking-title-combo-title{
-    margin-right: 18%;
-}
-
 .ranking-title-title{
-    float: left;
     padding-top: 15px;
-    padding-left: 40%;
-    width: 70%;
-    align-content: center;
-}
-
-.ranking-text{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 200%;
+    width: 80%;
+    text-align: center;
 }
 
 .ranking-body{
@@ -94,12 +90,6 @@
     height: auto;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 50%;
-}
-
-.employee-text{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 200%;
 }
 
 .employee-body{
@@ -230,9 +220,9 @@
 
 .admin{
     float: left;
-    width: 70%;
+    width: 60%;
     margin-left: 5%;
-    height: 600px;
+    height: 1000px;
     background-color: white;
     border-radius: 5%;
     align-items: center;
@@ -240,8 +230,6 @@
 
 .admin-title{
     width: 90%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 160%;
     padding: 1.2%;
     height: auto;
 }
@@ -273,11 +261,43 @@
 
 .header-fixed-profile > tbody {
     overflow-y: scroll;
-    height: 400px;
+    height: 250px;
 }
 
 .header-fixed-profile > tbody > tr > td,
 .header-fixed-profile > thead > tr > th {
+    width: 33%;
+    float: left;
+}
+
+.header-fixed-admin {
+    width: 100% 
+}
+
+.header-fixed-admin > thead,
+.header-fixed-admin > tbody,
+.header-fixed-admin > thead > tr,
+.header-fixed-admin > tbody > tr,
+.header-fixed-admin > thead > tr > th,
+.header-fixed-admin > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed-admin > tbody > tr:after,
+.header-fixed-admin > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed-admin > tbody {
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.header-fixed-admin > tbody > tr > td,
+.header-fixed-admin > thead > tr > th {
     width: 33%;
     float: left;
 }
@@ -372,6 +392,152 @@ label{
     background-color: #fff;
 }
 
+/* css card perfil */
+
+.card-user{
+    float: left;
+    width: 36%;
+}
+
+.input-profile{
+    background-color: white;
+    color: black;
+    border-color: #48D1CC;
+    height: 40%;
+    width: 100%;
+}
+
+.user-card-full {
+    overflow: hidden
+}
+
+.card {
+    border-radius: 5%;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.m-r-0 {
+    margin-right: 0px
+}
+
+.m-l-0 {
+    margin-left: 0px
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px
+}
+
+.bg-c-lite-green {
+    background: -webkit-gradient(linear, left top, right top, #6495ED ,#48D1CC);
+    background: linear-gradient(to right, #6495ED ,#48D1CC)
+}
+
+.user-profile {
+    padding: 20px 0
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.m-b-25 {
+    margin-bottom: 25px
+}
+
+
+.img-radius {
+    border-radius: 50%;
+    width: 70%;
+}
+
+h6 {
+    font-size: 14px
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px
+    }
+}
+
+.card-block {
+    padding: 5%;
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+.m-b-10 {
+    margin-bottom: 3%;
+    margin-left: 4.5%;
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.f-w-600 {
+    font-weight: 600
+}
+
+.f-w-800 {
+    font-size: 120%;
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.user-card-full .social-link li {
+    display: inline-block
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
 
 /* design celular */
 
@@ -387,7 +553,6 @@ label{
         margin-left: 18%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -401,16 +566,16 @@ label{
         padding-left: 25%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 90%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -439,11 +604,15 @@ label{
         padding-left: 10%;
     }
     
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
+
     .admin{
         width: 80%;
         margin-left: 15%;
         margin-top: 5%;
-        height: 400px;
     }
     
     .admin-title{
@@ -460,7 +629,24 @@ label{
     }
 
     .header-fixed-profile > tbody {
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed-admin > tbody {
         height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -50%;
     }
 }
 
@@ -489,16 +675,16 @@ label{
         padding-left: 25%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 90%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -525,12 +711,16 @@ label{
         text-align: left;
         padding-left: 10%;
     }
+
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
     
     .admin{
         width: 80%;
         margin-left: 15%;
         margin-top: 5%;
-        height: 400px;
     }
     
     .admin-title{
@@ -547,7 +737,24 @@ label{
     }
 
     .header-fixed-profile > tbody {
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed-admin > tbody {
         height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -45%;
     }
 }
 
@@ -563,7 +770,6 @@ label{
         margin-left: 18%;
     }
     
-    
     .ranking-body{
         width: 92%;
         height: auto;
@@ -577,16 +783,16 @@ label{
         padding-left: 27%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 90%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -613,12 +819,17 @@ label{
         text-align: left;
         padding-left: 10%;
     }
+
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
     
     .admin{
         width: 80%;
         margin-left: 15%;
         margin-top: 5%;
-        height: 400px;
+        height: 900px;
     }
     
     .admin-title{
@@ -635,7 +846,24 @@ label{
     }
 
     .header-fixed-profile > tbody {
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed-admin > tbody {
         height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -40%;
     }
 }
 
@@ -664,16 +892,16 @@ label{
         padding-left: 20%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 100%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -704,12 +932,17 @@ label{
         text-align: left;
         padding-left: 10%;
     }
+
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
     
     .admin{
         width: 80%;
         margin-left: 15%;
         margin-top: 5%;
-        height: 400px;
+        height: 900px;
     }
     
     .admin-title{
@@ -726,7 +959,24 @@ label{
     }
 
     .header-fixed-profile > tbody {
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-admin > tbody {
         height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -37%;
     }
 }
 
@@ -755,16 +1005,16 @@ label{
         padding-left: 50%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 100%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -795,12 +1045,16 @@ label{
         text-align: left;
         padding-left: 10%;
     }
+
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
     
     .admin{
         width: 90%;
         margin-left: 9%;
         margin-top: 5%;
-        height: 400px;
     }
     
     .admin-title{
@@ -817,7 +1071,24 @@ label{
     }
 
     .header-fixed-profile > tbody {
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-admin > tbody {
         height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -55%;
     }
 }
 
@@ -846,16 +1117,16 @@ label{
         padding-left: 50%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 100%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -886,12 +1157,16 @@ label{
         text-align: left;
         padding-left: 10%;
     }
+
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
     
     .admin{
         width: 90%;
         margin-left: 9%;
         margin-top: 5%;
-        height: 400px;
     }
     
     .admin-title{
@@ -908,7 +1183,24 @@ label{
     }
 
     .header-fixed-profile > tbody {
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 102%;
+    }
+
+    .header-fixed-admin > tbody {
         height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -55%;
     }
 }
 
@@ -937,16 +1229,16 @@ label{
         padding-left: 30%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 100%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -978,12 +1270,16 @@ label{
         text-align: left;
         padding-left: 10%;
     }
+
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
     
     .admin{
         width: 90%;
         margin-left: 9%;
         margin-top: 5%;
-        height: 550px;
     }
     
     .admin-title{
@@ -1000,7 +1296,24 @@ label{
     }
 
     .header-fixed-profile > tbody {
-        height: 400px;
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-admin > tbody {
+        height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -3%;
     }
 }
 
@@ -1029,16 +1342,16 @@ label{
         padding-left: 30%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 100%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -1069,12 +1382,17 @@ label{
         text-align: left;
         padding-left: 10%;
     }
+
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
     
     .admin{
         width: 90%;
         margin-left: 8%;
         margin-top: 5%;
-        height: 450px;
+        height: 900px;
     }
     
     .admin-title{
@@ -1091,7 +1409,24 @@ label{
     }
 
     .header-fixed-profile > tbody {
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-admin > tbody {
         height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -3%;
     }
 }
 
@@ -1120,16 +1455,16 @@ label{
         padding-left: 10%;
     }
 
-    .header-fixed > thead,
-    .header-fixed > tbody,
-    .header-fixed > thead > tr,
-    .header-fixed > tbody > tr,
-    .header-fixed > thead > tr > th,
-    .header-fixed > tbody > tr > td {
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
         font-size: 100%;
     }
 
-    .header-fixed > tbody {
+    .header-fixed-ranking > tbody {
         height: 350px;
     }
 
@@ -1160,12 +1495,16 @@ label{
         text-align: left;
         padding-left: 10%;
     }
+
+    .card-user{
+        width: 90%;
+        margin-left: 9%;
+    }
     
     .admin{
         width: 90%;
         margin-left: 7.5%;
         margin-top: 5%;
-        height: 550px;
     }
     
     .admin-title{
@@ -1182,6 +1521,29 @@ label{
     }
 
     .header-fixed-profile > tbody {
-        height: 400px;
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 105%;
+    }
+
+    .header-fixed-admin > tbody {
+        height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -3%;
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px){
+    .m-b-10 {
+        margin-left: -3%;
     }
 }

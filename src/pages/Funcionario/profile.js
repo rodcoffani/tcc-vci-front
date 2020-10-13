@@ -24,7 +24,7 @@ class employee extends Component{
                             <div className="ranking">
                                 <div className="ranking-title">
                                     <div className="ranking-title-combo">
-                                        <div className="ranking-title-combo-title">Filtrar por jogo: <br /></div>
+                                        Filtrar por jogo:
                                         <Form>
                                             <FormControl as="select">
                                                 <option value="a" className = "select-jogos">Perguntados</option>
@@ -33,7 +33,7 @@ class employee extends Component{
                                         </Form>
                                     </div> 
                                     <div className="ranking-title-title">
-                                        <p className="ranking-text">Ranking</p>
+                                        <h2>Ranking</h2>
                                     </div>
                                 </div>
                                 <div className="ranking-body">
@@ -71,7 +71,7 @@ class employee extends Component{
                             </div>
                             <div className="employee">
                                 <div className="employee-title">
-                                    <p className="employee-text"> Seu Perfil</p>
+                                    <h2>Seu Perfil</h2>
                                 </div>
                                 <div className="employee-body">
                                     <div class="table table-striped header-fixed-employee">
