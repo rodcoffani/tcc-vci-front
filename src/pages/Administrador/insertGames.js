@@ -277,6 +277,7 @@ const InsertGames = (props) => {
             <center>
                 <div className="mother">
                     <div className="insert-games">
+                        <h2>Cadastro de jogos</h2>
                         <Form className="todo-form" onSubmit={addItem}>
                             <div className="labels-insert">
                                 <FormLabel>Selecionar tipo de jogo:</FormLabel><br />
