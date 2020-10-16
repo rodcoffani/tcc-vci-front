@@ -1,3 +1,4 @@
+/*====================INDEX------------------------------*/
 .titulo_objetivo
 {
     font-weight: bold;
@@ -37,4 +38,73 @@
 
 .play > *:hover{
     opacity: 1;
+}
+
+/*-----------jogo------------------------------------------*/
+.container_jogo{
+    background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+.hud{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+    padding: 1vh 0 0 0;
+}
+
+.tempo{
+    display: flex;
+    flex-wrap: wrap;
+    height: 25vh;
+    width: 25vw;
+    border-radius: 20px;
+    background-color: #ffffffaa;
+    text-align: center;
+}
+
+.pontos{
+    display: flex;
+    flex-wrap: wrap;
+    height: 25vh;
+    width: 25vw;
+    border-radius: 20px;
+    background-color: #ffffffaa;
+    text-align: center;
+}
+
+.campValor{
+    padding: 5%;
+    margin-left: 35%;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.cronometro{}
+.points{}
+
+.quiz{
+    display: flex;
+    flex-wrap: wrap;
+    height: 76vh;
+    width: 76vw;
+    margin-left: 12vw;
+    margin-bottom: 5vw;
+    margin-top: 5vh;
+    border-radius: 20px;
+    background-color: #ffffffaa;
+    text-align: center;
+
+}
+
+#loader{
+    border:1.6rem solid white;
+    border-radius: 50%;
+    border-top: 1.6rem solid #56a5eb;
+    width: 12rem;
+    height: 12rem;
+    animation: spin 2s linear infinite;
+    align-content: center;
 }
