@@ -36,37 +36,36 @@ const Profile = (props) => {
             <center>
                 <div className="mother">
                     <br />
-                        <div className="row container d-flex card-user">
-                            <div className="col-md-12">
-                                <div className="card user-card-full">
-                                    <div className="row m-l-0 m-r-0">
-                                        <div className="col-sm-4 bg-c-lite-green user-profile">
-                                            <div className="card-block text-center text-white">
-                                                <div className="m-b-25"><img src={laura} className="img-radius"></img></div>
-                                                <h6 className="f-w-800">Mark Sloan</h6>
-                                                <FontAwesomeIcon icon={faEdit} className="icons" />
-                                            </div>
+                    <div className="row container d-flex card-user">
+                        <div className="col-md-12">
+                            <div className="card user-card-full">
+                                <div className="row m-l-0 m-r-0">
+                                    <div className="col-sm-4 bg-c-lite-green user-profile">
+                                        <div className="card-block text-center text-white">
+                                            <div className="m-b-25"><img src={laura} className="img-radius"></img></div>
+                                            <h6 className="f-w-800">Mark Sloan</h6>
+                                            <FontAwesomeIcon icon={faEdit} className="icons" />
                                         </div>
-                                        <div className="col-sm-8">
-                                            <div className="card-block">
-                                                <h5 className="m-b-20 p-b-5 b-b-default f-w-600">Meu Perfil</h5>
-                                                <div className="row">
-                                                    <div className="col-sm-12">
-                                                        <p className="m-b-10 f-w-600">Nome de usuário</p>
-                                                        <input type="text" className="input-profile" placeholder="aaaa"></input>
-                                                    </div>
-                                                    <div className="col-sm-12">
-                                                        <p className="m-b-10 f-w-600">Email</p>
-                                                        <input type="text" className="input-profile" placeholder="aaaa"></input>
-                                                    </div>
-                                                    <div className="col-sm-12">
-                                                        <p className="m-b-10 f-w-600">CPF</p>
-                                                        <input type="text" className="input-profile" placeholder="aaaa"></input>
-                                                    </div>
-                                                    <div className="col-sm-12">
-                                                        <p className="m-b-10 f-w-600">Senha</p>
-                                                        <input type="text" className="input-profile" placeholder="aaaa"></input>
-                                                    </div>
+                                    </div>
+                                    <div className="col-sm-8">
+                                        <div className="card-block">
+                                            <h5 className="m-b-20 p-b-5 b-b-default f-w-600">Meu Perfil</h5>
+                                            <div className="row">
+                                                <div className="col-sm-12">
+                                                    <p className="m-b-10 f-w-600">Nome de usuário</p>
+                                                    <input type="text" className="input-profile" placeholder="aaaa"></input>
+                                                </div>
+                                                <div className="col-sm-12">
+                                                    <p className="m-b-10 f-w-600">Email</p>
+                                                    <input type="text" className="input-profile" placeholder="aaaa"></input>
+                                                </div>
+                                                <div className="col-sm-12">
+                                                    <p className="m-b-10 f-w-600">CPF</p>
+                                                    <input type="text" className="input-profile" placeholder="aaaa"></input>
+                                                </div>
+                                                <div className="col-sm-12">
+                                                    <p className="m-b-10 f-w-600">Senha</p>
+                                                    <input type="text" className="input-profile" placeholder="aaaa"></input>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,18 +73,7 @@ const Profile = (props) => {
                                 </div>
                             </div>
                         </div>
-
-                    {/*<div className="profile">
-                        <div className="profile-photo">
-                            
-                        </div>
-                        <div className="profile-info">
-                            <p>Nome: Mark</p>
-                            <p>Sobrenome: Sloan</p>
-                            <p>E-mail: mark2008@yahoo.com</p>
-                            <p>CPF: 147.154.126-47</p>
-                        </div>
-                    </div>*/}
+                    </div>
 
                     <div className="admin">
                         <div className="admin-title"><h2>Outros administradores</h2></div>
@@ -126,9 +114,9 @@ const Profile = (props) => {
                                             <td>{item.name_user}</td>
                                             <td>{item.nickname_user}</td>
                                             <td>
-                                                <label class="switch">
+                                                <label className="switch-profile">
                                                     <input type="checkbox" value={item.iduser} />
-                                                    <span class="slider round"></span>
+                                                    <span className="slider round"></span>
                                                 </label>
                                             </td>
                                         </tr>

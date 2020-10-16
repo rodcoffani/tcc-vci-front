@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Helmet} from "react-helmet"
 import './styles.css';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar/admin';
@@ -38,6 +39,7 @@ const Admin = (props) => {
 
     return (
         <div>
+            <Helmet title="Relatórios"/>
             <Sidebar pageSelected="reports"/>
             <Header headerTitle="Administrador"/>
             <React.Fragment>
@@ -49,7 +51,10 @@ const Admin = (props) => {
                     <br />
                     <div className="ranking">
                         <div className="ranking-title">
-                            <div className="ranking-title-combo">
+                            <div className="ranking-title-title-adm">
+                                <h2>Ranking</h2>
+                            </div>
+                            <div className="ranking-title-combo-adm">
                                 Filtrar por jogo:
                                 <Form>
                                     <FormControl as="select" onChange={((e) => setId(parseInt(e.target.value)))}>
@@ -60,9 +65,6 @@ const Admin = (props) => {
                                     </FormControl>
                                 </Form>
                              </div>
-                            <div className="ranking-title-title">
-                                <h2>Ranking</h2>
-                            </div>
                         </div>
                         <br />
                         <div className="ranking-body">
@@ -108,9 +110,9 @@ const Admin = (props) => {
                                         <td>{item.name_user}</td>
                                         {/*<td>{item.iduser}</td>*/}
                                         <td>
-                                            <label class="switch">
-                                                <input type="checkbox" value={item.iduser} />
-                                                <span class="slider round"></span>
+                                            <label className="switch">
+                                                <input type="checkbox" value={item.iduser}/>
+                                                <span className="slider round"></span>
                                             </label>
                                         </td>
                                     </tr>

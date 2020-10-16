@@ -280,9 +280,7 @@ const InsertGames = (props) => {
                         <h2>Cadastro de jogos</h2>
                         <Form className="todo-form" onSubmit={addItem}>
                             <div className="labels-insert">
-                                <FormLabel>Selecionar tipo de jogo:</FormLabel><br />
-                                <FormLabel>Nome do jogo:</FormLabel>
-                                <FormLabel>Pergunta:</FormLabel>
+                                <FormLabel>Selecionar tipo de jogo:</FormLabel>
                             </div>
                             <div className="inputs-insert">
                                 <FormControl as="select">
@@ -290,7 +288,19 @@ const InsertGames = (props) => {
                                         return <option value={item.idgame} className="select-jogos">{item.name_game}</option>
                                     })}
                                 </FormControl>
+                            </div>
+
+                            <div className="labels-insert">
+                                <FormLabel>Nome do jogo:</FormLabel>
+                            </div>
+                            <div className="inputs-insert">
                                 <input type="text" placeholder="Digite o nome do jogo" className="form-control"/>
+                            </div>
+
+                            <div className="labels-insert">
+                                <FormLabel>Pergunta:</FormLabel>
+                            </div>
+                            <div className="inputs-insert">
                                 <input type="text" placeholder="Digite o enunciado da pergunta" className="form-control" value={currentQuestion.question} onChange={handleChangeQuestion}/>
                                 
                                 <div class="input-group">

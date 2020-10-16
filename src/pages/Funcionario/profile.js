@@ -11,9 +11,9 @@ class employee extends Component{
     render() {
         return(
             <div>
-                <Helmet title="Perfil Funcionário" />
+                <Helmet title="Perfil" />
                 <Sidebar pageSelected="reports"/>
-                <Header headerTitle="Funcionario"/>
+                <Header headerTitle="Funcionário"/>
                 <React.Fragment>
                     <Container fluid="xl">
                         <BackgroundParticle />

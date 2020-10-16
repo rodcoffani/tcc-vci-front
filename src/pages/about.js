@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from "react-helmet"
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import BackgroundParticle from '../components/Background-particle'
@@ -30,6 +31,7 @@ import kaio from "../assets/images/integrantes/kaio.png";
 const About = () => {
     return (
         <div>
+            <Helmet title="Sobre"/>
             <Sidebar pageSelected="Sobre" />
             <Header headerTitle="Home"/>
             <React.Fragment>
@@ -47,119 +49,119 @@ const About = () => {
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={grazi} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Graziele</h4>
+                                    Graziele
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={laura} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Laura</h4>
+                                    Laura
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={ana} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Ana Julia</h4>
+                                    Ana Julia
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={guilherme} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Guilherme</h4>
+                                    Guilherme
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={kaio} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Kaio</h4>
+                                    Kaio
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={micaela} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Micaela</h4>
+                                    Micaela
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={rodrigo} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Rodrigo</h4>
+                                    Rodrigo
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={sophia} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Sophia</h4>
+                                    Sophia
                                 </div>
                             </div>
                         
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={amanda} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Amanda</h4>
+                                    Amanda
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={anselmo} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Anselmo</h4>
+                                    Anselmo
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={jose} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>José</h4>
+                                    José
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={luiz} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Luiz</h4>
+                                    Luiz
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={nicolas} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Nicolas</h4>
+                                    Nicolas
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={thiago} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Thiago</h4>
+                                    Thiago
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={vinicius} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Vinicius</h4>
+                                    Vinicius
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={eduardo} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Eduardo</h4>
+                                    Eduardo
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={hugo} alt="Integrante do grupo"/>
                                 <div className="card-body">
-                                    <h4>Hugo</h4>
+                                    Hugo
                                 </div>
                             </div>
                         </div>

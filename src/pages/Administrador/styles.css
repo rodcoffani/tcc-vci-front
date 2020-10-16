@@ -32,18 +32,18 @@
     height: auto;
 }
 
-.ranking-title-combo{
-    float: left;
-    width: 17%;
-    align-content: flex-start;
+.ranking-title-title-adm{
     padding-top: 15px;
-    margin-left: 2%;
+    width: 60%;
+    margin-left: 15%;
+    text-align: center;
+    float:left;
 }
 
-.ranking-title-title{
+.ranking-title-combo-adm{
+    float: left;
+    width: 20%;
     padding-top: 15px;
-    width: 80%;
-    text-align: center;
 }
 
 .ranking-body{
@@ -130,12 +130,16 @@
     float: left;
 }
 
+.checkbox-validacao{
+    padding-left: 5%;
+}
+
 .switch {
     position: relative;
     display: inline-block;
     width: 50px;
     height: 25px;
-    margin-left: 10%;
+    margin-left: 15%;
   }
   
   /* Hide default HTML checkbox */
@@ -302,11 +306,27 @@
     float: left;
 }
 
+.switch-profile {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-left: 15%;
+  }
+
+   /* Hide default HTML checkbox */
+   .switch-profile input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+
 /* cadastro de jogos */
 .insert-games {
     width: 80%;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 3%;
     align-content: center;
     justify-content: center;
     display: flex;
@@ -321,12 +341,10 @@
 }
 
 .labels-insert{
-    height: 100%;
     width: 25%;
 }
 
 .inputs-insert{
-    height: 100%;
     width: 65%;
 }
 
@@ -552,6 +570,15 @@ h6 {
         margin-top: 5%;
         margin-left: 18%;
     }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 2%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
+    }
     
     .ranking-body{
         width: 92%;
@@ -560,10 +587,6 @@ h6 {
     
     .employee-body{
         height: auto;
-    }
-
-    .employee-title{
-        padding-left: 25%;
     }
 
     .header-fixed-ranking > thead,
@@ -581,6 +604,10 @@ h6 {
 
     .header-fixed-employee > tbody {
         height: 350px;
+    }
+
+    .switch {
+        margin-left: 35%;
     }
 
     .profile{
@@ -603,20 +630,25 @@ h6 {
         text-align: left;
         padding-left: 10%;
     }
-    
+
+    .switch-profile {
+        margin-left: 80%;
+    }
+
     .card-user{
         width: 90%;
-        margin-left: 9%;
+        margin-left: 14%;
     }
 
     .admin{
         width: 80%;
-        margin-left: 15%;
+        margin-left: 19%;
         margin-top: 5%;
+        height: 800px;
     }
     
-    .admin-title{
-        font-size: 130%;
+    .admin-title h2{
+        font-size: 115%;
     }
 
     .header-fixed-profile > thead,
@@ -648,6 +680,29 @@ h6 {
     .m-b-10 {
         margin-left: -50%;
     }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 15%;
+    }
+    
+    label{
+        text-align: left;
+    }
+
+    .insert-games h2{
+        font-size: 130%;
+    }
 }
 
 @media (min-width:365px) and (max-width: 375px) {
@@ -661,6 +716,15 @@ h6 {
         margin-top: 5%;
         margin-left: 18%;
     }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 3%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
+    }
     
     .ranking-body{
         width: 92%;
@@ -669,10 +733,6 @@ h6 {
     
     .employee-body{
         height: auto;
-    }
-
-    .employee-title{
-        padding-left: 25%;
     }
 
     .header-fixed-ranking > thead,
@@ -690,6 +750,10 @@ h6 {
 
     .header-fixed-employee > tbody {
         height: 350px;
+    }
+
+    .switch {
+        margin-left: 35%;
     }
 
     .profile{
@@ -712,18 +776,23 @@ h6 {
         padding-left: 10%;
     }
 
+    .switch-profile {
+        margin-left: 70%;
+    }
+
     .card-user{
         width: 90%;
-        margin-left: 9%;
+        margin-left: 11%;
     }
     
     .admin{
         width: 80%;
-        margin-left: 15%;
+        margin-left: 17%;
         margin-top: 5%;
+        height: 800px;
     }
     
-    .admin-title{
+    .admin-title h2{
         font-size: 130%;
     }
 
@@ -756,12 +825,44 @@ h6 {
     .m-b-10 {
         margin-left: -45%;
     }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 15%;
+    }
+    
+    label{
+        text-align: left;
+    }
+
+    .insert-games h2{
+        font-size: 130%;
+    }
 }
 
 @media (min-width:376px) and (max-width: 504px) {
     .ranking{
         width: 80%;
         margin-left: 18%;
+    }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 3%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
     }
     
     .employee{
@@ -779,10 +880,6 @@ h6 {
         height: auto;
     }
 
-    .employee-title{
-        padding-left: 27%;
-    }
-
     .header-fixed-ranking > thead,
     .header-fixed-ranking > tbody,
     .header-fixed-ranking > thead > tr,
@@ -798,6 +895,10 @@ h6 {
 
     .header-fixed-employee > tbody {
         height: 350px;
+    }
+
+    .switch {
+        margin-left: 35%;
     }
 
     .profile{
@@ -820,20 +921,24 @@ h6 {
         padding-left: 10%;
     }
 
+    .switch-profile {
+        margin-left: 63%;
+    }
+
     .card-user{
         width: 90%;
-        margin-left: 9%;
+        margin-left: 11%;
     }
     
     .admin{
         width: 80%;
-        margin-left: 15%;
+        margin-left: 16%;
         margin-top: 5%;
-        height: 900px;
+        height: 800px;
     }
     
-    .admin-title{
-        font-size: 130%;
+    .admin-title h2{
+        font-size: 135%;
     }
 
     .header-fixed-profile > thead,
@@ -865,12 +970,44 @@ h6 {
     .m-b-10 {
         margin-left: -40%;
     }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 15%;
+    }
+    
+    label{
+        text-align: left;
+    }
+
+    .insert-games h2{
+        font-size: 150%;
+    }
 }
 
 @media (min-width:505px) and (max-width: 599px) {
     .ranking{
         width: 90%;
         margin-left: 10%;
+    }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
     }
     
     .employee{
@@ -886,10 +1023,6 @@ h6 {
     
     .employee-body{
         height: auto;
-    }
-
-    .employee-title{
-        padding-left: 20%;
     }
 
     .header-fixed-ranking > thead,
@@ -908,9 +1041,9 @@ h6 {
     .header-fixed-employee > tbody {
         height: 350px;
     }
-    
-    .ranking-title-title{
-        width: 60%;
+
+    .switch {
+        margin-left: 35%;
     }
 
     .profile{
@@ -933,6 +1066,10 @@ h6 {
         padding-left: 10%;
     }
 
+    .switch-profile {
+        margin-left: 50%;
+    }
+
     .card-user{
         width: 90%;
         margin-left: 9%;
@@ -945,8 +1082,8 @@ h6 {
         height: 900px;
     }
     
-    .admin-title{
-        font-size: 130%;
+    .admin-title h2{
+        font-size: 165%;
     }
 
     .header-fixed-profile > thead,
@@ -978,12 +1115,45 @@ h6 {
     .m-b-10 {
         margin-left: -37%;
     }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 10%;
+        width: 90%;
+    }
+    
+    label{
+        text-align: left;
+    }
+
+    .insert-games h2{
+        font-size: 200%;
+    }
 }
 
 @media (min-width:600px) and (max-width: 789px) {
     .ranking{
         width: 90%;
         margin-left: 10%;
+    }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
     }
     
     .employee{
@@ -1002,7 +1172,7 @@ h6 {
     }
 
     .employee-title{
-        padding-left: 50%;
+        margin-left: -35%;
     }
 
     .header-fixed-ranking > thead,
@@ -1022,8 +1192,8 @@ h6 {
         height: 350px;
     }
     
-    .ranking-title-title{
-        width: 60%;
+    .switch {
+        margin-left: 25%;
     }
 
     .profile{
@@ -1046,6 +1216,10 @@ h6 {
         padding-left: 10%;
     }
 
+    .switch-profile {
+        margin-left: 35%;
+    }
+
     .card-user{
         width: 90%;
         margin-left: 9%;
@@ -1057,8 +1231,8 @@ h6 {
         margin-top: 5%;
     }
     
-    .admin-title{
-        font-size: 130%;
+    .admin-title h2{
+        font-size: 175%;
     }
 
     .header-fixed-profile > thead,
@@ -1090,6 +1264,30 @@ h6 {
     .m-b-10 {
         margin-left: -55%;
     }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 7%;
+        width: 90%;
+    }
+    
+    label{
+        text-align: left;
+    }
+
+    .insert-games h2{
+        font-size: 200%;
+    }
 }
 
 @media (min-width:700px) and (max-width: 789px) {
@@ -1102,6 +1300,15 @@ h6 {
         width: 90%;
         margin-top: 5%;
         margin-left: 8%;
+    }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
     }
     
     .ranking-body{
@@ -1134,8 +1341,8 @@ h6 {
         height: 350px;
     }
     
-    .ranking-title-title{
-        width: 60%;
+    .switch {
+        margin-left: 20%;
     }
 
     .profile{
@@ -1158,6 +1365,10 @@ h6 {
         padding-left: 10%;
     }
 
+    .switch-profile {
+        margin-left: 30%;
+    }
+
     .card-user{
         width: 90%;
         margin-left: 9%;
@@ -1165,12 +1376,12 @@ h6 {
     
     .admin{
         width: 90%;
-        margin-left: 9%;
+        margin-left: 7%;
         margin-top: 5%;
     }
     
-    .admin-title{
-        font-size: 130%;
+    .admin-title h2{
+        font-size: 175%;
     }
 
     .header-fixed-profile > thead,
@@ -1202,6 +1413,30 @@ h6 {
     .m-b-10 {
         margin-left: -55%;
     }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 7%;
+        width: 90%;
+    }
+    
+    label{
+        text-align: left;
+    }
+
+    .insert-games h2{
+        font-size: 200%;
+    }
 }
 
 @media (min-width:789px) and (max-width: 1000px) {
@@ -1215,7 +1450,16 @@ h6 {
         margin-top: 5%;
         margin-left: 6%;
     }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 0%;
+    }
     
+    .ranking-title-combo-adm{
+        width: 100%;
+    }
+
     .ranking-body{
         width: 92%;
         height: auto;
@@ -1244,10 +1488,6 @@ h6 {
 
     .header-fixed-employee > tbody {
         height: 350px;
-    }
-    
-    .ranking-title-title{
-        width: 60%;
     }
 
     .profile{
@@ -1271,6 +1511,10 @@ h6 {
         padding-left: 10%;
     }
 
+    .switch-profile {
+        margin-left: 25%;
+    }
+
     .card-user{
         width: 90%;
         margin-left: 9%;
@@ -1282,8 +1526,8 @@ h6 {
         margin-top: 5%;
     }
     
-    .admin-title{
-        font-size: 150%;
+    .admin-title h2{
+        font-size: 155%;
     }
 
     .header-fixed-profile > thead,
@@ -1315,6 +1559,30 @@ h6 {
     .m-b-10 {
         margin-left: -3%;
     }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 5%;
+        width: 90%;
+    }
+    
+    label{
+        text-align: left;
+        margin-top: 3%;    }
+
+    .insert-games h2{
+        font-size: 200%;
+    }
 }
 
 @media (min-width:789px) and (max-width: 859px) {
@@ -1327,6 +1595,15 @@ h6 {
         width: 95%;
         margin-top: 5%;
         margin-left: 5%;
+    }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
     }
     
     .ranking-body{
@@ -1358,10 +1635,6 @@ h6 {
     .header-fixed-employee > tbody {
         height: 350px;
     }
-    
-    .ranking-title-title{
-        width: 60%;
-    }
 
     .profile{
         width: 90%;
@@ -1383,6 +1656,10 @@ h6 {
         padding-left: 10%;
     }
 
+    .switch-profile {
+        margin-left: 27%;
+    }
+
     .card-user{
         width: 90%;
         margin-left: 9%;
@@ -1395,8 +1672,8 @@ h6 {
         height: 900px;
     }
     
-    .admin-title{
-        font-size: 150%;
+    .admin-title h2{
+        font-size: 175%;
     }
 
     .header-fixed-profile > thead,
@@ -1428,6 +1705,30 @@ h6 {
     .m-b-10 {
         margin-left: -3%;
     }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 5%;
+        width: 90%;
+    }
+    
+    label{
+        text-align: left;
+        margin-top: 3%;    }
+
+    .insert-games h2{
+        font-size: 200%;
+    }
 }
 
 @media (min-width:799px) and (max-width: 1000px) {
@@ -1441,6 +1742,15 @@ h6 {
         margin-top: 5%;
         margin-left: 5%;
     }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
+    }
     
     .ranking-body{
         width: 92%;
@@ -1452,7 +1762,7 @@ h6 {
     }
 
     .employee-title{
-        padding-left: 10%;
+        padding-left: 5%;
     }
 
     .header-fixed-ranking > thead,
@@ -1471,10 +1781,6 @@ h6 {
     .header-fixed-employee > tbody {
         height: 350px;
     }
-    
-    .ranking-title-title{
-        width: 60%;
-    }
 
     .profile{
         width: 90%;
@@ -1496,6 +1802,10 @@ h6 {
         padding-left: 10%;
     }
 
+    .switch-profile {
+        margin-left: 25%;
+    }
+
     .card-user{
         width: 90%;
         margin-left: 9%;
@@ -1507,8 +1817,8 @@ h6 {
         margin-top: 5%;
     }
     
-    .admin-title{
-        font-size: 150%;
+    .admin-title h2{
+        font-size: 190%;
     }
 
     .header-fixed-profile > thead,
@@ -1539,6 +1849,30 @@ h6 {
 
     .m-b-10 {
         margin-left: -3%;
+    }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 5%;
+        width: 90%;
+    }
+    
+    label{
+        text-align: left;
+        margin-top: 3%;    }
+
+    .insert-games h2{
+        font-size: 200%;
     }
 }
 
