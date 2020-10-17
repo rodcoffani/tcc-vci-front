@@ -86,12 +86,19 @@ class login extends Component {
             API.post("/login", user).then((res) => {
                 console.log(res);
                 console.log(res.data);
-                if (res.data.success === "true") {
+                // console.log(res.data.success === "true" && res.data.admin === true && res.data.checked_user === true);         
+                if (res.data.success === "true" && res.data.admin === false && res.data.checked_user === true) {
                     localStorage.setItem("authTk", res.data.token);
                     this.setState({ redirect: "/funcionario" });
+                } else if (res.data.success === "true" && res.data.admin === true && res.data.checked_user === true) {
+                    localStorage.setItem("authTk", res.data.token);
+                    this.setState({ redirect: "/administrador" });
                 } else {
-                    //Caso não logue
+                    alert("Talvez sua conta ainda não esteja verificada. Aguarde o recebimento de verificação em seu email para realizar o login!");
                 }
+            });
+            API.post("/login/teste-token", localStorage.getItem('authTk')).then((res) => {
+                
             });
         } else {
             console.error("Form invalid");
