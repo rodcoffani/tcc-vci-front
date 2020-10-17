@@ -2,27 +2,69 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar/admin';
-import { Container } from 'react-bootstrap'
+import { Container, Form } from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import BackgroundParticle from '../../components/Background-particle'
 import API from "../../api";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faCheckCircle, faFileUpload} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
-import laura from "../../assets/images/integrantes/laura.JPG";
 
 const Profile = (props) => {
-    const [users, setUsers] = useState([]);
-    const [user, setUser] = useState([]);
+    const [admin, setAdmin] = useState([]);
+    const [employee, setEmployee] = useState([]);
+    const [user, setUser] = useState({});
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [id, setId] = useState("");
+    const [profileImg, setImg] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
+
 
     useEffect(() => {
         API.get("/users/admins").then((res) => {
-            setUsers(res.data);
+            setAdmin(res.data);
         });
         API.get("/users/employee").then((res) => {
-            setUser(res.data);
+            setEmployee(res.data);
+        });
+        API.post("/login/teste-token",{token: localStorage.getItem('authTk')}).then((res) => {
+            setUser(res.data.decoded);  
+            setId(res.data.decoded.iduser);
         });
     }, []);
+
+    const enableForm = (e) => {
+        e.preventDefault();
+        const inputs = document.getElementsByClassName("input-profile");
+        for(let i=0; i<inputs.length; i++){
+            if(i === 0 || i === 3)
+                continue;
+            inputs.item(i).disabled = false;
+        }
+        inputs.item(1).focus();
+
+        const salvar = document.getElementsByClassName("edit-admin");
+        salvar.item(0).hidden = false;
+
+        const imagem = document.getElementsByClassName("profile-img");
+        imagem.item(0).hidden = false;
+    }
+
+    const editAdmin = (e) => {
+        API.put("/users/update-user", {id, nome, email}).then((res) => {
+            alert(res.data.message);
+        })
+    }
+
+    const imageHandler = (e) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          if(reader.readyState === 2){
+            setImg(reader.result);
+          }
+        }
+        reader.readAsDataURL(e.target.files[0]);
+    }
 
     return(
         <div>
@@ -37,14 +79,22 @@ const Profile = (props) => {
                 <div className="mother">
                     <br />
                     <div className="row container d-flex card-user">
+                    <Form onSubmit={editAdmin}>
                         <div className="col-md-12">
                             <div className="card user-card-full">
                                 <div className="row m-l-0 m-r-0">
                                     <div className="col-sm-4 bg-c-lite-green user-profile">
                                         <div className="card-block text-center text-white">
-                                            <div className="m-b-25"><img src={laura} className="img-radius"></img></div>
-                                            <h6 className="f-w-800">Mark Sloan</h6>
-                                            <FontAwesomeIcon icon={faEdit} className="icons" />
+                                            <div className="m-b-25">
+                                                <img src={profileImg} className="img-radius"></img>
+                                                <input type="file" id="photo" hidden onChange={imageHandler} />
+                                                <label for="photo" className="profile-img" hidden>
+                                                    <FontAwesomeIcon icon={faFileUpload} className="icon-file"/>
+                                                    &nbsp; Fazer upload:
+                                                </label>
+                                            </div>
+                                            <h6 className="f-w-800">{user.name_user}</h6>
+                                            <FontAwesomeIcon icon={faEdit} className="icon-edit" onClick={enableForm}/>
                                         </div>
                                     </div>
                                     <div className="col-sm-8">
@@ -53,27 +103,33 @@ const Profile = (props) => {
                                             <div className="row">
                                                 <div className="col-sm-12">
                                                     <p className="m-b-10 f-w-600">Nome de usuário</p>
-                                                    <input type="text" className="input-profile" placeholder="aaaa"></input>
+                                                    <input type="text" className="input-profile" disabled placeholder={user.nickname_user}></input>
+                                                </div>
+                                                <div className="col-sm-12">
+                                                    <p className="m-b-10 f-w-600">Nome</p>
+                                                    <input type="text" className="input-profile" disabled placeholder={user.name_user} onChange={e => setNome(e.target.value)}></input>
                                                 </div>
                                                 <div className="col-sm-12">
                                                     <p className="m-b-10 f-w-600">Email</p>
-                                                    <input type="text" className="input-profile" placeholder="aaaa"></input>
+                                                    <input type="text" className="input-profile" disabled placeholder={user.email_user} onChange={e => setEmail(e.target.value)}></input>
                                                 </div>
                                                 <div className="col-sm-12">
                                                     <p className="m-b-10 f-w-600">CPF</p>
-                                                    <input type="text" className="input-profile" placeholder="aaaa"></input>
+                                                    <input type="text" className="input-profile" disabled placeholder={user.cpf_user}></input>
                                                 </div>
-                                                <div className="col-sm-12">
-                                                    <p className="m-b-10 f-w-600">Senha</p>
-                                                    <input type="text" className="input-profile" placeholder="aaaa"></input>
-                                                </div>
+
+                                                <button type="submit" className="edit-admin" alt="submit" hidden>
+                                                    <FontAwesomeIcon icon={faCheckCircle} className="icon-save"/>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </Form>
                     </div>
+                    
 
                     <div className="admin">
                         <div className="admin-title"><h2>Outros administradores</h2></div>
@@ -87,7 +143,7 @@ const Profile = (props) => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {users.map((item) => {
+                                    {admin.map((item) => {
                                         return <tr>
                                             <td>{item.name_user}</td>
                                             <td>{item.nickname_user}</td>
@@ -109,7 +165,7 @@ const Profile = (props) => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {user.map((item) => {
+                                    {employee.map((item) => {
                                         return <tr>
                                             <td>{item.name_user}</td>
                                             <td>{item.nickname_user}</td>
