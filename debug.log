@@ -1,1 +1,5 @@
-[1016/142530.558:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1016/142530.558:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema nï¿½o pode encontrar o caminho especificado. (0x3)
+[1007/120635.688:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/121010.861:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/121331.418:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1016/161652.498:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema nï¿½o pode encontrar o caminho especificado. (0x3)
