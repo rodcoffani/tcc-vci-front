@@ -30,7 +30,7 @@ export default class Quiz extends Component {
                     </div>
                 </div>
                 <div className='quiz'>
-                    a
+                    
                 </div>
             </div>
 
