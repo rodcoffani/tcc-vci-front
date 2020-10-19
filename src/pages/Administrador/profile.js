@@ -30,6 +30,8 @@ const Profile = (props) => {
         API.post("/login/teste-token",{token: localStorage.getItem('authTk')}).then((res) => {
             setUser(res.data.decoded);  
             setId(res.data.decoded.iduser);
+            setNome(res.data.decoded.name_user);
+            setEmail(res.data.decoded.email_user);
         });
     }, []);
 
@@ -51,9 +53,25 @@ const Profile = (props) => {
     }
 
     const editAdmin = (e) => {
+        e.preventDefault();
+        console.log(id, email, nome);
         API.put("/users/update-user", {id, nome, email}).then((res) => {
             alert(res.data.message);
+            console.log(res.data);
         })
+
+        const inputs = document.getElementsByClassName("input-profile");
+        for(let i=0; i<inputs.length; i++){
+            if(i === 0 || i === 3)
+                continue;
+            inputs.item(i).disabled = true;
+        }
+
+        const salvar = document.getElementsByClassName("edit-admin");
+        salvar.item(0).hidden = true;
+
+        const imagem = document.getElementsByClassName("profile-img");
+        imagem.item(0).hidden = true;
     }
 
     const imageHandler = (e) => {
@@ -107,11 +125,11 @@ const Profile = (props) => {
                                                 </div>
                                                 <div className="col-sm-12">
                                                     <p className="m-b-10 f-w-600">Nome</p>
-                                                    <input type="text" className="input-profile" disabled placeholder={user.name_user} onChange={e => setNome(e.target.value)}></input>
+                                                    <input type="text" className="input-profile" disabled value={nome} onChange={e => setNome(e.target.value)}></input>
                                                 </div>
                                                 <div className="col-sm-12">
                                                     <p className="m-b-10 f-w-600">Email</p>
-                                                    <input type="text" className="input-profile" disabled placeholder={user.email_user} onChange={e => setEmail(e.target.value)}></input>
+                                                    <input type="text" className="input-profile" disabled value={email} onChange={e => setEmail(e.target.value)}></input>
                                                 </div>
                                                 <div className="col-sm-12">
                                                     <p className="m-b-10 f-w-600">CPF</p>

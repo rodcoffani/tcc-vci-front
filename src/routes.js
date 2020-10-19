@@ -16,6 +16,7 @@ import CadastroJogos from "./pages/Administrador/insertGames";
 import Funcionario from "./pages/Funcionario";
 import Profile from "./pages/Funcionario/profile"
 import Sobre from "./pages/about"
+import Logout from "./pages/Logout";
 
 const Routes = () => {
     return (
@@ -80,6 +81,10 @@ const Routes = () => {
                 <Route
                     path="/sobre"
                     component={ Sobre }
+                />
+                <Route 
+                    path="/logout"
+                    component={ Logout }
                 />
             </Switch>
         </BrowserRouter>
