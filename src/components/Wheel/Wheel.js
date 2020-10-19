@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./style.css";
-
 import wheel from "../../assets/images/Wheel.png";
+import API from "../../api";
 import marker from "../../assets/images/Button-Marker.png";
+import {withRouter } from "react-router-dom";
 
 class Wheel extends Component {
     //Quando o componente da mount (Carrega a classe)
@@ -31,7 +32,7 @@ class Wheel extends Component {
         8 - Desperdicio e sobra de Processo 
 
     */
-
+    
     //funcao para validar
     validate = (val) => {
         var aux = false;
@@ -44,6 +45,10 @@ class Wheel extends Component {
 
         return aux;
     };
+
+    handleRedirect = (newPath)=>{
+        this.props.history.push(newPath);
+    }
 
     //funcao chamada quando clica no botao girar
     handleButtonClick = () => {
@@ -76,6 +81,13 @@ class Wheel extends Component {
             numeroJogo: sortedVal,
             sorteados: [sortedVal].concat(this.state.sorteados),
         });
+
+        
+        setTimeout(()=>{
+            API.get(`/perguntados/${sortedVal}`).then((res)=>{
+                this.handleRedirect(`/jogos/roleta/pergunta/${res.data.data.idquestion}`);
+            })
+        }, 7000)
     };
 
     render() {
@@ -92,4 +104,4 @@ class Wheel extends Component {
     }
 }
 
-export default Wheel;
+export default withRouter(Wheel);

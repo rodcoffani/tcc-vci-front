@@ -3,7 +3,6 @@ import "./style.css";
 import Header from "../../components/Header";
 import { Container, Row, Col, Button, Modal, Alert} from "react-bootstrap";
 import { Helmet } from "react-helmet";
-import axios from "axios";
 import API from "../../api";
 import ead from "../../assets/images/ead-lab.png";
 import { Redirect } from "react-router-dom";

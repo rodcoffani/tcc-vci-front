@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import Header from "../../../components/Header";
+import API from "../../../api";
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
 import Sidebar from '../../../components/Sidebar/user';
@@ -23,6 +24,11 @@ import image_014 from '../../../assets/images/jogo_10/image_014.png';
 import image_015 from '../../../assets/images/jogo_10/image_015.png';
 import image_016 from '../../../assets/images/jogo_10/image_016.png';
 import image_017 from '../../../assets/images/jogo_10/image_017.png';
+
+import socketIOClient from "socket.io-client";
+
+//MARTIAL FAZER O TOKEN
+//COM AMOR THIAGO E PRA 
 
 export default class Roleta extends Component {
     constructor(props) {
