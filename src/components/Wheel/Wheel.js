@@ -3,7 +3,7 @@ import "./style.css";
 import wheel from "../../assets/images/Wheel.png";
 import API from "../../api";
 import marker from "../../assets/images/Button-Marker.png";
-import {withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class Wheel extends Component{
 
@@ -83,18 +83,13 @@ class Wheel extends Component{
         this.props.history.push(newPath);
     }
 
-    handleRedirect = (newPath)=>{
-        this.props.history.push(newPath);
-    }
 
     //funcao chamada quando clica no botao girar
     handleButtonClick = () => {
         //Sorteia uma das categorias de 1 a 9 (inclusive)
         let sortedVal = 0;
 
-        do {
-            sortedVal = Math.floor(Math.random() * 9);
-        } while (this.validate(sortedVal));
+        sortedVal = Math.floor(Math.random() * 9);
         
         
         //Deg representa a rotacao a ser aplicada a wheel. de 40 em 40
@@ -139,7 +134,7 @@ class Wheel extends Component{
         setTimeout(()=>{
             API.get(`/perguntados/${sortedVal}`).then((res)=>{
                 this.handleRedirect(`/jogos/roleta/pergunta/${res.data.data.idquestion}`);
-            })
+            });
         }, 7000)
     };
     render(){
