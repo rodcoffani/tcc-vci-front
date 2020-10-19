@@ -63,7 +63,7 @@ export default class Saudacao extends Component {
                                         className="cad"
                                     >
                                         <p className="FieldD">
-                                            <b className="Presc">Nome:</b>
+                                            <b className="Presc">Nome:                  </b>
                                             <input
                                                 type="text"
                                                 placeholder="Nome"
@@ -79,7 +79,7 @@ export default class Saudacao extends Component {
                                             ></input>
                                         </p>
                                         <p className="FieldD">
-                                            <b className="Presc">Sobrenome:</b>
+                                            <b className="Presc">Sobrenome:     </b>
                                             <input
                                                 type="text"
                                                 placeholder="Sobrenome"
@@ -94,7 +94,7 @@ export default class Saudacao extends Component {
                                             ></input>
                                         </p>
                                         <p className="FieldD">
-                                            <b className="Presc">E-mail:</b>
+                                            <b className="Presc">E-mail:     </b>
                                             <input
                                                 type="text"
                                                 placeholder="E-mail"
@@ -109,7 +109,7 @@ export default class Saudacao extends Component {
                                             ></input>
                                         </p>
                                         <p className="FieldD">
-                                            <b className="Presc">CPF:</b>
+                                            <b className="Presc">CPF:        </b>
                                             <input
                                                 type="text"
                                                 placeholder="CPF"
