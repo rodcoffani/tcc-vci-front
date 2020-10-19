@@ -3,9 +3,9 @@ import './styles.css';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar/employee';
 import Foto from '../../assets/images/nn.jpg';
-import { Container, FormControl, Form, Image} from 'react-bootstrap'
-import {Helmet} from "react-helmet"
-import BackgroundParticle from '../../components/Background-particle'
+import { Container, FormControl, Form, Image} from 'react-bootstrap';
+import {Helmet} from "react-helmet";
+import BackgroundParticle from '../../components/Background-particle';
 
 class employee extends Component{
     render() {
