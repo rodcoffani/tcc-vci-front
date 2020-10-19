@@ -83,6 +83,10 @@ class Wheel extends Component{
         this.props.history.push(newPath);
     }
 
+    handleRedirect = (newPath)=>{
+        this.props.history.push(newPath);
+    }
+
     //funcao chamada quando clica no botao girar
     handleButtonClick = () => {
         //Sorteia uma das categorias de 1 a 9 (inclusive)
