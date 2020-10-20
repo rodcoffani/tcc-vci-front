@@ -9,7 +9,7 @@ background: transparent!important;
 }
 
 .FormC b {
-    font-size: 150%;
+    font-size: 155%;
     background: transparent!important;
 
 }
@@ -22,7 +22,7 @@ background: transparent!important;
     
     color:white;
     height: 7vh;
-    width: 88%;
+    width: 100%;
     
 }
 .inputCS{
@@ -30,7 +30,7 @@ background: transparent!important;
     outline: none;
     border: none;
     border-bottom: solid 1px black;
-    width: 60%;
+    width: 100%;
     color:white;
     height: 7vh;
 }
@@ -39,7 +39,7 @@ background: transparent!important;
     outline: none;
     border: none;
     border-bottom: solid 1px black;
-    width: 160%;
+    width: 100%;
     color:white;
     height: 7vh;
 }
@@ -50,7 +50,7 @@ background: transparent!important;
 .CadT {
     margin: auto;
     margin-top: -10%!important;
-    font-size: 5vw;
+    font-size: 10vw;
     color: white;
     background: transparent!important;
     
@@ -91,7 +91,6 @@ form.cad{
     height: 31vw;
     min-height: 150px;
     max-height: 260px;
-    margin-top: 89px;
 }
 @keyframes Flick {
     from {color: white;background-color: white !important;} to
@@ -118,7 +117,7 @@ form.cad{
     color: white;
     background-color: #015df0 !important;
     border:none;
-    margin-right: 50%;
+    margin-right: 20%;
     margin-top: 10px;
     padding-bottom: 40px!important;
     height: 8vh;
@@ -278,7 +277,7 @@ form.cad{
         font-size: x-large;
     }
     .inputCC{
-        width: 108%;
+        width: 100%;
         font-size: x-large;
     }
 
@@ -435,6 +434,7 @@ form.cad{
     }
     .inputV{
         font-size: x-large;
+        width: 88%;
     }
     .inputCS{
         width: 88%;
@@ -510,6 +510,7 @@ form.cad{
     }
     .inputV{
         font-size: x-large;
+        width: 88%;
     }
     .CadBtn{
         font-size: xx-large;

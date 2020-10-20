@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "./style.css";
-import { Container, Row, Col, Button, Modal, Alert} from "react-bootstrap";
+import { Container, Row, Col, Button, Modal, Alert } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import API from "../../api";
 import ead from "../../assets/images/ead-lab.png";
@@ -25,43 +25,60 @@ const formValid = ({ formErrors, ...rest }) => {
 
     return valid;
 };
-
 class login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             login: null,
             password: null,
-            redirect: '',
+            redirect: "",
             formErrors: {
                 login: "",
                 password: "",
             },
+            email: null,
             sucess: false,
             error: false,
-            view:false,
+            view: false,
         };
-        
-    
     }
     handleModal = () => {
         var a = this.state.view;
-        if(a){
-            this.setState({view:false});
-            this.setState({sucess:false})
-            this.setState({error:false});
-        }else{
-            this.setState({view:true});
+        if (a) {
+            this.setState({ view: false });
+            this.setState({ sucess: false });
+            this.setState({ error: false });
+        } else {
+            this.setState({ view: true });
         }
-    }
-    handleModalValidacao = () =>{
-        // atencao backend!! se a validacao der certo executa esse codigo -- alert avisando que deu certo (falta recarregar a página)
-        alert("Senha enviada ao respectivo email");
-
-        // se der errado - alert avisando que deu erro
-        this.setState({error:true});
-
-    }
+    };
+    handleModalValidacao = () => {
+        API.post("/users/forgot-password", {
+            email: this.state.email,
+        })
+            .then((response) => {
+                if (response) {
+                    this.setState({
+                        error: false,
+                        sucess: true,
+                    });
+                } else {
+                    this.setState({
+                        error: true,
+                        sucess: false,
+                    });
+                }
+                this.setState({
+                    message: `(${response.status}) - ${response.data.message}`,
+                });
+            })
+            .catch((err) => {
+                this.setState({
+                    error: true,
+                    message: `(${err.response.status}) - ${err.response.data.message}`,
+                });
+            });
+    };
     handleClick = (e) => {
         var texto = $("#pass").attr("type");
         if (texto === "password") {
@@ -86,13 +103,31 @@ class login extends Component {
             API.post("/login", user).then((res) => {
                 console.log(res);
                 console.log(res.data);
-                if (res.data.success === "true") {
+                // console.log(res.data.success === "true" && res.data.admin === true && res.data.checked_user === true);
+                if (
+                    res.data.success === "true" &&
+                    res.data.admin === false &&
+                    res.data.checked_user === true
+                ) {
                     localStorage.setItem("authTk", res.data.token);
                     this.setState({ redirect: "/funcionario" });
+                } else if (
+                    res.data.success === "true" &&
+                    res.data.admin === true &&
+                    res.data.checked_user === true
+                ) {
+                    localStorage.setItem("authTk", res.data.token);
+                    this.setState({ redirect: "/administrador" });
                 } else {
-                    //Caso não logue
+                    alert(
+                        "Talvez sua conta ainda não esteja verificada. Aguarde o recebimento de verificação em seu email para realizar o login!"
+                    );
                 }
             });
+            API.post(
+                "/login/teste-token",
+                localStorage.getItem("authTk")
+            ).then((res) => {});
         } else {
             console.error("Form invalid");
         }
@@ -114,32 +149,37 @@ class login extends Component {
             default:
                 break;
         }
-        this.setState({ formErrors, [name]: value }, () => console.log(this.state));
+        this.setState({ formErrors, [name]: value }, () =>
+            console.log(this.state)
+        );
     };
-    componentWillMount(){
-      let tk = {
-        token: localStorage.getItem('authTk')
-      };
-      if (tk) {
-        API.post("/login/teste-token", tk).then((res) => {
-          console.log(res.data);
-          if (res.data.success === "true") {
-            this.setState({ redirect: "/" });
-          }
-        });
-      }
+    componentWillMount() {
+        let tk = {
+            token: localStorage.getItem("authTk"),
+        };
+        if (tk !== null) {
+            API.post("/login/teste-token", tk)
+                .then((res) => {
+                    if (res.data.success === "true") {
+                        this.setState({ redirect: "/" });
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
     }
     goToCadastro() {
         /* eslint-disable no-restricted-globals */
-        open('/cadastro');
+        open("/cadastro");
     }
     render() {
         if (this.state.redirect) {
-          return <Redirect to={this.state.redirect} />
+            return <Redirect to={this.state.redirect} />;
         }
         return (
             <React.Fragment>
-                <Helmet title="Login"/> 
+                <Helmet title="Login" />
                 <Container fluid="xl">
                     <BackgroundParticle></BackgroundParticle>
                     <Container fluid="xl login">
@@ -149,7 +189,11 @@ class login extends Component {
                         <Row>
                             <Col className="image">
                                 <div className="imageBlue">
-                                    <img src={ead} className="img-logo login" alt="Logotipo EAD-LAB"/>
+                                    <img
+                                        src={ead}
+                                        className="img-logo login"
+                                        alt="Logotipo EAD-LAB"
+                                    />
                                 </div>
                             </Col>
                             <Col>
@@ -198,10 +242,20 @@ class login extends Component {
 
                                         <div className="oneAcess">
                                             {" "}
-                                            <button className="btn btn-link one" onClick={() => {this.goToCadastro()}}>
+                                            <button
+                                                className="btn btn-link one"
+                                                onClick={() => {
+                                                    this.goToCadastro();
+                                                }}
+                                            >
                                                 1º Acesso{" "}
                                             </button>{" "}
-                                            <button className="btn btn-link oneTwo" onClick={()=>{this.handleModal()}}>
+                                            <button
+                                                className="btn btn-link oneTwo"
+                                                onClick={() => {
+                                                    this.handleModal();
+                                                }}
+                                            >
                                                 Esqueci a senha{" "}
                                             </button>
                                             <input
@@ -226,7 +280,10 @@ class login extends Component {
                     </Container>
                 </Container>
                 <div>
-                    <Modal show={this.state.view} onHide={()=>this.handleModal()}>
+                    <Modal
+                        show={this.state.view}
+                        onHide={() => this.handleModal()}
+                    >
                         <Modal.Header>RECUPERAÇÃO DE SENHA </Modal.Header>
                         <Modal.Body>
                             <b className="">Email:</b>
@@ -234,20 +291,39 @@ class login extends Component {
                                 type="text"
                                 placeholder="Email"
                                 className="recuperaEmail"
+                                onChange={(e) =>
+                                    (this.state.email = e.target.value)
+                                }
                                 maxLength="85"
                             ></input>
-                            {/* <Alert show={this.state.sucess} id="AlertSucess" variant="success">
-                                Senha enviada para o respectivo email
-                            </Alert> */}
-                            <Alert show={this.state.error} id="AlertDanger" variant="danger">
-                               Email Incorreto
+                            <Alert
+                                show={this.state.sucess}
+                                id="AlertSucess"
+                                variant="success"
+                            >
+                                {this.state.message}
+                            </Alert>
+                            <Alert
+                                show={this.state.error}
+                                id="AlertDanger"
+                                variant="danger"
+                            >
+                                {this.state.message}
                             </Alert>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button onClick={()=>{this.handleModalValidacao()}}>
+                            <Button
+                                onClick={() => {
+                                    this.handleModalValidacao();
+                                }}
+                            >
                                 Enviar
                             </Button>
-                            <Button onClick={()=>{this.handleModal()}}>
+                            <Button
+                                onClick={() => {
+                                    this.handleModal();
+                                }}
+                            >
                                 Cancelar
                             </Button>
                         </Modal.Footer>

@@ -7,6 +7,7 @@ import Cadastro from "./pages/Cadastro";
 import Relatorios from "./pages/Administrador/reports";
 import Administrador from "./pages/Administrador";
 import Roleta from "./pages/Jogos/Roleta/jogo";
+import Pergunta from "./pages/Jogos/Roleta/Pergunta";
 import Quiz from "./pages/Jogos/Quiz/quiz";
 import Roleta_rules from "./pages/Jogos/Roleta";
 import Quiz_rules from "./pages/Jogos/Quiz";
@@ -16,6 +17,7 @@ import CadastroJogos from "./pages/Administrador/insertGames";
 import Funcionario from "./pages/Funcionario";
 import Profile from "./pages/Funcionario/profile"
 import Sobre from "./pages/about"
+import Logout from "./pages/Logout";
 
 const Routes = () => {
     return (
@@ -46,8 +48,12 @@ const Routes = () => {
                     component={ Roleta_rules }
                 />
                 <Route 
-                    path="/jogos/roleta"
+                    exact path="/jogos/roleta"
                     component={ Roleta }
+                />
+                <Route
+                    path="/jogos/roleta/pergunta/:id"
+                    component = { Pergunta }
                 />
                 <Route
                     path="/quiz_rules"
@@ -80,6 +86,10 @@ const Routes = () => {
                 <Route
                     path="/sobre"
                     component={ Sobre }
+                />
+                <Route 
+                    path="/logout"
+                    component={ Logout }
                 />
             </Switch>
         </BrowserRouter>
