@@ -22,15 +22,23 @@ export default class Quiz extends Component {
                 <div className='hud'>
                     <div className="tempo">
                         <div className='campValor'>Tempo</div>
-                        <div className='cronometro'></div>
+                        <div className='cronometro'>cronos</div>
                     </div>
                     <div className="pontos">
                         <div className='campValor'>Pontos</div>
-                        <div clawsName='points'></div>
+                        <div className='points'>points</div>
                     </div>
                 </div>
                 <div className='quiz'>
-                    
+                        <div className='enunciado'>enunciado</div>
+                        <div className='alternativas'>
+                            <div className='groupAlt'>
+                                <div className='altA'>a</div>
+                                <div className='altB'>b</div>
+                                <div className='altC'>c</div>
+                                <div className='altD'>d</div>
+                            </div>
+                        </div>
                 </div>
             </div>
 

@@ -76,14 +76,39 @@
 }
 
 .campValor{
-    padding: 5%;
-    margin-left: 35%;
+    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 30%;
+    width: 100%;
     font-size: 16pt;
     font-weight: bold;
+   
 }
 
-.cronometro{}
-.points{}
+.cronometro{
+    background-color:#F0F8FF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    bottom: 10px;
+    width: 100%;
+    height: 77%;
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
+}
+.points{
+    background-color:#F0F8FF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    bottom: 10px;
+    width: 100%;
+    height: 77%;
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
+
+}
 
 .quiz{
     display: flex;
@@ -98,13 +123,83 @@
     text-align: center;
 
 }
+ 
+.enunciado{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 25%;
+    padding-top: 50px;
+    font-weight: bold;
+    font-size: 12pt;
+}
 
-#loader{
-    border:1.6rem solid white;
-    border-radius: 50%;
-    border-top: 1.6rem solid #56a5eb;
-    width: 12rem;
-    height: 12rem;
-    animation: spin 2s linear infinite;
-    align-content: center;
+.alternativas{
+    background-color:#F0F8FF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+    height: 75%;
+    padding-top: 3%;
+    padding-bottom: 0.25%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.groupAlt{
+    background-color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: auto;
+    height: 85%;
+    margin-top: 0.5%;
+    /*padding-top: 0.85%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;*/
+}
+
+.altA {
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /*margin-bottom: 0.7%;*/
+    padding-left: 0.5%;
+    width: 100%;
+    height: 25%;
+    text-align: justify;
+    cursor: pointer;
+}
+
+.altB{
+    background-color: gray;
+    /*margin-bottom: 0.5%;*/
+    padding-left: 0.5%;
+    width: 100%;
+    height: 25%;
+    text-align: justify;
+    cursor: pointer;
+    
+}
+
+.altC{
+    background-color: white;
+    /*margin-bottom: 0.5%;*/
+    padding-left: 0.5%;
+    width: 100%;
+    height: 25%;
+    text-align: justify;
+    cursor: pointer;
+}
+
+.altD{
+    background-color: gray;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 0.5%;
+    width: 100%;
+    height: 25%;
+    text-align: justify;
+    cursor: pointer;
 }
