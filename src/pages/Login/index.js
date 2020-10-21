@@ -75,6 +75,7 @@ class login extends Component {
             .catch((err) => {
                 this.setState({
                     error: true,
+                    sucess: false,
                     message: `(${err.response.status}) - ${err.response.data.message}`,
                 });
             });
