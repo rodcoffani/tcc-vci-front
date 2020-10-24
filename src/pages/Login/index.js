@@ -19,9 +19,9 @@ const formValid = ({ formErrors, ...rest }) => {
         val.length > 0 && (valid = false);
     });
     //Valida o form que foi preenchido
-    Object.values(rest).forEach((val) => {
+    /*Object.values(rest).forEach((val) => {
         val === null && (valid = false);
-    });
+    });*/
 
     return valid;
 };

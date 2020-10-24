@@ -12,16 +12,19 @@ const Admin = (props) => {
     const [ranking, setRanking] = useState([]);
     const [games, setGames] = useState([]);
     const [id, setId] = useState(0);
+    const [reloadFlag, setReloadFlag] = useState(true); 
 
-    useEffect(() => {
-        API.get("/users/all").then((res) => {
-            setUsers(res.data);
-        });
-        
+    useEffect(() => {   
         API.get("/game/all").then((res) => {
             setGames(res.data);
         });        
     }, []);
+
+    useEffect(() => {
+        API.get("/users/checked-users").then((res) => {
+            setUsers(res.data);
+        });
+    }, [reloadFlag]);
 
     useEffect(() => {
         if(id === 0){
@@ -36,6 +39,13 @@ const Admin = (props) => {
         }
             
     }, [id]);
+
+    const checkUser = (email, name, nickname) => {
+        API.put(`users/check-user/${email}`, {name, nickname}).then((res) => {
+            alert(res.data.message);
+            setReloadFlag(!reloadFlag);
+        });
+    }
 
     return (
         <div>
@@ -106,12 +116,12 @@ const Admin = (props) => {
                             </thead>
                             <tbody>
                                 {users.map((item) => {
-                                    return <tr>
+                                    return <tr key={item.iduser}>
                                         <td>{item.name_user}</td>
                                         {/*<td>{item.iduser}</td>*/}
                                         <td>
                                             <label className="switch">
-                                                <input type="checkbox" value={item.iduser}/>
+                                                <input type="checkbox" value={item.email_user} checked={item.checked_user} readOnly={item.checked_user} onChange={e => checkUser(e.target.value, item.name_user, item.nickname_user)}/>
                                                 <span className="slider round"></span>
                                             </label>
                                         </td>
