@@ -64,6 +64,7 @@ export default class Saudacao extends Component {
                                     >
                                         <p className="FieldD">
                                             <b className="Presc">Nome:                  </b>
+                                            <br></br>
                                             <input
                                                 type="text"
                                                 placeholder="Nome"
@@ -80,6 +81,7 @@ export default class Saudacao extends Component {
                                         </p>
                                         <p className="FieldD">
                                             <b className="Presc">Sobrenome:     </b>
+                                            <br></br>
                                             <input
                                                 type="text"
                                                 placeholder="Sobrenome"
@@ -95,6 +97,7 @@ export default class Saudacao extends Component {
                                         </p>
                                         <p className="FieldD">
                                             <b className="Presc">E-mail:     </b>
+                                            <br></br>
                                             <input
                                                 type="text"
                                                 placeholder="E-mail"
@@ -110,6 +113,7 @@ export default class Saudacao extends Component {
                                         </p>
                                         <p className="FieldD">
                                             <b className="Presc">CPF:        </b>
+                                            <br></br>
                                             <input
                                                 type="text"
                                                 placeholder="CPF"
