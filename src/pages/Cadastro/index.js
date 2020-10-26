@@ -34,6 +34,10 @@ export default class Saudacao extends Component {
     setNome(e) {
         this.setState({ nome: e.target.value });
     }
+    goToLogin() {
+        /* eslint-disable no-restricted-globals */
+        open("/login");
+    }
     render() {
         const { cpf } = this.state;
         const { nome } = this.state;
@@ -119,6 +123,7 @@ export default class Saudacao extends Component {
                                                 onChange={this.handlechange}
                                             ></input>
                                         </p>
+                                        <div class="possuiConta">Já possui uma conta? <a class="redirectLogin" href="#" onClick={() => {this.goToLogin();}}>Entrar</a></div>
                                         <input
                                             type="submit"
                                             value="Cadastrar"

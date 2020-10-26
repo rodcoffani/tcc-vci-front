@@ -151,7 +151,14 @@ form.cad{
     color: white;
     background-color: transparent !important;
 }
-
+a.redirectLogin{
+    color: #0426a5;
+    text-decoration: underline;
+}
+.possuiConta{
+    color: white;
+    text-decoration: solid;
+}
 @media (min-width:320px) and (max-width: 375px) {
     .TituloC{
         
@@ -187,6 +194,9 @@ form.cad{
     }
     .FormC{
         padding-left: 22px;
+    }
+    .possuiConta{
+        margin-left: 11%;
     }
 
 }
