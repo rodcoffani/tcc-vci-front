@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import "./styles.css";
 import API from "../../../../api";
-import { useParams } from "react-router";
-import { Alert } from "react-bootstrap";
+import socketIOClient from "socket.io-client";
 
 class Pergunta extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
             questao: "",
             alternativas: [],
             selecionada: 0,
-            correta : 0
+            correta : 0,
+            conexao : null
         };
     }
     componentDidMount() {
@@ -42,14 +43,18 @@ class Pergunta extends Component {
             this.setState({
                 questao: res.data.data[0].json_question,
                 alternativas: perguntas,
+                conexao : socketIOClient("http://localhost:4000")
             });
         });
         console.log(perguntas);
     }
     handleSubmit = (e) => {
         e.preventDefault();
+        // const socket = socketIOClient("http://localhost:4000");
         if(this.state.selecionada == this.state.correta){
             alert("acertou");
+        }else{
+            this.state.conexao.emit("errou", this.state.conexao.id);
         }
     };
 

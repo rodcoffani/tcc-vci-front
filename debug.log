@@ -4,3 +4,12 @@
 [1007/121331.418:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [1016/161652.498:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema nï¿½o pode encontrar o caminho especificado. (0x3)
 [1019/172158.346:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1022/160116.895:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1022/190043.563:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[1022/190043.560:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[1022/190043.560:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[1022/190043.573:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[1022/190043.787:ERROR:exception_snapshot_win.cc(99)] thread ID 12004 not found in process
+[1022/190043.787:ERROR:exception_snapshot_win.cc(99)] thread ID 13772 not found in process
+[1022/190043.787:ERROR:exception_snapshot_win.cc(99)] thread ID 11960 not found in process
+[1022/190043.787:ERROR:exception_snapshot_win.cc(99)] thread ID 7380 not found in process
