@@ -50,7 +50,7 @@ export default class Saudacao extends Component {
                         <Row className="TopShelf">
                             <h1 className="CadT">CADASTRO</h1>
                         </Row>
-                        <Row>
+                        <Row className="inputs">
                             <Col className="image">
                                 <div className="imageBlue">
                                     <img src={ead} className="img-logo cad" alt="Logotipo do EAD-LAB"/>
@@ -79,6 +79,9 @@ export default class Saudacao extends Component {
                                                 maxLength="45"
                                             ></input>
                                         </p>
+
+                                        
+
                                         <p className="FieldD">
                                             <b className="Presc">Sobrenome:     </b>
                                             <br></br>
