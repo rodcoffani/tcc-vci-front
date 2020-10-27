@@ -171,5 +171,73 @@ form.cad{
     background-color: transparent !important;
 }
 
+a.redirectLogin{
+    color: #0426a5;
+    text-decoration: underline;
+}
+.possuiConta{
+    color: white;
+    text-decoration: solid;
+}
+@media (min-width:320px) and (max-width: 375px) {
+    .TituloC{
+        
+    width: 290px;
+    }
+    .CadT{
+        margin: auto;
+        font-size: 10vw;
+    }
+    .linkC{
+        
+        font-size: medium;
+    }
+    .CadBtn{
+        width: 150px;
+        font-size: large;
+        margin-right: 25%;
+    }
+    .CadS{
+        font-size: 5vw;
+    }
+    .inputV{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputCS{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputCC{
+        width: 100%;
+        font-size: x-large;
+    }
+    .FormC{
+        padding-left: 22px;
+    }
+    .possuiConta{
+        margin-left: 11%;
+    }
+
+}
+@media (min-width:365px) and (max-width: 375px) {
+    .TituloC{
+        width: 310px;
+    }
+    .CadT{
+        margin: auto;
+        font-size: 10vw;
+    }
+    .linkC{
+        font-size: large;
+    }
+    .inputV{
+        width: 100%;
+        font-size: x-large;
+    }
+    .inputV.log{
+        width: 130%;
+    }
+}
 
 

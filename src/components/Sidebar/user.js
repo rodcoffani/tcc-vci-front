@@ -1,6 +1,6 @@
 import React from "react";
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import { faIdBadge, faGamepad, faUserFriends, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { faIdBadge, faHome, faUserFriends, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
 import './styles.css';
@@ -20,10 +20,10 @@ const Sidebar = (props) => {
                 <SideNav.Nav defaultSelected={props.pageSelected}>
                      <NavItem eventKey="">
                          <NavIcon>
-                            <FontAwesomeIcon icon={faGamepad} />
+                            <FontAwesomeIcon icon={faHome} />
                         </NavIcon>
                         <NavText>
-                            Jogos
+                            Home
                         </NavText>
                     </NavItem>
                     <NavItem eventKey="Login">

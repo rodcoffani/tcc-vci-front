@@ -87,11 +87,14 @@ const Profile = (props) => {
         reader.readAsDataURL(e.target.files[0]);
     }
 
-    const promoteUser = (email, name) => {
-        API.put(`users/promote-admin/${email}`, {name}).then((res) => {
-            alert(res.data.message);
-            setReloadFlag(!reloadFlag);
-        });
+    const promoteUser = (email, name) => { 
+        // eslint-disable-next-line no-restricted-globals
+        if(confirm("Deseja prosseguir? A promoção a administrador é irreversível.")){
+            API.put(`users/promote-admin/${email}`, {name}).then((res) => {
+                alert(res.data.message);
+                setReloadFlag(!reloadFlag);
+            });
+        } 
     }
 
     return(
