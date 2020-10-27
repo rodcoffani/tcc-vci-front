@@ -59,7 +59,6 @@ export default class Saudacao extends Component {
     setNome(e) {
         this.setState({ nome: e.target.value });
     }
-    
     goToLogin() {
         /* eslint-disable no-restricted-globals */
         open("/login");
@@ -81,6 +80,7 @@ export default class Saudacao extends Component {
             return false;
         }
     }
+
     render() {
         const { cpf } = this.state;
         const { nome } = this.state;
