@@ -10,6 +10,7 @@ import Roleta from "./pages/Jogos/Roleta/jogo";
 import Pergunta from "./pages/Jogos/Roleta/Pergunta";
 import Quiz from "./pages/Jogos/Quiz/quiz";
 import Roleta_rules from "./pages/Jogos/Roleta";
+import Queue from "./pages/Jogos/Roleta/queue";
 import Quiz_rules from "./pages/Jogos/Quiz";
 import Caca_palavras_rules from "./pages/Jogos/Caça-palavras";
 import Perfil from "./pages/Administrador/profile";
@@ -18,6 +19,9 @@ import Funcionario from "./pages/Funcionario";
 import Profile from "./pages/Funcionario/profile"
 import Sobre from "./pages/about"
 import Logout from "./pages/Logout";
+
+
+
 
 const Routes = () => {
     return (
@@ -46,6 +50,10 @@ const Routes = () => {
                 <Route 
                     path="/roleta_rules"
                     component={ Roleta_rules }
+                />
+                <Route
+                    exact path="/jogos/roleta/queue"
+                    component = { Queue }
                 />
                 <Route 
                     exact path="/jogos/roleta"
