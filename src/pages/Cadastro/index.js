@@ -7,7 +7,17 @@ import { cpfMask } from "./mask";
 import ead from "../../assets/images/ead-lab.png";
 import { Redirect } from "react-router-dom";
 import API from "../../api";
+import $ from "jquery";
 import BackgroundParticle from '../../components/Background-particle'
+// const exclude = RegExp(
+//     /[^@-.w]|^[_@.-]|[._-]{2}|[@.]{2}|(@)[^@]*1/
+// );
+const check = RegExp(
+    /.+@.+\.[A-Za-z]+$/
+);
+// const checkend = RegExp(
+//     /.[a-zA-Z]{2,3}$/
+// );
 export default class Saudacao extends Component {
     constructor(props) {
         super(props);
@@ -20,9 +30,22 @@ export default class Saudacao extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
+        if(!this.isEmail()){
+            alert("Email Incorreto!");
+            return;
+        }
+        if(!this.isCpf()){
+            alert("CPF Incorreto!");
+            return;
+        }
         API.post("/users/",this.state).then((res) => {
             console.log(res.data.success);
             if(res.data.success === true) {
+                alert(
+                "Bem-vindo ao VCI Treinamentos!\n"+
+                "A verificação da sua conta será realizada por um dos administradores\n"+
+                "que enviarão o resultado e as próximas orientações via email."
+                );
                 this.setState({ redirect: "/login" })
             }
         })
@@ -30,13 +53,33 @@ export default class Saudacao extends Component {
     }
     state = {
         nome: this.props.nome,
+        email: this.props.email,
+        cpf: this.props.cpf,
     };
     setNome(e) {
         this.setState({ nome: e.target.value });
     }
+    
     goToLogin() {
         /* eslint-disable no-restricted-globals */
         open("/login");
+    }
+    isEmail(){
+        var logEmail = this.state.email;
+        console.log(check.test(logEmail));
+        return check.test(logEmail);
+
+        // if(((email.search(exclude) != -1)||(email.search(check)) == -1)||(email.search(checkend) == -1)){return false;}
+        // else {return true;}
+    }
+    isCpf(){
+        var logCpf = this.state.cpf;
+        if(logCpf.length==14){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     render() {
         const { cpf } = this.state;
@@ -104,6 +147,7 @@ export default class Saudacao extends Component {
                                                 placeholder="E-mail"
                                                 className="inputV"
                                                 required
+                                                id="emailCad"
                                                 maxLength="45"
                                                 onChange={(e) =>
                                                     this.setState({
