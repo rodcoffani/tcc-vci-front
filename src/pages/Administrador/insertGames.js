@@ -122,12 +122,37 @@ const InsertGames = (props) => {
         key: '',
     })
     const [games, setGames] = useState([]);
+    const [categorias, setCategorias] = useState([]);
 
     useEffect(() => {
         API.get("/game/all").then((res) => {
             setGames(res.data);
-        });        
+        });    
+        API.get("/perguntados/all").then((res) => {
+            setCategorias(res.data);
+        })    
     }, []);
+
+    const showCategories = (e) => {
+        let id = 0;
+        {games.map((item) => {
+            if(item.name_game === "Perguntados"){
+                id = item.idgame;
+            }
+        })}
+
+        const select = document.getElementById("select-categorias");
+        const categoria = document.getElementById("label-categoria");
+        if(e.target.value === id.toString()){
+            select.hidden = false;
+            categoria.hidden = false;
+        }
+        else {
+            select.hidden = true;
+            categoria.hidden = true;
+        }
+            
+    }
 
     const handleChangeQuestion = (e) => {
         setCurrentQuestion({
@@ -283,7 +308,7 @@ const InsertGames = (props) => {
                                 <FormLabel>Selecionar tipo de jogo:</FormLabel>
                             </div>
                             <div className="inputs-insert">
-                                <FormControl as="select">
+                                <FormControl as="select" onChange={showCategories}>
                                     {games.map((item) => {
                                         return <option value={item.idgame} className="select-jogos">{item.name_game}</option>
                                     })}
@@ -302,7 +327,23 @@ const InsertGames = (props) => {
                             </div>
                             <div className="inputs-insert">
                                 <input type="text" placeholder="Digite o enunciado da pergunta" className="form-control" value={currentQuestion.question} onChange={handleChangeQuestion}/>
-                                
+                            </div>
+
+                            <div className="labels-insert" id="label-categoria" hidden>
+                                <FormLabel>Categoria:</FormLabel>
+                            </div>
+                            <div className="inputs-insert" id="select-categorias" hidden>
+                                <FormControl as="select">
+                                    {categorias.map((item) => {
+                                        return <option value={item.idtoten} className="select-jogos">{item.name_toten}</option>
+                                    })}
+                                </FormControl>
+                            </div>
+
+                            <div className="labels-insert">
+                                <FormLabel>Alternativas:</FormLabel>
+                            </div>
+                            <div className="inputs-insert">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
@@ -324,7 +365,7 @@ const InsertGames = (props) => {
                                 <div class="input-group" >
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="radio" name="alternativa" aria-label="Botão radio para acompanhar input text" />
+                                            <input type="radio" name="alternativa" value="c" aria-label="Botão radio para acompanhar input text" />
                                         </div>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Alternativa C"  aria-label="Input text com 0botão radio" value={currentQuestion.alternative_c} onChange={handleChangeAltC}/>
