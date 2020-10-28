@@ -116,9 +116,9 @@ const InsertQuiz = (props) => {
     });
 
     useEffect(()=> {
-        API.get('/quiz/questions').then(res => {
-            setItems(JSON.parse(res.data.map(item => item.json_question)))
-        })
+        // API.get('/quiz/questions').then(res => {
+        //     setItems(JSON.parse(res.data.map(item => item.json_question)))
+        // })
     },[])
 
     const handleChangeQuestion = (e) => {
