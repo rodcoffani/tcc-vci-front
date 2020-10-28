@@ -323,6 +323,19 @@
   
 
 /* cadastro de jogos */
+.mother-games {
+    width: 90%;
+    height: auto;
+    margin-left: 4%;
+    display: flex;
+    justify-content: center;
+}
+
+.table-games {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .insert-games {
     width: 80%;
     background-color: white;
@@ -393,6 +406,7 @@ label{
 }
 
 .icons{
+    margin-top: 10px;
     cursor: pointer;
     font-size: 24px;
     color: black;
@@ -460,10 +474,11 @@ label{
     overflow: hidden
 }
 
-.card {
+.admin-profile-card {
     border-radius: 20px;
     border: none;
     margin-bottom: 30px;
+    background-color: #fff;
 }
 
 .m-r-0 {
@@ -515,7 +530,7 @@ h6 {
     font-size: 14px
 }
 
-.card .card-block p {
+.admin-profile-card .card-block p {
     line-height: 25px
 }
 
@@ -541,7 +556,7 @@ h6 {
     padding-bottom: 5px 
 }
 
-.card .card-block p {
+.admin-profile-card .card-block p {
     line-height: 25px
 }
 
