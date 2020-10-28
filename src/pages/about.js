@@ -48,119 +48,119 @@ const About = () => {
                         "Prof Isaac Portal Roldán" (CTI), da Unesp, dos seguintes alunos:</h4>
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={grazi} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Graziele
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={laura} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Laura
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={ana} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Ana Julia
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={guilherme} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Guilherme
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={kaio} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Kaio
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={micaela} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Micaela
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={rodrigo} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Rodrigo
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={sophia} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Sophia
                                 </div>
                             </div>
                         
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={amanda} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Amanda
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={anselmo} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Anselmo
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={jose} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     José
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={luiz} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Luiz
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={nicolas} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Nicolas
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={thiago} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Thiago
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={vinicius} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Vinicius
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={eduardo} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Eduardo
                                 </div>
                             </div>
 
                             <div className="card-integrante">
                                 <img className="card-img-top rounded" src={hugo} alt="Integrante do grupo"/>
-                                <div className="card-body">
+                                <div className="card-integrante-body">
                                     Hugo
                                 </div>
                             </div>

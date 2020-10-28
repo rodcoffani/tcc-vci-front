@@ -152,7 +152,7 @@ span{
   width: 100%;
 }
 
-.card-body{
+.card-integrante-body{
   text-align: center;
   font-size: 150%;
   font-weight: bold;
@@ -269,7 +269,7 @@ span{
     width: 48%;
   }
 
-  .card-body{
+  .card-integrante-body{
     font-size: 63%;
   }
 
@@ -368,7 +368,7 @@ span{
     width: 48%;
   }
 
-  .card-body{
+  .card-integrante-body{
     font-size: 80%;
   }
 
@@ -468,7 +468,7 @@ span{
     width: 48%;
   }
 
-  .card-body{
+  .card-integrante-body{
     font-size: 100%;
   }
 
@@ -570,7 +570,7 @@ span{
     width: 31%;
   }
 
-  .card-body{
+  .card-integrante-body{
     font-size: 120%;
   }
 
@@ -662,7 +662,7 @@ span{
     width: 90%;
   }
 
-  .card-body{
+  .card-integrante-body{
     font-size: 110%;
   }
 

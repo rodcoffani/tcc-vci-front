@@ -14,7 +14,9 @@ import Queue from "./pages/Jogos/Roleta/queue";
 import Quiz_rules from "./pages/Jogos/Quiz";
 import Caca_palavras_rules from "./pages/Jogos/Caça-palavras";
 import Perfil from "./pages/Administrador/profile";
-import CadastroJogos from "./pages/Administrador/insertGames";
+import CadastroJogos from "./pages/Administrador/editGames";
+import CadastroQuiz from "./pages/Administrador/editGames/insertQuiz";
+import CadastroRoleta from "./pages/Administrador/editGames/insertRoleta";
 import Funcionario from "./pages/Funcionario";
 import Profile from "./pages/Funcionario/profile"
 import Sobre from "./pages/about"
@@ -80,8 +82,16 @@ const Routes = () => {
                     component={ Perfil }
                 />
                 <Route
-                    path="/insertGames"
+                    exact path="/editGames"
                     component={ CadastroJogos }
+                />
+                <Route
+                    path="/editGames/roleta"
+                    component={ CadastroRoleta }
+                />
+                <Route
+                    path="/editGames/quiz"
+                    component={ CadastroQuiz }
                 />
                 <Route
                     path="/funcionario"
