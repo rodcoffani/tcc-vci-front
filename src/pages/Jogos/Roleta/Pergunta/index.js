@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import "./styles.css";
 import API from "../../../../api";
 import socketIOClient from "socket.io-client";
+import { connect, connection } from "react-redux";
+
+
+ function mapStateToProps(state){
+    return {
+      ...state.playerCon,
+    };
+  }
 
 class Pergunta extends Component {
     
@@ -16,6 +24,8 @@ class Pergunta extends Component {
         };
     }
     componentDidMount() {
+        console.log(this.props);
+        console.log('----------------------------------')
         let id = this.props.match.params.id;
         const perguntas = [];
         API.get(`/perguntados/pergunta/${id}`).then((res) => {
@@ -105,6 +115,9 @@ class Pergunta extends Component {
             </React.Fragment>
         );
     }
+
+    
+
 }
 
-export default Pergunta;
+export default connect(mapStateToProps)(Pergunta);
