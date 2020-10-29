@@ -18,7 +18,16 @@ const Profile = (props) => {
     const [email, setEmail] = useState("");
     const [id, setId] = useState("");
     const [profileImg, setImg] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
+    const [reloadFlag, setReloadFlag] = useState(true); 
 
+    useEffect(() => {
+        API.post("/login/teste-token",{token: localStorage.getItem('authTk')}).then((res) => {
+            setUser(res.data.decoded);  
+            setId(res.data.decoded.iduser);
+            setNome(res.data.decoded.name_user);
+            setEmail(res.data.decoded.email_user);
+        });
+    }, []);
 
     useEffect(() => {
         API.get("/users/admins").then((res) => {
@@ -27,13 +36,7 @@ const Profile = (props) => {
         API.get("/users/employee").then((res) => {
             setEmployee(res.data);
         });
-        API.post("/login/teste-token",{token: localStorage.getItem('authTk')}).then((res) => {
-            setUser(res.data.decoded);  
-            setId(res.data.decoded.iduser);
-            setNome(res.data.decoded.name_user);
-            setEmail(res.data.decoded.email_user);
-        });
-    }, []);
+    }, [reloadFlag]);
 
     const enableForm = (e) => {
         e.preventDefault();
@@ -84,6 +87,16 @@ const Profile = (props) => {
         reader.readAsDataURL(e.target.files[0]);
     }
 
+    const promoteUser = (email, name) => { 
+        // eslint-disable-next-line no-restricted-globals
+        if(confirm("Deseja prosseguir? A promoção a administrador é irreversível.")){
+            API.put(`users/promote-admin/${email}`, {name}).then((res) => {
+                alert(res.data.message);
+                setReloadFlag(!reloadFlag);
+            });
+        } 
+    }
+
     return(
         <div>
             <Helmet title="Perfil"/>
@@ -99,7 +112,7 @@ const Profile = (props) => {
                     <div className="row container d-flex card-user">
                     <Form onSubmit={editAdmin}>
                         <div className="col-md-12">
-                            <div className="card user-card-full">
+                            <div className="admin-profile-card user-card-full">
                                 <div className="row m-l-0 m-r-0">
                                     <div className="col-sm-4 bg-c-lite-green user-profile">
                                         <div className="card-block text-center text-white">
@@ -189,7 +202,7 @@ const Profile = (props) => {
                                             <td>{item.nickname_user}</td>
                                             <td>
                                                 <label className="switch-profile">
-                                                    <input type="checkbox" value={item.iduser} />
+                                                    <input type="checkbox" value={item.email_user} checked={item.admin} onChange={e => promoteUser(e.target.value, item.name_user)}/>
                                                     <span className="slider round"></span>
                                                 </label>
                                             </td>

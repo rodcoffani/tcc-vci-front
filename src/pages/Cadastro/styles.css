@@ -13,6 +13,20 @@ background: transparent!important;
     background: transparent!important;
 
 }
+.inputs{
+    width: 100%;
+}
+
+.cad
+{
+    padding-left:25%;
+}
+.FieldD
+{
+    padding-left: 0px;
+}
+
+
 
 .inputV {
     background-color: #0255da !important;
@@ -33,6 +47,11 @@ background: transparent!important;
     width: 100%;
     color:white;
     height: 7vh;
+}
+.container-x1
+{
+    width: 95%
+
 }
 .inputCC{
     background-color: #0255da !important;
@@ -152,6 +171,14 @@ form.cad{
     background-color: transparent !important;
 }
 
+a.redirectLogin{
+    color: #0426a5;
+    text-decoration: underline;
+}
+.possuiConta{
+    color: white;
+    text-decoration: solid;
+}
 @media (min-width:320px) and (max-width: 375px) {
     .TituloC{
         
@@ -188,6 +215,9 @@ form.cad{
     .FormC{
         padding-left: 22px;
     }
+    .possuiConta{
+        margin-left: 11%;
+    }
 
 }
 @media (min-width:365px) and (max-width: 375px) {
@@ -210,377 +240,4 @@ form.cad{
     }
 }
 
-@media (min-width:376px) and (max-width: 504px) {
-    .TituloC{
-        
-    width: 360px;
-    }
-    .CadS{
-        font-size: 5vw;
-    }
-    .inputV{
-        width: 107%;
-        font-size: x-large;
-    }
-    .CadT{
-        margin: auto;
-        font-size: 10vw;
-    }
-    .CadBtn{
-        font-size: large;
-    }
-    .inputCS{
-        width: 107%;
-        font-size: x-large;
-    }
-    .inputCC{
-        width: 117%;
-        font-size: x-large;
-    }
-    
-    .linkC{
-        font-size: large;
-   }
-}
-@media (min-width:376px) and (max-width: 423px) {
-    .TituloC{
-        
-    width: 360px;
-    }
-   
-    .inputV{
-        width: 107%;
-        font-size: x-large;
-    }
-    .inputCS{
-        width: 107%;
-        font-size: x-large;
-    }
-    .inputCC{
-        width: 107%;
-        font-size: x-large;
-    }
-
-}
-@media (min-width:424px) and (max-width: 462px) {
-    .TituloC{
-        
-    width: 360px;
-    }
-   
-    .inputV{
-        width: 100%;
-        font-size: x-large;
-    }
-    .inputCS{
-        width: 100%;
-        font-size: x-large;
-    }
-    .inputCC{
-        width: 100%;
-        font-size: x-large;
-    }
-
-}
-@media (min-width:463px) and (max-width: 504px) {
-    .TituloC{
-        
-    width: 430px;
-    }.inputCS{
-        width: 107%;
-        font-size: x-large;
-    }
-    .inputCC{
-        width: 107%;
-        font-size: x-large;
-    }
-}
-
-@media (min-width:505px) and (max-width: 599px) {
-    .TituloC{
-        
-    width: 420px;
-    }
-    .CadT{
-        margin: auto;
-        font-size: 10vw;
-    }
-    .CadBtn{
-        padding-bottom: 8%;
-        font-size: x-large;
-    }
-    .inputV{
-        width: 100%;
-        font-size: x-large;
-    }
-    .inputCS{
-        width: 100%;
-        font-size: x-large;
-    }
-    .inputCC{
-        width: 100%;
-        font-size: x-large;
-    }
-    .linkC{
-        font-size: x-large;
-   }
-}
-@media (min-width:600px) and (max-width: 789px) {
-    .TituloC{
-        
-    width: 570px;
-    }
-    .CadT{
-        margin: auto;
-        font-size: 10vw;
-    }
-    .CadBtn{
-        padding-bottom: 8%;
-    }
-    .inputV{
-        width: 100%;
-        font-size: x-large;
-    }
-    .inputCS{
-        width: 100%;
-        font-size: x-large;
-    }
-    .inputCC{
-        width: 100%;
-        font-size: x-large;
-    }
-    .CadBtn{
-        font-size: x-large;
-    }
-    
-    .linkC{
-        font-size: x-large;
-   }
-}
-
-
-@media (min-width:789px) and (max-width: 1000px) {
-    .inputV{
-        font-size: x-large;
-        width: 100%;
-    }
-    .inputCS{
-        font-size: x-large;
-        width: 87%;
-    }
-    .inputCC{
-        font-size: x-large;
-        width: 110%;
-    }
-    .TituloC{
-        padding: 5% 4%;
-    }
-    .CadT{
-        margin: auto;
-        font-size: 6vw;
-    }
-    .CadBtn{
-        font-size: x-large;
-    }
-    
-    .linkC{
-        font-size: x-large;  
-   }
-}
-@media (min-width:789px) and (max-width: 859px) {
-    .TituloC{
-        font-size: xx-large;
-        width: 740px;
-    }
-    .inputV{
-        font-size: x-large;
-        width: 100%;
-    }
-    .inputCS{
-        font-size: x-large;
-        width: 100%;
-    }
-    .inputCC{
-        font-size: x-large;
-        width: 100%;
-    }
-    
-    .CadBtn{
-        padding-bottom: 7%;
-    }
-}
-
-@media (min-width:799px) and (max-width: 1000px) {
-    .CadS{
-        font-size: x-large;
-    }
-    .CadBtn{
-        padding-bottom: 7%;
-    }
-}
-
-@media (min-width:1000px) and (max-width: 1440px) {
-    .TituloC{
-        padding: 10% 5%;
-        width: 460px;
-    }
-    .CadS{
-        font-size: x-large;
-    }
-    .linkC{
-        font-size: x-large;
-
-        
-    }
-    .inputV{
-        font-size: x-large;
-        width: 88%;
-    }
-    .inputCS{
-        width: 88%;
-        font-size: x-large;
-    }
-    .inputCC{
-        display: flex;
-        width: 88%;
-        font-size: x-large;
-    }
-    .CadBtn{
-        
-        padding-bottom: 7%;
-        font-size: x-large;
-    }
-}
-@media (min-width:1100px) and (max-width: 1300px) {
-    .TituloC{
-        padding: 10% 5%;
-        width: 520px;
-    }
-    .CadS{
-        font-size: xx-large;
-    }
-    .CadBtn{
-        
-        padding-bottom: 5%;
-        font-size: x-large;
-    }
-}
-@media (min-width:1250px) and (max-width: 1440px) {
-    .TituloC{
-        padding: 6% 5%;
-        width: 510px;
-    }
-    .CadT{
-        margin: auto;
-    }
-    .CadS{
-        font-size: xx-large;
-    }
-    .linkC{
-        font-size: x-large;
-    }
-    .CadBtn{
-        font-size: x-large;
-    }
-}
-@media (min-width:1440px) and (max-width: 2560px) {
-    .TituloC{
-        padding: 10% 2%;
-        width: 510px;
-    }
-    
-    .inputCS{
-        width: 88%;
-        font-size: x-large;
-    }
-    .inputCC{
-        display: flex;
-        width: 88%;
-        font-size: x-large;
-    }
-    .CadT{
-        margin: auto;
-        font-size: 4vw;
-    }
-    .CadS{
-        font-size: xx-large;
-    }
-    .linkC{
-        font-size: x-large;
-    }
-    .inputV{
-        font-size: x-large;
-        width: 88%;
-    }
-    .CadBtn{
-        font-size: xx-large;
-        height: 9vh;
-
-    }
-}
-@media (min-width:1733px) and (max-width: 2560px) {
-    .TituloC{
-        padding: 1%;
-        width: 510px;
-    }
-    .CadT{
-        margin: auto;
-        font-size: 4vw;
-    }
-    .Presc{
-        font-size: 12vh;
-    }
-    .CadS{
-        font-size: xx-large;
-    }
-    .linkC{
-        font-size: x-large;
-    }
-    .inputV{
-        font-size: x-large;
-    }
-    .CadBtn{
-        font-size: xx-large;
-        height: 9vh;
-    }
-}
-
-@media (min-width:1800px) and (max-width: 2560px) {
-    
-    .CadT{
-        margin: auto;
-        font-size: 4vw;
-    }
-    .CadS{
-        
-        font-size: xx-large;
-    }
-}
-
-@media (min-width:2380px) and (max-width: 2560px) {
-    .TituloC{
-        padding: 1%;
-        width: 510px;
-    }
-    .CadT{
-        margin: auto;
-        font-size: 3vw;
-    }
-    .Presc{
-        font-size: 12vh;
-    }
-    .CadS{
-        font-size: xx-large;
-    }
-    .linkC{
-        font-size: x-large;
-    }
-    .inputV{
-        font-size: x-large;
-    }
-    .CadBtn{
-        font-size: xx-large;
-        height: 9vh;
-    }
-}
 

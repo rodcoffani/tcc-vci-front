@@ -34,12 +34,12 @@ const Sidebar = (props) => {
                             Perfil
                         </NavText>
                     </NavItem>
-                    <NavItem eventKey="insertGames"> {/* arquivo q vai ao clicar */}
+                    <NavItem eventKey="editGames"> {/* arquivo q vai ao clicar */}
                         <NavIcon>
                             <FontAwesomeIcon icon={faGamepad} />
                         </NavIcon>
                         <NavText>
-                             Cadastro de Jogos
+                            Edição de Jogos
                         </NavText>           
                     </NavItem>
                     <NavItem eventKey="reports"> {/* arquivo q vai ao clicar */}

@@ -26,9 +26,6 @@ import image_017 from "../../../assets/images/jogo_10/image_017.png";
 
 // import socketIOClient from "socket.io-client";
 
-//MARTIAL FAZER O TOKEN
-//COM AMOR THIAGO E PRA
-
 export default class Roleta extends Component {
     constructor(props) {
         super(props);
