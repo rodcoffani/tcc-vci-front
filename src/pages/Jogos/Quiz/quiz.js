@@ -3,6 +3,7 @@ import "../Quiz/style.css";
 import Header from "../../../components/Header";
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
+import Cronometro from "../../../components/Cronometro/cron"
 import { Container } from "react-bootstrap";
 import { faFlag } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -22,7 +23,7 @@ export default class Quiz extends Component {
                 <div className='hud'>
                     <div className="tempo">
                         <div className='campValor'>Tempo</div>
-                        <div className='cronometro'>cronos</div>
+                        <div className='cronometro'><Cronometro></Cronometro></div>
                     </div>
                     <div className="pontos">
                         <div className='campValor'>Pontos</div>
