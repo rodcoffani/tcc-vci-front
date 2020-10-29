@@ -38,7 +38,7 @@ export default class Roleta_rules extends Component {
 
                         <Row style={{paddingRight:"35%"}}>
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/jogos/roleta">Jogar</a>
+                                <a style={{color:"white", textDecoration:"none"}} href="/jogos/loading">Jogar</a>
                             </Container>
 
                             <Container className="play">

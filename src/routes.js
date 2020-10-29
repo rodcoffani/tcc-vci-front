@@ -7,6 +7,7 @@ import Cadastro from "./pages/Cadastro";
 import Relatorios from "./pages/Administrador/reports";
 import Administrador from "./pages/Administrador";
 import Roleta from "./pages/Jogos/Roleta/jogo";
+import Loading from "./pages/Jogos/Roleta/loading";
 import Pergunta from "./pages/Jogos/Roleta/Pergunta";
 import Quiz from "./pages/Jogos/Quiz/quiz";
 import Roleta_rules from "./pages/Jogos/Roleta";
@@ -50,6 +51,10 @@ const Routes = () => {
                 <Route 
                     exact path="/jogos/roleta"
                     component={ Roleta }
+                />
+                <Route
+                    path ="/jogos/loading"
+                    component = { Loading }
                 />
                 <Route
                     path="/jogos/roleta/pergunta/:id"
