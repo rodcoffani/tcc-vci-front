@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
 import { Container, Row, Col, Button, Modal, Alert } from "react-bootstrap";
 import Cronometro from "../../../components/Cronometro/cron"
-import { Container } from "react-bootstrap";
 import { faFlag } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import API from "../../../api";
@@ -17,20 +16,25 @@ export default class Quiz extends Component {
             time: 0,
             points: 0,
             questions: {},
+            question:{},
+            alternativas:{},
             interval: null,
             view:true,
             message:"Clique \"Prosseguir\" para iniciar",
+            indice:0
         };
-        API.get(`/get-questions`).then((res) => {
-            console.log(res);
+        API.get(`/quiz/get-questions`).then((res) => {
+            this.state.questions = res.data;
         });
     }
+   
     startTime() {
         this.setState({
             interval: setInterval(() => {
                 let novo = this.state.time + 0.1;
                 this.setState({
                     time: Number(novo.toFixed(2)),
+                    points: this.state.points,
                 });
             }, 100),
         });
@@ -38,18 +42,39 @@ export default class Quiz extends Component {
     pauseTime() {
         clearInterval(this.state.interval);
     }
-    handleModal = () => {
-        var a = this.state.view;
-        if (a) {
+    handleModalAlt = async (alt) =>{
+        this.setState({indice: this.state.indice+1})
+
+        
+        API.post(`/quiz/check-question/`, {idquestion: this.state.question.idquestion,resposta: alt})
+        .then((res) => {
+            this.setState({message: res.data.resultado})
+            if(this.state.message.includes("certa")){
+                this.setState({points: this.state.points+20});
+            }
+            this.handleModal();
+        })
+        .catch((err)=> {console.log(err)});
+        
+        // if(
+        //     this.state.message.includes("certa")
+        //     // true
+        // ){
+        //     this.setState({points: this.state.points+20});
+        // }
+        // this.handleModal();
+    }
+    handleModal = (mostra) => {
+        
+        if (this.state.view) {
             this.setState({ view: false });
             this.startTime();
+            this.setState({ question: this.state.questions.questions[this.state.indice]}); // ta dando erro
+
         } else {
             this.setState({ view: true });
             this.pauseTime();
         }
-    };
-    exitGame = () => {
-
     };
     render() {
         return ( 
@@ -64,37 +89,37 @@ export default class Quiz extends Component {
                     </div>
                     <div className="pontos">
                         <div className='campValor'>Pontos</div>
-                        <div className='points'>points</div>
+                        <div className='points'>{this.state.points}</div>
                     </div>
                 </div>
                 <div className='quiz'>
-                        <div className='enunciado'>enunciado</div>
+                    <div className='enunciado'>{this.state.question.enunciado}</div>
                         <div className='alternativas'>
                             <div className='groupAlt'>
                                 
                                 <div className="altA"
-                                    onClick={() => this.handleModal()}
+                                    onClick={() => this.handleModalAlt(this.state.question.q1)} // fazer para os outros
                                 >
                                     <div className="alternativa">A)</div>
-                                    <div className="conteudo">Fala oi</div>
+                                    <div className="conteudo">{this.state.question.q1}</div>
                                 </div>
                                 <div className="altB"
-                                    onClick={() => this.handleModal()}
+                                   onClick={() => this.handleModalAlt(this.state.question.q2)}
                                 >
                                     <div className="alternativa">B)</div>
-                                    <div className="conteudo">Fala oi</div>
+                                    <div className="conteudo">{this.state.question.q2}</div>
                                 </div>
                                 <div className="altC"
-                                    onClick={() => this.handleModal()}
+                                    onClick={() => this.handleModalAlt(this.state.question.q3)}
                                 >
                                     <div className="alternativa">C)</div>
-                                    <div className="conteudo">Fala oi</div>
+                                    <div className="conteudo">{this.state.question.q3}</div>
                                 </div>
                                 <div className="altD"
-                                    onClick={() => this.handleModal()}
+                                    onClick={() => this.handleModalAlt(this.state.question.q4)}
                                 >
                                     <div className="alternativa">D)</div>
-                                    <div className="conteudo">Fala oi</div>
+                                    <div className="conteudo">{this.state.question.q4}</div>
                                 </div>
                             </div>
                         </div>
@@ -109,13 +134,6 @@ export default class Quiz extends Component {
                     {this.state.message}
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button
-                        onClick={() => {
-                            this.exitGame();
-                        }}
-                    >
-                        Cancelar Rodada
-                    </Button>
                     <Button
                         onClick={() => {
                             this.handleModal();
