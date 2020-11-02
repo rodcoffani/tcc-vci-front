@@ -12,20 +12,19 @@ import { connect, connection } from "react-redux";
   }
 
 class Pergunta extends Component {
-    
+    handleRedirect = (newPath)=>{
+        this.props.history.push(newPath);
+    }
     constructor(props) {
         super(props);
         this.state = {
             questao: "",
             alternativas: [],
             selecionada: 0,
-            correta : 0,
-            conexao : null
+            correta : 0
         };
     }
     componentDidMount() {
-        console.log(this.props);
-        console.log('----------------------------------')
         let id = this.props.match.params.id;
         const perguntas = [];
         API.get(`/perguntados/pergunta/${id}`).then((res) => {
@@ -53,7 +52,6 @@ class Pergunta extends Component {
             this.setState({
                 questao: res.data.data[0].json_question,
                 alternativas: perguntas,
-                conexao : socketIOClient("http://localhost:4000")
             });
         });
         console.log(perguntas);
@@ -63,8 +61,9 @@ class Pergunta extends Component {
         // const socket = socketIOClient("http://localhost:4000");
         if(this.state.selecionada == this.state.correta){
             alert("acertou");
+            this.handleRedirect("/jogos/roleta/");
         }else{
-            this.state.conexao.emit("errou", this.state.conexao.id);
+            this.props.conexao.emit("errou", this.props.conexao.id);
         }
     };
 
