@@ -1,6 +1,7 @@
 const initialState = {
-    con: null
-  };
+    con: null,
+    player : null
+};
   
   const conReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -14,4 +15,3 @@ const initialState = {
   };
   
   export default conReducer;
-  

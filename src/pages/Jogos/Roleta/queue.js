@@ -24,9 +24,9 @@ class Queue extends Component{
             let aux = false;
             for (var i=0; i<PLAYERS.length; i++)
             {
-                if(PLAYERS[i] === conexao.id)
+                if(PLAYERS[i].id === conexao.id)
                 {
-                    aux =true;
+                    aux = true;
                 }
             }
             if(aux)
@@ -38,7 +38,10 @@ class Queue extends Component{
                 setTimeout(()=>{
                     store.dispatch({
                         type: "SET_CON",
-                        payload: conexao,
+                        payload: {
+                            conexao : conexao,
+                            player : PLAYERS
+                        },
                       });
                       this.handleRedirect('/jogos/roleta/');
                       // QUERIDO PRA, FAVOR REDIRECIONAR A PAGINA, BEIJOS DA CORNETA 
