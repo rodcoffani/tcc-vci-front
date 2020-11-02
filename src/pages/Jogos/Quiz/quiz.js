@@ -49,7 +49,7 @@ export default class Quiz extends Component {
         API.post(`/quiz/check-question/`, {idquestion: this.state.question.idquestion,resposta: alt})
         .then((res) => {
             this.setState({message: res.data.resultado})
-            if(this.state.message.includes("certa")){
+            if(this.state.message.includes("Correta")){
                 this.setState({points: this.state.points+20});
             }
             this.handleModal();
@@ -80,13 +80,14 @@ export default class Quiz extends Component {
         return ( 
             <React.Fragment>
             <Helmet title = "Jogo 1" />
-            <Header headerTitle = "Jogo de Perguntas" />
+            <Header headerTitle = "Jogo Quiz" />
             <div className='container_jogo'>
                 <div className='hud'>
                     <div className="tempo">
                         <div className='campValor'>Tempo</div>
-                        <div className='cronometro'>{this.state.time}</div>
+                        <div className='cronometro'>{this.state.time} s</div>
                     </div>
+                    <div className="indice">{this.state.indice+1} / 5</div>
                     <div className="pontos">
                         <div className='campValor'>Pontos</div>
                         <div className='points'>{this.state.points}</div>
@@ -97,25 +98,25 @@ export default class Quiz extends Component {
                         <div className='alternativas'>
                             <div className='groupAlt'>
                                 
-                                <div className="altA"
+                                <div className="alt"
                                     onClick={() => this.handleModalAlt(this.state.question.q1)} // fazer para os outros
                                 >
                                     <div className="alternativa">A)</div>
                                     <div className="conteudo">{this.state.question.q1}</div>
                                 </div>
-                                <div className="altB"
+                                <div className="alt"
                                    onClick={() => this.handleModalAlt(this.state.question.q2)}
                                 >
                                     <div className="alternativa">B)</div>
                                     <div className="conteudo">{this.state.question.q2}</div>
                                 </div>
-                                <div className="altC"
+                                <div className="alt"
                                     onClick={() => this.handleModalAlt(this.state.question.q3)}
                                 >
                                     <div className="alternativa">C)</div>
                                     <div className="conteudo">{this.state.question.q3}</div>
                                 </div>
-                                <div className="altD"
+                                <div className="alt"
                                     onClick={() => this.handleModalAlt(this.state.question.q4)}
                                 >
                                     <div className="alternativa">D)</div>

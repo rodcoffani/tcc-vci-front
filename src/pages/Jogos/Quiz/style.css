@@ -59,20 +59,22 @@
     display: flex;
     flex-wrap: wrap;
     height: 25vh;
-    width: 25vw;
+    width: 19vw;
     border-radius: 20px;
     background-color: #ffffffaa;
     text-align: center;
+    margin-left:9%;
 }
 
 .pontos{
     display: flex;
     flex-wrap: wrap;
     height: 25vh;
-    width: 25vw;
+    width: 19vw;
     border-radius: 20px;
     background-color: #ffffffaa;
     text-align: center;
+    margin-right:9%;
 }
 
 .campValor{
@@ -87,18 +89,18 @@
 }
 
 .cronometro{
-    background-color:#F0F8FF;
+    background-color: #F0F8FF;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    bottom: 10px;
     width: 100%;
-    height: 77%;
-    position: relative;
+    height: 68%;
     text-align: center;
     padding-top: 30px;
+    font-size: 45px;
+    font-family: fantasy;
 }
 .points{
-    background-color:#F0F8FF;
+    background-color: #F0F8FF;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     bottom: 10px;
@@ -107,6 +109,8 @@
     position: relative;
     text-align: center;
     padding-top: 30px;
+    font-size: 45px;
+    font-family: fantasy;
 
 }
 
@@ -114,8 +118,8 @@
     display: flex;
     flex-wrap: wrap;
     height: 76vh;
-    width: 75vw;
-    margin-left: 12vw;
+    width: 69vw;
+    margin-left: 15vw;
     margin-bottom: 5vw;
     margin-top: 5vh;
     border-radius: 20px;
@@ -131,7 +135,10 @@
     height: 25%;
     padding-top: 50px;
     font-weight: bold;
-    font-size: 12pt;
+    font-size: 14pt;
+    text-align: justify;
+    padding-right: 4%;
+    padding-left: 4%;
 }
 
 .alternativas{
@@ -147,7 +154,7 @@
 }
 
 .groupAlt{
-    background-color: black;
+    background-color: #c3d4f0;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -155,12 +162,13 @@
     width: auto;
     height: 85%;
     margin-top: 0.5%;
+    font-weight: 500;
     /*padding-top: 0.85%;
     padding-left: 0.5%;
     padding-right: 0.5%;*/
 }
 
-.altA {
+.alt {
     background-color: white;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -170,36 +178,46 @@
     height: 25%;
     text-align: justify;
     cursor: pointer;
+    display: inline-flex;
+    border-radius: inherit;
+    margin-bottom: 1%;
+    padding-top: 1%;
+    border-style: solid;
+    border-color: #808080a6;
 }
-
-.altB{
-    background-color: gray;
-    /*margin-bottom: 0.5%;*/
-    padding-left: 0.5%;
-    width: 100%;
-    height: 25%;
-    text-align: justify;
-    cursor: pointer;
-    
+.alt:hover{
+    border-color: blue;
 }
-
-.altC{
-    background-color: white;
-    /*margin-bottom: 0.5%;*/
-    padding-left: 0.5%;
-    width: 100%;
-    height: 25%;
-    text-align: justify;
-    cursor: pointer;
+.alternativa{
+    padding-right:1%;
 }
-
-.altD{
-    background-color: gray;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding-left: 0.5%;
-    width: 100%;
-    height: 25%;
-    text-align: justify;
-    cursor: pointer;
+.indice{
+    font-weight: 400;
+    color: white;
+    font-family: fantasy;
+    font-size: 6vh;
+}
+@media (min-width: 320px) and (max-width: 375px) {
+    .quiz {
+        width: 83vw;
+        margin-left: 9vw;
+    }
+    .tempo {
+        width: 23vw;
+        margin-left: 6%;
+    }
+    .cronometro{
+        font-size:29px;
+    }
+    .pontos {
+        width: 22vw;
+        margin-right: 6%;
+    }
+    .points {
+        font-size: 40px;
+    }
+    .container_descricao{
+        width: 90%;
+        padding-left: 15%;
+    }
 }
