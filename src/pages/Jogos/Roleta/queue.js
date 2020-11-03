@@ -25,8 +25,10 @@ class Queue extends Component {
 
         conexao.on("ready", (PLAYERS) => {
             let aux = false;
-            for (var i = 0; i < PLAYERS.length; i++) {
-                if (PLAYERS[i].id === conexao.id) {
+            for (var i=0; i<PLAYERS.length; i++)
+            {
+                if(PLAYERS[i].id === conexao.id)
+                {
                     aux = true;
                 }
             }
