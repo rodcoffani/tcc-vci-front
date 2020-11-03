@@ -4,8 +4,6 @@ import Header from '../../../components/Header';
 import Sidebar from '../../../components/Sidebar/admin';
 import {Helmet} from "react-helmet"
 import BackgroundParticle from '../../../components/Background-particle'
-import { faTrashAlt, faPlus, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
 import API from "../../../api";
 
@@ -24,7 +22,7 @@ const EditGames = (props) => {
 
     return (
         <div>
-            <Helmet title="Cadastro de Jogos"/>
+            <Helmet title="Edição de Jogos"/>
             <Sidebar pageSelected="editGames" />
             <Header headerTitle="Administrador"/>
             <div className="container">

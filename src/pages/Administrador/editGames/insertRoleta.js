@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import '../styles.css';
 import Header from '../../../components/Header';
 import Sidebar from '../../../components/Sidebar/admin';
-import { Container, Form, FormControl, FormLabel} from 'react-bootstrap'
+import { Container, Form, FormControl, FormLabel } from 'react-bootstrap'
 import {Helmet} from "react-helmet"
 import BackgroundParticle from '../../../components/Background-particle'
-import { faTrashAlt, faPlus, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faPlus, faCheckCircle, faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
 import FlipMove from "react-flip-move";
@@ -100,6 +101,7 @@ const ListItems = (props) => {
 }
 
 const InsertRoleta = (props) => {
+    const { push } = useHistory();
     const [items, setItems] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState({
         enunciado: '',
@@ -359,8 +361,9 @@ const InsertRoleta = (props) => {
                 <BackgroundParticle />
             </Container>
             <center>
-                <div className="mother">
+                <div className="mother-games">
                     <div className="insert-games">
+                        <FontAwesomeIcon icon={faArrowCircleLeft} size="lg" color="rgba(58, 167, 180, 1)" className="icons ml-4" onClick={() => push('/editGames')} />
                         <h2>Edição de Jogo - Roleta</h2>
                         <Form className="todo-form" onSubmit={addItem}>
                             <div className="labels-insert">
