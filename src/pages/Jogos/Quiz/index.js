@@ -17,7 +17,7 @@ export default class Quiz_rules extends Component {
         return (
             <React.Fragment>
                 <Helmet title="Jogo 1" />
-                <Header headerTitle="Jogo de Perguntas"/>
+                <Header headerTitle="Jogo Quiz"/>
 
                     <h1 className="titulo_objetivo">Objetivos:</h1>
 
@@ -39,11 +39,11 @@ export default class Quiz_rules extends Component {
 
                         <Row style={{paddingRight:"35%"}}>
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/jogos/quiz">Jogar</a>
+                                <a style={{color:"white", textDecoration:"none"}} href="/">Voltar</a>
                             </Container>
 
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/">Voltar</a>
+                                <a style={{color:"white", textDecoration:"none"}} href="/jogos/quiz">Jogar</a>
                             </Container>
                         </Row>
                     </Container>
