@@ -1,75 +1,75 @@
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
-import store from '../../../config/store';
+import store from "../../../config/store";
 import { withRouter } from "react-router-dom";
+import "./style.css";
+import Header from "../../../components/Header";
+import { Helmet } from "react-helmet";
 
-class Queue extends Component{
+
+class Queue extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            conexao : null,
-            mensagem: "Você está na fila para Jogar!"
-
+            conexao: null,
+            mensagem: "(1/2)",
         };
     }
 
-    handleRedirect = (newPath)=>{
+    handleRedirect = (newPath) => {
         this.props.history.push(newPath);
-    }
+    };
 
-    componentDidMount(){
-        const conexao = socketIOClient("http://localhost:4000")
+    componentDidMount() {
+        const conexao = socketIOClient("http://localhost:4000");
 
-        conexao.on('ready', (PLAYERS) =>{
+        conexao.on("ready", (PLAYERS) => {
             let aux = false;
             for (var i=0; i<PLAYERS.length; i++)
             {
-                if(PLAYERS[i] === conexao.id)
+                if(PLAYERS[i].id === conexao.id)
                 {
-                    aux =true;
+                    aux = true;
                 }
             }
-            if(aux)
-            {
+            if (aux) {
                 this.setState({
-                    mensagem: "Partida encontrada!"
-                })
+                    mensagem: "(2/2)",
+                });
 
-                setTimeout(()=>{
+                setTimeout(() => {
                     store.dispatch({
                         type: "SET_CON",
-                        payload: conexao,
-                      });
-                      this.handleRedirect('/jogos/roleta/');
-                      // QUERIDO PRA, FAVOR REDIRECIONAR A PAGINA, BEIJOS DA CORNETA 
-                      // ASS. LUIZ HENRIQUE BELORIO
-                }, 5000)
+                        payload: {
+                            conexao: conexao,
+                            player: PLAYERS,
+                        },
+                    });
+                    this.handleRedirect("/jogos/roleta/");
+                    // QUERIDO PRA, FAVOR REDIRECIONAR A PAGINA, BEIJOS DA CORNETA
+                    // ASS. LUIZ HENRIQUE BELORIO
+                }, 5000);
             }
         });
-
-        //var cache = [];
-        /*
-        var teste = JSON.stringify(this.state.conexao, (key, value) => {
-            if (typeof value === 'object' && value !== null) {
-                // Duplicate reference found, discard key
-                if (cache.includes(value)) return;
-
-                // Store value in our collection
-                cache.push(value);
-               console.log(cache);
-            }
-            return value;
-        });
-        localStorage.setItem("conPlayer", teste);
-        */
     }
 
-    render(){
-        return(
-            <div>
-                <h1>Fila</h1>
-                <p>{this.state.mensagem}</p>
-            </div>
+    render() {
+        return (
+            <React.Fragment>
+                <Helmet title="Jogo 10" />
+                <Header headerTitle="Jogo da Roleta" />
+
+                <div className="LoadMessage">Procurando jogadores {this.state.mensagem}</div>
+                <div className="PreLoader">
+                    <div className="Loader">
+                        <div className="Dots">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </React.Fragment>
         );
     }
 }

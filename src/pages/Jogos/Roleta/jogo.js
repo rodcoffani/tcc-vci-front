@@ -23,15 +23,35 @@ import image_014 from "../../../assets/images/jogo_10/image_014.png";
 import image_015 from "../../../assets/images/jogo_10/image_015.png";
 import image_016 from "../../../assets/images/jogo_10/image_016.png";
 import image_017 from "../../../assets/images/jogo_10/image_017.png";
-
+import { connect, connection } from "react-redux";
 // import socketIOClient from "socket.io-client";
 
-export default class Roleta extends Component {
+function mapStateToProps(state){
+    return {
+      ...state.playerCon,
+    };
+}
+
+class Roleta extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            jsx : null
+        };
     }
-
+    componentDidMount(){
+        console.log(this.props);
+        for(var i=0; i<this.props.player.length; i++){
+            if(this.props.player[i].id === this.props.conexao.id){
+                if(this.props.player[i].available){
+                    this.setState({
+                        jsx : <Wheel></Wheel>
+                    })
+                }
+            }
+        }
+        
+    }
     render() {
         return (
             <React.Fragment>
@@ -152,7 +172,7 @@ export default class Roleta extends Component {
                         </div>
                     </div>
                     <div className="quizWheel">
-                        <Wheel></Wheel>
+                        {this.state.jsx}
                     </div>
                     <div className="questionsBar">
                         <div className="streak1">&nbsp;</div>
@@ -164,3 +184,5 @@ export default class Roleta extends Component {
         );
     }
 }
+
+export default connect(mapStateToProps)(Roleta);
