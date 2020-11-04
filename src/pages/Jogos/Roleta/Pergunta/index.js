@@ -11,6 +11,18 @@ function mapStateToProps(state) {
     };
 }
 
+window.onbeforeunload = function (e) {
+    var e = e || window.event;
+
+    // For IE and Firefox
+    if (e) {
+        e.returnValue = 'Leaving the page';
+    }
+
+    // For Safari
+    return 'Leaving the page';
+};
+
 class Pergunta extends Component {
     handleRedirect = (newPath)=>{
         this.props.history.push(newPath);
@@ -25,7 +37,7 @@ class Pergunta extends Component {
             time : 0,
             interval: null,
             view:true,
-            message:"Clique \"Prosseguir\" para iniciar",
+            message:"Clique \"Prosseguir\" para iniciar - Você possui 20 segundos pra responder a questão",
         };
     }
     componentDidMount() {
@@ -60,16 +72,10 @@ class Pergunta extends Component {
         });
         console.log(perguntas);
     }
-    handleSubmit = (e) => {
-        e.preventDefault();
-        // const socket = socketIOClient("http://localhost:4000");
-        if (this.state.selecionada == this.state.correta) {
-            alert("acertou");
-            this.handleRedirect("/jogos/roleta/");
-        } else {
-            this.props.conexao.emit("errou", this.props.conexao.id);
-        }
-    };
+
+    componentDidUpdate(){
+
+    }
 
     startTime() {
         this.setState({
@@ -77,8 +83,21 @@ class Pergunta extends Component {
                 let novo = this.state.time + 0.1;
                 this.setState({
                     time: Number(novo.toFixed(2)),
+                },
+                () =>{
+                    setTimeout(() => {
+                        if(this.state.time == 20){
+                            this.pauseTime();
+                            this.setState({
+                                view : true,
+                                message : "Tempo esgotado!"
+                            });
+                            //Aqui ficará checando até o tempo limite
+                            //Quando exceder, redirecionar
+                        }
+                    }, 100);
                 });
-            }, 1000),
+            }, 100),
         });
     }
     pauseTime() {
@@ -89,10 +108,18 @@ class Pergunta extends Component {
             selecionada: alt + 1
         }, () => {
             if(this.state.selecionada == this.state.correta){
-                alert("acertou");
+                this.setState({
+                    view : true,
+                    message : "Alternativa correta!"
+                });
+                this.pauseTime();
+                // alert("acertou");
             }else{
-                alert("errou");
-                // this.state.conexao.emit("errou", this.state.conexao.id);
+                this.setState({
+                    view : true,
+                    message : "Alternativa incorreta!"
+                });
+                    // this.props.conexao.emit("errou",this.props.conexao.id);
             }
         });
         
@@ -162,7 +189,11 @@ class Pergunta extends Component {
                         <Modal.Footer>
                             <Button
                                 onClick={() => {
-                                    this.handleModal();
+                                    if(this.state.selecionada != 0 || this.state.time == 20){
+                                        this.handleRedirect("/jogos/roleta/");
+                                    }else{
+                                        this.handleModal();
+                                    }
                                 }}
                             >
                                 Prosseguir

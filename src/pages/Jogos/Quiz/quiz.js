@@ -4,9 +4,6 @@ import Header from "../../../components/Header";
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
 import { Container, Row, Col, Button, Modal, Alert } from "react-bootstrap";
-import Cronometro from "../../../components/Cronometro/cron"
-import { faFlag } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import API from "../../../api";
 
 export default class Quiz extends Component {
