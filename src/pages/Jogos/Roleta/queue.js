@@ -27,7 +27,7 @@ class Queue extends Component {
             token: localStorage.getItem("authTk"),
         };
         API.post(
-            "perguntados/teste-token", 
+            "login/teste-token", 
             tk
         ).then((res) => {
             console.log(res.data.decoded);
