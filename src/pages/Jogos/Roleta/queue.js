@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
 import store from "../../../config/store";
 import { withRouter } from "react-router-dom";
+import API from "../../../api";
 import "./style.css";
 import Header from "../../../components/Header";
 import { Helmet } from "react-helmet";
@@ -12,6 +13,7 @@ class Queue extends Component {
         super(props);
         this.state = {
             conexao: null,
+            dados : {},
             mensagem: "(1/2)",
         };
     }
@@ -21,36 +23,46 @@ class Queue extends Component {
     };
 
     componentDidMount() {
-        const conexao = socketIOClient("http://localhost:4000");
-
-        conexao.on("ready", (PLAYERS) => {
-            let aux = false;
-            for (var i=0; i<PLAYERS.length; i++)
-            {
-                if(PLAYERS[i].id === conexao.id)
+        let tk = {
+            token: localStorage.getItem("authTk"),
+        };
+        API.post(
+            "perguntados/teste-token", 
+            tk
+        ).then((res) => {
+            console.log(res.data.decoded);
+            const conexao = socketIOClient("http://localhost:4000", {query:`nickName=${res.data.decoded.nickname_user}`});
+            conexao.on("ready", (PLAYERS) => {
+                let aux = false;
+                for (var i=0; i<PLAYERS.length; i++)
                 {
-                    aux = true;
+                    if(PLAYERS[i].id === conexao.id)
+                    {
+                        aux = true;
+                    }
                 }
-            }
-            if (aux) {
-                this.setState({
-                    mensagem: "(2/2)",
-                });
-
-                setTimeout(() => {
-                    store.dispatch({
-                        type: "SET_CON",
-                        payload: {
-                            conexao: conexao,
-                            player: PLAYERS,
-                        },
+                if (aux) {
+                    this.setState({
+                        mensagem: "(2/2)",
                     });
-                    this.handleRedirect("/jogos/roleta/");
-                    // QUERIDO PRA, FAVOR REDIRECIONAR A PAGINA, BEIJOS DA CORNETA
-                    // ASS. LUIZ HENRIQUE BELORIO
-                }, 5000);
-            }
+
+                    setTimeout(() => {
+                        store.dispatch({
+                            type: "SET_CON",
+                            payload: {
+                                conexao: conexao,
+                                player: PLAYERS,
+                            },
+                        });
+                        this.handleRedirect("/jogos/roleta/");
+                        // QUERIDO PRA, FAVOR REDIRECIONAR A PAGINA, BEIJOS DA CORNETA
+                        // ASS. LUIZ HENRIQUE BELORIO
+                    }, 5000);
+                }
+            });
         });
+
+        
     }
 
     render() {

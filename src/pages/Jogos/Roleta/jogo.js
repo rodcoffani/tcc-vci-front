@@ -26,33 +26,65 @@ import image_017 from "../../../assets/images/jogo_10/image_017.png";
 import { connect, connection } from "react-redux";
 // import socketIOClient from "socket.io-client";
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
-      ...state.playerCon,
+        ...state.playerCon,
     };
 }
+
+window.onbeforeunload = function (e) {
+    var e = e || window.event;
+
+    // For IE and Firefox
+    if (e) {
+        e.returnValue = "Leaving the page";
+    }
+
+    // For Safari
+    return "Leaving the page";
+};
 
 class Roleta extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            jsx : null
+            jsx: null,
         };
     }
-    componentDidMount(){
+    componentDidMount() {
         console.log(this.props);
-        for(var i=0; i<this.props.player.length; i++){
-            if(this.props.player[i].id === this.props.conexao.id){
-                if(this.props.player[i].available){
+        for (var i = 0; i < this.props.player.length; i++) {
+            if (this.props.player[i].id === this.props.conexao.id) {
+                if (this.props.player[i].available) {
                     this.setState({
-                        jsx : <Wheel></Wheel>
-                    })
+                        jsx: <Wheel></Wheel>,
+                    });
                 }
             }
         }
-        
+        this.props.conexao.on("swap", (e) =>{
+            this.swap(e);
+        });
     }
-    render() {
+
+    swap = (arg) => {
+        for(var i = 0; i<arg.length; i++){
+            if(arg[i].id ===  this.props.conexao.id){
+                if(arg[i].available){
+                    this.setState({
+                        jsx : <Wheel></Wheel>
+                    });
+                }else{
+                    this.setState({
+                        jsx : null
+                    });
+                }
+
+            }
+        }
+    }
+
+    render() { 
         return (
             <React.Fragment>
                 <Helmet title="Jogo 10" />
@@ -66,7 +98,7 @@ class Roleta extends Component {
                                 src="https://www.menshair.style/wp-content/uploads/2019/03/black-men-hairstyles-59.jpg"
                                 alt="Imagem do participante 1"
                             />
-                            <div className="employeeName">Danyel</div>
+                            <div className="employeeName">{this.props.player[0].nick_name}</div>
                             <div className="totensContainer">
                                 <img
                                     className="totens"
@@ -121,7 +153,7 @@ class Roleta extends Component {
                                 src="https://i.pinimg.com/originals/07/a9/97/07a9978da38303b87c13243d55942df4.jpg"
                                 alt="Imagem do participante 2"
                             />
-                            <div className="employeeName">Caroline</div>
+                            <div className="employeeName">{this.props.player[1].nick_name}</div>
                             <div className="totensContainer">
                                 <img
                                     className="totens"
@@ -171,9 +203,7 @@ class Roleta extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="quizWheel">
-                        {this.state.jsx}
-                    </div>
+                    <div className="quizWheel">{this.state.jsx}</div>
                     <div className="questionsBar">
                         <div className="streak1">&nbsp;</div>
                         <div className="streak2">&nbsp;</div>

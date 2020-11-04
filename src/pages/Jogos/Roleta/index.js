@@ -12,7 +12,7 @@ export default class Roleta_rules extends Component {
         super(props);
         this.state = {};
     }
-
+    
     render() {
         return (
             <React.Fragment>
