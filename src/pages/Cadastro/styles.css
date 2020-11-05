@@ -6,6 +6,7 @@ body{
 margin-top: 3%;
 margin-bottom:11.6%;
 background: transparent!important;
+align-items: center;
 }
 
 .FormC b {
@@ -110,6 +111,7 @@ form.cad{
     height: 31vw;
     min-height: 150px;
     max-height: 260px;
+    padding-left: 20%;
 }
 @keyframes Flick {
     from {color: white;background-color: white !important;} to
@@ -179,9 +181,8 @@ a.redirectLogin{
     color: white;
     text-decoration: solid;
 }
-@media (min-width:320px) and (max-width: 375px) {
+@media (max-width: 375px) {
     .TituloC{
-        
     width: 290px;
     }
     .CadT{
@@ -215,8 +216,10 @@ a.redirectLogin{
     .FormC{
         padding-left: 22px;
     }
-    .possuiConta{
-        margin-left: 11%;
+    .possuiConta
+    {
+        margin-right: 25%; 
+        margin-left: -25%;
     }
 
 }
@@ -239,5 +242,40 @@ a.redirectLogin{
         width: 130%;
     }
 }
+@media (min-width: 376px) and (max-width: 460px)
+{
+    .CadBtn{
+        margin-right: 30%;
+    }
+    .possuiConta
+    {
+        text-align: right;
+        margin-right: 30%; 
+        margin-left: -100%;
+    }
+}
+@media (min-width: 460px) and (max-width: 767px)
+{
+    .CadBtn{
+        margin-right: 40%;
+    }
+    .possuiConta
+    {
+        text-align: right;
+        margin-right: 40%; 
+        margin-left: -100%;
+    }
+}
 
-
+@media (min-width: 768px)
+{
+    .CadBtn{
+        margin-right: 30%;
+    }
+    .possuiConta
+    {
+        text-align: right;
+        margin-right: 30%;
+        margin-left: -100%; 
+    }
+}
