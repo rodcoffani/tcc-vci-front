@@ -3,8 +3,9 @@ import "../Quiz/style.css";
 import Header from "../../../components/Header";
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
-import { Container, Row, Col, Button, Modal, Alert } from "react-bootstrap";
+import {Button, Modal} from "react-bootstrap";
 import API from "../../../api";
+import { withRouter } from "react-router-dom";
 
 export default class Quiz extends Component {
     constructor(props) {
@@ -17,8 +18,9 @@ export default class Quiz extends Component {
             alternativas:{},
             interval: null,
             view:true,
+            view2:false,
             message:"Clique \"Prosseguir\" para iniciar",
-            indice:0
+            indice:0,
         };
         API.get(`/quiz/get-questions`).then((res) => {
             this.state.questions = res.data;
@@ -39,10 +41,10 @@ export default class Quiz extends Component {
     pauseTime() {
         clearInterval(this.state.interval);
     }
+    handleRedirect = (newPath) => {
+        this.props.history.push(newPath);
+    };
     handleModalAlt = async (alt) =>{
-        this.setState({indice: this.state.indice+1})
-
-        
         API.post(`/quiz/check-question/`, {idquestion: this.state.question.idquestion,resposta: alt})
         .then((res) => {
             this.setState({message: res.data.resultado})
@@ -61,11 +63,23 @@ export default class Quiz extends Component {
         // }
         // this.handleModal();
     }
-    handleModal = (mostra) => {
+    GameAgain(){
+        this.handleRedirect("/quiz_rules");
         
+    }
+    Encerra(){
+         this.handleRedirect("/profile-employee");
+    }
+    handleModal = (mostra) => {
+        if(this.state.indice==5){
+            this.setState({ view2: true });
+            this.pauseTime();
+            return;
+        }
         if (this.state.view) {
             this.setState({ view: false });
             this.startTime();
+            this.setState({indice: this.state.indice+1}) 
             this.setState({ question: this.state.questions.questions[this.state.indice]}); // ta dando erro
 
         } else {
@@ -84,7 +98,7 @@ export default class Quiz extends Component {
                         <div className='campValor'>Tempo</div>
                         <div className='cronometro'>{this.state.time} s</div>
                     </div>
-                    <div className="indice">{this.state.indice+1} / 5</div>
+                    <div className="indice">{this.state.indice} / 5</div>
                     <div className="pontos">
                         <div className='campValor'>Pontos</div>
                         <div className='points'>{this.state.points}</div>
@@ -131,6 +145,7 @@ export default class Quiz extends Component {
                 <Modal.Body>
                     {this.state.message}
                 </Modal.Body>
+                {this.state.button}
                 <Modal.Footer>
                     <Button
                         onClick={() => {
@@ -138,6 +153,31 @@ export default class Quiz extends Component {
                         }}
                     >
                         Prosseguir
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            <Modal
+                show={this.state.view2}
+            >
+                <Modal.Header>Fim de Jogo</Modal.Header>
+                <Modal.Body>
+                    Você fez {this.state.points} pontos!!
+                </Modal.Body>
+                
+                <Modal.Footer>
+                    <Button
+                        onClick={() => {
+                            this.GameAgain();
+                        }}
+                    >
+                        Jogar Novamente
+                    </Button>
+                    <Button
+                        onClick={() => {
+                            this.Encerra();
+                        }}
+                    >
+                        Encerrar
                     </Button>
                 </Modal.Footer>
             </Modal>
