@@ -13,4 +13,8 @@
 [1022/190043.787:ERROR:exception_snapshot_win.cc(99)] thread ID 13772 not found in process
 [1022/190043.787:ERROR:exception_snapshot_win.cc(99)] thread ID 11960 not found in process
 [1022/190043.787:ERROR:exception_snapshot_win.cc(99)] thread ID 7380 not found in process
+<<<<<<< HEAD
 [1028/161531.937:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+=======
+[1105/152138.557:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+>>>>>>> 9c731aa... Update debug.log
