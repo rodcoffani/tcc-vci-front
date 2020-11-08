@@ -186,7 +186,7 @@ class login extends Component {
                         <Row className="TopShelf">
                             <h1 className="CadT">LOGIN</h1>
                         </Row>
-                        <Row>
+                        <Row className="inputs">
                             <Col className="image">
                                 <div className="imageBlue">
                                     <img
@@ -201,15 +201,15 @@ class login extends Component {
                                     <form
                                         onSubmit={this.handleSubmit}
                                         noValidate
-                                        className="formLogin"
+                                        className="cad"
                                     >
-                                        <p className="FieldD senha">
+                                        <p className="FieldD">
                                             <b className="Presc">Login:</b>
                                             <input
                                                 type="text"
                                                 name="login"
                                                 placeholder="Login"
-                                                className="inputC log"
+                                                className="inputV"
                                                 required
                                                 onChange={this.handleChange}
                                                 noValidate
@@ -217,7 +217,7 @@ class login extends Component {
                                             />
                                         </p>
 
-                                        <p className="FieldD senha">
+                                        <p className="FieldD">
                                             <b className="Presc">
                                                 Senha:{" "}
                                                 <button
@@ -233,7 +233,7 @@ class login extends Component {
                                                 type="password"
                                                 name="password"
                                                 placeholder="Senha"
-                                                className="inputC log"
+                                                className="inputV"
                                                 required
                                                 onChange={this.handleChange}
                                                 noValidate
@@ -261,7 +261,7 @@ class login extends Component {
                                             <input
                                                 type="submit"
                                                 value="Entrar"
-                                                className="CadBtn cad"
+                                                className="CadBtn"
                                             />
                                         </div>
                                     </form>
