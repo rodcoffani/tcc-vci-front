@@ -10,8 +10,18 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 export default class Quiz_rules extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            token:localStorage.getItem('authTk'),
+        };
     }
+    handleClick = (caminho) => {
+        if(!this.state.token){
+            alert("Por favor, entre na sua conta para jogar.");
+            this.props.history.push("/Login");
+        }else{
+            this.props.history.push(caminho);
+        }
+    };
 
     render() {
         return (
@@ -43,7 +53,8 @@ export default class Quiz_rules extends Component {
                             </Container>
 
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/jogos/quiz">Jogar</a>
+                                <a style={{color:"white", textDecoration:"none"}} href="#" onClick={() => this.handleClick("/jogos/quiz")}>Jogar</a>
+                                
                             </Container>
                         </Row>
                     </Container>
