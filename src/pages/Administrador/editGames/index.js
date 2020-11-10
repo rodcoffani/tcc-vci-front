@@ -19,9 +19,6 @@ const EditGames = (props) => {
     const goToInsert = (edit_game) => {
         window.open(`/editGames/${edit_game}`);
     }
-    const goToEdit = (edit_game) => {
-        window.open(`/editGames/${edit_game}`);
-    }
 
     return (
         <div>
