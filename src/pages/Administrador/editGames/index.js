@@ -33,13 +33,13 @@ const EditGames = (props) => {
                             {
                                 games.map(game => {
                                     return (
-                                        <div className="col col-md-4">
+                                        <div className="col col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                             <div className="card mb-2">
                                                 <div className="card-body">
-                                                    <h5 className="card-title">{game.name_game}</h5>
+                                                    <h5 className="card-title card-game-title">{game.name_game}</h5>
                                                     <h6 className="card-subtitle mb-3 text-muted">Tempo de jogo: {game.time_game} min</h6>
                                                     <div className="text-center">
-                                                        <button type="button" className="btn btn-sm btn-primary" onClick={() => goToInsert('quiz')}>Cadastrar</button>
+                                                        <button type="button" className="btn btn-sm btn-primary mb-2" onClick={() => goToInsert(game.name_game.replace(' ', '-'))}>Cadastrar Perguntas</button>
                                                     </div>
                                                 </div>
                                             </div>

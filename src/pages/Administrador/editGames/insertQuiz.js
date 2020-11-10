@@ -35,7 +35,7 @@ const ListItems = (props) => {
                     <input 
                         type="text" 
                         className = "form-control" 
-                        value={item.respostas.q1.enunciado}
+                        value={item.respostas.q1.pergunta}
                         disabled
                     />
                 </div>
@@ -48,7 +48,7 @@ const ListItems = (props) => {
                     <input 
                         type="text" 
                         className = "form-control" 
-                        value={item.respostas.q2.enunciado}
+                        value={item.respostas.q2.pergunta}
                         disabled
                     />
                 </div>
@@ -61,7 +61,7 @@ const ListItems = (props) => {
                     <input 
                         type="text" 
                         className = "form-control" 
-                        value={item.respostas.q3.enunciado}
+                        value={item.respostas.q3.pergunta}
                         disabled
                     />
                 </div>
@@ -74,7 +74,7 @@ const ListItems = (props) => {
                     <input 
                         type="text" 
                         className = "form-control" 
-                        value={item.respostas.q4.enunciado}
+                        value={item.respostas.q4.pergunta}
                         disabled
                     />
                 </div>
@@ -98,19 +98,19 @@ const InsertQuiz = (props) => {
         enunciado: '',
         respostas:{
             q1:{
-                enunciado: '',
+                pergunta: '',
                 certa: false,
             },
             q2:{
-                enunciado: '',
+                pergunta: '',
                 certa: false,
             },
             q3:{
-                enunciado: '',
+                pergunta: '',
                 certa: false,
             },
             q4:{
-                enunciado: '',
+                pergunta: '',
                 certa: false, 
             }
         },
@@ -118,9 +118,22 @@ const InsertQuiz = (props) => {
     });
 
     useEffect(()=> {
-        // API.get('/quiz/questions').then(res => {
-        //     setItems(JSON.parse(res.data.map(item => item.json_question)))
-        // })
+        API.get('/quiz/get-all-questions').then(res => {
+            const questions = res.data.questions;
+            const questionsFinal = questions.map(item => {
+                return {
+                    enunciado: item.enunciado,
+                    respostas: {
+                        q1: item.q1,
+                        q2: item.q2,
+                        q3: item.q3,
+                        q4: item.q4,
+                    },
+                    key: item.key
+                }
+            });
+            setItems(questionsFinal);
+        })
     },[])
 
     const handleChangeQuestion = (e) => {
@@ -139,7 +152,7 @@ const InsertQuiz = (props) => {
             respostas: {
                 ...currentQuestion.respostas,
                 q1: {
-                    enunciado: e.target.value,
+                    pergunta: e.target.value,
                     certa: currentQuestion.respostas.q1.certa,
                 },
             },
@@ -153,7 +166,7 @@ const InsertQuiz = (props) => {
             respostas:{
                 ...currentQuestion.respostas,
                 q2:{
-                    enunciado: e.target.value,
+                    pergunta: e.target.value,
                     certa: currentQuestion.respostas.q2.certa,
                 },
             },
@@ -167,7 +180,7 @@ const InsertQuiz = (props) => {
             respostas:{
                 ...currentQuestion.respostas,
                 q3:{
-                    enunciado: e.target.value,
+                    pergunta: e.target.value,
                     certa: currentQuestion.respostas.q3.certa,
                 },
             },
@@ -181,7 +194,7 @@ const InsertQuiz = (props) => {
             respostas: {
                 ...currentQuestion.respostas,
                 q4: {
-                    enunciado: e.target.value,
+                    pergunta: e.target.value,
                     certa: currentQuestion.respostas.q4.certa, 
                 }
             },
@@ -297,19 +310,19 @@ const InsertQuiz = (props) => {
                 enunciado: '',
                 respostas:{
                     q1:{
-                        enunciado: '',
+                        pergunta: '',
                         certa: false,
                     },
                     q2:{
-                        enunciado: '',
+                        pergunta: '',
                         certa: false,
                     },
                     q3:{
-                        enunciado: '',
+                        pergunta: '',
                         certa: false,
                     },
                     q4:{
-                        enunciado: '',
+                        pergunta: '',
                         certa: false, 
                     }
                 },
@@ -324,12 +337,12 @@ const InsertQuiz = (props) => {
     }
 
     const submitQuestions = () => {
-        items.length ? alert('Jogo cadastrado com sucesso!') : alert('ERRO! \nO jogo não possui questões suficientes!');
-        // if(items.length !== 0) {
-        //     API.post('/quiz/questions', items).then(res => {
-        //         alert(res.data.message);
-        //     });
-        // }
+        items.length ? alert('Questões enviadas!') : alert('ERRO! \nNão existem questões suficientes!');
+        if(items.length > 0) {
+            API.put('/quiz/update-questions', { questions: items }).then(res => {
+                alert(res.data.message);
+            });
+        }
     }
 
     return (
@@ -363,7 +376,7 @@ const InsertQuiz = (props) => {
                                             <input type="radio" name="alternativa" required value="a" checked={currentQuestion.respostas.q1.certa} aria-label="Botão radio para acompanhar input text" onChange={handleChangeCorrectAnswer}/>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Alternativa A" aria-label="Input text com botão radio" value={currentQuestion.respostas.q1.enunciado} onChange={handleChangeAltA}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa A" aria-label="Input text com botão radio" value={currentQuestion.respostas.q1.pergunta} onChange={handleChangeAltA}/>
                                 </div>
 
                                 <div class="input-group" >
@@ -372,7 +385,7 @@ const InsertQuiz = (props) => {
                                             <input type="radio" name="alternativa" required value="b" checked={currentQuestion.respostas.q2.certa} aria-label="Botão radio para acompanhar input text" onChange={handleChangeCorrectAnswer} />
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Alternativa B" aria-label="Input text com botão radio" value={currentQuestion.respostas.q2.enunciado} onChange={handleChangeAltB}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa B" aria-label="Input text com botão radio" value={currentQuestion.respostas.q2.pergunta} onChange={handleChangeAltB}/>
                                 </div>
 
                                 <div class="input-group" >
@@ -381,7 +394,7 @@ const InsertQuiz = (props) => {
                                             <input type="radio" name="alternativa" required value="c" checked={currentQuestion.respostas.q3.certa} aria-label="Botão radio para acompanhar input text" onChange={handleChangeCorrectAnswer} />
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Alternativa C" aria-label="Input text com 0botão radio" value={currentQuestion.respostas.q3.enunciado} onChange={handleChangeAltC}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa C" aria-label="Input text com 0botão radio" value={currentQuestion.respostas.q3.pergunta} onChange={handleChangeAltC}/>
                                 </div>
 
                                 <div class="input-group" >
@@ -390,13 +403,14 @@ const InsertQuiz = (props) => {
                                             <input type="radio" name="alternativa" required value="d" checked={currentQuestion.respostas.q4.certa} aria-label="Botão radio para acompanhar input text" onChange={handleChangeCorrectAnswer} />
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Alternativa D" aria-label="Input text com botão radio" value={currentQuestion.respostas.q4.enunciado} onChange={handleChangeAltD}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa D" aria-label="Input text com botão radio" value={currentQuestion.respostas.q4.pergunta} onChange={handleChangeAltD}/>
                                 </div>
                             </div>
                             <button type="submit" className="add-question-admin" alt="submit">
                                 <FontAwesomeIcon icon={faPlus} size="lg" className="icons"/> 
                             </button> 
-                        </Form>  
+                        </Form>
+                        {console.log(items)}
                         <ListItems 
                             items = {items}
                             deleteItem = {deleteItem}
