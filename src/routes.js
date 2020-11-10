@@ -91,7 +91,7 @@ const Routes = () => {
                     component={ CadastroJogos }
                 />
                 <Route
-                    path="/editGames/roleta"
+                    path="/editGames/perguntados"
                     component={ CadastroRoleta }
                 />
                 <Route

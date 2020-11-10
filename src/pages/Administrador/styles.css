@@ -331,6 +331,12 @@
     justify-content: center;
 }
 
+.card-game-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .table-games {
     display: flex;
     flex-wrap: wrap;
