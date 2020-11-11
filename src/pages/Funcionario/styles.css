@@ -369,11 +369,14 @@ h6 {
         width: 90%;
         margin-left: 14%;
     }
-
 }
-
-
-
+@media (min-width: 576px){
+    .col-sm-8 {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+        background-color: white;
+    }
+}
 
 /* @media (min-width:320px) and (max-width: 375px) {
     .ranking{
