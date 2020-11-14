@@ -193,7 +193,7 @@ span{
   span
   {
    left: 45%;
-   font-size: 115%;
+   font-size: 125%;
   }
 
   .EfctvCardG{
@@ -202,26 +202,26 @@ span{
 
   .Carrossel
   {
-    height: 100%; 
+    height: 103%; 
     width: 100%;
   }
 
   .cont
   {
     width: 100%; 
-    margin-top: 3%;
+    margin-top: 2%;
   }
 
   .content
   {
     background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
     border-radius: 3%;
-    width: 100%;
+    width: 100vw;
+    padding-left: 0.1%;
   }
 
   .mid
   {
-    padding-left: 5%;
     width: 100%;
     background-color: white;
   }
@@ -241,7 +241,7 @@ span{
 
   .h2_projeto
   {
-    font-size: 150%;
+    font-size: 155%;
     text-align: center;
     padding-left: 20%;
   }
@@ -250,15 +250,15 @@ span{
   {    
     text-align: justify;
     padding-Right: 6vw; 
-    padding-left: 21vw;
-    font-Size: 80%;
+    padding-left: 25vw;
+    font-Size: 90%;
   }
 
   ul
   {
     list-Style: none; 
-    margin-Left: -11.5vw;
-    font-size: 80%;
+    margin-Left: -13vw;
+    font-size: 90%;
   }
 
   .about{
@@ -278,14 +278,20 @@ span{
     font-size: 100%;
   }
 
+  .img-logo-empresa{
+    width: 35%;
+    margin-bottom: 3%;
+    margin-right: 15%;
+  }
+
 }
 
 @media (max-width:425px) and (min-width: 375px)
 {
   span
   {
-   left: 45%;
-   font-size: 130%;
+   left: 43%;
+   font-size: 145%;
   }
 
   .EfctvCardG{
@@ -308,7 +314,7 @@ span{
   .cont
   {
     width: 100%; 
-    margin-top: 3%;
+    margin-top: 2%;
   }
 
   .content
@@ -316,11 +322,12 @@ span{
     background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
     border-radius: 3%;
     width: 100%;
+    padding-left: 0.1%;
   }
 
   .mid
   {
-    padding-left: 5%;
+    padding-left: 8%;
     width: 100%;
     background-color: white;
   }
@@ -340,7 +347,7 @@ span{
 
   .h2_projeto
   {
-    font-size: 140%;
+    font-size: 160%;
     text-align: center;
     padding-left: 25%;
   }
@@ -350,14 +357,14 @@ span{
     text-align: justify;
     padding-Right: 6vw; 
     padding-left: 21vw;
-    font-Size: 80%;
+    font-Size: 95%;
   }
 
   ul
   {
     list-Style: none; 
     margin-Left: -10.3vw;
-    font-size: 80%;
+    font-size: 95%;
   }
 
   .about{
@@ -377,14 +384,20 @@ span{
     font-size: 100%;
   }
 
+  .img-logo-empresa{
+    width: 35%;
+    margin-bottom: 3%;
+    margin-right: 15%;
+  }
+
 }
 
-@media (max-width:768px) and (min-width: 425px)
+@media (max-width:767px) and (min-width: 425px)
 {
   span
   {
-   left: 46%;
-   font-size: 130%;
+   left: 50%;
+   font-size: 165%;
   }
 
   .EfctvCardG{
@@ -408,7 +421,7 @@ span{
     background: radial-gradient(circle, rgba(58,167,180,1) 0%, rgba(96,69,252,1) 100%);
     border-radius: 3%;
     width: 100%;
-    padding-right: 5%;
+    padding-left: 0.1%;
   }
 
   .Caption h1{
@@ -441,7 +454,7 @@ span{
 
   .h2_projeto
   {
-    font-size: 140%;
+    font-size: 180%;
     text-align: center;
     padding-left: 30%;
   }
@@ -449,15 +462,15 @@ span{
   p
   {    
     text-align: justify;
-    font-Size: 80%;
-    padding-left: 21vw;
+    font-Size: 95%;
+    padding-left: 24vw;
   }
 
   ul
   {
     list-Style: none; 
     margin-Left: -8.9vw;
-    font-size: 70%;
+    font-size: 95%;
   }
 
   .about{
