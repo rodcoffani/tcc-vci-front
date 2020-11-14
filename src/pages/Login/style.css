@@ -64,7 +64,13 @@ label {
     color: #ffff;
     font-weight: lighter;
 }
-
+.olhinho
+{
+    background-image: url("../../assets/images/olhinho.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
 input {
     padding: 10px 10px;
     border-radius: 5px;
@@ -146,7 +152,7 @@ input.error {
     }
     .CadT{
         margin: auto;
-        font-size: 10vw;
+        font-size: 60px;
     }
     .linkC{
         
@@ -180,6 +186,14 @@ input.error {
         margin-right: 25%; 
         margin-left: -25%;
     }
+    .one
+    {
+        width: 50%;    
+    }
+    .oneTwo
+    {
+        width: 50%;
+    }
 
 }
 @media (min-width:365px) and (max-width: 375px) {
@@ -188,7 +202,6 @@ input.error {
     }
     .CadT{
         margin: auto;
-        font-size: 10vw;
     }
     .linkC{
         font-size: large;
@@ -212,6 +225,10 @@ input.error {
         margin-right: 30%; 
         margin-left: -100%;
     }
+    .CadT{
+        margin: auto;
+        font-size: 80px;
+    }
 }
 @media (min-width: 460px) and (max-width: 767px)
 {
@@ -223,6 +240,10 @@ input.error {
         text-align: right;
         margin-right: 40%; 
         margin-left: -100%;
+    }
+    .CadT{
+        margin: auto;
+        font-size: 100px;
     }
 }
 
@@ -236,5 +257,9 @@ input.error {
         text-align: right;
         margin-right: 30%;
         margin-left: -100%; 
+    }
+    .CadT{
+        margin: auto;
+        font-size: 120px;
     }
 }
