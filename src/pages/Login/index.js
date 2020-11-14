@@ -224,7 +224,7 @@ class login extends Component {
                                                     className="btn"
                                                     onClick={this.handleClick}
                                                 >
-                                                    <i class="fa fa-cog fa-spin icone"></i>
+                                                    <div class="olhinho"></div>
                                                 </button>{" "}
                                             </b>
 

@@ -70,7 +70,6 @@ align-items: center;
 .CadT {
     margin: auto;
     margin-top: -10%!important;
-    font-size: 10vw;
     color: white;
     background: transparent!important;
     
@@ -187,7 +186,6 @@ a.redirectLogin{
     }
     .CadT{
         margin: auto;
-        font-size: 10vw;
     }
     .linkC{
         
@@ -229,7 +227,6 @@ a.redirectLogin{
     }
     .CadT{
         margin: auto;
-        font-size: 10vw;
     }
     .linkC{
         font-size: large;
