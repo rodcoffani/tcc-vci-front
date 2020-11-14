@@ -11,17 +11,17 @@ function mapStateToProps(state) {
     };
 }
 
-window.onbeforeunload = function (e) {
-    var e = e || window.event;
+// window.onbeforeunload = function (e) {
+//     var e = e || window.event;
 
-    // For IE and Firefox
-    if (e) {
-        e.returnValue = 'Leaving the page';
-    }
+//     // For IE and Firefox
+//     if (e) {
+//         e.returnValue = 'Leaving the page';
+//     }
 
-    // For Safari
-    return 'Leaving the page';
-};
+//     // For Safari
+//     return 'Leaving the page';
+// };
 
 class Pergunta extends Component {
     handleRedirect = (newPath)=>{
@@ -87,6 +87,7 @@ class Pergunta extends Component {
                 () =>{
                     setTimeout(() => {
                         if(this.state.time == 20){
+                            this.props.conexao.emit("errou",this.props.conexao.id);
                             this.pauseTime();
                             this.setState({
                                 view : true,
@@ -119,7 +120,7 @@ class Pergunta extends Component {
                     view : true,
                     message : "Alternativa incorreta!"
                 });
-                    // this.props.conexao.emit("errou",this.props.conexao.id);
+                this.props.conexao.emit("errou",this.props.conexao.id);
             }
         });
         

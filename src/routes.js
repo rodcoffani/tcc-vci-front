@@ -67,7 +67,7 @@ const Routes = () => {
                     component = { Loading }
                 />
                 <Route
-                    path="/jogos/roleta/pergunta/:id"
+                    exact path="/jogos/roleta/pergunta/:id"
                     component = { Pergunta }
                 />
                 <Route
