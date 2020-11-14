@@ -5,8 +5,7 @@ import API from "../../api";
 import marker from "../../assets/images/Button-Marker.png";
 import { withRouter } from "react-router-dom";
 
-class Wheel extends Component{
-
+class Wheel extends Component {
     componentDidMount() {
         this.state = {
             wheel: document.querySelector(".wheel"),
@@ -34,8 +33,6 @@ class Wheel extends Component{
     }, [])
     */
 
-   
-
     /*
 
     =============== CATEGORIAS DE ACORDO COM O NUMERO ===============
@@ -50,7 +47,7 @@ class Wheel extends Component{
         8 - Desperdicio e sobra de Processo 
 
     */
-    
+
     //funcao para validar
     /*
     const validateSort = (val) => {
@@ -67,22 +64,21 @@ class Wheel extends Component{
     };
     */
 
-   validate = (val) => {
-    var aux = false;
+    validate = (val) => {
+        var aux = false;
 
-    this.state.sorteados.map((item) => {
-        if (val == item) {
-            aux = true;
-        }
-    });
+        this.state.sorteados.map((item) => {
+            if (val == item) {
+                aux = true;
+            }
+        });
 
-    return aux;
+        return aux;
     };
 
-    handleRedirect = (newPath)=>{
+    handleRedirect = (newPath) => {
         this.props.history.push(newPath);
-    }
-
+    };
 
     //funcao chamada quando clica no botao girar
     handleButtonClick = () => {
@@ -90,8 +86,7 @@ class Wheel extends Component{
         let sortedVal = 0;
 
         sortedVal = Math.floor(Math.random() * 9);
-        
-        
+
         //Deg representa a rotacao a ser aplicada a wheel. de 40 em 40
         //Pois 9 categorias / 360 graus = 40 graus
         let deg = Math.floor(3600 * this.state.vez + sortedVal * 40);
@@ -99,11 +94,11 @@ class Wheel extends Component{
         console.log(sortedVal);
         //Aqui no Deg ele nao gira de forma constante pois Math.Randon retorna ponto flutuante
         //Para que gire de forma constante use Math.floor em sorted val.
-        
+
         //setVez(vez + 1);
-        
+
         // Para regular o tempo que ele demora para parar troque o valor de segundos
-        
+
         //wheelObj.style.transition = 'all 6s ease-out';
         //wheelObj.style.transform = `rotate(${deg}deg`
 
@@ -113,10 +108,10 @@ class Wheel extends Component{
         setSorteados([...sorteados, sortedVal]);
         */
 
-       this.setState({
-        wheel: document.querySelector(".wheel"),
-        startButton: document.querySelector(".button"),
-        vez: this.state.vez + 1,
+        this.setState({
+            wheel: document.querySelector(".wheel"),
+            startButton: document.querySelector(".button"),
+            vez: this.state.vez + 1,
         });
 
         //Para regular o tempo que ele demora para parar troque o valor de segundos
@@ -124,31 +119,34 @@ class Wheel extends Component{
         this.state.wheel.style.transform = `rotate(${deg}deg)`;
 
         //Guarda a categoria no State
-        
+
         this.setState({
             numeroJogo: sortedVal,
             sorteados: [sortedVal].concat(this.state.sorteados),
         });
-        
-        
-        setTimeout(()=>{
-            API.get(`/perguntados/${sortedVal}`).then((res)=>{
-                this.handleRedirect(`/jogos/roleta/pergunta/${res.data.data.idquestion}`);
+
+        setTimeout(() => {
+            //MUDEI PERGUNTA NAO TEM MAIS INDEICE 0 => LINHA 136 IMPLEMENTAR (BEIJOS DA CORNETA ASS. JAMAL)
+            API.get(`/perguntados/${sortedVal + 1}`).then((res) => {
+                //========================
+                this.handleRedirect(
+                    `/jogos/roleta/pergunta/${res.data.data.idquestion}`
+                );
             });
-        }, 7000)
+        }, 7000);
     };
-    render(){
-    return (
-        <div className="App" id="app">
-            <img src={wheel} className="wheel" alt="Roleta"/>
-            <img
-                src={marker}
-                className="marker"
-                onClick={this.handleButtonClick}
-                alt="Marcador da Roleta"
-            />
-        </div>
-    );
+    render() {
+        return (
+            <div className="App" id="app">
+                <img src={wheel} className="wheel" alt="Roleta" />
+                <img
+                    src={marker}
+                    className="marker"
+                    onClick={this.handleButtonClick}
+                    alt="Marcador da Roleta"
+                />
+            </div>
+        );
     }
 }
 
