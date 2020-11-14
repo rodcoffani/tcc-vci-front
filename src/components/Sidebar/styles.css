@@ -13,7 +13,7 @@
     bottom: 0;
     left: 0;
     z-index: 1006;
-    min-width: 64px;
+    min-width: 0px;
     background: #282c34;
     -webkit-transition: min-width 0.2s;
     -moz-transition: min-width 0.2s;
@@ -143,7 +143,7 @@
     filter: alpha(opacity=70);
   }
   .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 + .sidenav---icon-bar---u1f02 {
-    margin-top: 4px;
+    margin-top: 5px;
   }
   .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
     width: 25px;
@@ -354,5 +354,367 @@
     -moz-box-sizing: inherit;
     box-sizing: inherit;
   }
+
+  @media (max-width:320px)
+{
+  .sidebar{
+    height: 100vh;
+    float: left;
+    width: 0px;
+    background-color: #282c34;
+    position: fixed;
+    z-index: 1006;
+  }
+
+  .sidenav---sidenav---_2tBP {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1006;
+    width: 0px;
+    background: #282c34;
+    -webkit-transition: min-width 0.2s;
+    -moz-transition: min-width 0.2s;
+    -o-transition: min-width 0.2s;
+    -ms-transition: min-width 0.2s;
+    transition: min-width 0.2s;
+  }
+
+  .sidenav---sidenav-toggle---1KRjR {
+    position: relative;
+    float: left;
+    width: 36px;
+    height: 73px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
+    display: block;
+    width: 14px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 1px;
+    -webkit-transition: all 0.15s;
+    -moz-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    -ms-transition: all 0.15s;
+    transition: all 0.15s;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+    display: block;
+    float: left;
+    width: 64px;
+    height: 50px;
+    margin-right: -6px;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
+    min-width: 140px;
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T {
+    position: relative;
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    padding-left: 25px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after,
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after {
+    background: #000;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+}
+
+@media (max-width:375px) and (min-width: 320px)
+{
+  .sidebar{
+    height: 110vh;
+    float: left;
+    width: 0px;
+    background-color: #282c34;
+    position: fixed;
+    z-index: 1006;
+  }
+
+  .sidenav---sidenav---_2tBP {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1006;
+    width: 0px;
+    background: #282c34;
+    -webkit-transition: min-width 0.2s;
+    -moz-transition: min-width 0.2s;
+    -o-transition: min-width 0.2s;
+    -ms-transition: min-width 0.2s;
+    transition: min-width 0.2s;
+  }
+
+  .sidenav---sidenav-toggle---1KRjR {
+    position: relative;
+    float: left;
+    width: 45px;
+    height: 73px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
+    display: block;
+    width: 14px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 1px;
+    -webkit-transition: all 0.15s;
+    -moz-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    -ms-transition: all 0.15s;
+    transition: all 0.15s;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+    display: none;
+    
+  }
+
+  .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
+    min-width: 140px;
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T {
+    position: relative;
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    padding-left: 25px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after,
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after {
+    background: #000;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+}
+
+@media (max-width:425px) and (min-width: 375px)
+{
+  .sidebar{
+    height: 105vh;
+    float: left;
+    width: 0px;
+    background-color: #282c34;
+    position: fixed;
+    z-index: 1006;
+  }
+
+  .sidenav---sidenav---_2tBP {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1006;
+    width: 0px;
+    background: #282c34;
+    -webkit-transition: min-width 0.2s;
+    -moz-transition: min-width 0.2s;
+    -o-transition: min-width 0.2s;
+    -ms-transition: min-width 0.2s;
+    transition: min-width 0.2s;
+  }
+
+  .sidenav---sidenav-toggle---1KRjR {
+    position: relative;
+    float: left;
+    width: 45px;
+    height: 73px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
+    display: block;
+    width: 14px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 1px;
+    -webkit-transition: all 0.15s;
+    -moz-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    -ms-transition: all 0.15s;
+    transition: all 0.15s;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+    display: none;
+  }
+
+  .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
+    min-width: 140px;
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T {
+    position: relative;
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    padding-left: 25px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after,
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after {
+    background: #000;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+}
+
+@media (max-width:767px) and (min-width: 425px)
+{
+  .sidebar{
+    height: 105vh;
+    float: left;
+    width: 0px;
+    background-color: #282c34;
+    position: fixed;
+    z-index: 1006;
+  }
+
+  .sidenav---sidenav---_2tBP {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1006;
+    width: 0px;
+    background: #282c34;
+    -webkit-transition: min-width 0.2s;
+    -moz-transition: min-width 0.2s;
+    -o-transition: min-width 0.2s;
+    -ms-transition: min-width 0.2s;
+    transition: min-width 0.2s;
+  }
+
+  .sidenav---sidenav-toggle---1KRjR {
+    position: relative;
+    float: left;
+    width: 55px;
+    height: 73px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
+    display: block;
+    width: 14px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 1px;
+    -webkit-transition: all 0.15s;
+    -moz-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    -ms-transition: all 0.15s;
+    transition: all 0.15s;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+    display: none;
+  }
+
+  .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
+    min-width: 160px;
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T {
+    position: relative;
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    padding-left: 26px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after,
+  .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after {
+    background: #000;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+}
   
   /*# sourceMappingURL=react-sidenav.css.map*/
