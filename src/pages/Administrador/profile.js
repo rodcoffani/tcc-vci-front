@@ -111,7 +111,7 @@ const Profile = (props) => {
                     <br />
                     <div className="row container d-flex card-user">
                     <Form onSubmit={editAdmin}>
-                        <div className="col-md-12">
+                         <div className="col-md-12">
                             <div className="admin-profile-card user-card-full">
                                 <div className="row m-l-0 m-r-0">
                                     <div className="col-sm-4 bg-c-lite-green user-profile">
