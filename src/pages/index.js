@@ -117,19 +117,6 @@ function App() {
               <a href='/quiz_rules'>Jogar!</a>
               </Card.Footer>
             </Card>
-            <Card className='EfctvCard'>
-              <Card.Img variant="top" src="" />
-              <Card.Body>
-                <Card.Title  style={{textAlign:'center'}}>Caça-palavras</Card.Title>
-              </Card.Body>
-              <ListGroup variant="flush">
-                <ListGroup.Item><FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Duração: 15 minutos</ListGroup.Item>
-                <ListGroup.Item><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;N° de jogadores: 1</ListGroup.Item>
-              </ListGroup>
-              <Card.Footer style={{textAlign:'center'}}> 
-              <a href='/caça_palavras_rules'>Jogar!</a>
-              </Card.Footer>
-            </Card>
           </CardGroup>
           </Col>
           </Row>
