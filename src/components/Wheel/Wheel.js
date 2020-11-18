@@ -127,7 +127,7 @@ class Wheel extends Component {
 
         setTimeout(() => {
             //MUDEI PERGUNTA NAO TEM MAIS INDEICE 0 => LINHA 136 IMPLEMENTAR (BEIJOS DA CORNETA ASS. JAMAL)
-            API.get(`/perguntados/${2 + 1}`).then((res) => {
+            API.get(`/perguntados/${sortedVal + 1}`).then((res) => {
                 //========================
                 this.handleRedirect(
                     `/jogos/roleta/pergunta/${res.data.data.idquestion}`
