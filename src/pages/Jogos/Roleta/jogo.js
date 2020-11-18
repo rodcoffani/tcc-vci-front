@@ -50,6 +50,18 @@ class Roleta extends Component {
                 }
             }
         }
+
+        this.props.conexao.on("conquistaTotem", (e)=>{
+            store.dispatch({
+                type: "SET_CON",
+                payload: {
+                    conexao: this.props.conexao,
+                    player: e,
+                },
+            });
+            console.log(this.props.player);
+        });
+
         this.props.conexao.on("swap", (e) => {
             this.swap(e);
             store.dispatch({
