@@ -35,6 +35,7 @@ class Pergunta extends Component {
             selecionada: 0,
             correta: 0,
             time : 0,
+            totem_fk : 0,
             interval: null,
             view:true,
             message:"Clique \"Prosseguir\" para iniciar - Você possui 20 segundos pra responder a questão",
@@ -44,7 +45,10 @@ class Pergunta extends Component {
         let id = this.props.match.params.id;
         const perguntas = [];
         API.get(`/perguntados/pergunta/${id}`).then((res) => {
-            console.log(res.data.data[0].json_question);
+            console.log(res.data.data[0].totem_fk);
+            this.setState({
+                totem_fk : res.data.data[0].totem_fk
+            });
             var flag = 1;
             for (var [key, value] of Object.entries(
                 res.data.data[0].json_question.respostas
@@ -114,12 +118,13 @@ class Pergunta extends Component {
                     message : "Alternativa correta!"
                 });
                 this.pauseTime();
-                // alert("acertou");
+                this.props.conexao.emit("acertou", {id: this.props.conexao.id, totem : this.state.totem_fk});
             }else{
                 this.setState({
                     view : true,
                     message : "Alternativa incorreta!"
                 });
+                this.pauseTime();
                 this.props.conexao.emit("errou",this.props.conexao.id);
             }
         });
