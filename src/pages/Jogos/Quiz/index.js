@@ -6,16 +6,16 @@ import "font-awesome/css/font-awesome.min.css";
 import { Container, Row } from "react-bootstrap";
 import {faFlag} from '@fortawesome/free-regular-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-
+import API from "../../../api";
 export default class Quiz_rules extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            token:localStorage.getItem('authTk'),
+            log: localStorage.getItem('authTk'),
         };
     }
     handleClick = (caminho) => {
-        if(!this.state.token){
+        if(!this.state.log){
             alert("Por favor, entre na sua conta para jogar.");
             this.props.history.push("/Login");
         }else{
