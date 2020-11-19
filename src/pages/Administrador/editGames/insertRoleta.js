@@ -44,7 +44,7 @@ const ListItems = (props) => {
                     <input 
                         type="text" 
                         className = "form-control" 
-                        value={item.respostas.q1.enunciado}
+                        value={item.respostas.q1.pergunta}
                         disabled
                     />
                 </div>
@@ -57,7 +57,7 @@ const ListItems = (props) => {
                     <input 
                         type="text" 
                         className = "form-control" 
-                        value={item.respostas.q2.enunciado}
+                        value={item.respostas.q2.pergunta}
                         disabled
                     />
                 </div>
@@ -70,7 +70,7 @@ const ListItems = (props) => {
                     <input 
                         type="text" 
                         className = "form-control" 
-                        value={item.respostas.q3.enunciado}
+                        value={item.respostas.q3.pergunta}
                         disabled
                     />
                 </div>
@@ -83,7 +83,7 @@ const ListItems = (props) => {
                     <input 
                         type="text" 
                         className = "form-control" 
-                        value={item.respostas.q4.enunciado}
+                        value={item.respostas.q4.pergunta}
                         disabled
                     />
                 </div>
@@ -107,19 +107,19 @@ const InsertRoleta = (props) => {
         enunciado: '',
         respostas:{
             q1:{
-                enunciado: '',
+                pergunta: '',
                 certa: false,
             },
             q2:{
-                enunciado: '',
+                pergunta: '',
                 certa: false,
             },
             q3:{
-                enunciado: '',
+                pergunta: '',
                 certa: false,
             },
             q4:{
-                enunciado: '',
+                pergunta: '',
                 certa: false, 
             }
         },
@@ -132,9 +132,22 @@ const InsertRoleta = (props) => {
         API.get("/perguntados/all").then((res) => {
             setCategorias(res.data);
         });
-        // API.get('/perguntados/questions').then(res => {
-        //     setItems(JSON.parse(res.data.map(item => item.json_question)))
-        // });
+        API.get('/perguntados/get-all-questions').then(res => {
+            const questions = res.data.questions;
+            const questionsFinal = questions.map(item => {
+                return {
+                    enunciado: item.enunciado,
+                    respostas: {
+                        q1: item.q1,
+                        q2: item.q2,
+                        q3: item.q3,
+                        q4: item.q4,
+                    },
+                    key: item.key
+                }
+            });
+            setItems(questionsFinal);
+        });
     }, []);
 
     const handleChangeQuestion = (e) => {
@@ -153,7 +166,7 @@ const InsertRoleta = (props) => {
             respostas: {
                 ...currentQuestion.respostas,
                 q1: {
-                    enunciado: e.target.value,
+                    pergunta: e.target.value,
                     certa: currentQuestion.respostas.q1.certa,
                 },
             },
@@ -167,7 +180,7 @@ const InsertRoleta = (props) => {
             respostas:{
                 ...currentQuestion.respostas,
                 q2:{
-                    enunciado: e.target.value,
+                    pergunta: e.target.value,
                     certa: currentQuestion.respostas.q2.certa,
                 },
             },
@@ -181,7 +194,7 @@ const InsertRoleta = (props) => {
             respostas:{
                 ...currentQuestion.respostas,
                 q3:{
-                    enunciado: e.target.value,
+                    pergunta: e.target.value,
                     certa: currentQuestion.respostas.q3.certa,
                 },
             },
@@ -195,7 +208,7 @@ const InsertRoleta = (props) => {
             respostas: {
                 ...currentQuestion.respostas,
                 q4: {
-                    enunciado: e.target.value,
+                    pergunta: e.target.value,
                     certa: currentQuestion.respostas.q4.certa, 
                 }
             },
@@ -314,19 +327,19 @@ const InsertRoleta = (props) => {
                 categoria: 0,
                 respostas:{
                     q1:{
-                        enunciado: '',
+                        pergunta: '',
                         certa: false,
                     },
                     q2:{
-                        enunciado: '',
+                        pergunta: '',
                         certa: false,
                     },
                     q3:{
-                        enunciado: '',
+                        pergunta: '',
                         certa: false,
                     },
                     q4:{
-                        enunciado: '',
+                        pergunta: '',
                         certa: false, 
                     }
                 },
@@ -344,11 +357,11 @@ const InsertRoleta = (props) => {
 
     const submitQuestions = () => {
         items.length ? alert('Jogo cadastrado com sucesso!') : alert('ERRO! \nO jogo não possui questões suficientes!');
-        // if(items.length !== 0) {
-        //     API.post('/perguntados/questions', items).then(res => {
-        //         alert(res.data.message);
-        //     });
-        // }
+        if(items.length > 0) {
+            API.put('/perguntados/update-questions', { questions: items }).then(res => {
+                alert(res.data.message);
+            });
+        }
     }
 
     return (
@@ -394,7 +407,7 @@ const InsertRoleta = (props) => {
                                             <input type="radio" name="alternativa" required value="a" aria-label="Botão radio para acompanhar input text" checked={currentQuestion.respostas.q1.certa} aria-label="Botão radio para acompanhar input text" onChange={handleChangeCorrectAnswer} />
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Alternativa A" aria-label="Input text com botão radio" value={currentQuestion.respostas.q1.enunciado} onChange={handleChangeAltA}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa A" aria-label="Input text com botão radio" value={currentQuestion.respostas.q1.pergunta} onChange={handleChangeAltA}/>
                                 </div>
 
                                 <div class="input-group" >
@@ -403,7 +416,7 @@ const InsertRoleta = (props) => {
                                             <input type="radio" name="alternativa" required value="b"  aria-label="Botão radio para acompanhar input text" checked={currentQuestion.respostas.q2.certa} aria-label="Botão radio para acompanhar input text" onChange={handleChangeCorrectAnswer} />
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Alternativa B"  aria-label="Input text com botão radio" value={currentQuestion.respostas.q2.enunciado} onChange={handleChangeAltB}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa B"  aria-label="Input text com botão radio" value={currentQuestion.respostas.q2.pergunta} onChange={handleChangeAltB}/>
                                 </div>
 
                                 <div class="input-group" >
@@ -412,7 +425,7 @@ const InsertRoleta = (props) => {
                                             <input type="radio" name="alternativa" required value="c" aria-label="Botão radio para acompanhar input text" checked={currentQuestion.respostas.q3.certa} aria-label="Botão radio para acompanhar input text" onChange={handleChangeCorrectAnswer} />
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Alternativa C"  aria-label="Input text com 0botão radio" value={currentQuestion.respostas.q3.enunciado} onChange={handleChangeAltC}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa C"  aria-label="Input text com 0botão radio" value={currentQuestion.respostas.q3.pergunta} onChange={handleChangeAltC}/>
                                 </div>
 
                                 <div class="input-group" >
@@ -421,7 +434,7 @@ const InsertRoleta = (props) => {
                                             <input type="radio" name="alternativa" required value="d" aria-label="Botão radio para acompanhar input text" checked={currentQuestion.respostas.q4.certa} aria-label="Botão radio para acompanhar input text" onChange={handleChangeCorrectAnswer} />
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Alternativa D"  aria-label="Input text com botão radio" value={currentQuestion.respostas.q4.enunciado} onChange={handleChangeAltD}/>
+                                    <input type="text" class="form-control" placeholder="Alternativa D"  aria-label="Input text com botão radio" value={currentQuestion.respostas.q4.pergunta} onChange={handleChangeAltD}/>
                                 </div>
                             </div>
                             <button type="submit" className="add-question-admin" alt="submit">
