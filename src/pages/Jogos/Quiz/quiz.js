@@ -21,10 +21,17 @@ export default class Quiz extends Component {
             view2:false,
             message:"Clique \"Prosseguir\" para iniciar",
             indice:0,
+            token:localStorage.getItem('authTk'),
+            idUser:0,
         };
         API.get(`/quiz/get-questions`).then((res) => {
             this.state.questions = res.data;
         });
+        API.post(`/login/teste-token`, {token: localStorage.getItem('authTk') }).then((res) => {
+            this.setState({idUser: res.data.decoded.iduser});
+        });
+        
+        
     }
    
     startTime() {
@@ -54,7 +61,6 @@ export default class Quiz extends Component {
             this.handleModal();
         })
         .catch((err)=> {console.log(err)});
-        
         // if(
         //     this.state.message.includes("certa")
         //     // true
@@ -72,6 +78,12 @@ export default class Quiz extends Component {
     }
     handleModal = (mostra) => {
         if(this.state.indice==5){
+            let ranking = {
+                points: this.state.points,
+                tempo: this.state.time,
+                user: this.state.idUser,
+            }
+            API.put(`/quiz/insert-ranking`, { points: this.state.points, tempo: this.state.time, user: this.state.idUser,});
             this.setState({ view2: true });
             this.pauseTime();
             return;
