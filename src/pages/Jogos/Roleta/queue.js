@@ -30,7 +30,6 @@ class Queue extends Component {
             "login/teste-token", 
             tk
         ).then((res) => {
-            console.log(res.data.decoded);
             const conexao = socketIOClient("http://localhost:4000", {query:`nickName=${res.data.decoded.nickname_user}`});
             conexao.on("ready", (PLAYERS) => {
                 let aux = false;

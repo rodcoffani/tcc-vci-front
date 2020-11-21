@@ -4,6 +4,7 @@ import API from "../../../../api";
 import { Button, Modal } from "react-bootstrap";
 import socketIOClient from "socket.io-client";
 import { connect, connection } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 function mapStateToProps(state) {
     return {
@@ -39,6 +40,7 @@ class Pergunta extends Component {
             interval: null,
             view:true,
             message:"Clique \"Prosseguir\" para iniciar - Você possui 20 segundos pra responder a questão",
+            redirect: ""
         };
     }
     componentDidMount() {
@@ -118,7 +120,6 @@ class Pergunta extends Component {
                     message : "Alternativa correta!"
                 });
                 this.pauseTime();
-                this.props.conexao.emit("acertou", {id: this.props.conexao.id, totem : this.state.totem_fk});
             }else{
                 this.setState({
                     view : true,
@@ -134,15 +135,22 @@ class Pergunta extends Component {
         if (this.state.view) {
             this.setState({ view: false });
             this.startTime();
-            // this.setState({
-            //     question: this.state.questions.questions[this.state.indice],
-            // }); // ta dando erro
+            if(this.state.selecionada != 0 || this.state.time == 20){
+                if(this.state.selecionada == this.state.correta){
+                   this.props.conexao.emit("acertou", {id: this.props.conexao.id, totem : this.state.totem_fk});
+                }
+                // this.handleRedirect("/jogos/roleta/");
+                this.setState({ redirect: "/jogos/roleta/"});
+            }
         } else {
             this.setState({ view: true });
             this.pauseTime();
         }
     };
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />;
+        }
         let ops = this.state.alternativas;
         return (
             <React.Fragment>
@@ -195,11 +203,7 @@ class Pergunta extends Component {
                         <Modal.Footer>
                             <Button
                                 onClick={() => {
-                                    if(this.state.selecionada != 0 || this.state.time == 20){
-                                        this.handleRedirect("/jogos/roleta/");
-                                    }else{
                                         this.handleModal();
-                                    }
                                 }}
                             >
                                 Prosseguir

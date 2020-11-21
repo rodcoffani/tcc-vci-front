@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
+import { Button, Modal } from "react-bootstrap";
 import Header from "../../../components/Header";
 import API from "../../../api";
 import { Helmet } from "react-helmet";
@@ -33,14 +34,28 @@ function mapStateToProps(state) {
 }
 
 class Roleta extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
+            imagesTotensPB: [
+                image_001, image_003, image_005,
+                image_007, image_009, image_011,
+                image_013, image_015, image_017
+            ],
+            imagensTotens : [
+                image_000, image_002, image_004,
+                image_006, image_008, image_010,
+                image_012, image_014, image_016
+            ],
+            view: false,
+            message: "",
             jsx: null,
+            flag: true
         };
     }
     componentDidMount() {
-        console.log(this.props);
+
         for (var i = 0; i < this.props.player.length; i++) {
             if (this.props.player[i].id === this.props.conexao.id) {
                 if (this.props.player[i].available) {
@@ -51,17 +66,6 @@ class Roleta extends Component {
             }
         }
 
-        this.props.conexao.on("conquistaTotem", (e)=>{
-            store.dispatch({
-                type: "SET_CON",
-                payload: {
-                    conexao: this.props.conexao,
-                    player: e,
-                },
-            });
-            console.log(this.props.player);
-        });
-
         this.props.conexao.on("swap", (e) => {
             this.swap(e);
             store.dispatch({
@@ -71,8 +75,89 @@ class Roleta extends Component {
                     player: e,
                 },
             });
+
         });
+
+        this.props.conexao.on("conquistaTotem", (e)=>{
+            store.dispatch({
+                type: "SET_CON",
+                payload: {
+                    conexao: this.props.conexao,
+                    player: e,
+                },
+            });
+            this.totemAlert(e);
+        });
+    
+        this.props.conexao.on("winner", (e)=>{
+            this.setWinner(e);
+            store.dispatch({
+                type: "SET_CON",
+                payload: {
+                    conexao: this.props.conexao,
+                    player: e,
+                },
+            });
+        })
     }
+
+    componentDidCatch(){
+        this.props.conexao.on("winner", (e)=>{
+            this.setWinner(e);
+            store.dispatch({
+                type: "SET_CON",
+                payload: {
+                    conexao: this.props.conexao,
+                    player: e,
+                },
+            });
+        })
+    }
+
+
+    handleModal = (mostra) => {
+        if (this.state.view) {
+            this.setState({ view: false });
+            // this.setState({
+            //     question: this.state.questions.questions[this.state.indice],
+            // }); // ta dando erro
+        } else {
+            this.setState({ view: true });
+        }
+    };
+
+    setWinner = (arg) => {
+        for(var i = 0; i < arg.length; i++){
+            if (arg[i].id === this.props.conexao.id && arg[i].totem.length === 9){
+                alert("Parabéns, você ganhou o jogo perguntados!");
+                break;
+            }else{
+                alert("Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!");
+            }
+        }
+    }
+
+    totemAlert = (arg) => {
+        for(var i = 0; i < arg.length; i++){
+            if (arg[i].id === this.props.conexao.id){
+                if(arg[i].totem.length != 0){
+                    var idTotem = {
+                        idTotem : arg[i].totem[arg[i].totem.length - 1]
+                    }
+                    API.post("perguntados/nameTotem", idTotem).then((res) =>{
+                        setTimeout(() => {
+                            // this.setState({
+                            //     view: true,
+                            //     message : `Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`
+                            // });
+                            alert(`Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`);
+                        }, 2000);
+                       
+                    });
+                }
+            }
+        }
+    };
 
     swap = (arg) => {
         for (var i = 0; i < arg.length; i++) {
@@ -108,51 +193,31 @@ class Roleta extends Component {
                                 {this.props.player[0].nick_name}
                             </div>
                             <div className="totensContainer">
-                                <img
-                                    className="totens"
-                                    src={image_000}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_002}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_004}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_006}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_008}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_010}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_012}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_014}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_016}
-                                    alt="Totem do jogo"
-                                />
+                               {
+                                   this.state.imagesTotensPB.map((value, index)=>{
+                                       if(this.props.player[0].totem.length != 0){
+                                           for(var i = 0; i<this.props.player[0].totem.length; i++){
+                                               if(this.props.player[0].totem[i]-1 == index){
+                                                return (
+                                                    <img
+                                                        className="totens"
+                                                        src={this.state.imagensTotens[index]}
+                                                        alt="Totem do jogo"
+                                                    />
+                                                );
+                                               }
+                                           }
+                                       }
+                                        return (
+                                            <img
+                                                className="totens"
+                                                src={value}
+                                                alt="Totem do jogo"
+                                            />
+                                        );
+                                   })
+                               }
+                                
                             </div>
                         </div>
                         <div className="player p2">
@@ -165,51 +230,31 @@ class Roleta extends Component {
                                 {this.props.player[1].nick_name}
                             </div>
                             <div className="totensContainer">
-                                <img
-                                    className="totens"
-                                    src={image_001}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_003}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_005}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_007}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_009}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_011}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_013}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_015}
-                                    alt="Totem do jogo"
-                                />
-                                <img
-                                    className="totens"
-                                    src={image_017}
-                                    alt="Totem do jogo"
-                                />
+                            {
+                                   this.state.imagesTotensPB.map((value, index)=>{
+                                       if(this.props.player[1].totem.length != 0){
+                                           for(var i = 0; i<this.props.player[1].totem.length; i++){
+                                               if(this.props.player[1].totem[i]-1 == index){
+                                                return (
+                                                    <img
+                                                        className="totens"
+                                                        src={this.state.imagensTotens[index]}
+                                                        alt="Totem do jogo"
+                                                    />
+                                                );
+                                               }
+                                           }
+                                       }
+                                        return (
+                                            <img
+                                                className="totens"
+                                                src={value}
+                                                alt="Totem do jogo"
+                                            />
+                                        );
+                                   })
+                               }
+                                
                             </div>
                         </div>
                     </div>
@@ -219,6 +264,17 @@ class Roleta extends Component {
                         <div className="streak2">&nbsp;</div>
                         <div className="streak3">&nbsp;</div>
                     </div>
+                    <Modal show={this.state.view}>
+                        <Modal.Header>Quiz </Modal.Header>
+                        <Modal.Body>{this.state.message}</Modal.Body>
+                        <Modal.Footer>
+                            <Button
+                                onClick={() => { this.handleModal(); }}
+                            >
+                                Prosseguir
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
             </React.Fragment>
         );
