@@ -35,6 +35,10 @@ function mapStateToProps(state) {
 
 class Roleta extends Component {
 
+    handleRedirect = (newPath)=>{
+        this.props.history.push(newPath);
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -91,8 +95,6 @@ class Roleta extends Component {
         });
     
         this.props.conexao.off("winner").on("winner", (e)=>{
-            console.log("winner");
-            this.setWinner(e);
             store.dispatch({
                 type: "SET_CON",
                 payload: {
@@ -100,16 +102,18 @@ class Roleta extends Component {
                     player: e,
                 },
             });
+            this.setWinner(e);
         })
         
     }
 
     handleModal = (mostra) => {
         if (this.state.view) {
+            if(this.state.message === "Parabéns, você ganhou o jogo perguntados!" ||
+               this.state.message === "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!"){
+                this.handleRedirect("/profile-employee");
+            }
             this.setState({ view: false });
-            // this.setState({
-            //     question: this.state.questions.questions[this.state.indice],
-            // }); // ta dando erro
         } else {
             this.setState({ view: true });
         }
@@ -124,31 +128,38 @@ class Roleta extends Component {
             tk
         ).then((res) => {
             for(var i = 0; i < arg.length; i++){
-                if (arg[i].id === this.props.conexao.id && arg[i].totem.length === 9){
-                    const dadosPlayer = {
-                        idUser : res.data.decoded.iduser,
-                        points : arg[i].pontos,
-                        time : arg[i].time
-                    };
-                    // alert("Parabéns, você ganhou o jogo perguntados!");
-                    this.setState({
-                        view: true,
-                        message : "Parabéns, você ganhou o jogo perguntados!"
-                    });
-                    API.post("perguntados/insert-ranking", dadosPlayer);
-                    break;
-                }else{
-                    const dadosPlayer = {
-                        idUser : res.data.decoded.iduser,
-                        points : arg[i].pontos,
-                        time : arg[i].time
-                    };
-                    // alert("Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!");
-                    this.setState({
-                        view: true,
-                        message : "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!"
-                    });
-                    API.post("perguntados/insert-ranking", dadosPlayer);
+                if (arg[i].id === this.props.conexao.id){
+                    if(arg[i].totem.length === 9){
+                        const dadosPlayer = {
+                            idUser : res.data.decoded.iduser,
+                            points : arg[i].pontos,
+                            time : arg[i].time
+                        };
+                        // alert("Parabéns, você ganhou o jogo perguntados!");
+                        this.setState({
+                            view: true,
+                            message : "Parabéns, você ganhou o jogo perguntados!"
+                        });
+                        API.post("perguntados/insert-ranking", dadosPlayer)
+                        .then((res)=>{
+                            
+                            this.props.conexao.emit("winner-room", this.props.conexao.id);
+
+                        });
+                        break;
+                    }else{
+                        const dadosPlayer = {
+                            idUser : res.data.decoded.iduser,
+                            points : arg[i].pontos,
+                            time : arg[i].time
+                        };
+                        // alert("Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!");
+                        this.setState({
+                            view: true,
+                            message : "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!"
+                        });
+                        API.post("perguntados/insert-ranking", dadosPlayer);
+                    }
                 }
             }
         });
@@ -156,7 +167,6 @@ class Roleta extends Component {
     }
 
     totemAlert = (arg) => {
-        console.log(arg);
         for(var i = 0; i < arg.length; i++){
             if (arg[i].id === this.props.conexao.id){
                 if(arg[i].totem.length != 0){
