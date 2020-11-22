@@ -123,7 +123,10 @@ class Pergunta extends Component {
                     message : "Alternativa incorreta!"
                 });
                 this.pauseTime();
-                this.props.conexao.emit("errou",this.props.conexao.id);
+                this.props.conexao.emit("errou",{
+                    id : this.props.conexao.id,
+                    time : this.state.time
+                });
             }
         });
         
@@ -135,7 +138,12 @@ class Pergunta extends Component {
             if(this.state.selecionada != 0 || this.state.time == 20){
                 this.handleRedirect("/jogos/roleta/");
                 if(this.state.selecionada == this.state.correta){
-                    this.props.conexao.emit("acertou", {id: this.props.conexao.id, totem : this.state.totem_fk});
+                    this.props.conexao.emit("acertou", 
+                    {
+                        id: this.props.conexao.id,
+                        totem : this.state.totem_fk,
+                        time : this.state.time
+                    });
                 }
             }
         } else {

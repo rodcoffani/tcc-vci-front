@@ -101,7 +101,6 @@ class Roleta extends Component {
                 },
             });
         })
-        console.log("construtor");
         
     }
 
@@ -117,24 +116,55 @@ class Roleta extends Component {
     };
 
     setWinner = (arg) => {
-        for(var i = 0; i < arg.length; i++){
-            if (arg[i].id === this.props.conexao.id && arg[i].totem.length === 9){
-                alert("Parabéns, você ganhou o jogo perguntados!");
-                break;
-            }else{
-                alert("Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!");
+        let tk = {
+            token: localStorage.getItem("authTk"),
+        };
+        API.post(
+            "login/teste-token", 
+            tk
+        ).then((res) => {
+            for(var i = 0; i < arg.length; i++){
+                if (arg[i].id === this.props.conexao.id && arg[i].totem.length === 9){
+                    const dadosPlayer = {
+                        idUser : res.data.decoded.iduser,
+                        points : arg[i].pontos,
+                        time : arg[i].time
+                    };
+                    // alert("Parabéns, você ganhou o jogo perguntados!");
+                    this.setState({
+                        view: true,
+                        message : "Parabéns, você ganhou o jogo perguntados!"
+                    });
+                    API.post("perguntados/insert-ranking", dadosPlayer);
+                    break;
+                }else{
+                    const dadosPlayer = {
+                        idUser : res.data.decoded.iduser,
+                        points : arg[i].pontos,
+                        time : arg[i].time
+                    };
+                    // alert("Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!");
+                    this.setState({
+                        view: true,
+                        message : "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!"
+                    });
+                    API.post("perguntados/insert-ranking", dadosPlayer);
+                }
             }
-        }
+        });
+       
     }
 
     totemAlert = (arg) => {
+        console.log(arg);
         for(var i = 0; i < arg.length; i++){
             if (arg[i].id === this.props.conexao.id){
                 if(arg[i].totem.length != 0){
+                    var aux =arg[i].totem.length;
                     var idTotem = {
-                        idTotem : arg[i].totem[arg[i].totem.length - 1]
+                        idTotem : arg[i].totem[aux - 1]
                     }
-                    API.post("perguntados/nameTotem", idTotem).then((res) =>{
+                    API.post("perguntados/name-totem", idTotem).then((res) =>{
                         this.setState({
                             view: true,
                             message : `Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`
