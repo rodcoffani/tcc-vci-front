@@ -203,7 +203,7 @@ class Roleta extends Component {
 
     render() {
         if (this.state.redirect) {
-            return window.location.replace("http://localhost:3000/profile-employee");
+            return window.location.replace("/profile-employee");
         }
         return (
             <React.Fragment>
