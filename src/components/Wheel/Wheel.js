@@ -4,15 +4,24 @@ import wheel from "../../assets/images/Wheel.png";
 import API from "../../api";
 import marker from "../../assets/images/Button-Marker.png";
 import { withRouter } from "react-router-dom";
+import store from "../../config/store";
 
 class Wheel extends Component {
     componentDidMount() {
+        var index;
+        var id = store.getState().playerCon.conexao.id;
+        var players = store.getState().playerCon.player;
+        for(var i = 0; i<players.length; i++){
+            if(players[i].id === id){
+                index = i;
+            }
+        }
         this.state = {
             wheel: document.querySelector(".wheel"),
             startButton: document.querySelector(".button"),
             numeroJogo: 0,
             vez: 1,
-            sorteados: [],
+            sorteados: store.getState().playerCon.player[index].totem,
         };
     }
 
@@ -85,8 +94,10 @@ class Wheel extends Component {
         //Sorteia uma das categorias de 1 a 9 (inclusive)
         let sortedVal = 0;
 
-        sortedVal = Math.floor(Math.random() * 9);
-
+        do{
+            sortedVal = Math.floor(Math.random() * 9) + 1;
+        }while(this.validate(sortedVal));
+        sortedVal--;
         //Deg representa a rotacao a ser aplicada a wheel. de 40 em 40
         //Pois 9 categorias / 360 graus = 40 graus
         let deg = Math.floor(3600 * this.state.vez + sortedVal * 40);
@@ -127,7 +138,7 @@ class Wheel extends Component {
 
         setTimeout(() => {
             //MUDEI PERGUNTA NAO TEM MAIS INDEICE 0 => LINHA 136 IMPLEMENTAR (BEIJOS DA CORNETA ASS. JAMAL)
-            API.get(`/perguntados/${sortedVal + 1}`).then((res) => {
+            API.get(`/perguntados/${2 + 1}`).then((res) => {
                 //========================
                 this.handleRedirect(
                     `/jogos/roleta/pergunta/${res.data.data.idquestion}`
