@@ -47,7 +47,6 @@ class Pergunta extends Component {
         let id = this.props.match.params.id;
         const perguntas = [];
         API.get(`/perguntados/pergunta/${id}`).then((res) => {
-            console.log(res.data.data[0].totem_fk);
             this.setState({
                 totem_fk : res.data.data[0].totem_fk
             });
@@ -61,7 +60,6 @@ class Pergunta extends Component {
                     }
                     if (key1 == "certa") {
                         if (value1 == "true") {
-                            console.log("A flag vale " + flag);
                             this.setState({
                                 correta: flag,
                             });
@@ -76,7 +74,6 @@ class Pergunta extends Component {
                 alternativas: perguntas,
             });
         });
-        console.log(perguntas);
     }
 
     componentDidUpdate(){
@@ -136,11 +133,10 @@ class Pergunta extends Component {
             this.setState({ view: false });
             this.startTime();
             if(this.state.selecionada != 0 || this.state.time == 20){
+                this.handleRedirect("/jogos/roleta/");
                 if(this.state.selecionada == this.state.correta){
-                   this.props.conexao.emit("acertou", {id: this.props.conexao.id, totem : this.state.totem_fk});
+                    this.props.conexao.emit("acertou", {id: this.props.conexao.id, totem : this.state.totem_fk});
                 }
-                // this.handleRedirect("/jogos/roleta/");
-                this.setState({ redirect: "/jogos/roleta/"});
             }
         } else {
             this.setState({ view: true });
@@ -148,9 +144,6 @@ class Pergunta extends Component {
         }
     };
     render() {
-        if (this.state.redirect) {
-            return <Redirect to={this.state.redirect} />;
-        }
         let ops = this.state.alternativas;
         return (
             <React.Fragment>

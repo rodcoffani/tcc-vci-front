@@ -53,6 +53,8 @@ class Roleta extends Component {
             jsx: null,
             flag: true
         };
+
+
     }
     componentDidMount() {
 
@@ -65,8 +67,7 @@ class Roleta extends Component {
                 }
             }
         }
-
-        this.props.conexao.on("swap", (e) => {
+        this.props.conexao.off("swap").on("swap", (e) => {
             this.swap(e);
             store.dispatch({
                 type: "SET_CON",
@@ -78,7 +79,7 @@ class Roleta extends Component {
 
         });
 
-        this.props.conexao.on("conquistaTotem", (e)=>{
+        this.props.conexao.off("conquistaTotem").on("conquistaTotem", (e)=>{
             store.dispatch({
                 type: "SET_CON",
                 payload: {
@@ -89,7 +90,8 @@ class Roleta extends Component {
             this.totemAlert(e);
         });
     
-        this.props.conexao.on("winner", (e)=>{
+        this.props.conexao.off("winner").on("winner", (e)=>{
+            console.log("winner");
             this.setWinner(e);
             store.dispatch({
                 type: "SET_CON",
@@ -99,21 +101,9 @@ class Roleta extends Component {
                 },
             });
         })
+        console.log("construtor");
+        
     }
-
-    componentDidCatch(){
-        this.props.conexao.on("winner", (e)=>{
-            this.setWinner(e);
-            store.dispatch({
-                type: "SET_CON",
-                payload: {
-                    conexao: this.props.conexao,
-                    player: e,
-                },
-            });
-        })
-    }
-
 
     handleModal = (mostra) => {
         if (this.state.view) {
@@ -145,14 +135,11 @@ class Roleta extends Component {
                         idTotem : arg[i].totem[arg[i].totem.length - 1]
                     }
                     API.post("perguntados/nameTotem", idTotem).then((res) =>{
-                        setTimeout(() => {
-                            // this.setState({
-                            //     view: true,
-                            //     message : `Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`
-                            // });
-                            alert(`Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`);
-                        }, 2000);
-                       
+                        this.setState({
+                            view: true,
+                            message : `Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`
+                        });
+                        // alert(`Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`);
                     });
                 }
             }
