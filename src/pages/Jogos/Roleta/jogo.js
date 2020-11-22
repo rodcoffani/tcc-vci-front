@@ -53,6 +53,8 @@ class Roleta extends Component {
             jsx: null,
             flag: true
         };
+
+
     }
     componentDidMount() {
 
@@ -65,8 +67,7 @@ class Roleta extends Component {
                 }
             }
         }
-
-        this.props.conexao.on("swap", (e) => {
+        this.props.conexao.off("swap").on("swap", (e) => {
             this.swap(e);
             store.dispatch({
                 type: "SET_CON",
@@ -78,7 +79,7 @@ class Roleta extends Component {
 
         });
 
-        this.props.conexao.on("conquistaTotem", (e)=>{
+        this.props.conexao.off("conquistaTotem").on("conquistaTotem", (e)=>{
             store.dispatch({
                 type: "SET_CON",
                 payload: {
@@ -89,7 +90,8 @@ class Roleta extends Component {
             this.totemAlert(e);
         });
     
-        this.props.conexao.on("winner", (e)=>{
+        this.props.conexao.off("winner").on("winner", (e)=>{
+            console.log("winner");
             this.setWinner(e);
             store.dispatch({
                 type: "SET_CON",
@@ -99,21 +101,8 @@ class Roleta extends Component {
                 },
             });
         })
+        
     }
-
-    componentDidCatch(){
-        this.props.conexao.on("winner", (e)=>{
-            this.setWinner(e);
-            store.dispatch({
-                type: "SET_CON",
-                payload: {
-                    conexao: this.props.conexao,
-                    player: e,
-                },
-            });
-        })
-    }
-
 
     handleModal = (mostra) => {
         if (this.state.view) {
@@ -127,32 +116,60 @@ class Roleta extends Component {
     };
 
     setWinner = (arg) => {
-        for(var i = 0; i < arg.length; i++){
-            if (arg[i].id === this.props.conexao.id && arg[i].totem.length === 9){
-                alert("Parabéns, você ganhou o jogo perguntados!");
-                break;
-            }else{
-                alert("Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!");
+        let tk = {
+            token: localStorage.getItem("authTk"),
+        };
+        API.post(
+            "login/teste-token", 
+            tk
+        ).then((res) => {
+            for(var i = 0; i < arg.length; i++){
+                if (arg[i].id === this.props.conexao.id && arg[i].totem.length === 9){
+                    const dadosPlayer = {
+                        idUser : res.data.decoded.iduser,
+                        points : arg[i].pontos,
+                        time : arg[i].time
+                    };
+                    // alert("Parabéns, você ganhou o jogo perguntados!");
+                    this.setState({
+                        view: true,
+                        message : "Parabéns, você ganhou o jogo perguntados!"
+                    });
+                    API.post("perguntados/insert-ranking", dadosPlayer);
+                    break;
+                }else{
+                    const dadosPlayer = {
+                        idUser : res.data.decoded.iduser,
+                        points : arg[i].pontos,
+                        time : arg[i].time
+                    };
+                    // alert("Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!");
+                    this.setState({
+                        view: true,
+                        message : "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!"
+                    });
+                    API.post("perguntados/insert-ranking", dadosPlayer);
+                }
             }
-        }
+        });
+       
     }
 
     totemAlert = (arg) => {
+        console.log(arg);
         for(var i = 0; i < arg.length; i++){
             if (arg[i].id === this.props.conexao.id){
                 if(arg[i].totem.length != 0){
+                    var aux =arg[i].totem.length;
                     var idTotem = {
-                        idTotem : arg[i].totem[arg[i].totem.length - 1]
+                        idTotem : arg[i].totem[aux - 1]
                     }
-                    API.post("perguntados/nameTotem", idTotem).then((res) =>{
-                        setTimeout(() => {
-                            // this.setState({
-                            //     view: true,
-                            //     message : `Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`
-                            // });
-                            alert(`Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`);
-                        }, 2000);
-                       
+                    API.post("perguntados/name-totem", idTotem).then((res) =>{
+                        this.setState({
+                            view: true,
+                            message : `Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`
+                        });
+                        // alert(`Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`);
                     });
                 }
             }
