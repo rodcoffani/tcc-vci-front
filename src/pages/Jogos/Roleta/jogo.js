@@ -5,6 +5,7 @@ import Header from "../../../components/Header";
 import API from "../../../api";
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
+import { Link, Redirect } from "react-router-dom";
 import Wheel from "../../../components/Wheel/Wheel";
 import image_000 from "../../../assets/images/jogo_10/image_000.png";
 import image_001 from "../../../assets/images/jogo_10/image_001.png";
@@ -35,9 +36,6 @@ function mapStateToProps(state) {
 
 class Roleta extends Component {
 
-    handleRedirect = (newPath)=>{
-        this.props.history.push(newPath);
-    }
 
     constructor(props) {
         super(props);
@@ -55,7 +53,7 @@ class Roleta extends Component {
             view: false,
             message: "",
             jsx: null,
-            flag: true
+            redirect: ""
         };
 
 
@@ -111,7 +109,9 @@ class Roleta extends Component {
         if (this.state.view) {
             if(this.state.message === "Parabéns, você ganhou o jogo perguntados!" ||
                this.state.message === "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!"){
-                this.handleRedirect("/profile-employee");
+                this.setState({
+                    redirect : "/profile-employee"
+                });
             }
             this.setState({ view: false });
         } else {
@@ -142,7 +142,6 @@ class Roleta extends Component {
                         });
                         API.post("perguntados/insert-ranking", dadosPlayer)
                         .then((res)=>{
-                            
                             this.props.conexao.emit("winner-room", this.props.conexao.id);
 
                         });
@@ -203,6 +202,9 @@ class Roleta extends Component {
     };
 
     render() {
+        if (this.state.redirect) {
+            return window.location.replace("http://localhost:3000/profile-employee");
+        }
         return (
             <React.Fragment>
                 <Helmet title="Jogo 10" />
