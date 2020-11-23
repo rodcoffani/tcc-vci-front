@@ -93,7 +93,7 @@ class Wheel extends Component {
     handleButtonClick = () => {
         //Sorteia uma das categorias de 1 a 9 (inclusive)
         let sortedVal = 0;
-
+        console.log(this.state.sorteados);
         do{
             sortedVal = Math.floor(Math.random() * 9) + 1;
         }while(this.validate(sortedVal));
@@ -133,7 +133,6 @@ class Wheel extends Component {
 
         this.setState({
             numeroJogo: sortedVal,
-            sorteados: [sortedVal].concat(this.state.sorteados),
         });
 
         setTimeout(() => {
