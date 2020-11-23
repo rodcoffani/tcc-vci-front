@@ -36,7 +36,7 @@ export default class Quiz_rules extends Component {
                         <li><FontAwesomeIcon icon={faFlag}/> O participante deverá responder a questão escolhendo uma das quatro alternativas;</li>
                         <br></br>
                         <li><FontAwesomeIcon icon={faFlag}/> Para cada resposta correta, o participante pontuará
-                        positivamente e para cada resposta errada, pontuará negativamente;</li>
+                        positivamente;</li>
                         <br></br>
                         <li><FontAwesomeIcon icon={faFlag}/> Após dada a resposta o participante será informado se
                         acertou ou errou, mas não irá visualizar qual a resposta correta no caso de errar. O sistema irá pular automaticamente para a próxima pergunta;</li>
