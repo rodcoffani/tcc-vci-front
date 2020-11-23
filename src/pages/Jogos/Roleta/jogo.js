@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Button, Modal } from "react-bootstrap";
+import { Alert, Button, Modal } from "react-bootstrap";
 import Header from "../../../components/Header";
 import API from "../../../api";
 import { Helmet } from "react-helmet";
+
 import "font-awesome/css/font-awesome.min.css";
-import { Link, Redirect } from "react-router-dom";
+import Sidebar from "../../../components/Sidebar/employee";
 import Wheel from "../../../components/Wheel/Wheel";
 import image_000 from "../../../assets/images/jogo_10/image_000.png";
 import image_001 from "../../../assets/images/jogo_10/image_001.png";
@@ -35,7 +36,7 @@ function mapStateToProps(state) {
 }
 
 class Roleta extends Component {
-
+    
 
     constructor(props) {
         super(props);
@@ -52,12 +53,13 @@ class Roleta extends Component {
             ],
             view: false,
             message: "",
-            jsx: null,
+            jsx: <h1>Aguarde seu turno...</h1>,
             redirect: ""
         };
 
 
     }
+
     componentDidMount() {
 
         for (var i = 0; i < this.props.player.length; i++) {
@@ -103,12 +105,29 @@ class Roleta extends Component {
             this.setWinner(e);
         })
         
+        // this.props.conexao.off("roomProblem").on("roomProblem", (e)=>{
+        //     store.dispatch({
+        //         type: "SET_CON",
+        //         payload: {
+        //             conexao: this.props.conexao,
+        //             player: e,
+        //         },
+        //     });
+        //     this.RoomProblem(e);
+        // });
+
+        // setInterval(()=>{
+        //     console.log("test");
+        //     this.props.conexao.emit("isConnected", this.props.conexao.id);
+        // },15000);
     }
+
 
     handleModal = (mostra) => {
         if (this.state.view) {
             if(this.state.message === "Parabéns, você ganhou o jogo perguntados!" ||
-               this.state.message === "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!"){
+               this.state.message === "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!" ||
+               this.state.message === "Infelizmente parece que você ou seu adversário se desconectaram!"){
                 this.setState({
                     redirect : "/profile-employee"
                 });
@@ -119,6 +138,16 @@ class Roleta extends Component {
         }
     };
 
+    RoomProblem = (arg) => {
+        this.setState({
+            view: true,
+            message : "Infelizmente parece que você ou seu adversário se desconectaram!"
+        });
+        if(arg.length != 2){
+            this.props.conexao.emit("winner-room", this.props.conexao.id);
+        }
+    }
+    
     setWinner = (arg) => {
         let tk = {
             token: localStorage.getItem("authTk"),
@@ -194,28 +223,29 @@ class Roleta extends Component {
                     });
                 } else {
                     this.setState({
-                        jsx: "<div></div>",
+                        jsx: <div>QUEM VAI SER LOKO DE ASSALTAR O SUPER XANDAO????</div>,
                     });
                 }
             }
         }
     };
-
     render() {
+        
         if (this.state.redirect) {
             return window.location.replace("/profile-employee");
         }
         return (
             <React.Fragment>
+                
                 <Helmet title="Jogo 10" />
-                {/* Inserir sidebar */}
+                <Sidebar/>
                 <Header headerTitle="Jogo da Roleta" />
                 <div className="content-roleta">
                     <div className="playersArea">
                         <div className="player p1">
                             <img
                                 className="profilePic"
-                                src="https://www.menshair.style/wp-content/uploads/2019/03/black-men-hairstyles-59.jpg"
+                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
                                 alt="Imagem do participante 1"
                             />
                             <div className="employeeName">
@@ -252,7 +282,7 @@ class Roleta extends Component {
                         <div className="player p2">
                             <img
                                 className="profilePic"
-                                src="https://i.pinimg.com/originals/07/a9/97/07a9978da38303b87c13243d55942df4.jpg"
+                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
                                 alt="Imagem do participante 2"
                             />
                             <div className="employeeName">
@@ -288,11 +318,11 @@ class Roleta extends Component {
                         </div>
                     </div>
                     <div className="quizWheel">{this.state.jsx}</div>
-                    <div className="questionsBar">
+                    {/* <div className="questionsBar">
                         <div className="streak1">&nbsp;</div>
                         <div className="streak2">&nbsp;</div>
                         <div className="streak3">&nbsp;</div>
-                    </div>
+                    </div> */}
                     <Modal show={this.state.view}>
                         <Modal.Header>Quiz </Modal.Header>
                         <Modal.Body>{this.state.message}</Modal.Body>
