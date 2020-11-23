@@ -102,7 +102,7 @@ export default class Quiz extends Component {
     render() {
         return ( 
             <React.Fragment>
-            <Helmet title = "Jogo 1" />
+            <Helmet title = "Quiz" />
             <Header headerTitle = "Jogo Quiz" />
             <div className='container_jogo'>
                 <div className='hud'>
