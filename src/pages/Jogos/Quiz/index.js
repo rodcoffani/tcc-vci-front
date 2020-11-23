@@ -26,7 +26,7 @@ export default class Quiz_rules extends Component {
     render() {
         return (
             <React.Fragment>
-                <Helmet title="Jogo 1" />
+                <Helmet title="Quiz" />
                 <Header headerTitle="Jogo Quiz"/>
 
                     <h1 className="titulo_objetivo">Objetivos:</h1>
