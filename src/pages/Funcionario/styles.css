@@ -454,13 +454,13 @@ h6 {
 @media (min-width:320px) and (max-width: 375px) {
     
     .ranking-employee{
-        width: 80%;
-        margin-left: 5%;
+        width: 100%;
+        margin-left: 0%;
     }
     
     .ranking-body{
         width: 92%;
-        height: 80%;
+        height: auto;
     }
     
     .employee-body{
@@ -501,8 +501,8 @@ h6 {
     }
 
     .card-user-employee{
-        width: 90%;
-        margin-left: 5%;
+        width: 115%;
+        margin-left: -10%;
         float: left;
     }
 
@@ -519,6 +519,7 @@ h6 {
 
     .m-b-10 {
         margin-bottom: 3%;
+        margin-left: -35%;
     }
 
     .f-w-600 {
@@ -528,8 +529,8 @@ h6 {
 
 @media (min-width:365px) and (max-width: 375px) {
     .ranking-employee{
-        width: 80%;
-        margin-left: 10%;
+        width: 100%;
+        margin-left: 0%;
     }
     
 
@@ -572,8 +573,8 @@ h6 {
     }
 
     .card-user-employee{
-        width: 90%;
-        margin-left: 11%;
+        width: 105%;
+        margin-left: -5%;
     }
 
     .m-b-10 {
@@ -585,8 +586,8 @@ h6 {
 
 @media (min-width:376px) and (max-width: 504px) {
     .ranking-employee{
-        width: 80%;
-        margin-left: 10%;
+        width: 100%;
+        margin-left: 0%;
     }
 
     .ranking-title-title-e{
@@ -648,7 +649,23 @@ h6 {
     }
 
     .m-b-10 {
-        margin-left: -40%;
+        margin-left: -35%;
+    }
+}
+
+@media (min-width:375px) and (max-width: 667px) {
+    .card-user-employee{
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .ranking-title-title-e{
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    .m-b-10 {
+        margin-left: -30%;
     }
 }
 
@@ -706,8 +723,8 @@ h6 {
 
 @media (min-width:600px) and (max-width: 789px) {
     .ranking-employee{
-        width: 90%;
-        margin-left: 4%;
+        width: 100%;
+        margin-left: 0%;
     }
 
     .ranking-title-title-e{
@@ -754,7 +771,7 @@ h6 {
 @media (min-width:700px) and (max-width: 789px) {
     .ranking-employee{
         width: 90%;
-        margin-left: 3%;
+        margin-left: -2%;
     }
 
     .ranking-title-title-e{
@@ -932,6 +949,6 @@ h6 {
         margin-left: -3%;
     }
     .ranking-employee{
-        margin-left: 7%;
+        margin-left: 2%;
     }
 }
