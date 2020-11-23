@@ -7,8 +7,9 @@ import "./style.css";
 import Header from "../../../components/Header";
 import { Helmet } from "react-helmet";
 
-
 class Queue extends Component {
+
+
     constructor(props) {
         super(props);
         this.state = {
@@ -63,6 +64,7 @@ class Queue extends Component {
 
         
     }
+
 
     render() {
         return (
