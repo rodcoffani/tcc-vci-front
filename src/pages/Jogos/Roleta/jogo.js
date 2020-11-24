@@ -109,21 +109,13 @@ class Roleta extends Component {
             this.setWinner(e);
         })
         
-        // this.props.conexao.off("roomProblem").on("roomProblem", (e)=>{
-        //     store.dispatch({
-        //         type: "SET_CON",
-        //         payload: {
-        //             conexao: this.props.conexao,
-        //             player: e,
-        //         },
-        //     });
-        //     this.RoomProblem(e);
-        // });
+        this.props.conexao.off("roomProblem").on("roomProblem", (e)=>{
+            this.RoomProblem();
+        });
 
-        // setInterval(()=>{
-        //     console.log("test");
-        //     this.props.conexao.emit("isConnected", this.props.conexao.id);
-        // },15000);
+        setInterval(()=>{
+            this.props.conexao.emit("isConnected", this.props.conexao.id);
+        },5000);
 
         let tk = {
             token: localStorage.getItem("authTk"),
@@ -132,7 +124,6 @@ class Roleta extends Component {
             "login/teste-token", 
             tk
         ).then((res) => {
-            console.log(res.data.decoded.admin)
             if(res.data.decoded.admin){
                 console.log("é ademir")
                 this.setState({
@@ -163,13 +154,9 @@ class Roleta extends Component {
     };
 
     RoomProblem = (arg) => {
-        this.setState({
-            view: true,
-            message : "Infelizmente parece que você ou seu adversário se desconectaram!"
-        });
-        if(arg.length != 2){
-            this.props.conexao.emit("winner-room", this.props.conexao.id);
-        }
+        this.props.conexao.emit("winner-room", this.props.conexao.id);
+        alert("Infelizmente parece que você ou seu adversário se desconectaram!\nIremos te redirecionar para o perfil");
+        window.location.replace("/profile-employee");
     }
     
     setWinner = (arg) => {
