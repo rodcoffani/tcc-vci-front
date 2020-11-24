@@ -68,12 +68,11 @@ export default class Roleta_rules extends Component {
                         <li><FontAwesomeIcon icon={faFlag}/> Vence o participante que conquistar todos os totens.</li>
                         </ul>
 
-                        <Row style={{paddingRight:"35%"}}>
+                        <Row className="row_play">
                             <Container className="play">
                                 {
                                     this.state.flagAdm
                                 }
-                                
                             </Container>
                             <Container className="play">
                                 <a style={{color:"white", textDecoration:"none"}} href="/jogos/roleta/queue">Jogar</a>

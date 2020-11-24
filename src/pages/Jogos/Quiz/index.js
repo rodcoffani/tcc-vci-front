@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../Quiz/style.css";
 import Header from "../../../components/Header";
+import Sidebar from '../../../components/Sidebar/employee';
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
 import { Container, Row } from "react-bootstrap";
@@ -27,6 +28,7 @@ export default class Quiz_rules extends Component {
         return (
             <React.Fragment>
                 <Helmet title="Quiz" />
+                <Sidebar pageSelected=""/>
                 <Header headerTitle="Jogo Quiz"/>
 
                     <h1 className="titulo_objetivo">Objetivos:</h1>
@@ -47,14 +49,13 @@ export default class Quiz_rules extends Component {
                         final serão mostrados os melhores tempos dos jogadores cadastrados.</li>
                         </ul>
 
-                        <Row style={{paddingRight:"35%"}}>
+                        <Row className="row_play">
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/">Voltar</a>
+                                <a style={{color:"white", textDecoration:"none"}} href="/funcionario">Voltar</a>
                             </Container>
 
                             <Container className="play">
                                 <a style={{color:"white", textDecoration:"none"}} href="#" onClick={() => this.handleClick("/jogos/quiz")}>Jogar</a>
-                                
                             </Container>
                         </Row>
                     </Container>
