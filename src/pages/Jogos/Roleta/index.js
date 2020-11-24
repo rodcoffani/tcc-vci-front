@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "../Quiz/style.css";
 import Header from "../../../components/Header";
+import API from "../../../api";
+import Sidebar from "../../../components/Sidebar/employee";
+import SidebarADM from "../../../components/Sidebar/admin";
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
 import { Container, Row } from "react-bootstrap";
@@ -10,15 +13,44 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 export default class Roleta_rules extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            admin : null,
+            flagAdm : null
+        };
     }
     
+    componentDidMount(){
+        let tk = {
+            token: localStorage.getItem("authTk"),
+        };
+        API.post(
+            "login/teste-token", 
+            tk
+        ).then((res) => {
+            console.log(res.data.decoded.admin)
+            if(res.data.decoded.admin){
+                console.log("é ademir")
+                this.setState({
+                    admin: <SidebarADM/>,
+                    flagAdm : <a style={{color:"white", textDecoration:"none"}} href="/administrador">Voltar</a>
+                });
+            }else{
+                this.setState({
+                    admin: <Sidebar/>,
+                    flagAdm : <a style={{color:"white", textDecoration:"none"}} href="/funcionario">Voltar</a>
+                });
+            }
+        })
+    }
+
+
     render() {
         return (
             <React.Fragment>
                 <Helmet title="Roleta" />
+                {this.state.admin}
                 <Header headerTitle="Jogo da Roleta"/>
-
+                    
                     <h1 className="titulo_objetivo">Objetivos:</h1>
 
                     <Container className="container_descricao">
@@ -38,9 +70,10 @@ export default class Roleta_rules extends Component {
 
                         <Row className="row_play">
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/">Voltar</a>
+                                {
+                                    this.state.flagAdm
+                                }
                             </Container>
-
                             <Container className="play">
                                 <a style={{color:"white", textDecoration:"none"}} href="/jogos/roleta/queue">Jogar</a>
                             </Container>

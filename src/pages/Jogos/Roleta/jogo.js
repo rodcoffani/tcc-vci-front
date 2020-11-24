@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 
 import "font-awesome/css/font-awesome.min.css";
 import Sidebar from "../../../components/Sidebar/employee";
+import SidebarADM from "../../../components/Sidebar/admin";
 import Wheel from "../../../components/Wheel/Wheel";
 import image_000 from "../../../assets/images/jogo_10/image_000.png";
 import image_001 from "../../../assets/images/jogo_10/image_001.png";
@@ -36,6 +37,7 @@ function mapStateToProps(state) {
 }
 
 class Roleta extends Component {
+
     
 
     constructor(props) {
@@ -52,8 +54,10 @@ class Roleta extends Component {
                 image_012, image_014, image_016
             ],
             view: false,
+            admin: null,
             message: "",
-            jsx: <h1>Aguarde seu turno...</h1>,
+            lengthTotem: 0,
+            jsx: <h1>Aguarde sua vez...</h1>,
             redirect: ""
         };
 
@@ -120,6 +124,26 @@ class Roleta extends Component {
         //     console.log("test");
         //     this.props.conexao.emit("isConnected", this.props.conexao.id);
         // },15000);
+
+        let tk = {
+            token: localStorage.getItem("authTk"),
+        };
+        API.post(
+            "login/teste-token", 
+            tk
+        ).then((res) => {
+            console.log(res.data.decoded.admin)
+            if(res.data.decoded.admin){
+                console.log("é ademir")
+                this.setState({
+                    admin: <SidebarADM/>
+                });
+            }else{
+                this.setState({
+                    admin: <Sidebar/>
+                });
+            }
+        })
     }
 
 
@@ -172,7 +196,6 @@ class Roleta extends Component {
                         API.post("perguntados/insert-ranking", dadosPlayer)
                         .then((res)=>{
                             this.props.conexao.emit("winner-room", this.props.conexao.id);
-
                         });
                         break;
                     }else{
@@ -186,7 +209,8 @@ class Roleta extends Component {
                             view: true,
                             message : "Infelizmente você não ganhou o jogo perguntados, boa sorte na próxima!"
                         });
-                        API.post("perguntados/insert-ranking", dadosPlayer);
+                        API.post("perguntados/insert-ranking", dadosPlayer).then((res)=>{
+                        });
                     }
                 }
             }
@@ -197,12 +221,14 @@ class Roleta extends Component {
     totemAlert = (arg) => {
         for(var i = 0; i < arg.length; i++){
             if (arg[i].id === this.props.conexao.id){
-                if(arg[i].totem.length != 0){
+                console.log(this.state.lengthTotem)
+                if(arg[i].totem.length != 0 && arg[i].available){
                     var aux =arg[i].totem.length;
                     var idTotem = {
                         idTotem : arg[i].totem[aux - 1]
                     }
-                    API.post("perguntados/name-totem", idTotem).then((res) =>{
+                    API.post("perguntados/name-totem", idTotem)
+                    .then((res) =>{
                         this.setState({
                             view: true,
                             message : `Parabéns você conquistou o totem sobre ${res.data.data.name_toten}`
@@ -223,12 +249,13 @@ class Roleta extends Component {
                     });
                 } else {
                     this.setState({
-                        jsx: <div>QUEM VAI SER LOKO DE ASSALTAR O SUPER XANDAO????</div>,
+                        jsx: <div>Aguarde sua vez...</div>,
                     });
                 }
             }
         }
     };
+
     render() {
         
         if (this.state.redirect) {
@@ -238,7 +265,7 @@ class Roleta extends Component {
             <React.Fragment>
                 
                 <Helmet title="Jogo 10" />
-                <Sidebar/>
+                {this.state.admin}
                 <Header headerTitle="Jogo da Roleta" />
                 <div className="content-roleta">
                     <div className="playersArea">
