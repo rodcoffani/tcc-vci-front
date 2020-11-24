@@ -207,7 +207,7 @@ class Roleta extends Component {
         }
         return (
             <React.Fragment>
-                <Helmet title="Jogo 10" />
+                <Helmet title="Roleta" />
                 {/* Inserir sidebar */}
                 <Header headerTitle="Jogo da Roleta" />
                 <div className="content-roleta">
