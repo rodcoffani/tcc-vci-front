@@ -47,14 +47,17 @@ const Profile = (props) => {
 
     useEffect(() => {
         if(idGame == 0){
-            API.get("/ranking/all").then((res) => {
+            API.get(`/ranking/all/${id}` ).then((res) => {
                 console.log(res.data);
                 setRanking(res.data);
             }); 
         }
         else{
-            console.log(idGame);
-            API.get(`/ranking/${idGame}`).then((res) => {
+            var data = {
+                idUser : id,
+                idGame : idGame
+            }
+            API.post(`/ranking/rank-by-game`, data).then((res) => {
                 setRanking(res.data);
             });  
         }
@@ -209,6 +212,7 @@ const Profile = (props) => {
                                     <tbody>
                                         {ranking.map((item, index) => {
                                             if(id == item.iduser){
+                                                console.log(index);
                                                 return <tr>
                                                     <td>{index + 1}</td>
                                                     <td>{item.name_game}</td>

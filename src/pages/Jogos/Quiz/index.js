@@ -27,7 +27,7 @@ export default class Quiz_rules extends Component {
     render() {
         return (
             <React.Fragment>
-                <Helmet title="Jogo Quiz" />
+                <Helmet title="Quiz" />
                 <Sidebar pageSelected=""/>
                 <Header headerTitle="Jogo Quiz"/>
 
