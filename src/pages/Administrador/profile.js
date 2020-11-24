@@ -21,9 +21,11 @@ const Profile = (props) => {
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [id, setId] = useState("");
-    const [profileImg, setImg] = useState(
+    const [profileImg, setReadImg] = useState(
         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
     );
+    const [formImg, setFormImg] = useState();
+
     const [reloadFlag, setReloadFlag] = useState(true);
 
     useEffect(() => {
@@ -34,6 +36,13 @@ const Profile = (props) => {
             setId(res.data.decoded.iduser);
             setNome(res.data.decoded.name_user);
             setEmail(res.data.decoded.email_user);
+            API.get("/users/image/" + res.data.decoded.iduser, {
+                responseType: "blob",
+            }).then((res) => {
+                if (res.data.size > 100) {
+                    setReadImg(URL.createObjectURL(res.data));
+                }
+            });
         });
     }, []);
 
@@ -64,8 +73,14 @@ const Profile = (props) => {
 
     const editAdmin = (e) => {
         e.preventDefault();
-        console.log(id, email, nome);
-        API.put("/users/update-user", { id, nome, email }).then((res) => {
+        const data = new FormData();
+        if (formImg !== null) {
+            data.append("file", formImg);
+        }
+        data.append("id", id);
+        data.append("email", email);
+        data.append("nome", nome);
+        API.put("/users/update-user", data).then((res) => {
             alert(res.data.message);
             console.log(res.data);
         });
@@ -82,32 +97,23 @@ const Profile = (props) => {
         const imagem = document.getElementsByClassName("profile-img");
         imagem.item(0).hidden = true;
     };
-    const editImage = (e) => {
-        e.preventDefault();
-        const data = new FormData();
-
-        data.append("name", "Image Upload");
-        data.append("file_attachment", profileImg);
-        console.log(data);
-        API.post("/users/save-image-user", {
-            data: profileImg,
-            tk: localStorage.getItem("authTk"),
-        })
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err));
-    };
     const imageHandler = (e) => {
-        console.log(e);
-        setImg(e.target.files[0]);
+        const reader = new FileReader();
+        reader.onload = () => {
+            if (reader.readyState === 2) {
+                setReadImg(reader.result);
+            }
+        };
+        reader.readAsDataURL(e.target.files[0]);
+        setFormImg(e.target.files[0]);
     };
 
     const promoteUser = (email, name) => {
-        // eslint-disable-next-line no-restricted-globals
         if (
-            // confirm(
-            //     "Deseja prosseguir? A promoção a administrador é irreversível."
-            // )
-            true
+            // eslint-disable-next-line no-restricted-globals
+            confirm(
+                "Deseja prosseguir? A promoção a administrador é irreversível."
+            )
         ) {
             API.put(`users/promote-admin/${email}`, { name }).then((res) => {
                 alert(res.data.message);
@@ -115,7 +121,6 @@ const Profile = (props) => {
             });
         }
     };
-
     return (
         <div>
             <Helmet title="Perfil" />
@@ -129,7 +134,7 @@ const Profile = (props) => {
                     <div className="mother">
                         <br />
                         <div className="row container d-flex card-user">
-                            <Form onSubmit={/*editAdmin*/ editImage}>
+                            <Form onSubmit={editAdmin}>
                                 <div className="col-md-12">
                                     <div className="admin-profile-card user-card-full">
                                         <div className="row m-l-0 m-r-0">
