@@ -47,14 +47,13 @@ export default class Quiz_rules extends Component {
                         final serão mostrados os melhores tempos dos jogadores cadastrados.</li>
                         </ul>
 
-                        <Row style={{paddingRight:"35%"}}>
+                        <Row className="row_play">
                             <Container className="play">
                                 <a style={{color:"white", textDecoration:"none"}} href="/">Voltar</a>
                             </Container>
 
                             <Container className="play">
                                 <a style={{color:"white", textDecoration:"none"}} href="#" onClick={() => this.handleClick("/jogos/quiz")}>Jogar</a>
-                                
                             </Container>
                         </Row>
                     </Container>
