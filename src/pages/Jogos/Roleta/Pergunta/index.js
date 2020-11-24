@@ -57,11 +57,11 @@ class Pergunta extends Component {
                 res.data.data[0].json_question.respostas
             )) {
                 for (var [key1, value1] of Object.entries(value)) {
-                    if (key1 != "certa") {
+                    if (key1 !== "certa") {
                         perguntas.push(value1);
                     }
-                    if (key1 == "certa") {
-                        if (value1 == "true") {
+                    if (key1 === "certa") {
+                        if (value1 === true) {
                             this.setState({
                                 correta: flag,
                             });

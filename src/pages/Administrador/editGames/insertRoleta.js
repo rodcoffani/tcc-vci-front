@@ -105,6 +105,7 @@ const InsertRoleta = (props) => {
     const [items, setItems] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState({
         enunciado: '',
+        categoria: 0,
         respostas:{
             q1:{
                 pergunta: '',
@@ -137,6 +138,7 @@ const InsertRoleta = (props) => {
             const questionsFinal = questions.map(item => {
                 return {
                     enunciado: item.enunciado,
+                    categoria: item.categoria,
                     respostas: {
                         q1: item.q1,
                         q2: item.q2,
