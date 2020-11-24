@@ -28,6 +28,7 @@ class Pergunta extends Component {
     handleRedirect = (newPath)=>{
         this.props.history.push(newPath);
     }
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -43,6 +44,7 @@ class Pergunta extends Component {
             redirect: ""
         };
     }
+
     componentDidMount() {
         let id = this.props.match.params.id;
         const perguntas = [];
@@ -104,9 +106,11 @@ class Pergunta extends Component {
             }, 100),
         });
     }
+
     pauseTime() {
         clearInterval(this.state.interval);
     }
+
     handleModalAlt = async (alt) => {
         this.setState({
             selecionada: alt + 1
@@ -131,6 +135,7 @@ class Pergunta extends Component {
         });
         
     };
+
     handleModal = (mostra) => {
         if (this.state.view) {
             this.setState({ view: false });
@@ -151,6 +156,7 @@ class Pergunta extends Component {
             this.pauseTime();
         }
     };
+    
     render() {
         let ops = this.state.alternativas;
         return (
