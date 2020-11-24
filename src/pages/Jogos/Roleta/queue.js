@@ -69,7 +69,7 @@ class Queue extends Component {
     render() {
         return (
             <React.Fragment>
-                <Helmet title="Roleta" />
+                <Helmet title="Jogo da Roleta - Fila" />
                 <Header headerTitle="Jogo da Roleta" />
 
                 <div className="LoadMessage">Procurando jogadores {this.state.mensagem}</div>
