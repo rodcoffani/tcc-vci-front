@@ -6,7 +6,7 @@ import "font-awesome/css/font-awesome.min.css";
 import {Button, Modal} from "react-bootstrap";
 import API from "../../../api";
 import { withRouter } from "react-router-dom";
-
+import Sidebar from '../../../components/Sidebar/employee';
 export default class Quiz extends Component {
     constructor(props) {
         super(props);
@@ -102,7 +102,8 @@ export default class Quiz extends Component {
     render() {
         return ( 
             <React.Fragment>
-            <Helmet title = "Quiz" />
+           <Helmet title = "Quiz" />
+           <Sidebar pageSelected=""/>
             <Header headerTitle = "Jogo Quiz" />
             <div className='container_jogo'>
                 <div className='hud'>
