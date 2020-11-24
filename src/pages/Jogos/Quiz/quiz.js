@@ -102,9 +102,7 @@ export default class Quiz extends Component {
     render() {
         return ( 
             <React.Fragment>
-            <Helmet title = "Jogo Quiz" />
-            <Sidebar pageSelected=""/>
-            <Helmet title = "Quiz" />
+           <Helmet title = "Quiz" />
            <Sidebar pageSelected=""/>
             <Header headerTitle = "Jogo Quiz" />
             <div className='container_jogo'>

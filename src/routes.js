@@ -13,7 +13,6 @@ import Quiz from "./pages/Jogos/Quiz/quiz";
 import Roleta_rules from "./pages/Jogos/Roleta";
 import Queue from "./pages/Jogos/Roleta/queue";
 import Quiz_rules from "./pages/Jogos/Quiz";
-import Caca_palavras_rules from "./pages/Jogos/Caça-palavras";
 import Perfil from "./pages/Administrador/profile";
 import CadastroJogos from "./pages/Administrador/editGames";
 import CadastroQuiz from "./pages/Administrador/editGames/insertQuiz";
@@ -78,10 +77,7 @@ const Routes = () => {
                     path="/jogos/quiz"
                     component={ Quiz }
                 />
-                <Route 
-                    path="/caça_palavras_rules"
-                    component={ Caca_palavras_rules }
-                />
+                
                 <Route
                     path="/profile"
                     component={ Perfil }
