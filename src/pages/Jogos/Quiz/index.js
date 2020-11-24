@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../Quiz/style.css";
 import Header from "../../../components/Header";
+import Sidebar from '../../../components/Sidebar/employee';
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
 import { Container, Row } from "react-bootstrap";
@@ -26,7 +27,8 @@ export default class Quiz_rules extends Component {
     render() {
         return (
             <React.Fragment>
-                <Helmet title="Jogo 1" />
+                <Helmet title="Jogo Quiz" />
+                <Sidebar pageSelected=""/>
                 <Header headerTitle="Jogo Quiz"/>
 
                     <h1 className="titulo_objetivo">Objetivos:</h1>
@@ -49,7 +51,7 @@ export default class Quiz_rules extends Component {
 
                         <Row style={{paddingRight:"35%"}}>
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/">Voltar</a>
+                                <a style={{color:"white", textDecoration:"none"}} href="/funcionario">Voltar</a>
                             </Container>
 
                             <Container className="play">
