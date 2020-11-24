@@ -14,7 +14,8 @@ export default class Roleta_rules extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            admin : null
+            admin : null,
+            flagAdm : null
         };
     }
     
@@ -30,11 +31,13 @@ export default class Roleta_rules extends Component {
             if(res.data.decoded.admin){
                 console.log("é ademir")
                 this.setState({
-                    admin: <SidebarADM/>
+                    admin: <SidebarADM/>,
+                    flagAdm : <a style={{color:"white", textDecoration:"none"}} href="/administrador">Voltar</a>
                 });
             }else{
                 this.setState({
-                    admin: <Sidebar/>
+                    admin: <Sidebar/>,
+                    flagAdm : <a style={{color:"white", textDecoration:"none"}} href="/funcionario">Voltar</a>
                 });
             }
         })
@@ -67,7 +70,10 @@ export default class Roleta_rules extends Component {
 
                         <Row style={{paddingRight:"35%"}}>
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/funcionario">Voltar</a>
+                                {
+                                    this.state.flagAdm
+                                }
+                                
                             </Container>
                             <Container className="play">
                                 <a style={{color:"white", textDecoration:"none"}} href="/jogos/roleta/queue">Jogar</a>
