@@ -47,7 +47,7 @@ export default class Roleta_rules extends Component {
     render() {
         return (
             <React.Fragment>
-                <Helmet title="Roleta" />
+                <Helmet title="Jogo da Roleta" />
                 {this.state.admin}
                 <Header headerTitle="Jogo da Roleta"/>
                     

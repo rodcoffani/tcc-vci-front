@@ -242,15 +242,6 @@ class login extends Component {
                                         </p>
 
                                         <div className="oneAcess">
-                                            {" "}
-                                            <button
-                                                className="btn btn-link one"
-                                                onClick={() => {
-                                                    this.goToCadastro();
-                                                }}
-                                            >
-                                                1º Acesso{" "}
-                                            </button>{" "}
                                             <button
                                                 className="btn btn-link oneTwo"
                                                 onClick={() => {
