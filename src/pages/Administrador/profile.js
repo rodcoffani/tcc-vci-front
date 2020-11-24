@@ -127,50 +127,54 @@ const Profile = (props) => {
             <Sidebar pageSelected="profile" />
             <Header headerTitle="Administrador" />
             <React.Fragment>
-            <Container fluid="xl">
-                <BackgroundParticle></BackgroundParticle>
-            </Container>
-            <center>
-                <div className="mother">
-                    <br />
-                    <div className="row container d-flex card-user">
-                    <Form onSubmit={editAdmin}>
-                         <div className="col-md-12">
-                            <div className="admin-profile-card user-card-full">
-                                <div className="row m-l-0 m-r-0">
-                                    <div className="col-sm-4 bg-c-lite-green user-profile">
-                                        <div className="card-block text-center text-white">
-                                            <div className="m-b-25">
-                                                <img src={profileImg} className="img-radius"></img>
-                                                <input type="file" id="photo" hidden onChange={imageHandler} />
-                                                <label for="photo" className="profile-img" hidden>
-                                                    <FontAwesomeIcon icon={faFileUpload} className="icon-file"/>
-                                                    &nbsp; Fazer upload:
-                                                </label>
-                                            </div>
-                                            <h6 className="f-w-800">{user.name_user}</h6>
-                                            <FontAwesomeIcon icon={faEdit} className="icon-edit" onClick={enableForm}/>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-8">
-                                        <div className="card-block">
-                                            <h5 className="m-b-20 p-b-5 b-b-default f-w-600">Meu Perfil</h5>
-                                            <div className="row">
-                                                <div className="col-sm-12">
-                                                    <p className="m-b-10 f-w-600">Nome de usuário</p>
-                                                    <input type="text" className="input-profile" disabled placeholder={user.nickname_user}></input>
-                                                </div>
-                                                <div className="col-sm-12">
-                                                    <p className="m-b-10 f-w-600">Nome</p>
-                                                    <input type="text" className="input-profile" disabled value={nome} onChange={e => setNome(e.target.value)}></input>
-                                                </div>
-                                                <div className="col-sm-12">
-                                                    <p className="m-b-10 f-w-600">Email</p>
-                                                    <input type="text" className="input-profile" disabled value={email} onChange={e => setEmail(e.target.value)}></input>
-                                                </div>
-                                                <div className="col-sm-12">
-                                                    <p className="m-b-10 f-w-600">CPF</p>
-                                                    <input type="text" className="input-profile" disabled placeholder={user.cpf_user}></input>
+                <Container fluid="xl">
+                    <BackgroundParticle></BackgroundParticle>
+                </Container>
+                <center>
+                    <div className="mother">
+                        <br />
+                        <div className="row container d-flex card-user">
+                            <Form onSubmit={editAdmin}>
+                                <div className="col-md-12">
+                                    <div className="admin-profile-card user-card-full">
+                                        <div className="row m-l-0 m-r-0">
+                                            <div className="col-sm-4 bg-c-lite-green user-profile">
+                                                <div className="card-block text-center text-white">
+                                                    <div className="m-b-25">
+                                                        <img
+                                                            src={profileImg}
+                                                            className="img-radius"
+                                                        ></img>
+                                                        <input
+                                                            type="file"
+                                                            id="photo"
+                                                            hidden
+                                                            onChange={
+                                                                imageHandler
+                                                            }
+                                                        />
+                                                        <label
+                                                            for="photo"
+                                                            className="profile-img"
+                                                            hidden
+                                                        >
+                                                            <FontAwesomeIcon
+                                                                icon={
+                                                                    faFileUpload
+                                                                }
+                                                                className="icon-file"
+                                                            />
+                                                            &nbsp; Fazer upload:
+                                                        </label>
+                                                    </div>
+                                                    <h6 className="f-w-800">
+                                                        {user.name_user}
+                                                    </h6>
+                                                    <FontAwesomeIcon
+                                                        icon={faEdit}
+                                                        className="icon-edit"
+                                                        onClick={enableForm}
+                                                    />
                                                 </div>
                                             </div>
                                             <div className="col-sm-8">
@@ -239,20 +243,100 @@ const Profile = (props) => {
                                                                 }
                                                             ></input>
                                                         </div>
+                                                    </div>
+                                                    <div className="col-sm-8">
+                                                        <div className="card-block">
+                                                            <h5 className="m-b-20 p-b-5 b-b-default f-w-600">
+                                                                Meu Perfil
+                                                            </h5>
+                                                            <div className="row">
+                                                                <div className="col-sm-12">
+                                                                    <p className="m-b-10 f-w-600">
+                                                                        Nome de
+                                                                        usuário
+                                                                    </p>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="input-profile"
+                                                                        disabled
+                                                                        placeholder={
+                                                                            user.nickname_user
+                                                                        }
+                                                                    ></input>
+                                                                </div>
+                                                                <div className="col-sm-12">
+                                                                    <p className="m-b-10 f-w-600">
+                                                                        Nome
+                                                                    </p>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="input-profile"
+                                                                        disabled
+                                                                        value={
+                                                                            nome
+                                                                        }
+                                                                        onChange={(
+                                                                            e
+                                                                        ) =>
+                                                                            setNome(
+                                                                                e
+                                                                                    .target
+                                                                                    .value
+                                                                            )
+                                                                        }
+                                                                    ></input>
+                                                                </div>
+                                                                <div className="col-sm-12">
+                                                                    <p className="m-b-10 f-w-600">
+                                                                        Email
+                                                                    </p>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="input-profile"
+                                                                        disabled
+                                                                        value={
+                                                                            email
+                                                                        }
+                                                                        onChange={(
+                                                                            e
+                                                                        ) =>
+                                                                            setEmail(
+                                                                                e
+                                                                                    .target
+                                                                                    .value
+                                                                            )
+                                                                        }
+                                                                    ></input>
+                                                                </div>
+                                                                <div className="col-sm-12">
+                                                                    <p className="m-b-10 f-w-600">
+                                                                        CPF
+                                                                    </p>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="input-profile"
+                                                                        disabled
+                                                                        placeholder={
+                                                                            user.cpf_user
+                                                                        }
+                                                                    ></input>
+                                                                </div>
 
-                                                        <button
-                                                            type="submit"
-                                                            className="edit-admin"
-                                                            alt="submit"
-                                                            hidden
-                                                        >
-                                                            <FontAwesomeIcon
-                                                                icon={
-                                                                    faCheckCircle
-                                                                }
-                                                                className="icon-save"
-                                                            />
-                                                        </button>
+                                                                <button
+                                                                    type="submit"
+                                                                    className="edit-admin"
+                                                                    alt="submit"
+                                                                    hidden
+                                                                >
+                                                                    <FontAwesomeIcon
+                                                                        icon={
+                                                                            faCheckCircle
+                                                                        }
+                                                                        className="icon-save"
+                                                                    />
+                                                                </button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
