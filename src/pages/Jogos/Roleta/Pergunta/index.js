@@ -4,6 +4,7 @@ import API from "../../../../api";
 import { Button, Modal } from "react-bootstrap";
 import socketIOClient from "socket.io-client";
 import { connect, connection } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 function mapStateToProps(state) {
     return {
@@ -27,6 +28,7 @@ class Pergunta extends Component {
     handleRedirect = (newPath)=>{
         this.props.history.push(newPath);
     }
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -35,16 +37,21 @@ class Pergunta extends Component {
             selecionada: 0,
             correta: 0,
             time : 0,
+            totem_fk : 0,
             interval: null,
             view:true,
             message:"Clique \"Prosseguir\" para iniciar - Você possui 20 segundos pra responder a questão",
+            redirect: ""
         };
     }
+
     componentDidMount() {
         let id = this.props.match.params.id;
         const perguntas = [];
         API.get(`/perguntados/pergunta/${id}`).then((res) => {
-            console.log(res.data.data[0].json_question);
+            this.setState({
+                totem_fk : res.data.data[0].totem_fk
+            });
             var flag = 1;
             for (var [key, value] of Object.entries(
                 res.data.data[0].json_question.respostas
@@ -55,7 +62,6 @@ class Pergunta extends Component {
                     }
                     if (key1 == "certa") {
                         if (value1 == "true") {
-                            console.log("A flag vale " + flag);
                             this.setState({
                                 correta: flag,
                             });
@@ -70,7 +76,6 @@ class Pergunta extends Component {
                 alternativas: perguntas,
             });
         });
-        console.log(perguntas);
     }
 
     componentDidUpdate(){
@@ -101,9 +106,11 @@ class Pergunta extends Component {
             }, 100),
         });
     }
+
     pauseTime() {
         clearInterval(this.state.interval);
     }
+
     handleModalAlt = async (alt) => {
         this.setState({
             selecionada: alt + 1
@@ -114,29 +121,42 @@ class Pergunta extends Component {
                     message : "Alternativa correta!"
                 });
                 this.pauseTime();
-                // alert("acertou");
             }else{
                 this.setState({
                     view : true,
                     message : "Alternativa incorreta!"
                 });
-                this.props.conexao.emit("errou",this.props.conexao.id);
+                this.pauseTime();
+                this.props.conexao.emit("errou",{
+                    id : this.props.conexao.id,
+                    time : this.state.time
+                });
             }
         });
         
     };
+
     handleModal = (mostra) => {
         if (this.state.view) {
             this.setState({ view: false });
             this.startTime();
-            // this.setState({
-            //     question: this.state.questions.questions[this.state.indice],
-            // }); // ta dando erro
+            if(this.state.selecionada != 0 || this.state.time == 20){
+                this.handleRedirect("/jogos/roleta/");
+                if(this.state.selecionada == this.state.correta){
+                    this.props.conexao.emit("acertou", 
+                    {
+                        id: this.props.conexao.id,
+                        totem : this.state.totem_fk,
+                        time : this.state.time
+                    });
+                }
+            }
         } else {
             this.setState({ view: true });
             this.pauseTime();
         }
     };
+    
     render() {
         let ops = this.state.alternativas;
         return (
@@ -190,11 +210,7 @@ class Pergunta extends Component {
                         <Modal.Footer>
                             <Button
                                 onClick={() => {
-                                    if(this.state.selecionada != 0 || this.state.time == 20){
-                                        this.handleRedirect("/jogos/roleta/");
-                                    }else{
                                         this.handleModal();
-                                    }
                                 }}
                             >
                                 Prosseguir

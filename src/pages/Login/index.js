@@ -221,12 +221,13 @@ class login extends Component {
                                         <p className="FieldD">
                                             <b className="Presc">
                                                 Senha:{" "}
-                                                <button
+                                                <a
+                                                    href="#"
                                                     className="btn"
                                                     onClick={this.handleClick}
                                                 >
                                                     <div class="olhinho"></div>
-                                                </button>{" "}
+                                                </a>{" "}
                                             </b>
 
                                             <input

@@ -322,7 +322,7 @@
   }
   
 
-/* cadastro de jogos */
+/* edição de jogos */
 .mother-games {
     width: 90%;
     height: auto;
@@ -623,14 +623,14 @@ h6 {
 
 @media (min-width:320px) and (max-width: 375px) {
     .ranking{
-        width: 80%;
-        margin-left: 18%;
+        width: 95%;
+        margin-left: -1%;
     }
     
     .employee{
-        width: 80%;
+        width: 95%;
         margin-top: 5%;
-        margin-left: 18%;
+        margin-left: -1%;
     }
 
     .ranking-title-title-adm{
@@ -651,6 +651,10 @@ h6 {
         height: auto;
     }
 
+    .employee-title{
+        margin-left: -20%;
+    }
+
     .header-fixed-ranking > thead,
     .header-fixed-ranking > tbody,
     .header-fixed-ranking > thead > tr,
@@ -661,7 +665,7 @@ h6 {
     }
 
     .header-fixed-ranking > tbody {
-        height: 350px;
+        height: 330px;
     }
 
     .header-fixed-employee > tbody {
@@ -682,13 +686,17 @@ h6 {
     }
 
     .card-user{
-        width: 90%;
-        margin-left: 14%;
+        width: 100%;
+        margin-left: 5%;
+    }
+
+    .admin-profile-card{
+        margin-left: -20%;
     }
 
     .admin{
-        width: 80%;
-        margin-left: 19%;
+        width: 100%;
+        margin-left: -3%;
         margin-top: 5%;
         height: 800px;
     }
@@ -724,7 +732,7 @@ h6 {
     }
 
     .m-b-10 {
-        margin-left: -50%;
+        margin-left: -35%;
     }
 
     .labels-insert{
@@ -753,14 +761,14 @@ h6 {
 
 @media (min-width:365px) and (max-width: 375px) {
     .ranking{
-        width: 80%;
-        margin-left: 18%;
+        width: 95%;
+        margin-left: -1%;
     }
     
     .employee{
-        width: 80%;
+        width: 95%;
         margin-top: 5%;
-        margin-left: 18%;
+        margin-left: -1%;
     }
 
     .ranking-title-title-adm{
@@ -818,7 +826,7 @@ h6 {
     
     .admin{
         width: 80%;
-        margin-left: 17%;
+        margin-left: 10%;
         margin-top: 5%;
         height: 800px;
     }
@@ -883,8 +891,8 @@ h6 {
 
 @media (min-width:376px) and (max-width: 504px) {
     .ranking{
-        width: 80%;
-        margin-left: 18%;
+        width: 95%;
+        margin-left: -2%;
     }
 
     .ranking-title-title-adm{
@@ -897,9 +905,9 @@ h6 {
     }
     
     .employee{
-        width: 80%;
+        width: 95%;
         margin-top: 5%;
-        margin-left: 18%;
+        margin-left: -2%;
     }
     
     .ranking-body{
@@ -946,9 +954,13 @@ h6 {
         margin-left: 11%;
     }
     
+    .admin-profile-card{
+        margin-left: -20%;
+    }
+
     .admin{
         width: 80%;
-        margin-left: 16%;
+        margin-left: 10%;
         margin-top: 5%;
         height: 800px;
     }
@@ -984,7 +996,141 @@ h6 {
     }
 
     .m-b-10 {
-        margin-left: -40%;
+        margin-left: -35%;
+    }
+
+    .labels-insert{
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    .inputs-insert{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .insert-games {
+        margin-left: 15%;
+    }
+    
+    label{
+        text-align: left;
+    }
+
+    .insert-games h2{
+        font-size: 150%;
+    }
+}
+
+@media (min-width:375px) and (max-width: 667px) {
+    .ranking{
+        width: 96%;
+        margin-left: -1%;
+    }
+
+    .ranking-title-title-adm{
+        width: 100%;
+        margin-left: 3%;
+    }
+    
+    .ranking-title-combo-adm{
+        width: 100%;
+    }
+    
+    .employee{
+        width: 96%;
+        margin-top: 5%;
+        margin-left: -1%;
+    }
+    
+    .ranking-body{
+        width: 92%;
+        height: auto;
+    }
+    
+    .employee-body{
+        height: auto;
+    }
+
+    .header-fixed-ranking > thead,
+    .header-fixed-ranking > tbody,
+    .header-fixed-ranking > thead > tr,
+    .header-fixed-ranking > tbody > tr,
+    .header-fixed-ranking > thead > tr > th,
+    .header-fixed-ranking > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed-ranking > tbody {
+        height: 350px;
+    }
+
+    .header-fixed-employee > tbody {
+        height: 350px;
+    }
+
+    .switch {
+        margin-left: 35%;
+    }
+
+    .img-radius {
+        height: 140px;
+        width: 140px;
+    }
+
+    .switch-profile {
+        margin-left: 63%;
+    }
+
+    .card-user{
+        width: 90%;
+        margin-left: 11%;
+    }
+    
+    .admin-profile-card{
+        margin-left: -20%;
+    }
+
+    .admin{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+        height: 800px;
+    }
+    
+    .admin-title h2{
+        font-size: 135%;
+    }
+
+    .header-fixed-profile > thead,
+    .header-fixed-profile > tbody,
+    .header-fixed-profile > thead > tr,
+    .header-fixed-profile > tbody > tr,
+    .header-fixed-profile > thead > tr > th,
+    .header-fixed-profile > tbody > tr > td {
+        font-size: 95%;
+    }
+
+    .header-fixed-profile > tbody {
+        height: 250px;
+    }
+
+    .header-fixed-admin > thead,
+    .header-fixed-admin > tbody,
+    .header-fixed-admin > thead > tr,
+    .header-fixed-admin > tbody > tr,
+    .header-fixed-admin > thead > tr > th,
+    .header-fixed-admin > tbody > tr > td {
+        font-size: 90%;
+    }
+
+    .header-fixed-admin > tbody {
+        height: 300px;
+    }
+
+    .m-b-10 {
+        margin-left: -30%;
     }
 
     .labels-insert{
@@ -1013,8 +1159,8 @@ h6 {
 
 @media (min-width:505px) and (max-width: 599px) {
     .ranking{
-        width: 90%;
-        margin-left: 10%;
+        width: 95%;
+        margin-left: -2%;
     }
 
     .ranking-title-title-adm{
@@ -1027,9 +1173,9 @@ h6 {
     }
     
     .employee{
-        width: 90%;
+        width: 95%;
         margin-top: 5%;
-        margin-left: 10%;
+        margin-left: -2%;
     }
     
     .ranking-body{
@@ -1076,9 +1222,13 @@ h6 {
         margin-left: 9%;
     }
     
+    .admin-profile-card{
+        margin-left: -10%;
+    }
+
     .admin{
         width: 80%;
-        margin-left: 15%;
+        margin-left: 10%;
         margin-top: 5%;
         height: 900px;
     }
@@ -1144,8 +1294,8 @@ h6 {
 
 @media (min-width:600px) and (max-width: 789px) {
     .ranking{
-        width: 90%;
-        margin-left: 10%;
+        width: 95%;
+        margin-left: -2%;
     }
 
     .ranking-title-title-adm{
@@ -1158,9 +1308,9 @@ h6 {
     }
     
     .employee{
-        width: 90%;
+        width: 95%;
         margin-top: 5%;
-        margin-left: 10%;
+        margin-left: -2%;
     }
     
     .ranking-body{
@@ -1206,9 +1356,13 @@ h6 {
         margin-left: 9%;
     }
     
+    .admin-profile-card{
+        margin-left: -10%;
+    }
+
     .admin{
         width: 90%;
-        margin-left: 9%;
+        margin-left: 5%;
         margin-top: 5%;
     }
     
@@ -1273,14 +1427,14 @@ h6 {
 
 @media (min-width:700px) and (max-width: 789px) {
     .ranking{
-        width: 90%;
-        margin-left: 8%;
+        width: 95%;
+        margin-left: -2%;
     }
     
     .employee{
-        width: 90%;
+        width: 95%;
         margin-top: 5%;
-        margin-left: 8%;
+        margin-left: -2%;
     }
 
     .ranking-title-title-adm{
@@ -1337,7 +1491,7 @@ h6 {
     
     .admin{
         width: 90%;
-        margin-left: 7%;
+        margin-left: 4%;
         margin-top: 5%;
     }
     
@@ -1409,7 +1563,7 @@ h6 {
     .employee{
         width: 93%;
         margin-top: 5%;
-        margin-left: 6%;
+        margin-left: 5%;
     }
 
     .ranking-title-title-adm{
@@ -1431,7 +1585,8 @@ h6 {
     }
 
     .employee-title{
-        padding-left: 30%;
+        padding-left: 20%;
+        margin-left: -30%;
     }
 
     .header-fixed-ranking > thead,
@@ -1688,6 +1843,7 @@ h6 {
 
     .employee-title{
         padding-left: 5%;
+        margin-left: -1%;
     }
 
     .header-fixed-ranking > thead,
@@ -1784,5 +1940,12 @@ h6 {
 @media (min-width:768px) and (max-width:1024px){
     .m-b-10 {
         margin-left: -3%;
+    }
+    .ranking{
+        margin-left: 7%;
+    }
+    
+    .employee{
+        margin-left: 7%;
     }
 }

@@ -9,9 +9,9 @@
 .container_descricao
 {
     width: 40%;
-    border-radius: 3%;
+    border-radius: 20px;
     padding-left: 11%;
-    padding-top: 5%;
+    padding-top: 30px;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -21,13 +21,17 @@
     padding-right: 18%;
 }
 
+.row_play {
+    padding-right: 35%
+}
+
 .play
 {
     font-size: 2.8vw;
     background: rgb(0, 137, 248);
-    border-radius: 7%;
+    border-radius: 10px;
     width: 45%;
-    margin-bottom: 3%;
+    margin-bottom: 10px;
     height: 5vw;
     text-align: center;
 }
@@ -197,7 +201,7 @@
     font-family: fantasy;
     font-size: 6vh;
 }
-@media (min-width: 320px) and (max-width: 375px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .quiz {
         width: 83vw;
         margin-left: 9vw;
@@ -206,7 +210,7 @@
         width: 23vw;
         margin-left: 6%;
     }
-    .cronometro{
+    .cronometro {
         font-size:29px;
     }
     .pontos {
@@ -216,8 +220,20 @@
     .points {
         font-size: 40px;
     }
-    .container_descricao{
+    .titulo_objetivo {
+        font-size: 28px;
+    }
+    .container_descricao {
         width: 90%;
         padding-left: 15%;
+    }
+    .play
+    {
+        font-size: 20px;
+        height: 30px;
+        text-align: center;
+    }
+    .row_play {
+        padding-right: 20%;
     }
 }

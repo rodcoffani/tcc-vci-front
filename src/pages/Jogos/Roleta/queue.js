@@ -7,8 +7,9 @@ import "./style.css";
 import Header from "../../../components/Header";
 import { Helmet } from "react-helmet";
 
-
 class Queue extends Component {
+
+
     constructor(props) {
         super(props);
         this.state = {
@@ -30,7 +31,6 @@ class Queue extends Component {
             "login/teste-token", 
             tk
         ).then((res) => {
-            console.log(res.data.decoded);
             const conexao = socketIOClient("http://localhost:4000", {query:`nickName=${res.data.decoded.nickname_user}`});
             conexao.on("ready", (PLAYERS) => {
                 let aux = false;
@@ -65,10 +65,11 @@ class Queue extends Component {
         
     }
 
+
     render() {
         return (
             <React.Fragment>
-                <Helmet title="Jogo 10" />
+                <Helmet title="Roleta" />
                 <Header headerTitle="Jogo da Roleta" />
 
                 <div className="LoadMessage">Procurando jogadores {this.state.mensagem}</div>

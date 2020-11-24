@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 import "../Quiz/style.css";
 import Header from "../../../components/Header";
+import Sidebar from '../../../components/Sidebar/employee';
 import { Helmet } from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
 import { Container, Row } from "react-bootstrap";
 import {faFlag} from '@fortawesome/free-regular-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-
+import API from "../../../api";
 export default class Quiz_rules extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            token:localStorage.getItem('authTk'),
+            log: localStorage.getItem('authTk'),
         };
     }
     handleClick = (caminho) => {
-        if(!this.state.token){
+        if(!this.state.log){
             alert("Por favor, entre na sua conta para jogar.");
             this.props.history.push("/Login");
         }else{
@@ -26,7 +27,8 @@ export default class Quiz_rules extends Component {
     render() {
         return (
             <React.Fragment>
-                <Helmet title="Jogo 1" />
+                <Helmet title="Quiz" />
+                <Sidebar pageSelected=""/>
                 <Header headerTitle="Jogo Quiz"/>
 
                     <h1 className="titulo_objetivo">Objetivos:</h1>
@@ -36,7 +38,7 @@ export default class Quiz_rules extends Component {
                         <li><FontAwesomeIcon icon={faFlag}/> O participante deverá responder a questão escolhendo uma das quatro alternativas;</li>
                         <br></br>
                         <li><FontAwesomeIcon icon={faFlag}/> Para cada resposta correta, o participante pontuará
-                        positivamente e para cada resposta errada, pontuará negativamente;</li>
+                        positivamente;</li>
                         <br></br>
                         <li><FontAwesomeIcon icon={faFlag}/> Após dada a resposta o participante será informado se
                         acertou ou errou, mas não irá visualizar qual a resposta correta no caso de errar. O sistema irá pular automaticamente para a próxima pergunta;</li>
@@ -47,14 +49,13 @@ export default class Quiz_rules extends Component {
                         final serão mostrados os melhores tempos dos jogadores cadastrados.</li>
                         </ul>
 
-                        <Row style={{paddingRight:"35%"}}>
+                        <Row className="row_play">
                             <Container className="play">
-                                <a style={{color:"white", textDecoration:"none"}} href="/">Voltar</a>
+                                <a style={{color:"white", textDecoration:"none"}} href="/funcionario">Voltar</a>
                             </Container>
 
                             <Container className="play">
                                 <a style={{color:"white", textDecoration:"none"}} href="#" onClick={() => this.handleClick("/jogos/quiz")}>Jogar</a>
-                                
                             </Container>
                         </Row>
                     </Container>

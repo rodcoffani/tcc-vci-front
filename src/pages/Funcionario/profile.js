@@ -12,13 +12,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '@fortawesome/fontawesome-free';
 
 const Profile = (props) => {
-    const [admin, setAdmin] = useState([]);
     const [employee, setEmployee] = useState([]);
     const [games, setGames] = useState([]);
     const [ranking, setRanking] = useState([]);
     const [user, setUser] = useState({});
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
+    const [idGame, setIdGame] = useState("");
     const [id, setId] = useState("");
     const [profileImg, setImg] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
     const [reloadFlag, setReloadFlag] = useState(true); 
@@ -29,13 +29,11 @@ const Profile = (props) => {
             setId(res.data.decoded.iduser);
             setNome(res.data.decoded.name_user);
             setEmail(res.data.decoded.email_user);
+            setIdGame(0);
         });
     }, []);
 
     useEffect(() => {
-        API.get("/users/admins").then((res) => {
-            setAdmin(res.data);
-        });
         API.get("/users/employee").then((res) => {
             setEmployee(res.data);
         });
@@ -48,18 +46,23 @@ const Profile = (props) => {
     }, []);
 
     useEffect(() => {
-        if(id === 0){
-            API.get("/ranking/all").then((res) => {
+        if(idGame == 0){
+            API.get(`/ranking/all/${id}` ).then((res) => {
+                console.log(res.data);
                 setRanking(res.data);
             }); 
         }
         else{
-            API.get(`/ranking/${id}`).then((res) => {
+            var data = {
+                idUser : id,
+                idGame : idGame
+            }
+            API.post(`/ranking/rank-by-game`, data).then((res) => {
                 setRanking(res.data);
             });  
         }
             
-    }, [id]);
+    }, [idGame]);
 
     const enableForm = (e) => {
         e.preventDefault();
@@ -110,15 +113,7 @@ const Profile = (props) => {
         reader.readAsDataURL(e.target.files[0]);
     }
 
-    const promoteUser = (email, name) => { 
-        // eslint-disable-next-line no-restricted-globals
-        if(confirm("Deseja salvar as alterações?")){
-            API.put(`users/promote-admin/${email}`, {name}).then((res) => {
-                alert(res.data.message);
-                setReloadFlag(!reloadFlag);
-            });
-        } 
-    }
+
 
     // render() {
         return(
@@ -190,7 +185,9 @@ const Profile = (props) => {
                                     <div className="ranking-title-combo">
                                         Filtrar por jogo:
                                         <Form>
-                                            <FormControl as="select" onChange={((e) => setId(parseInt(e.target.value)))}>
+                                            <FormControl as="select" onChange={((e) => {
+                                                    setIdGame(parseInt(e.target.value)); 
+                                                })}>
                                                 <option value={0} className="select-jogos">---</option>
                                                 {games.map((item) => {
                                                     return <option value={item.idgame} className="select-jogos">{item.name_game}</option>
@@ -214,12 +211,16 @@ const Profile = (props) => {
                                     </thead>
                                     <tbody>
                                         {ranking.map((item, index) => {
-                                            return <tr>
-                                                <td>{index + 1}</td>
-                                                <td>{item.name_game}</td>
-                                                <td>{item.time}</td>
-                                                <td>{item.points}</td>
-                                            </tr>
+                                            if(id == item.iduser){
+                                                console.log(index);
+                                                return <tr>
+                                                    <td>{index + 1}</td>
+                                                    <td>{item.name_game}</td>
+                                                    <td>{item.time}</td>
+                                                    <td>{item.points}</td>
+                                                </tr>
+                                            }
+                                            
                                         })}
                                     </tbody>
                                     </table>

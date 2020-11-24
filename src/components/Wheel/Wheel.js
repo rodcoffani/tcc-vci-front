@@ -4,15 +4,17 @@ import wheel from "../../assets/images/Wheel.png";
 import API from "../../api";
 import marker from "../../assets/images/Button-Marker.png";
 import { withRouter } from "react-router-dom";
+import store from "../../config/store";
 
 class Wheel extends Component {
     componentDidMount() {
+       
         this.state = {
             wheel: document.querySelector(".wheel"),
             startButton: document.querySelector(".button"),
             numeroJogo: 0,
             vez: 1,
-            sorteados: [],
+            // sorteados: store.getState().playerCon.player[index].totem,
         };
     }
 
@@ -65,9 +67,18 @@ class Wheel extends Component {
     */
 
     validate = (val) => {
+        var index;
+        var id = store.getState().playerCon.conexao.id;
+        var players = store.getState().playerCon.player;
+        for(var i = 0; i<players.length; i++){
+            if(players[i].id === id){
+                index = i;
+            }
+        }
+
         var aux = false;
 
-        this.state.sorteados.map((item) => {
+        store.getState().playerCon.player[index].totem.map((item) => {
             if (val == item) {
                 aux = true;
             }
@@ -84,14 +95,15 @@ class Wheel extends Component {
     handleButtonClick = () => {
         //Sorteia uma das categorias de 1 a 9 (inclusive)
         let sortedVal = 0;
-
-        sortedVal = Math.floor(Math.random() * 9);
-
+        do{
+            sortedVal = Math.floor(Math.random() * 9) + 1;
+        }while(this.validate(sortedVal));
+        sortedVal--;
         //Deg representa a rotacao a ser aplicada a wheel. de 40 em 40
         //Pois 9 categorias / 360 graus = 40 graus
         let deg = Math.floor(3600 * this.state.vez + sortedVal * 40);
         deg = 20 + deg;
-        console.log(sortedVal);
+        // console.log(sortedVal);
         //Aqui no Deg ele nao gira de forma constante pois Math.Randon retorna ponto flutuante
         //Para que gire de forma constante use Math.floor em sorted val.
 
@@ -122,13 +134,20 @@ class Wheel extends Component {
 
         this.setState({
             numeroJogo: sortedVal,
-            sorteados: [sortedVal].concat(this.state.sorteados),
         });
 
         setTimeout(() => {
             //MUDEI PERGUNTA NAO TEM MAIS INDEICE 0 => LINHA 136 IMPLEMENTAR (BEIJOS DA CORNETA ASS. JAMAL)
             API.get(`/perguntados/${sortedVal + 1}`).then((res) => {
+                console.log(store.getState().playerCon);
                 //========================
+                // store.dispatch({
+                //     type: "ADD_QUESTION",
+                //     payload: {
+                //         questions : [1,2,3]
+                //     },
+                // });
+                console.log(store.getState());
                 this.handleRedirect(
                     `/jogos/roleta/pergunta/${res.data.data.idquestion}`
                 );
