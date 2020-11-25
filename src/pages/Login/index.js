@@ -240,16 +240,15 @@ class login extends Component {
                                                 noValidate
                                             />
                                         </p>
-
-                                        <div className="oneAcess">
-                                            <button
+                                        <button
                                                 className="btn btn-link oneTwo"
                                                 onClick={() => {
                                                     this.handleModal();
                                                 }}
                                             >
                                                 Esqueci a senha{" "}
-                                            </button>
+                                        </button>
+                                        <div className="oneAcess">
                                             <input
                                                 type="submit"
                                                 value="Entrar"
