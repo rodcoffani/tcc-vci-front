@@ -243,6 +243,20 @@ const Profile = (props) => {
                                                                 }
                                                             ></input>
                                                         </div>
+
+                                                        <button
+                                                            type="submit"
+                                                            className="edit-admin"
+                                                            alt="submit"
+                                                            hidden
+                                                        >
+                                                            <FontAwesomeIcon
+                                                                icon={
+                                                                    faCheckCircle
+                                                                }
+                                                                className="icon-save"
+                                                            />
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
