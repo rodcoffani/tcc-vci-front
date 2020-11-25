@@ -123,6 +123,8 @@ class login extends Component {
                         "Talvez sua conta ainda não esteja verificada. Aguarde o recebimento de verificação em seu email para realizar o login!"
                     );
                 }
+            }).catch(()=>{
+                alert("Usuário ou senha incorretos!!");
             });
             API.post(
                 "/login/teste-token",
@@ -240,21 +242,35 @@ class login extends Component {
                                                 noValidate
                                             />
                                         </p>
-                                        <button
-                                                className="btn btn-link oneTwo"
+                                        <div className="links">
+                                            <a
+                                                
                                                 onClick={() => {
-                                                    this.handleModal();
+                                                    this.goToCadastro();
                                                 }}
                                             >
-                                                Esqueci a senha{" "}
-                                        </button>
-                                        <div className="oneAcess">
-                                            <input
-                                                type="submit"
-                                                value="Entrar"
-                                                className="CadBtn"
-                                            />
+                                                1º Acesso{" "}
+                                            </a>
                                         </div>
+                                        <div className="links2">
+                                            <a
+                                                    
+                                                    onClick={() => {
+                                                        this.handleModal();
+                                                    }}
+                                                >
+                                                    Esqueci a senha{" "}
+                                            </a>
+                                        </div>
+                                        <center>
+                                            <div className="oneAcess">
+                                                <input
+                                                    type="submit"
+                                                    value="Entrar"
+                                                    className="CadBtn"
+                                                />
+                                            </div>
+                                       </center>
                                     </form>
                                 </div>
                             </Col>

@@ -55,7 +55,9 @@ class Roleta extends Component {
             ],
             view: false,
             admin: null,
+            profilePìc : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
             message: "",
+            adminFlag : false,
             lengthTotem: 0,
             jsx: <h1>Aguarde sua vez...</h1>,
             redirect: ""
@@ -125,15 +127,25 @@ class Roleta extends Component {
             tk
         ).then((res) => {
             if(res.data.decoded.admin){
-                console.log("é ademir")
                 this.setState({
-                    admin: <SidebarADM/>
+                    admin: <SidebarADM/>,
+                    adminFlag : true
                 });
             }else{
                 this.setState({
-                    admin: <Sidebar/>
+                    admin: <Sidebar/>,
+                    adminFlag : false
                 });
             }
+            API.get("/users/image/" + res.data.decoded.iduser, {
+                responseType: "blob",
+            }).then((res) => {
+                if (res.data.size > 100) {
+                    this.setState({
+                        profilePìc : URL.createObjectURL(res.data)
+                    });
+                }
+            });
         })
     }
 
@@ -156,7 +168,11 @@ class Roleta extends Component {
     RoomProblem = (arg) => {
         this.props.conexao.emit("winner-room", this.props.conexao.id);
         alert("Infelizmente parece que você ou seu adversário se desconectaram!\nIremos te redirecionar para o perfil");
-        window.location.replace("/profile-employee");
+        if(this.state.adminFlag){
+            window.location.replace("/reports");
+        }else{
+            window.location.replace("/profile-employee");
+        }
     }
     
     setWinner = (arg) => {
@@ -259,7 +275,7 @@ class Roleta extends Component {
                         <div className="player p1">
                             <img
                                 className="profilePic"
-                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                src={this.state.profilePìc}
                                 alt="Imagem do participante 1"
                             />
                             <div className="employeeName">
@@ -296,7 +312,7 @@ class Roleta extends Component {
                         <div className="player p2">
                             <img
                                 className="profilePic"
-                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                src={this.state.profilePìc}
                                 alt="Imagem do participante 2"
                             />
                             <div className="employeeName">
