@@ -20,8 +20,9 @@ const Profile = (props) => {
     const [email, setEmail] = useState("");
     const [idGame, setIdGame] = useState("");
     const [id, setId] = useState("");
-    const [profileImg, setImg] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
+    const [profileImg, setReadImg] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
     const [reloadFlag, setReloadFlag] = useState(true); 
+    const [formImg, setFormImg] = useState();
 
     useEffect(() => {
         API.post("/login/teste-token",{token: localStorage.getItem('authTk')}).then((res) => {
@@ -30,6 +31,13 @@ const Profile = (props) => {
             setNome(res.data.decoded.name_user);
             setEmail(res.data.decoded.email_user);
             setIdGame(0);
+            API.get("/users/image/" + res.data.decoded.iduser, {
+                responseType: "blob",
+            }).then((res) => {
+                if (res.data.size > 100) {
+                    setReadImg(URL.createObjectURL(res.data));
+                }
+            });
         });
     }, []);
 
@@ -83,11 +91,17 @@ const Profile = (props) => {
 
     const editAdmin = (e) => {
         e.preventDefault();
-        console.log(id, email, nome);
-        API.put("/users/update-user", {id, nome, email}).then((res) => {
+        const data = new FormData();
+        if (formImg !== null) {
+            data.append("file", formImg);
+        }
+        data.append("id", id);
+        data.append("email", email);
+        data.append("nome", nome);
+        API.put("/users/update-user", data).then((res) => {
             alert(res.data.message);
             console.log(res.data);
-        })
+        });
 
         const inputs = document.getElementsByClassName("input-profile");
         for(let i=0; i<inputs.length; i++){
@@ -107,10 +121,11 @@ const Profile = (props) => {
         const reader = new FileReader();
         reader.onload = () => {
           if(reader.readyState === 2){
-            setImg(reader.result);
+            setReadImg(reader.result);
           }
         }
         reader.readAsDataURL(e.target.files[0]);
+        setFormImg(e.target.files[0]);
     }
 
 
