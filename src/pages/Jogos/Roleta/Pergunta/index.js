@@ -169,12 +169,12 @@ class Pergunta extends Component {
                                 {this.state.time} s
                             </div>
                         </div>
-                        <div className="pontos">
+                        {/*<div className="pontos">
                             <div className="campValor">Pontos</div>
                             <div className="points">
-                                {/*this.state.points*/}
+                                //this.state.points
                             </div>
-                        </div>
+                        </div>*/}
                     </div>
                     <div className="quiz">
                         <div className="enunciado">
